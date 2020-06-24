@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_163821) do
+ActiveRecord::Schema.define(version: 2020_05_06_121330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
- create_table "contracts", force: :cascade do |t|
+  create_table "contracts", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "customer_id"
     t.integer "insure_trade_type"
@@ -143,6 +143,4 @@ ActiveRecord::Schema.define(version: 2020_06_22_163821) do
   add_foreign_key "loss_payees", "primary_insurances"
   add_foreign_key "options", "insure_trad_supps"
   add_foreign_key "primary_insurances", "insure_trad_supps"
-
-
 end
