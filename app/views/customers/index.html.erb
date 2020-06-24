@@ -1,0 +1,36 @@
+<%
+=begin%>
+commentaire : ici on peut faire creation nouveau client
+<%
+=end%>
+<div class="container">
+  <div class="title">
+    <h2>L'ASSURÉ</h2>
+    <p> Veuillez préciser le nom ou numéro siren de votre assuré</p>
+  </div>
+  <%= form_tag customers_path, method: :get do %>
+  <%= text_field_tag :search,
+      params[:search],
+      class: "form-control",
+      placeholder: "Find a compagny"
+    %>
+  <%= submit_tag "Search", class: "btn btn-primary my-2" %>
+  <% end %>
+  <% if (!(@customers == Customer.all)) %>
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <div id="customers">
+        <% @customers.each do |customer| %>
+        <%= link_to(edit_customer_path(customer)) do %>
+        <div class='card'>
+          <h4><%= customer.compagny_name %></h4>
+          <p>Siren: <%= customer.siret %></p>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% else %>
+  <% end %>
+</div>

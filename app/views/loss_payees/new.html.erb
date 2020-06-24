@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Police de Second Rang</h1>
+  <p>Merci de préciser les organismes devant être nommés en tant que bénéficiaires de la
+    police de second rang</p>
+  <div class="form">
+    <%= simple_form_for [@primary_insurance , @loss_payee ] do |f| %>
+    <%= f.input :name , label: 'Raison sociale' %>
+    <%= f.input :address , label: 'Adresse' %>
+    <div class="inline">
+      <%= f.input :zipcode , label: 'Code postal' %>
+      <%= f.input :city , label: 'Ville' %>
+      <%= f.input :country ,:as => :string, label: 'Pays' %>
+    </div>
+    <%= f.submit 'Validez', class:'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

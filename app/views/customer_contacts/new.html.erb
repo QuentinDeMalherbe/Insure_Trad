@@ -1,0 +1,40 @@
+  <div class="container">
+    <h1>Police de seconde ligne</h1>
+    <p>Chaque section doit être complétée. Cette declaration une fois remplie fera partie de la police d’assurance crédit de second rang.</p>
+    <%= simple_form_for [@insure_trad_supp, @customer_contact] do |f| %>
+    <div class="contact">
+      <p>Détails des Contacts de l’Assuré</p>
+      <div class="inline">
+        <%= f.input :last_name_contact , label: 'Nom de Famille' %>
+        <%= f.input :position_contact , label: 'Fonction' %>
+      </div>
+      <div class="inline">
+        <%= f.input :email_contact , label: 'Adresse email' %>
+        <%= f.input :tel_contact , label: 'N° de téléphone' %>
+      </div>
+    </div>
+    <div class="contact">
+      <p>Détails des contacts du dirigeant de l’Assuré</p>
+      <div class="inline">
+        <%= f.input :last_name_dirigeant , label: 'Nom de Famille' %>
+        <%= f.input :position_dirigeant , label: 'Fonction' %>
+      </div>
+      <div class="inline">
+        <%= f.input :email_dirigeant , label: 'Adresse email' %>
+        <%= f.input :tel_dirigeant , label: 'N° de téléphone' %>
+      </div>
+    </div>
+    <div class="contact">
+      <p>La correspondance quotidienne au titre de la police d’assurance doit être adressée à</p>
+      <div class="inline">
+        <%= f.input :last_name_correspondance , label: 'Nom de Famille' %>
+        <%= f.input :position_correspondance , label: 'Fonction' %>
+      </div>
+      <div class="inline">
+        <%= f.input :email_correspondance , label: 'Adresse email' %>
+        <%= f.input :tel_correspondance , label: 'N° de téléphone' %>
+      </div>
+      <%= f.submit 'Validez les informations' , class: 'btn btn-primary'  %>
+    </div>
+    <% end %>
+  </div>

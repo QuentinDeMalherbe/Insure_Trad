@@ -1,0 +1,164 @@
+<div class="avancement">
+  <div class="position-avancement-realise inline-text">
+    <i class="fas fa-check-circle tick"></i>
+    <p>
+      Choix de la <br>police
+    </p>
+  </div>
+  <div class="position-avancement-actif inline-text">
+    <div class="avancement-number">
+      <p class=" actif-number">2</p>
+    </div>
+    <p>
+      Tarification
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">3</p>
+    </div>
+    <p>
+      Information <br>complémentaires
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">4</p>
+    </div>
+    <p>
+      Création <br>police
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="title mt-4">
+    <h2>Tarification</h2>
+    <p>Pour finaliser votre contrat nous avons besoin de ...</p>
+  </div>
+  <table>
+    <tbody style="height:80%;">
+      <tr class='ligne-1'>
+        <td style="width: 40%;"></td>
+        <td style="width: 10%;" class="option1">
+          <p class="titre-tableau-1">Option 1</p>
+        </td>
+        <td style="width: 10%;" class=" option2">
+          <p class="titre-tableau-2">Option 2</p>
+        </td>
+        <td style="width: 10%;" class=" option3">
+          <p class="titre-tableau-3">Option 3</p>
+        </td>
+      </tr>
+      <tr class='ligne-2'>
+        <td class="darkk-blue">Montant Cumulé annuel des Pertes
+          Garanties constitué par la somme des
+          lignes ci-après</td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@options[:option1][:cumul_loses_insured1], unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency(@options[:option2][:cumul_loses_insured2], unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency(@options[:option3][:cumul_loses_insured3], unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-3-a-6'>
+        <td STYLE="padding:0 0 0 20px;">4ième ligne du cumul annuel des Pertes
+          Garanties</td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@options[:option1][:quatre1], unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency(@options[:option2][:quatre2], unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency(@options[:option3][:quatre3], unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-3-a-6'>
+        <td STYLE="padding:0 0 0 20px;">3ième ligne du cumul annuel des Pertes
+          Garanties</td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@options[:option1][:trois1], unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency(@options[:option2][:trois2], unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency(@options[:option3][:trois3], unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-3-a-6'>
+        <td STYLE="padding:0 0 0 20px;">2ième ligne du cumul annuel des Pertes
+          Garanties</td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@options[:option1][:deux1], unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency(@options[:option2][:deux2], unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency(@options[:option3][:deux3], unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-3-a-6 ligne-6'>
+        <td STYLE="padding:0 0 10px 20px;">1ière ligne du cumul annuel des Pertes
+          Garanties</td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@options[:option1][:un1], unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency(@options[:option2][:un2], unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency(@options[:option3][:un3], unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-7-a-11'>
+        <td class="darkk-blue">Seuil maximum automatique de toute
+          garantie complémentaire de second rang</td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@options[:option1][:max_auto_indiv_insured_loss1], unit: :€, format: "%n %u", precision: 0)  %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency(@options[:option2][:max_auto_indiv_insured_loss2], unit: :€, format: "%n %u", precision: 0)  %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency(@options[:option3][:max_auto_indiv_insured_loss3], unit: :€, format: "%n %u", precision: 0)  %></td>
+      </tr>
+      <tr class='ligne-7-a-11'>
+        <td class="darkk-blue">Prime trimestrielle</td>
+        <td class="option1 darkk-blue"><%= number_to_currency((@options[:option1][:annual_prenium1] /12 *3).ceil, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency((@options[:option2][:annual_prenium2] /12 *3).ceil, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency((@options[:option3][:annual_prenium3] /12 *3).ceil, unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-7-a-11'>
+        <td class="darkk-blue">Coût annuel de police et Prestation de
+          Services</td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@option.policy_admin, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency(@option.policy_admin, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency(@option.policy_admin, unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-7-a-11'>
+        <td class="darkk-blue">Total prime et coût annuel payable
+          pour le 1er trimestre</td>
+        <td class="option1 darkk-blue"><%= number_to_currency((@options[:option1][:annual_prenium1] /12*3).ceil + @option.policy_admin, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency((@options[:option2][:annual_prenium2] /12 *3).ceil + @option.policy_admin, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency((@options[:option3][:annual_prenium3] /12 *3).ceil + @option.policy_admin, unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-7-a-11'>
+        <td class="darkk-blue">Total prime annuelle et coût annuel</td>
+        <td class="option1 darkk-blue"><%= number_to_currency((@options[:option1][:annual_prenium1] /12*3).ceil*4 + @option.policy_admin, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency((@options[:option2][:annual_prenium2] /12 *3).ceil*4+ @option.policy_admin, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency((@options[:option3][:annual_prenium3] /12 *3).ceil*4 + @option.policy_admin, unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-12'>
+        <td class="light-blue">Quelle option?</td>
+        <td class="option1 center_table">
+          <%= simple_form_for [@insure_trad_supp, @option ] do |f| %>
+          <%= f.input :cumul_loses_insured, :as => :hidden, :input_html => { :value => @options[:option1][:cumul_loses_insured1] } %>
+          <%= f.input :max_auto_indiv_insured_loss, :as => :hidden, :input_html => { :value => @options[:option1][:max_auto_indiv_insured_loss1] } %>
+          <%= f.input :annual_prenium, :as => :hidden, :input_html => { :value => @options[:option1][:annual_prenium1] } %>
+          <%= f.input :quatrieme_layer, :as => :hidden, :input_html => { :value => @options[:option1][:quatre1] } %>
+          <%= f.input :troisieme_layer, :as => :hidden, :input_html => { :value => @options[:option1][:trois1] } %>
+          <%= f.input :deuxieme_layer, :as => :hidden, :input_html => { :value => @options[:option1][:deux1] } %>
+          <%= f.input :premier_layer, :as => :hidden, :input_html => { :value => @options[:option1][:un1] } %>
+          <%= f.submit 'Validez', class:'btn btn-primary' %>
+          <%end%>
+        </td>
+        <td class="option2 center_table">
+          <%= simple_form_for [@insure_trad_supp, @option ] do |f| %>
+          <%= f.input :cumul_loses_insured, :as => :hidden, :input_html => { :value => @options[:option2][:cumul_loses_insured2] } %>
+          <%= f.input :max_auto_indiv_insured_loss, :as => :hidden, :input_html => { :value => @options[:option2][:max_auto_indiv_insured_loss2] } %>
+          <%= f.input :annual_prenium, :as => :hidden, :input_html => { :value => @options[:option2][:annual_prenium2] } %>
+          <%= f.input :quatrieme_layer, :as => :hidden, :input_html => { :value => @options[:option2][:quatre2] } %>
+          <%= f.input :troisieme_layer, :as => :hidden, :input_html => { :value => @options[:option2][:trois2] } %>
+          <%= f.input :deuxieme_layer, :as => :hidden, :input_html => { :value => @options[:option2][:deux2] } %>
+          <%= f.input :premier_layer, :as => :hidden, :input_html => { :value => @options[:option2][:un2] } %>
+          <%= f.submit 'Validez', class:'btn btn-primary' %>
+          <%end%>
+        </td>
+        <td class="option3 center_table">
+          <%= simple_form_for [@insure_trad_supp, @option ] do |f| %>
+          <%= f.input :cumul_loses_insured, :as => :hidden, :input_html => { :value => @options[:option3][:cumul_loses_insured3] } %>
+          <%= f.input :max_auto_indiv_insured_loss, :as => :hidden, :input_html => { :value => @options[:option3][:max_auto_indiv_insured_loss3] } %>
+          <%= f.input :annual_prenium, :as => :hidden, :input_html => { :value => @options[:option3][:annual_prenium3] } %>
+          <%= f.input :quatrieme_layer, :as => :hidden, :input_html => { :value => @options[:option3][:quatre3] } %>
+          <%= f.input :troisieme_layer, :as => :hidden, :input_html => { :value => @options[:option3][:trois3] } %>
+          <%= f.input :deuxieme_layer, :as => :hidden, :input_html => { :value => @options[:option3][:deux3] } %>
+          <%= f.input :premier_layer, :as => :hidden, :input_html => { :value => @options[:option3][:un3] } %>
+          <%= f.submit 'Validez', class:'btn btn-primary' %>
+          <%end%>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

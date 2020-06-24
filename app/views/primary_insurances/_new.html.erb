@@ -1,0 +1,54 @@
+<p>
+  Veuillez indiquer les informations lié à l'assurance de base. Cette declaration une fois remplie fera partie de la police d’assurance crédit de
+  second rang.<br>
+  *Champs obligatoires.
+</p>
+<%= simple_form_for([@insure_trad_supp, @primary_insurance]) do |f| %>
+<%= f.input :name_insurer , label: 'Raison sociale' %>
+<%= f.input :policy_number , label: 'Référence/N° de la police d’assurance crédit de base' %>
+<p>Période de validité de cette police
+  d’assurance</p>
+<div class="inline inline-date">
+  <span class="my-2 inline-date-span">Du</span> <%= f.input :policy_period_start , label: false %> <span class="my-2 mr-2 inline-date-span">à</span>
+  <%= f.input :policy_period_end , label: false %>
+</div>
+<%= f.input :intermediaire , label: 'Courtier/intermédiaire de cette police de
+    base' %>
+<%= f.input :loss_payee , label: 'Bénéficiaire(s) de cette police de base' %>
+<%= f.submit 'Validez' , class: 'btn btn-primary mb-2', id: 'button-primary', onclick: "modal()" %>
+<% end %>
+
+
+<!-- Modal -->
+<%
+=begin%>
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-contenu" style="vertical-align: middle;">
+    <h1>Police de Second Rang</h1>
+    <p>Merci de préciser les organismes devant être nommés en tant que bénéficiaires de la
+      police de second rang</p>
+    <div class="form">
+      <%= simple_form_for [@primary_insurance , @loss_payee ] do |f| %>
+      <%= f.input :name , label: 'Raison sociale' %>
+      <%= f.input :address , label: 'Adresse' %>
+      <div class="inline">
+        <%= f.input :zipcode , label: 'Code postal' %>
+        <%= f.input :city , label: 'Ville' %>
+        <%= f.input :country ,:as => :string, label: 'Pays' %>
+      </div>
+      <%= f.submit 'Validez', class:'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function modal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+  }
+</script>
+<%
+=end%>

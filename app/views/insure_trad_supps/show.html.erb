@@ -1,0 +1,101 @@
+<div class="avancement">
+  <div class="position-avancement-realise inline-text">
+    <i class="fas fa-check-circle tick"></i>
+    <p>
+      Choix de la <br>police
+    </p>
+  </div>
+  <div class="position-avancement-realise inline-text">
+    <i class="fas fa-check-circle tick"></i>
+    <p>
+      Tarification
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" actif-number">3</p>
+    </div>
+    <p>
+      Information <br>complémentaires
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">4</p>
+    </div>
+    <p>
+      Création <br>police
+    </p>
+  </div>
+</div>
+
+<div class="container ">
+  <div class="title my-4">
+    <h2>Informations complémentaires</h2>
+    <p>Pour finaliser votre contrat nous avons besoin de ...</p>
+  </div>
+  <div id="police-second-rang" class="card-info">
+    <div class="number">
+      <% if @insure_trad_supp.customers_info.id == nil %>
+      <p class="card-number card-number-active">1</p>
+      <% else%>
+      <p class="card-number card-number-inactive">1</p>
+      <% end %>
+    </div>
+    <div class="card-content">
+      <h3>Police de second rang</h3>
+      <% if @insure_trad_supp.customers_info.id == nil %>
+      <%= render 'customers_infos/new' %>
+      <p><%= @insure_trad_supp.customers_info.id %></p>
+      <% end %>
+    </div>
+    <% if @insure_trad_supp.customers_info.id != nil %>
+    <div class="done">
+      <i class="fas fa-check-circle tick green"></i>
+    </div>
+    <% end %>
+  </div>
+  <div id="contact" class="card-info">
+    <div class="number">
+      <% if @insure_trad_supp.customers_info.id != nil && @insure_trad_supp.customer_contact.id == nil%>
+      <p class="card-number card-number-active">2</p>
+      <% else %>
+      <p class="card-number card-number-inactive">2</p>
+      <% end %>
+    </div>
+    <div class="card-content">
+      <h3>Contact chez l'assuré</h3>
+      <% if @insure_trad_supp.customers_info.id != nil && @insure_trad_supp.customer_contact.id == nil%>
+      <%= render 'customer_contacts/new' %>
+      <% end %>
+    </div>
+    <% if @insure_trad_supp.customers_info.id != nil && @insure_trad_supp.customer_contact.id != nil%>
+    <div class="done">
+      <i class="fas fa-check-circle tick green"></i>
+    </div>
+    <% end %>
+  </div>
+  <div id="contact" class="card-info">
+    <div class="number">
+      <% if @insure_trad_supp.customers_info.id != nil && @insure_trad_supp.customer_contact.id != nil && @insure_trad_supp.primary_insurance.id == nil%>
+      <p class="card-number card-number-active">3</p>
+      <% else %>
+      <p class="card-number card-number-inactive">3</p>
+      <% end %>
+    </div>
+    <div class="card-content">
+      <h3>Assureur crédit de base</h3>
+      <% if @insure_trad_supp.customers_info.id != nil && @insure_trad_supp.customer_contact.id != nil && @insure_trad_supp.primary_insurance.id == nil%>
+      <%= render 'primary_insurances/new' %>
+      <% end %>
+    </div>
+    <% if @insure_trad_supp.customers_info.id != nil && @insure_trad_supp.customer_contact.id != nil && @insure_trad_supp.primary_insurance.id != nil%>
+    <div class="done">
+      <i class="fas fa-check-circle tick green"></i>
+    </div>
+    <% end %>
+  </div>
+  <div class="center">
+    <%= link_to 'Telecharger la police', creation_path(@insure_trad_supp, :format => :pdf) , :class => "btn btn-success mt-4 button-contrat-creation-300" %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Police de Second Rang</h1>
+  <p>Chaque section doit être complétée. Cette declaration une fois remplie fera partie de la police d’assurance crédit de second rang.</p>
+  <%= simple_form_for [@insure_trad_supp, @primary_insurance] do |f| %>
+  <h2>Assureur Crédit de base</h2>
+  <%= f.input :name_insurer , label: 'Raison sociale' %>
+  <%= f.input :policy_number , label: 'Référence/N° de la police d’assurance crédit de base' %>
+  <p>Période de validité de cette police
+    d’assurance</p>
+  <div class="inline">
+    <span class="my-2">Du</span> <%= f.input :policy_period_start , label: false %> <span class="my-2 mr-2">à</span>
+    <%= f.input :policy_period_end , label: false %>
+  </div>
+  <%= f.input :intermediaire , label: 'Courtier/intermédiaire de cette police de
+      base' %>
+  <%= f.input :loss_payee , label: 'Bénéficiaire(s) de cette police de base' %>
+  <%= f.submit 'Validez les informations' , class: 'btn btn-primary'  %>
+  <% end %>
+</div>

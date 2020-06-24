@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Police de seconde ligne</h1>
+  <p>Merci de bien vouloir vérifier les informations ci-après et les modifier/compléter lorsque nécessaire. Chaque
+    section doit être complétée. Cette declaration une fois remplie fera partie de la police d’assurance crédit de
+    second rang.</p>
+  <%= simple_form_for [@insure_trad_supp, @customers_info] do |f| %>
+  <div class="inline">
+    <%= f.input :compagny_name , label: 'Raison sociale', :input_html => { :value => @insure_trad_supp.contract.customer.compagny_name } %>
+    <%= f.input :siret , label: "Siret", :input_html => { :value => @insure_trad_supp.contract.customer.siret  } %>
+    <%= f.input :legalForm , label: 'Forme légale' %>
+  </div>
+
+  <%= f.input :address , label: 'Adresse', :input_html => { :value => @insure_trad_supp.contract.customer.address  } %>
+  <div class="inline">
+    <%= f.input :zip_code , label: 'Code postal', :input_html => { :value => @insure_trad_supp.contract.customer.zip_code  } %>
+    <%= f.input :city , label: 'Ville', :input_html => { :value => @insure_trad_supp.contract.customer.city  }%>
+    <%= f.input :country , label: 'Pays'  , as: :string, :input_html => { :value => @insure_trad_supp.contract.customer.country }%>
+  </div>
+  <%= f.input :activity_code , label: "Code d'activité", :input_html => { :value => @insure_trad_supp.contract.customer.activity_code  } %>
+  <%= f.input :saleInsured , label: "Description des produits vendus et prestations de services fournies assurées" %>
+  <div class="inline">
+    <%= f.submit 'Validez', class:'btn btn-primary' %>
+  </div>
+  <% end %>
+</div>

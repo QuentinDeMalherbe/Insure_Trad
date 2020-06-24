@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="title">
+    <h2>INFORMATIONS ASSURÉ</h2>
+    <p>Confirmez les informations obtenues sur
+      votre assuré</p>
+  </div>
+  <%= simple_form_for(@customer) do |f| %>
+  <div class="inline">
+    <%= f.input :compagny_name %>
+    <%= f.input :siret %>
+  </div>
+  <%= f.input :address %>
+  <div class="inline">
+    <%= f.input :zip_code %>
+    <%= f.input :city %>
+  </div>
+  <%= f.input :country , as: :string%>
+  <%= f.input :activity_code %>
+  <p>
+    Merci de modifier ou compléter les informations erronées ou manquantes
+  </p>
+  <%= f.submit 'Validez les informations' , class: 'btn btn-primary'  %>
+  <%# probleme de boutton avec simple_form prend pas en compte la class peut etre change de simple avec tag par exemple ( cf index customers) %>
+  <% end %>
+</div>

@@ -1,0 +1,52 @@
+<div class="avancement">
+  <div class="position-avancement-actif inline-text">
+    <div class="avancement-number">
+      <p class=" actif-number">1</p>
+    </div>
+    <p>
+      Choix de la <br>police
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">2</p>
+    </div>
+    <p>
+      Tarification
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">3</p>
+    </div>
+    <p>
+      Information <br>complémentaires
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">4</p>
+    </div>
+    <p>
+      Création <br>police
+    </p>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="title my-4">
+    <h2>Police d'assurance de second rang</h2>
+  </div>
+  <%= simple_form_for [@contract, @insure_trad_supp] do |f| %>
+  <p>Quel est le montant du chiffre d’affaires soumis à votre assureur crédit pour le dernier exercice annuel d’assurance?</p>
+  <%= f.input :amountCA , label: false, input_html: { min: '0', step: '1000'} %>
+  <p>Quel pourcentage de ce chiffre d’affaires est insuffisamment couvert?</p>
+  <%= f.input :percentCA , label: false ,collection: InsureTradSupp::PERCENTS, label_method: :second, value_method: :first%>
+  <p>Quel est le nombre total approximatif de vos clients actifs assurés?</p>
+  <%= f.input :numberTotalInsured , label: false, collection: InsureTradSupp::CLIENTS, label_method: :second, value_method: :first%>
+  <p>Quel est le pourcentage approximatif de ces clients actifs insuffisamment couverts?</p>
+  <%= f.input :percentBadlyCovert , label: false, collection: InsureTradSupp::PERCENTS, label_method: :second, value_method: :first%>
+  <%= f.submit 'Validez', class:'btn btn-primary' %>
+  <% end %>
+</div>

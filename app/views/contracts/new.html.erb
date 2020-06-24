@@ -1,0 +1,45 @@
+<div class="avancement">
+  <div class="position-avancement-actif inline-text">
+    <div class="avancement-number">
+      <p class=" actif-number">1</p>
+    </div>
+    <p>
+      Choix de la <br>police
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">2</p>
+    </div>
+    <p>
+      Tarification
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">3</p>
+    </div>
+    <p>
+      Information <br>complémentaires
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">4</p>
+    </div>
+    <p>
+      Création <br>police
+    </p>
+  </div>
+</div>
+
+
+<div class="container ">
+  <div class="title  center my-4">
+    <h2>Police d'assurance souhaitée </h2>
+  </div>
+  <%= simple_form_for [@customer, @contract] , html: { class: "center-form"}  do |f| %>
+  <%= f.input :insure_trade_type, as: :radio_buttons, collection: Contract::INSURETRADTYPE, label_method: :second, value_method: :first, legend_tag: false  %>
+  <%= f.submit 'Validez', class:'btn btn-primary' %>
+  <% end %>
+</div>
