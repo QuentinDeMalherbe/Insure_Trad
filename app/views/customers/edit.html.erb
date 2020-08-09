@@ -6,16 +6,16 @@
   </div>
   <%= simple_form_for(@customer) do |f| %>
   <div class="inline">
-    <%= f.input :compagny_name %>
-    <%= f.input :siret %>
+    <%= f.input :compagny_name, label: 'Nom de la société' %>
+    <%= f.input :siret, label: 'Siret' %>
   </div>
-  <%= f.input :address %>
+  <%= f.input :address, label: 'Adresse' %>
   <div class="inline">
-    <%= f.input :zip_code %>
-    <%= f.input :city %>
+    <%= f.input :zip_code, label: 'Code postale' %>
+    <%= f.input :city, label: 'Pays' %>
   </div>
-  <%= f.input :country , as: :string%>
-  <%= f.input :activity_code %>
+  <%= f.input :country , as: :string, label: 'Pays'%>
+  <%= f.input :activity_code, label: 'Code d\'activité' %>
   <p>
     Merci de modifier ou compléter les informations erronées ou manquantes
   </p>

@@ -12,9 +12,9 @@ commentaire : ici on peut faire creation nouveau client
   <%= text_field_tag :search,
       params[:search],
       class: "form-control",
-      placeholder: "Find a compagny"
+      placeholder: "Trouver une compagnie"
     %>
-  <%= submit_tag "Search", class: "btn btn-primary my-2" %>
+  <%= submit_tag "Recherche", class: "btn btn-primary my-2" %>
   <% end %>
   <% if (!(@customers == Customer.all)) %>
   <div class="row">

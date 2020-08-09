@@ -16,7 +16,8 @@
   </div>
 </div>
 <div class="contact">
-  <p>Détails des contacts du dirigeant de l’Assuré</p>
+  <p style='margin-bottom: 0rem;'>Détails des contacts du dirigeant de l’Assuré</p>
+  <input id="dirigeant" type="checkbox" style='margin-bottom: 1rem;'> Cochez si pareil que précédemment
   <div class="inline">
     <%= f.input :last_name_dirigeant , label: 'Nom de Famille' %>
     <%= f.input :position_dirigeant , label: 'Fonction' %>
@@ -27,7 +28,8 @@
   </div>
 </div>
 <div class="contact">
-  <p>La correspondance quotidienne au titre de la police d’assurance doit être adressée à</p>
+  <p style='margin-bottom: 0rem;'>La correspondance quotidienne au titre de la police d’assurance doit être adressée à</p>
+  <input id="correspondance" type="checkbox" style='margin-bottom: 1rem;'> Cochez si pareil que précédemment
   <div class="inline">
     <%= f.input :last_name_correspondance , label: 'Nom de Famille' %>
     <%= f.input :position_correspondance , label: 'Fonction' %>

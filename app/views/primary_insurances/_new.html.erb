@@ -4,7 +4,7 @@
   *Champs obligatoires.
 </p>
 <%= simple_form_for([@insure_trad_supp, @primary_insurance]) do |f| %>
-<%= f.input :name_insurer , label: 'Raison sociale' %>
+<%= f.input :name_insurer , label: 'Raison sociale',collection: PrimaryInsurance::PRIMARYASSURANCE %>
 <%= f.input :policy_number , label: 'Référence/N° de la police d’assurance crédit de base' %>
 <p>Période de validité de cette police
   d’assurance</p>
@@ -14,7 +14,7 @@
 </div>
 <%= f.input :intermediaire , label: 'Courtier/intermédiaire de cette police de
     base' %>
-<%= f.input :loss_payee , label: 'Bénéficiaire(s) de cette police de base' %>
+<%= f.input :loss_payee , label: 'Nombre de bénéficiaire(s) de cette police de base' %>
 <%= f.submit 'Validez' , class: 'btn btn-primary mb-2', id: 'button-primary', onclick: "modal()" %>
 <% end %>
 

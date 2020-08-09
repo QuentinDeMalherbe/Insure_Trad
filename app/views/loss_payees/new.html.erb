@@ -6,7 +6,7 @@
     <%= simple_form_for [@primary_insurance , @loss_payee ] do |f| %>
     <%= f.input :name , label: 'Raison sociale' %>
     <%= f.input :address , label: 'Adresse' %>
-    <div class="inline">
+    <div class="inline trois-enfant-10">
       <%= f.input :zipcode , label: 'Code postal' %>
       <%= f.input :city , label: 'Ville' %>
       <%= f.input :country ,:as => :string, label: 'Pays' %>

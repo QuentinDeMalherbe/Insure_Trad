@@ -25,6 +25,12 @@
   }
 }
 
+.trois-enfant-10 {
+  :nth-child(2) {
+    padding-right: 10px;
+  }
+}
+
 .center-form {
   display: flex;
   flex-direction: column;

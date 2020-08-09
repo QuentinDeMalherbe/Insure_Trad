@@ -1,0 +1,30 @@
+.hint-info {
+  position: relative;
+  display: inline-block;
+  :hover {
+    color: $primary;
+
+  }
+}
+
+.hint-info  .hint {
+  visibility: hidden;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.hint-info:hover  .hint{
+  visibility: visible;
+    top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}

@@ -32,8 +32,11 @@
     </p>
   </div>
 </div>
-
-
+<%
+=begin%>
+ <%= number_with_delimiter(12345678, delimiter: " ")   %>
+<%
+=end%>
 <div class="container">
   <div class="title my-4">
     <h2>Police d'assurance de second rang</h2>
@@ -50,3 +53,9 @@
   <%= f.submit 'Validez', class:'btn btn-primary' %>
   <% end %>
 </div>
+
+<%
+=begin%>
+  mettre JS avec une id pour l'id , quand 4 chiffre mettre espacer etc....
+<%
+=end%>

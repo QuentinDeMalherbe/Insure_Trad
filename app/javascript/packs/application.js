@@ -26,9 +26,35 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+import { memePersonne, pasMemePersonne } from '../components/button';
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
 });
+
+if (document.getElementById('dirigeant') !== null) {
+  const dirigeant = document.getElementById('dirigeant');
+  dirigeant.addEventListener('change', () => {
+    if (document.getElementById('dirigeant').checked) {
+      memePersonne('dirigeant');
+    } else {
+      pasMemePersonne('dirigeant');
+    }
+  });
+}
+
+if (document.getElementById('correspondance') !== null) {
+  const dirigeant = document.getElementById('correspondance');
+  dirigeant.addEventListener('change', () => {
+    if (document.getElementById('correspondance').checked) {
+      memePersonne('correspondance');
+    } else {
+      pasMemePersonne('correspondance');
+    }
+  });
+}
+
+
