@@ -1,0 +1,22 @@
+<div class="container">
+  <p>
+    Veuillez indiquer les détails des contacts de l ‘Assuré.
+    Cette déclaration une fois remplie fera partie de la police
+    d’assurance crédit de second rang.<br><em>*Champs obligatoires.</em>
+  </p>
+  <%= simple_form_for([@customer, @primary_contact]) do |f| %>
+  <div class="contact">
+    <p>Détails des Contacts de l’Assuré</p>
+    <div class="inline">
+      <%= f.input :last_name, label: 'Nom de Famille' %>
+      <%= f.input :first_name, label: 'Prénom' %>
+    </div>
+      <%= f.input :position, label: 'Fonction' %>
+    <div class="inline">
+      <%= f.input :email, label: 'Adresse email' %>
+      <%= f.input :tel , label: 'N° de téléphone' %>
+    </div>
+    <%= f.submit 'Validez les informations' , class: 'btn btn-primary'  %>
+  </div>
+  <% end %>
+</div>

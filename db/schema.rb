@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_121330) do
+ActiveRecord::Schema.define(version: 2020_10_27_155649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,7 +107,20 @@ ActiveRecord::Schema.define(version: 2020_05_06_121330) do
     t.bigint "insure_trad_supp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "optiontype"
     t.index ["insure_trad_supp_id"], name: "index_options_on_insure_trad_supp_id"
+  end
+
+  create_table "primary_contacts", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "position"
+    t.string "email"
+    t.string "tel"
+    t.bigint "customer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_primary_contacts_on_customer_id"
   end
 
   create_table "primary_insurances", force: :cascade do |t|
@@ -142,5 +155,6 @@ ActiveRecord::Schema.define(version: 2020_05_06_121330) do
   add_foreign_key "insure_trad_supps", "contracts"
   add_foreign_key "loss_payees", "primary_insurances"
   add_foreign_key "options", "insure_trad_supps"
+  add_foreign_key "primary_contacts", "customers"
   add_foreign_key "primary_insurances", "insure_trad_supps"
 end

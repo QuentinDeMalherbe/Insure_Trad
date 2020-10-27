@@ -9,6 +9,8 @@ class CustomerContactsController < ApplicationController
     @insure_trad_supp = InsureTradSupp.find(params[:insure_trad_supp_id])
     @customer_contact = CustomerContact.new(customers_contact_params)
     @customer_contact.insure_trad_supp = @insure_trad_supp
+    @customer = @insure_trad_supp.contract.customer
+    @primary_contact = PrimaryContact.where(customer_id: @customer.id).last
     if @customer_contact.save
       redirect_to @insure_trad_supp
     else

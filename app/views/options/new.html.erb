@@ -151,6 +151,7 @@
         <td class="light-blue">Quelle option?</td>
         <td class="option1 center_table">
           <%= simple_form_for [@insure_trad_supp, @option ] do |f| %>
+          <%= f.input :optiontype, :as => :hidden, :input_html => { :value => 'option 1' } %>
           <%= f.input :cumul_loses_insured, :as => :hidden, :input_html => { :value => @options[:option1][:cumul_loses_insured1] } %>
           <%= f.input :max_auto_indiv_insured_loss, :as => :hidden, :input_html => { :value => @options[:option1][:max_auto_indiv_insured_loss1] } %>
           <%= f.input :annual_prenium, :as => :hidden, :input_html => { :value => @options[:option1][:annual_prenium1] } %>
@@ -163,6 +164,7 @@
         </td>
         <td class="option2 center_table">
           <%= simple_form_for [@insure_trad_supp, @option ] do |f| %>
+          <%= f.input :optiontype, :as => :hidden, :input_html => { :value => 'option 2' } %>
           <%= f.input :cumul_loses_insured, :as => :hidden, :input_html => { :value => @options[:option2][:cumul_loses_insured2] } %>
           <%= f.input :max_auto_indiv_insured_loss, :as => :hidden, :input_html => { :value => @options[:option2][:max_auto_indiv_insured_loss2] } %>
           <%= f.input :annual_prenium, :as => :hidden, :input_html => { :value => @options[:option2][:annual_prenium2] } %>
@@ -175,6 +177,7 @@
         </td>
         <td class="option3 center_table">
           <%= simple_form_for [@insure_trad_supp, @option ] do |f| %>
+          <%= f.input :optiontype, :as => :hidden, :input_html => { :value => 'option 3' } %>
           <%= f.input :cumul_loses_insured, :as => :hidden, :input_html => { :value => @options[:option3][:cumul_loses_insured3] } %>
           <%= f.input :max_auto_indiv_insured_loss, :as => :hidden, :input_html => { :value => @options[:option3][:max_auto_indiv_insured_loss3] } %>
           <%= f.input :annual_prenium, :as => :hidden, :input_html => { :value => @options[:option3][:annual_prenium3] } %>

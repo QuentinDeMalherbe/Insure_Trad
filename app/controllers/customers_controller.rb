@@ -9,13 +9,14 @@ class CustomersController < ApplicationController
 
   def edit
     @customer = Customer.find(params[:id])
+    @primary_contact = PrimaryContact.new
   end
 
   def update
     @customer = Customer.find(params[:id])
-    @contract = Contract.new
+    @primary_contact = PrimaryContact.new
     if @customer.update(customer_params)
-      redirect_to new_customer_contract_path(@customer, @contract)
+      redirect_to new_customer_primary_contact_path(@customer, @primary_contact)
     else
       render_error
     end

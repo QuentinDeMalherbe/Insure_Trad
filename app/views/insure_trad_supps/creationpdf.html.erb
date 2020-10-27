@@ -1,6 +1,6 @@
 <div class="pdf">
 
-  <div class="container">
+  <div class="container pdf">
     <h1 class="center">DISPOSITIONS CONTRACTUELLES DE VOTRE POLICE D'ASSURANCE CREDIT DE SECONDE LIGNE</h1>
     <p>Votre police d'assurance crédit de seconde ligne (la “Police”) est composée des éléments suivants :</p>
     <ul>
@@ -65,6 +65,197 @@
     </p>
     <h3> Article 3 Nature des activités assurées : <%= @insure_trad_supp.customers_info.activity_code %></h3>
     <h3>Article 4 Description des produits/prestations de services assurés : <%= @insure_trad_supp.customers_info.saleInsured %></h3>
-
+    <h3>Article 5</h3>
+    <p>Comme indiqué à votre Intermédiaire sur le Devis ci-après, le montant de votre dernier
+      chiffre d’affaires annuel soumis à votre assureur crédit de base s’élève à <%= @insure_trad_supp.amountCA %> € - réalisé
+      avec une fourchette de <%=  InsureTradSupp.convertclient(@insure_trad_supp.numberTotalInsured)%> Clients actifs - et est insuffisamment garanti dans une tranche de
+      <%=  InsureTradSupp.convertpercent(@insure_trad_supp.percentCA)%> de ce chiffre d’affaires et à concurrence de <%=  InsureTradSupp.convertpercent(@insure_trad_supp.percentBadlyCovert)%> du nombre de vos clients actifs</p>
+    <h6 style='color:red;'>VERIFIER LES CHIFFRES ICI</h6>
+    <h3>Article 6 Montant des Garanties et calcul des Indemnisations</h3>
+    <p>Vous avez retenu de souscrire l'<%= @insure_trad_supp.option.optiontype  %> suivante des garanties offertes :</p>
+    <table>
+      <tbody>
+        <tr>
+          <td>Montant Cumulé annuel
+            des Pertes Garanties
+            constitué par la somme des
+            lignes ci-après</td>
+          <td><%= number_to_currency(@insure_trad_supp.option.cumul_loses_insured, unit: :€, format: "%n %u", precision: 0)  %></td>
+        </tr>
+        <tr>
+          <td>4ième ligne du cumul
+            annuel des Pertes Garanties</td>
+          <td><%= number_to_currency(@insure_trad_supp.option.quatrieme_layer, unit: :€, format: "%n %u", precision: 0)  %></td>
+          <td>La 3Ième ligne épuisée, chaque Perte
+            Garantie suivante est indemnisée à hauteur
+            de</td>
+          <td>85%</td>
+        </tr>
+        <tr>
+          <td>3ième ligne du cumul
+            annuel des Pertes Garanties</td>
+          <td><%= number_to_currency(@insure_trad_supp.option.troisieme_layer , unit: :€, format: "%n %u", precision: 0) %></td>
+          <td>La 2ème ligne épuisée, chaque Perte
+            Garantie suivante est indemnisée à hauteur
+            de</td>
+          <td>80%</td>
+        </tr>
+        <tr>
+          <td>2ième ligne du cumul
+            annuel des Pertes Garanties</td>
+          <td><%= number_to_currency(@insure_trad_supp.option.deuxieme_layer, unit: :€, format: "%n %u", precision: 0)  %></td>
+          <td>La 1ére ligne épuisée, chaque Perte
+            Garantie suivante est indemnisée à hauteur
+            de</td>
+          <td>75%</td>
+        </tr>
+        <tr>
+          <td>1ie ligne du cumul annuel
+            des Pertes Garanties</td>
+          <td><%= number_to_currency(@insure_trad_supp.option.premier_layer , unit: :€, format: "%n %u", precision: 0) %></td>
+          <td>Le cumul des Pertes Garanties alimentent
+            en priorité la 1ére ligne et sont indemnisées à
+            hauteur de</td>
+          <td>70%</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Article 7 Seuil maximum automatique de toute garantie complémentaire de second rang</h3>
+    <p>La présente police de second rang garantit automatiquement toute perte complémentaire subie
+      par Vous à concurrence du même montant que le montant de la Perte Garantie pris en compte
+      par votre assureur crédit de base avant l’application de sa quotité de garantie/indemnisation et ce
+      jusqu’à concurrence de <%= number_to_currency(@insure_trad_supp.option.max_auto_indiv_insured_loss , unit: :€, format: "%n %u", precision: 0) %>
+    </p>
+    <p>Lorsque Vous estimez pouvoir subir sur un quelconque Client une perte complémentaire
+      supérieure au seuil automatique complémentaire de second rang ci-dessus, vous pouvez demander à
+      InsureTrade servicing un montant de garantie individuelle de second rang supérieure sur ce Client. Toutefois, tout montant de garantie de second rang spécifique sur un Client délivré par InsureTrade
+      servicing reste calculé à concurrence au maximum du montant de la Perte Garantie indemnisée par
+      votre assureur crédit de base sur ce Client.
+    </p>
+    <h3>Article 8 Prix pour l’exercice annuel d’assurance</h3>
+    <p>Pour le présent exercice annuel d’assurance, le prix hors taxes est de <%= number_to_currency((@insure_trad_supp.option.annual_prenium/12*3).ceil*4  + @insure_trad_supp.option.policy_admin, unit: :€, format: "%n %u", precision: 0) %></p>
+    <p>dont:</p>
+    <p>Prime d’assurance : <%= number_to_currency((@insure_trad_supp.option.annual_prenium/12*3).ceil*4 , unit: :€, format: "%n %u", precision: 0) %> + 9% de Taxe</p>
+    <p>Coût annuel de police et Prestation de Services au titre de la Police : <%= number_to_currency(@insure_trad_supp.option.policy_admin, unit: :€, format: "%n %u", precision: 0) %> + 20% de TVA,
+      payable en totalité à la prise d’effet de la police et incluant un nombre de Clients sur lesquels vous
+      pouvez demander une garantie complémentaire de second rang spécifique : 3
+    </p>
+    <h6 style='color:red;'>NOMBRE DE CLIENT NON CONFIGURE(nombrejuste au dessus, VOIR AVEC PAPA</h6>
+    <p>Montant des frais pour toute demande supplémentaire de garantie complémentaire spécifique de
+      second rang : 30 € par demande</p>
+    <h4> Conditions de paiement :</h4>
+    <p> La prime est payable en 4 échéances trimestrielles.
+      En cas de résiliation anticipée de la présente police par Vous à une échéance trimestrielle
+      d’un exercice annuel de la police, Vous êtes libéré du paiement des échéances trimestrielles
+      non échues de l’exercice d’assurance concerné sauf en cas de paiement d’une indemnisation
+      relative à un sinistre garanti, même partiellement, au titre de l’exercice annuel d’assurance
+      concerné. Les échéances trimestrielles non échues pourront être appelées dans tous les cas
+      de façon anticipée par Nous avant tout versement d’indemnisation au titre de la présente
+      police de second rang.</p>
+    <p>La première échéance trimestrielle est de
+      <%= number_to_currency((@insure_trad_supp.option.annual_prenium/12*3).ceil , unit: :€, format: "%n %u", precision: 0) %> HT + 9% de taxe plus <%= number_to_currency(@insure_trad_supp.option.policy_admin, unit: :€, format: "%n %u", precision: 0) %>+ 20% de TVA qui sera débitée sur votre compte bancaire au <%= @insure_trad_supp.primary_insurance.policy_period_start.advance(days: 14) %> </p>
+    <h3> Article 9 Assurance Crédit de Base</h3>
+    <ul>
+      <li>Assureur Crédit de Base : <%= @insure_trad_supp.primary_insurance.name_insurer %></li>
+      <li>Référence de la police d’assurance-crédit de base : <%= @insure_trad_supp.primary_insurance.policy_number %></li>
+      <li>Période de la police d’assurance-crédit de base : du <%= @insure_trad_supp.primary_insurance.policy_period_start %> au <%= @insure_trad_supp.primary_insurance.policy_period_end %></li>
+      <li>Intermédiaire/Courtier de la police d’assurance-crédit de base : <%= @insure_trad_supp.primary_insurance.intermediaire %></li>
+      <li>Bénéficiaires au titre de la police d’assurance-crédit de base : <%= @loss_payees_in_string %></li>
+    </ul>
+    <h3>Convention de Prestations de Service au titre de la présente police</h3>
+    <p>Nous, Insure Trade Assurances, avons sous-traité et déléguons à Insure Trade Servicing, un certain
+      nombre de tâches et de missions dont la collecte d’informations, l’évaluation des risques de crédit et
+      le suivi de l’ensemble de ces éléments sur chacun des Clients susceptibles d’être assurés au titre de
+      votre présente police.</p>
+    <p>Nous transmettrons à Insure Trade Servicing toutes les informations que Vous pouvez Nous
+      transférer sur vos Clients et Nous Vous communiquerons nos décisions de garantie prises avec
+      l’aide d’InsureTrade Servicing sur chacun de vos Clients au titre de votre présente police.</p>
+    <p>Le Coût de police et Prestations de Service au titre de la Police indiqué à l’Article 8 des présentes
+      conditions particulières - y inclus la TVA applicable - est facturée par Insure Trade Servicing et lui est
+      directement du et payable.</p>
+    <p>En cas de demande(s) supplémentaire(s) par rapport au nombre de Clients inclus dans le forfait
+      forfaitaire initial du Cout de police et prestation de Service au titre de la police, les frais
+      supplémentaires par demande supplémentaire tels que précisés aux présentes conditions
+      particulières seront facturés par InsureTrade Servicing et lui seront directement dus et payables.</p>
+    <h2>DEVIS RÉALISÉ EN LIGNE</h2>
+    <p>Ce document reprend les différentes informations que vous avez fournies a votre intermédiaire
+      Marsh France pour votre devis en ligne à la date du 01/02/2020</p>
+    <h6 style="red"> qui cest au desus et la date c'est la date de creation j'imagine?</h6>
+    <table>
+      <tbody>
+        <%= number_to_currency((@insure_trad_supp.option.annual_prenium/12*3).ceil , unit: :€, format: "%n %u", precision: 0) %>
+        <tr>
+          <td>Assuré</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Raison sociale</td>
+          <td><%= @insure_trad_supp.contract.customer.compagny_name %></td>
+        </tr>
+        <tr>
+          <td>Adresse</td>
+          <td> <%= @insure_trad_supp.contract.customer.address %></td>
+        </tr>
+        <tr>
+          <td>Code postale</td>
+          <td> <%= @insure_trad_supp.contract.customer.zip_code %></td>
+        </tr>
+        <tr>
+          <td>Ville</td>
+          <td> <%= @insure_trad_supp.contract.customer.city %></td>
+        </tr>
+        <tr>
+          <td>Pays</td>
+          <td> <%= @insure_trad_supp.contract.customer.country %></td>
+        </tr>
+        <tr>
+          <td>N° Siren</td>
+          <td> <%= @insure_trad_supp.contract.customer.siret %></td>
+        </tr>
+        <tr>
+          <td>Informations économiques</td>
+          <td><%= @insure_trad_supp.customers_info.saleInsured %></td>
+        </tr>
+        <tr>
+          <td>Code d’activité principale</td>
+          <td><%= @insure_trad_supp.contract.customer.activity_code %></td>
+        </tr>
+        <tr>
+          <td>Ventes de produits et prestations de service assurées</td>
+          <td>
+            <h6 style="color:red">VOIR REMPLIR TABLEAU CORRESPONDANT </h6>
+          </td>
+        </tr>
+        <tr>
+          <td>Montant du chiffre d’affaires soumis à votre assureur crédit de base pour le dernier exercice annuel d'assurance</td>
+          <td><%= @insure_trad_supp.amountCA%></td>
+        </tr>
+        <tr>
+          <td>Pourcentage de ce chiffre d’affaires insuffisamment couvert</td>
+          <td><%=  InsureTradSupp.convertpercent(@insure_trad_supp.percentCA)%> </td>
+        </tr>
+        <tr>
+          <td>Nombre total approximatif de vos clients actifs assurés</td>
+          <td><%=  InsureTradSupp.convertclient(@insure_trad_supp.numberTotalInsured)%> </td>
+        </tr>
+        <tr>
+          <td>Pourcentage approximatif de ces clients actifs insuffisamment couverts</td>
+          <td><%=  InsureTradSupp.convertpercent(@insure_trad_supp.percentBadlyCovert)%></td>
+        </tr>
+        <tr>
+          <td>Assureur Crédit de Base</td>
+          <td><%= @insure_trad_supp.primary_insurance.name_insurer %></td>
+        </tr>
+        <tr>
+          <td>Référence de votre Police de base</td>
+          <td><%= @insure_trad_supp.primary_insurance.policy_number %></td>
+        </tr>
+        <tr>
+          <td>Période de votre police de base</td>
+          <td><%= @insure_trad_supp.primary_insurance.policy_period_start %></td>
+        </tr>
+      </tbody>
+    </table>
+    <p></p>
   </div>
 </div>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :customers, shallow: true, only:[:index, :new, :create, :edit, :update] do
+    resources :primary_contacts, shallow:true, only:[:new, :create, :edit, :update]
     resources :contracts, shallow: true,  only:[:new, :create] do
       resources :insure_trad_supps, shallow: true, only:[:new, :create, :show] do
         resources :options, only:[:new, :create, :edit, :update]

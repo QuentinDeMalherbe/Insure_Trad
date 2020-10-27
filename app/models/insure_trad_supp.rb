@@ -8,4 +8,21 @@ class InsureTradSupp < ApplicationRecord
   PERCENTS = [[0.1, 'moins de 10%'], [0.15, '11 % à 15 %'], [0.2, '16 % à 20 %'], [0.25, '20 % à 25 %'], [0.3, '26 % à 30 %'], [0, 'plus de  30 %']]
   CLIENTS =   [[20, 'moins de 25'], [35, '26 à 50'], [60, '51 à 75'], [85, '76 à 100'], [130, '101 à 150'], [185, '151 à 200'], [250, '200 à 300'], [400, 'plus de 301']]
   validates :amountCA, :percentBadlyCovert, :percentCA, :numberTotalInsured, presence: true
+
+  def self.convertclient(amount)
+    InsureTradSupp::CLIENTS.each do |client|
+      if amount == client[0]
+        return client[1]
+      end
+    end
+  end
+
+  def self.convertpercent(amount)
+    InsureTradSupp::PERCENTS.each do |percent|
+      if amount == percent[0]
+        return percent[1]
+      end
+    end
+  end
+
 end

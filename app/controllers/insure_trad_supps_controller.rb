@@ -11,6 +11,9 @@ class InsureTradSuppsController < ApplicationController
       @customer_contact = CustomerContact.find(@insure_trad_supp.customer_contact.id)
     else
       @customer_contact = CustomerContact.new
+      @customer = @insure_trad_supp.contract.customer
+      @primary_contact = PrimaryContact.where(customer_id: @customer.id).last
+      #  pas optimal mais  a reflechir
       @customer_contact.insure_trad_supp = @insure_trad_supp
     end
     if @insure_trad_supp.primary_insurance
@@ -39,18 +42,32 @@ class InsureTradSuppsController < ApplicationController
 
   def creationpdf
     @insure_trad_supp = InsureTradSupp.find(params[:id])
+    loss_payees = LossPayee.where(primary_insurance_id: @insure_trad_supp.primary_insurance)
+    @loss_payees_in_string = loss_payees_in_string_list(loss_payees)
     respond_to do |format|
       format.html
       format.pdf do
         render pdf: "Contrat",
-        template: "insure_trad_supps/creationpdf.html.erb",
-        layout: 'pdf.html',
-        formats: :html, encoding: 'utf8'
+               template: "insure_trad_supps/creationpdf.html.erb",
+               layout: 'pdf.html',
+               formats: :html, encoding: 'utf8'
       end
     end
-end
+  end
 
   private
+
+  def loss_payees_in_string_list(array)
+    string =""
+    array.each_with_index do |lp, index|
+      if index != (array.length - 1)
+        string += "#{lp.name}, "
+      else
+        string += "#{lp.name}."
+      end
+    end
+    return string
+  end
 
   def insure_trad_supp_params
     params.require(:insure_trad_supp).permit(:amountCA, :percentCA, :percentBadlyCovert, :numberTotalInsured)
