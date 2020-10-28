@@ -39,6 +39,7 @@ gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
 gem 'turbolinks_render'
 gem 'rails-i18n'
+gem 'devise-i18n'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

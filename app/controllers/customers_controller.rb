@@ -16,7 +16,8 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
     @primary_contact = PrimaryContact.new
     if @customer.update(customer_params)
-      redirect_to new_customer_primary_contact_path(@customer, @primary_contact)
+      # redirect_to new_customer_primary_contact_path(@customer, @primary_contact)
+      redirect_to controller: 'primary_contacts', action: 'new', customer_id: @customer.id
     else
       render_error
     end

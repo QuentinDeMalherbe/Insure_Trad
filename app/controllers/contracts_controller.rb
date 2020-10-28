@@ -12,7 +12,8 @@ class ContractsController < ApplicationController
     @insure_trade_type = InsureTradSupp.new
     if @contract.insure_trade_type == 2
       if @contract.save
-        redirect_to new_contract_insure_trad_supp_path(@contract, @insure_trade_type)
+        # redirect_to new_contract_insure_trad_supp_path(@contract, @insure_trade_type)
+        redirect_to controller: 'insure_trad_supps', action: 'new', contract_id: @contract.id , customer_id: @contract.customer.id
       else
         render 'new'
       end
