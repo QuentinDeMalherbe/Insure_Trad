@@ -1,0 +1,19 @@
+fr:
+  customer:
+    index:
+      title1: "L'ASSURÉ"
+      p1: "Veuillez préciser le nom ou numéro siren de votre assuré"
+      placeholder1: "Trouver une compagnie"
+      button1: "Recherche"
+    edit:
+      title1: "INFORMATIONS ASSURÉ"
+      p1: 'Confirmez les informations obtenues sur votre assuré'
+      label1: 'Nom de la société'
+      label2: 'Siret'
+      label3: 'Adresse'
+      label4: 'Code Postale'
+      label5: 'Ville'
+      label6: 'Pays'
+      label7: "Code d'activité"
+      p2: 'Merci de modifier ou compléter les informations erronées ou manquantes'
+      submit1: 'Validez les informations'

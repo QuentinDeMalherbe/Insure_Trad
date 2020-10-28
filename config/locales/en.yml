@@ -30,4 +30,21 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  customer:
+    index:
+      title1: "THE INSURED"
+      p1: "Please specify the name or siren number of your insured"
+      placeholder1: "Find a company"
+      button1: "Search"
+    edit:
+      title1: "INSURED INFORMATIONS"
+      p1: 'Confirm the information obtained on your insured'
+      label1: 'Company name'
+      label2: 'Siret'
+      label3: 'Address'
+      label4: 'Zipcode'
+      label5: 'City'
+      label6: 'Country'
+      label7: 'Activity code'
+      p2: 'Please modify or complete the incorrect or missing information'
+      submit1: 'Validate the information'

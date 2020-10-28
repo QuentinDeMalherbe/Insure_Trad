@@ -1,3 +1,16 @@
-<div class="navbar">
+<div class="navbar d-flex justify-content-between">
+  <div>
+    <%= link_to  root_path(locale: :en) do %>
+    <%= image_tag  "united-kingdom-flag-wave-xs.png" , class: 'logo' %>
+    <% end %>
+
+    <%= link_to  root_path(locale: :fr) do %>
+    <%= image_tag  "france-flag-wave-xs.png" , class: 'logo'%>
+    <% end %>
+
+    <%= link_to  root_path(locale: :es) do %>
+    <%= image_tag  "spain-flag-wave-xs.png" , class: 'logo' %>
+    <% end %>
+  </div>
   <%= image_tag  "logoiT.png" , class: 'logo'%>
 </div>
