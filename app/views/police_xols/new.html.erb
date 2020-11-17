@@ -1,0 +1,106 @@
+<div class="avancement">
+  <div class="position-avancement-actif inline-text">
+    <div class="avancement-number">
+      <p class=" actif-number">1</p>
+    </div>
+    <p>
+      Choix de la <br>police
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">2</p>
+    </div>
+    <p>
+      Tarification
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">3</p>
+    </div>
+    <p>
+      Information <br>complémentaires
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">4</p>
+    </div>
+    <p>
+      Création <br>police
+    </p>
+  </div>
+</div>
+<%
+=begin%>
+<%= number_with_delimiter(12345678, delimiter: " ")   %>
+<%
+=end%>
+<div class="container container-custom">
+  <div class="title my-4">
+    <h2>Police XOL pour entreprise de 5 millions € à 20 millions € de chiffre daffaires annuel</h2>
+    <h3>MARCHE NATIONAL EN <%= @contract.customer.country.upcase %> ET/OU DOMTOM ET/OU EXPORT SUR LES PAYS/TERRITOIRES CLASSES RISQUE A</h3>
+  </div>
+  <%= simple_form_for [@contract, @police] do |f| %>
+  <p>Quel est le montant du chiffre d'affaires H.T. annuel sur votre marché national soumis à InsureTrade en <%=  @contract.customer.country %>? </p>
+  <%= f.input :amount_ca_nat , label: false, collection: PoliceXol::CA, label_method: :second, value_method: :first  %>
+  <p>Quel est le montant du chiffre d'affaires H.T. annuel soumis à InsureTrade sur?</p>
+  <p>Rappel la liste outre-mer: </p>
+  <%= f.input :amount_ca_nat_else , label: false, collection: PoliceXol::CA_DOM, label_method: :second, value_method: :first %>
+  <p>Quel est le montant du chiffre d'affaires annuel à l'export soumis à InsureTrade sur les pays classés risque A?</p>
+  <p>Rappel la liste des pays classé A: </p>
+  <%= f.input :amount_ca_export_a , label: false, collection: PoliceXol::CA_EXPORT, label_method: :second, value_method: :first %>
+  <p>TOTAL du montant du chiffre annuel H.T. soumis à Insure Trade
+  </p>
+  <p>Quel est le nombre de clients actifs à garantir?</p>
+  <%= f.input :client_number , label: false, collection: PoliceXol::NUMBER, label_method: :second, value_method: :first%>
+  <p>Quel est le délai maximum de paiement accordé ?</p>
+  <%= f.input :delai_max , label: false, collection: PoliceXol::DELAI, label_method: :second, value_method: :first%>
+  <p>Quel est votre DSO?</p>
+  <%= f.input :dso , label: false, collection: PoliceXol::DSO, label_method: :second, value_method: :first%>
+  <h3 style='text-align: center '>Vos Clients principaux domiciliés en <%= @contract.customer.country %></h3>
+  <div class="d-flex justify-content-around align-items-center">
+    <p style='width: 150px; text-align: center; margin-left:10px'>Raison sociale</p>
+    <p style='width: 150px; text-align: center'>Adresse</p>
+    <p style=' width: 150px; text-align: center'>Code postale</p>
+    <p style='width: 150px; text-align: center'>Ville</p>
+    <p style='width: 150px; text-align: center'>Pays</p>
+    <p style='width: 150px; text-align: center'>Siret</p>
+    <p style='width: 150px; text-align: center'>% de votre chiffre d'affaires H.T. total maximum annuel ci-dessus au point 7.4 soumis à InsureTrade</p>
+    <p style='width: 150px; text-align: center'>Equivalent à un chiffre d'affaires H.T. maximum annuel </p>
+  </div>
+  <%= f.simple_fields_for :main_customer_as do |c| %>
+  <div class="inline no-f-child">
+    <%= c.index + 1%>
+    <%= c.input :name, label: false, input_html: { class: 'mx-2' }  %>
+    <%= c.input :address, label: false, input_html: { class: 'mx-2' } %>
+    <%= c.input :zip_code , label: false, input_html: { class: 'mx-2' } %>
+    <%= c.input :city , label: false, input_html: { class: 'mx-2' } %>
+    <%= c.input :country, as: :string, label: false, input_html: { class: 'mx-2' } %>
+    <%= c.input :siret, label: false, input_html: { class: 'mx-2' } %>
+    <%= c.input :percent_ca, label:false, input_html: { class: 'mx-2' } %>
+    <p class='mx-2' style='width: 210px; height: 38px; line-height: 38px; text-align: center ;border:1px solid #ced4da; background:white'>0</p>
+  </div>
+  <% end %>
+  <h3 style='text-align: center '>Historique des pertes (Hors taxe) en <%= @contract.customer.country %></h3>
+  <div class="d-flex justify-content-around align-items-center">
+    <p style='width: 150px; text-align: center; margin-left:10px'>Pour la période de</p>
+    <p style='width: 150px; text-align: center'>au</p>
+    <p style=' width: 150px; text-align: center'>Montant cumulé des pertes subies</p>
+    <p style='width: 150px; text-align: center'>Nombre des clients ayant générés une perte</p>
+    <p style='width: 150px; text-align: center'>Montant H de la perte subie la plus importante pour chaque période concernée</p>
+  </div>
+  <%= f.simple_fields_for :historic_losses_as do |c| %>
+  <div class="inline no-f-child">
+    <%= c.index + 1%>
+    <p class='ml-2' style='width: 210px; height: 38px; line-height: 38px; text-align: center ;border:1px solid #ced4da; background:white'>0</p>
+    <p  style='width: 210px; height: 38px; line-height: 38px; text-align: center ;border:1px solid #ced4da; background:white'>0</p>
+    <%= c.input :amount_loss, label: false, input_html: {} %>
+    <%= c.input :number_client, label: false, input_html: { } %>
+    <%= c.input :max_loss, label: false, input_html: { } %>
+  </div>
+  <% end %>
+  <%= f.submit 'Validez', class:'btn btn-primary' %>
+  <% end %>
+</div>

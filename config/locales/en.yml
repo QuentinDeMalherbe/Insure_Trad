@@ -46,5 +46,6 @@ en:
       label5: 'City'
       label6: 'Country'
       label7: 'Activity code'
+      label8: "Creation date"
       p2: 'Please modify or complete the incorrect or missing information'
       submit1: 'Validate the information'

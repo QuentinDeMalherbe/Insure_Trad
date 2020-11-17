@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :customers, shallow: true, only:[:index, :new, :create, :edit, :update] do
       resources :primary_contacts, shallow:true, only:[:new, :create, :edit, :update]
       resources :contracts, shallow: true,  only:[:new, :create] do
+        resources :police_xols, shallow: true, only:[:new, :create, :show] do
+          resources :police_xol_bs, only:[:new, :create, :edit, :update]
+          resources :gestions, only:[:new, :create, :edit, :update]
+        end
         resources :insure_trad_supps, shallow: true, only:[:new, :create, :show] do
           resources :options, only:[:new, :create, :edit, :update]
           resources :customer_contacts, only:[:new, :create, :edit, :update]

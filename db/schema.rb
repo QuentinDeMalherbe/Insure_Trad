@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_27_155649) do
+ActiveRecord::Schema.define(version: 2020_11_16_125530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_10_27_155649) do
     t.string "siret"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "creation_date"
   end
 
   create_table "customers_infos", force: :cascade do |t|
@@ -70,6 +71,45 @@ ActiveRecord::Schema.define(version: 2020_10_27_155649) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["insure_trad_supp_id"], name: "index_customers_infos_on_insure_trad_supp_id"
+  end
+
+  create_table "gestions", force: :cascade do |t|
+    t.string "cgi"
+    t.string "logiciel"
+    t.string "document"
+    t.string "client_info"
+    t.string "client_solvabilite"
+    t.string "client_limit"
+    t.string "calcul_client_limit"
+    t.string "limit_time_payback"
+    t.bigint "police_xol_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["police_xol_id"], name: "index_gestions_on_police_xol_id"
+  end
+
+  create_table "historic_losses_as", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "amount_loss"
+    t.integer "number_client"
+    t.integer "max_loss"
+    t.bigint "police_xol_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["police_xol_id"], name: "index_historic_losses_as_on_police_xol_id"
+  end
+
+  create_table "historic_losses_bs", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "amount_loss"
+    t.integer "number_client"
+    t.integer "max_loss"
+    t.bigint "police_xol_b_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["police_xol_b_id"], name: "index_historic_losses_bs_on_police_xol_b_id"
   end
 
   create_table "insure_trad_supps", force: :cascade do |t|
@@ -95,6 +135,34 @@ ActiveRecord::Schema.define(version: 2020_10_27_155649) do
     t.index ["primary_insurance_id"], name: "index_loss_payees_on_primary_insurance_id"
   end
 
+  create_table "main_customer_as", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.integer "zip_code"
+    t.string "city"
+    t.string "country"
+    t.string "siret"
+    t.integer "percent_ca"
+    t.bigint "police_xol_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["police_xol_id"], name: "index_main_customer_as_on_police_xol_id"
+  end
+
+  create_table "main_customer_bs", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.integer "zip_code"
+    t.string "city"
+    t.string "country"
+    t.string "siret"
+    t.integer "percent_ca"
+    t.bigint "police_xol_b_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["police_xol_b_id"], name: "index_main_customer_bs_on_police_xol_b_id"
+  end
+
   create_table "options", force: :cascade do |t|
     t.integer "cumul_loses_insured"
     t.integer "max_auto_indiv_insured_loss"
@@ -109,6 +177,31 @@ ActiveRecord::Schema.define(version: 2020_10_27_155649) do
     t.datetime "updated_at", null: false
     t.string "optiontype"
     t.index ["insure_trad_supp_id"], name: "index_options_on_insure_trad_supp_id"
+  end
+
+  create_table "police_xol_bs", force: :cascade do |t|
+    t.integer "amount_ca_export_b"
+    t.integer "amount_ca_export_c"
+    t.integer "client_number"
+    t.integer "delai_max"
+    t.integer "dso"
+    t.bigint "police_xol_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["police_xol_id"], name: "index_police_xol_bs_on_police_xol_id"
+  end
+
+  create_table "police_xols", force: :cascade do |t|
+    t.integer "amount_ca_nat"
+    t.integer "amount_ca_nat_else"
+    t.integer "amount_ca_export_a"
+    t.integer "client_number"
+    t.integer "delai_max"
+    t.integer "dso"
+    t.bigint "contract_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["contract_id"], name: "index_police_xols_on_contract_id"
   end
 
   create_table "primary_contacts", force: :cascade do |t|
@@ -152,9 +245,16 @@ ActiveRecord::Schema.define(version: 2020_10_27_155649) do
   add_foreign_key "contracts", "users"
   add_foreign_key "customer_contacts", "insure_trad_supps"
   add_foreign_key "customers_infos", "insure_trad_supps"
+  add_foreign_key "gestions", "police_xols"
+  add_foreign_key "historic_losses_as", "police_xols"
+  add_foreign_key "historic_losses_bs", "police_xol_bs"
   add_foreign_key "insure_trad_supps", "contracts"
   add_foreign_key "loss_payees", "primary_insurances"
+  add_foreign_key "main_customer_as", "police_xols"
+  add_foreign_key "main_customer_bs", "police_xol_bs"
   add_foreign_key "options", "insure_trad_supps"
+  add_foreign_key "police_xol_bs", "police_xols"
+  add_foreign_key "police_xols", "contracts"
   add_foreign_key "primary_contacts", "customers"
   add_foreign_key "primary_insurances", "insure_trad_supps"
 end

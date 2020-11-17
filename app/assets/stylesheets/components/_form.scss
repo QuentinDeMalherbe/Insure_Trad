@@ -11,6 +11,15 @@
   }
 }
 
+.no-f-child{
+  *{
+    flex-grow: 1;
+  }
+  :first-child {
+    padding-right: 0px;
+  }
+}
+
 .inline-date{
   padding-right: 0px;
 }

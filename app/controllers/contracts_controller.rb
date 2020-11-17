@@ -17,6 +17,13 @@ class ContractsController < ApplicationController
       else
         render 'new'
       end
+    elsif @contract.insure_trade_type == 1
+      if @contract.save
+        # redirect_to new_contract_insure_trad_supp_path(@contract, @insure_trade_type)
+        redirect_to controller: 'police_xols', action: 'new', contract_id: @contract.id , customer_id: @contract.customer.id
+      else
+        render 'new'
+      end
     else
       flash.alert = "Dev not did yet."
       render 'new'

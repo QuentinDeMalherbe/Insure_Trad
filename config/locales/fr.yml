@@ -15,5 +15,6 @@ fr:
       label5: 'Ville'
       label6: 'Pays'
       label7: "Code d'activité"
+      label8: "Date de creation"
       p2: 'Merci de modifier ou compléter les informations erronées ou manquantes'
       submit1: 'Validez les informations'
