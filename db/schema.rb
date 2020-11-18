@@ -74,14 +74,14 @@ ActiveRecord::Schema.define(version: 2020_11_16_125530) do
   end
 
   create_table "gestions", force: :cascade do |t|
-    t.string "cgi"
-    t.string "logiciel"
-    t.string "document"
-    t.string "client_info"
-    t.string "client_solvabilite"
-    t.string "client_limit"
-    t.string "calcul_client_limit"
-    t.string "limit_time_payback"
+    t.integer "cgi"
+    t.integer "logiciel"
+    t.integer "document"
+    t.integer "client_info"
+    t.integer "client_solvabilite"
+    t.integer "client_limit"
+    t.integer "calcul_client_limit"
+    t.integer "limit_time_payback"
     t.bigint "police_xol_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

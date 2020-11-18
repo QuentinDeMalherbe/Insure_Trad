@@ -1,1 +1,59 @@
-coucouyc
+<div class="avancement">
+  <div class="position-avancement-actif inline-text">
+    <div class="avancement-number">
+      <p class=" actif-number">1</p>
+    </div>
+    <p>
+      Choix de la <br>police
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">2</p>
+    </div>
+    <p>
+      Tarification
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">3</p>
+    </div>
+    <p>
+      Information <br>complémentaires
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">4</p>
+    </div>
+    <p>
+      Création <br>police
+    </p>
+  </div>
+</div>
+<div class="container mt-4">
+  <h1> Description de votre gestion courante /prévention du risque d'impayé appliquée sur chacune de vos ventes et/ou prestations de service *</h1>
+  <h6>*les termes et conditions de votre police d'assurance InsureTrade sont basées sur vos déclarations ci-dessus. L'application systématique de ces mesures et moyens de prévention sur chacune de vos ventes/prestations de service afin de limiter vos risques d'impayé est une condition de prise en garantie de tout impayé au titre de la police InsureTrade. En conseéquence, InsureTrade se réservera le droit de vérifier l'application effective de ces mesures et moyens de prévention avant le versement de toute indemnisation
+  </h6>
+  <%= simple_form_for [@police, @gestion] do |f| %>
+  <p>Disposez-vous de conditions générales standard de ventes - Incluant notamment une clause de réserve de propriété et une clause de résolution des litiges - imprimées au recto de vos devis/bons de commande ou de vos factures ou bien séparément sur tout autre support contractuel devant être signé par vos clients ?</p>
+  <%= f.input :cgi , label: false, collection: Gestion::CGI, label_method: :second, value_method: :first  %>
+  <p>Quel(s) document(s) supporte(nt) vos ventes ?</p>
+  <%= f.input :document , label: false, collection: Gestion::DOCUMENT, label_method: :second, value_method: :first %>
+  <p>Etes vous équipé d'un logiciel de gestion enregistrant pour chaque client chaque commande, facture et paiement encaissé qui vous permet de contôler l'encours cumulé sur chacun de ceux-ci ?</p>
+  <%= f.input :logiciel , label: false, collection: Gestion::LOGICIEL, label_method: :second, value_method: :first %>
+  <p>Achetez-vous des renseignements sur vos clients ?</p>
+  <%= f.input :client_info , label: false, collection: Gestion::INFO, label_method: :second, value_method: :first %>
+  <p>Surveillez-vous la solvabilité de vos clients ?</p>
+  <%= f.input :client_solvabilite , label: false, collection: Gestion::SOLVABILITE, label_method: :second, value_method: :first %>
+  <p>Fixez vous sur vos clients une limite de crédit maximale enregitrées dans votre logiciel gestion de clients?
+  </p>
+  <%= f.input :client_limit , label: false, collection: Gestion::LIMIT, label_method: :second, value_method: :first %>
+  <p>Comment calculez-vous cette limite de crédit maximale ?</p>
+  <%= f.input :calcul_client_limit , label: false, collection: Gestion::CALCUL, label_method: :second, value_method: :first %>
+  <p>Lorsqu'une facture reste impayée même partiellement et que vous ne reconnaissez pas un possible litige, quand arrêtez vous de faire une nouvelle livraison ou effectuer une nouvelle prestation de service à crédit ?</p>
+  <%= f.input :limit_time_payback , label: false, collection: Gestion::LIMIT_TIME, label_method: :second, value_method: :first %>
+  <%= f.submit 'Validez', class:'btn btn-primary' %>
+  <% end %>
+</div>

@@ -37,6 +37,7 @@
 <%= number_with_delimiter(12345678, delimiter: " ")   %>
 <%
 =end%>
+ATTENTION IL Y A DE LA FORME A FAIRE ENCORE ET VERIFIER LIEN DANS CONSTANTE
 <div class="container container-custom">
   <div class="title my-4">
     <h2>Police XOL pour entreprise de 5 millions € à 20 millions € de chiffre daffaires annuel</h2>
@@ -79,7 +80,7 @@
     <%= c.input :city , label: false, input_html: { class: 'mx-2' } %>
     <%= c.input :country, as: :string, label: false, input_html: { class: 'mx-2' } %>
     <%= c.input :siret, label: false, input_html: { class: 'mx-2' } %>
-    <%= c.input :percent_ca, label:false, input_html: { class: 'mx-2' } %>
+    <%= c.input :percent_ca , label: false, collection: PoliceXol::PERCENT_TURNOVER, label_method: :second, value_method: :first , input_html: { class: 'mx-2' } %>
     <p class='mx-2' style='width: 210px; height: 38px; line-height: 38px; text-align: center ;border:1px solid #ced4da; background:white'>0</p>
   </div>
   <% end %>
@@ -95,10 +96,10 @@
   <div class="inline no-f-child">
     <%= c.index + 1%>
     <p class='ml-2' style='width: 210px; height: 38px; line-height: 38px; text-align: center ;border:1px solid #ced4da; background:white'>0</p>
-    <p  style='width: 210px; height: 38px; line-height: 38px; text-align: center ;border:1px solid #ced4da; background:white'>0</p>
-    <%= c.input :amount_loss, label: false, input_html: {} %>
-    <%= c.input :number_client, label: false, input_html: { } %>
-    <%= c.input :max_loss, label: false, input_html: { } %>
+    <p style='width: 210px; height: 38px; line-height: 38px; text-align: center ;border:1px solid #ced4da; background:white'>0</p>
+    <%= c.input :amount_loss , label: false, collection: PoliceXol::CUMUL_LOSS, label_method: :second, value_method: :first %>
+    <%= c.input :number_client , label: false, collection: PoliceXol::NUMBER_CLIENT, label_method: :second, value_method: :first %>
+    <%= c.input :max_loss , label: false, collection: PoliceXol::MAX_LOSS, label_method: :second, value_method: :first %>
   </div>
   <% end %>
   <%= f.submit 'Validez', class:'btn btn-primary' %>
