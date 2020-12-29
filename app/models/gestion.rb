@@ -55,6 +55,30 @@ class Gestion < ApplicationRecord
       [ 10, "immédiatement après votre connaissance de l'impayé"]
   ]
 
+  def total_point
+    cgi + logiciel + document + client_info + client_solvabilite + client_limit + calcul_client_limit + limit_time_payback
+  end
 
+  def percent_non_denomme
+    if total_point <= 20
+      0.8
+    elsif  total_point <= 35
+      0.9
+    elsif  total_point <= 50
+      1
+    elsif  total_point <= 65
+      1.1
+    else
+      1.2
+    end
+  end
+    # t.integer "cgi"
+    # t.integer "logiciel"
+    # t.integer "document"
+    # t.integer "client_info"
+    # t.integer "client_solvabilite"
+    # t.integer "client_limit"
+    # t.integer "calcul_client_limit"
+    # t.integer "limit_time_payback"
 
 end

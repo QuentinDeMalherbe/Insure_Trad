@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_125530) do
+ActiveRecord::Schema.define(version: 2020_12_03_142913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -163,6 +163,23 @@ ActiveRecord::Schema.define(version: 2020_11_16_125530) do
     t.index ["police_xol_b_id"], name: "index_main_customer_bs_on_police_xol_b_id"
   end
 
+  create_table "nbis", force: :cascade do |t|
+    t.string "montant_min"
+    t.integer "garantie_1_6_z_1"
+    t.integer "garantie_1_6_z_2"
+    t.integer "garantie_1_6_z_3"
+    t.integer "garantie_7_z_1"
+    t.integer "garantie_7_z_2"
+    t.integer "garantie_7_z_3"
+    t.integer "garantie_8_z_1"
+    t.integer "garantie_8_z_2"
+    t.integer "garantie_8_z_3"
+    t.bigint "police_xol_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["police_xol_id"], name: "index_nbis_on_police_xol_id"
+  end
+
   create_table "options", force: :cascade do |t|
     t.integer "cumul_loses_insured"
     t.integer "max_auto_indiv_insured_loss"
@@ -252,6 +269,7 @@ ActiveRecord::Schema.define(version: 2020_11_16_125530) do
   add_foreign_key "loss_payees", "primary_insurances"
   add_foreign_key "main_customer_as", "police_xols"
   add_foreign_key "main_customer_bs", "police_xol_bs"
+  add_foreign_key "nbis", "police_xols"
   add_foreign_key "options", "insure_trad_supps"
   add_foreign_key "police_xol_bs", "police_xols"
   add_foreign_key "police_xols", "contracts"

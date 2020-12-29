@@ -10,7 +10,11 @@ class GestionsController < ApplicationController
     @gestion = Gestion.new(gestion_params)
     @gestion.police_xol = @police
     if @gestion.save
-      # mettre qq chose
+      if @police.montant_min == false
+        redirect_to montant_important_path(@police)
+      else
+        redirect_to new_police_xol_nbi_path(@police)
+      end
     else
       render 'new'
     end

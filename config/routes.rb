@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :contracts, shallow: true,  only:[:new, :create] do
         resources :police_xols, shallow: true, only:[:new, :create, :show] do
           resources :police_xol_bs, only:[:new, :create, :edit, :update]
+          resources :nbis, only:[:new, :create, :edit, :update]
           resources :gestions, only:[:new, :create, :edit, :update]
         end
         resources :insure_trad_supps, shallow: true, only:[:new, :create, :show] do
@@ -21,6 +22,8 @@ Rails.application.routes.draw do
       end
     end
     get '/insure_trad_supps/:id/createpdf', to: 'insure_trad_supps#creationpdf', as: 'creation'
+    get '/police_xols/:id/createpdf', to: 'police_xols#creationpdf', as: 'creation_police'
+    get 'police_xols/:id/montant_important', to: 'police_xols#montant_important', as: 'montant_important'
     # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   end
 end

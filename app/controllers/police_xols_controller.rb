@@ -21,6 +21,9 @@ class PoliceXolsController < ApplicationController
     end
   end
 
+  def montant_important
+    @police = PoliceXol.find(params[:id])
+  end
     private
 
   def police_params

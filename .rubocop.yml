@@ -30,8 +30,10 @@ Metrics/CyclomaticComplexity:
   Enabled: false
 Style/MissingRespondToMissing:
   Enabled: false
-Style/MethodMissingSuper:
+Lint/MissingSuper:
   Enabled: false
+# Style/MethodMissingSuper:
+#   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
 Layout/LineLength:
