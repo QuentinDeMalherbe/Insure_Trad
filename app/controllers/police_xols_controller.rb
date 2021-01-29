@@ -24,14 +24,15 @@ class PoliceXolsController < ApplicationController
   def montant_important
     @police = PoliceXol.find(params[:id])
   end
-    private
+
+  private
 
   def police_params
-      params.require(:police_xol).permit(
-        :amount_ca_nat, :amount_ca_nat_else, :amount_ca_export_a, :client_number, :delai_max, :dso,
-        historic_losses_as_attributes: [:id, :start_date, :end_date, :amount_loss, :number_client, :max_loss, :_destroy],
-        main_customer_as_attributes: [:id, :name, :address, :zip_code, :city, :country, :siret, :percent_ca, :_destroy ]
-      )
+    params.require(:police_xol).permit(
+      :amount_ca_nat, :amount_ca_nat_else, :amount_ca_export_a, :client_number, :delai_max, :dso,
+      historic_losses_as_attributes: [:id, :start_date, :end_date, :amount_loss, :number_client, :max_loss, :_destroy],
+      main_customer_as_attributes: [:id, :name, :address, :zip_code, :city, :country, :siret, :percent_ca, :_destroy ]
+    )
   end
 
   def historics

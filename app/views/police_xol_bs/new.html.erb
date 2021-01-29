@@ -84,11 +84,16 @@
     <p style='width: 150px; text-align: center'>Nombre des clients ayant générés une perte</p>
     <p style='width: 150px; text-align: center'>Montant H de la perte subie la plus importante pour chaque période concernée</p>
   </div>
-  <%= f.simple_fields_for :historic_losses_bs do |c| %>
+  <%= f.simple_fields_for :historic_losses_bs do |c, i| %>
   <div class="inline no-f-child">
     <%= c.index + 1%>
-    <p class='ml-2' style='width: 210px; height: 38px; line-height: 38px; text-align: center ;border:1px solid #ced4da; background:white'>0</p>
-    <p style='width: 210px; height: 38px; line-height: 38px; text-align: center ;border:1px solid #ced4da; background:white'>0</p>
+    <% historic = "historic_#{c.index+ 1}".to_sym%>
+    <p class='ml-2' style='width: 210px; height: 38px; line-height: 38px; text-align: center ;border:1px solid #ced4da; background:white'>
+      <%= PoliceXolB.historics[historic][:start_date] %>
+    </p>
+    <p style='width: 210px; height: 38px; line-height: 38px; text-align: center ;border:1px solid #ced4da; background:white'>
+      <%= PoliceXolB.historics[historic][:end_date] %>
+    </p>
     <%= c.input :amount_loss , label: false, collection: PoliceXol::CUMUL_LOSS, label_method: :second, value_method: :first %>
     <%= c.input :number_client , label: false, collection: PoliceXol::NUMBER_CLIENT, label_method: :second, value_method: :first %>
     <%= c.input :max_loss , label: false, collection: PoliceXol::MAX_LOSS, label_method: :second, value_method: :first %>

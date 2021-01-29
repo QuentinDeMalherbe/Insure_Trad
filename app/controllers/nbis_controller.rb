@@ -2,17 +2,18 @@ class NbisController < ApplicationController
   def new
     @police = PoliceXol.find(params[:police_xol_id])
     @nbi = Nbi.new(police_xol: @police)
+    @nbi.initialize_data
   end
 
   def create
     @police = PoliceXol.find(params[:police_xol_id])
     @nbi = Nbi.new(nbi_params)
     if @nbi.save
-      creation_police_path(@police)
-    else
-      render :new
+        creation_police_path(@police)
+      else
+        render :new
+      end
     end
-  end
 
   def creationpdf
 

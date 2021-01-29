@@ -208,7 +208,6 @@ class Option < ApplicationRecord
                                       + INDUSTRYRISKS[activity_code] * industry_weight
   end
 
-
   def max_number_insured_buyer
     return (self.insure_trad_supp.numberTotalInsured * self.insure_trad_supp.percentBadlyCovert).ceil
   end

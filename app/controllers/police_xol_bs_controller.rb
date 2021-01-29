@@ -21,15 +21,8 @@ class PoliceXolBsController < ApplicationController
     end
   end
 
-private
 
-  def police_b_params
-      params.require(:police_xol_b).permit(
-        :amount_ca_export_b, :amount_ca_export_c, :client_number, :delai_max, :dso,
-        historic_losses_bs_attributes: [:id, :start_date, :end_date, :amount_loss, :number_client, :max_loss, :_destroy],
-        main_customer_bs_attributes: [:id, :name, :address, :zip_code, :city, :country, :siret, :percent_ca, :_destroy ]
-      )
-  end
+  private
 
   def historics
     now = Date.today
@@ -52,6 +45,16 @@ private
       }
     }
   end
+
+  def police_b_params
+      params.require(:police_xol_b).permit(
+        :amount_ca_export_b, :amount_ca_export_c, :client_number, :delai_max, :dso,
+        historic_losses_bs_attributes: [:id, :start_date, :end_date, :amount_loss, :number_client, :max_loss, :_destroy],
+        main_customer_bs_attributes: [:id, :name, :address, :zip_code, :city, :country, :siret, :percent_ca, :_destroy ]
+      )
+  end
+
+
 
   def  default_values(police)
     police.historic_losses_bs.first.start_date = historics[:historic_1][:start_date] unless police.historic_losses_bs.first.nil?

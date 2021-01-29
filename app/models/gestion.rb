@@ -72,6 +72,63 @@ class Gestion < ApplicationRecord
       1.2
     end
   end
+
+  def score
+    if total_point <= 20
+      10
+    elsif  total_point <= 35
+      30
+    elsif  total_point <= 50
+      40
+    elsif  total_point <= 65
+      50
+    else
+      70
+    end
+  end
+
+  def option_1
+    if total_point <= 20
+      1.4
+    elsif  total_point <= 35
+      1.3
+    elsif  total_point <= 50
+      1.2
+    elsif  total_point <= 65
+      1.1
+    else
+      1
+    end
+  end
+
+  def option_2
+    if total_point <= 20
+      1.2
+    elsif  total_point <= 35
+      1.1
+    elsif  total_point <= 50
+      1
+    elsif  total_point <= 65
+      0.9
+    else
+      0.8
+    end
+  end
+
+  def option_3
+    if total_point <= 20
+      1
+    elsif  total_point <= 35
+      0.9
+    elsif  total_point <= 50
+      0.8
+    elsif  total_point <= 65
+      0.7
+    else
+      0.6
+    end
+  end
+end
     # t.integer "cgi"
     # t.integer "logiciel"
     # t.integer "document"
@@ -81,4 +138,3 @@ class Gestion < ApplicationRecord
     # t.integer "calcul_client_limit"
     # t.integer "limit_time_payback"
 
-end

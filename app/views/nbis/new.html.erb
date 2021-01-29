@@ -1,16 +1,225 @@
-<p>Montant minimum d'intervention <%= @nbi.montant_min_intervention(@police.montant_min) %> </p>
+<div class="avancement">
+  <div class="position-avancement-realise inline-text">
+    <i class="fas fa-check-circle tick"></i>
+    <p>
+      Choix de la <br>police
+    </p>
+  </div>
+  <div class="position-avancement-actif inline-text">
+    <div class="avancement-number">
+      <p class=" actif-number">2</p>
+    </div>
+    <p>
+      Tarification
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">3</p>
+    </div>
+    <p>
+      Information <br>complémentaires
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">4</p>
+    </div>
+    <p>
+      Création <br>police
+    </p>
+  </div>
+</div>
 
-<%= @police.main_customer_as.first.equivalent_ca %> <br>
-<%= @police.total_ca_min %> <br>
-<%= @police.total_ca_max %> <br>
-<%= @police.somme_main_customer_ca %> <br>
-<%= @police.total_ca_moy %> <br>
-<%= @police.ca_6_client_suivant %> <br>
-<%= @police.encours_10_client %> <br>
-<%= @police.encours_1_client %> <br>
-<%= @nbi.garantie_1_a_6_zone_1 %> <br>
-<%= @nbi.garantie_1_a_6_zone_2 %><br>
-<%= @nbi.garantie_1_a_6_zone_3 %><br>
-<%= @nbi.garantie_7_zone_1 %> <br>
-<%= @nbi.garantie_7_zone_2 %><br>
-<%= @nbi.garantie_7_zone_3 %><br>
+<div class="container">
+  <div class="title mt-4">
+    <h2>Tarification</h2>
+    <p>Pour finaliser votre contrat nous avons besoin de ...</p>
+  </div>
+
+
+  <p>Montant minimum d'intervention <%= @nbi.montant_min_intervention(@police.montant_min) %> </p>
+  <h3>
+    1. Garantie sur vos Clients Dénommés avec un Grade de risque déivré par InsureTrade Service
+  </h3>
+
+  <%
+=begin%>
+  <%= @police.main_customer_as.first.equivalent_ca %> <br>
+  <%= @police.total_ca_min %> <br>
+  <%= @police.total_ca_max %> <br>
+  <%= @police.somme_main_customer_ca %> <br>
+  <%= @police.total_ca_moy %> <br>
+  <%= @police.ca_6_client_suivant %> <br>
+  <%= @police.encours_10_client %> <br>
+  <%= @police.encours_1_client %> <br>
+  <%
+=end%>
+  <p>Garantie automatique par Client avec un Grade de risque de 1 à 6 (zone1): <%= @nbi.garantie_1_a_6_zone_1 %> </p>
+  <p>Garantie automatique par Client avec un Grade de risque de 1 à 6 (zone2): <%= @nbi.garantie_1_a_6_zone_2 %> </p>
+  <p>Garantie automatique par Client avec un Grade de risque de 1 à 6 (zone3): <%= @nbi.garantie_1_a_6_zone_3 %> </p>
+  <p>Garantie automatique par Client avec un Grade de risque de 7 (zone1): <%= @nbi.garantie_7_zone_1 %> </p>
+  <p>Garantie automatique par Client avec un Grade de risque de 7 (zone2): <%= @nbi.garantie_7_zone_2 %> </p>
+  <p>Garantie automatique par Client avec un Grade de risque de 7 (zone3): <%= @nbi.garantie_7_zone_3 %> </p>
+  <p>Plafond annuel de garantie (zone1): <%= @nbi.plafond_annuel_zone_1 %> </p>
+  <p>Plafond annuel de garantie (zone2): formule pas bonne</p>
+  <p>Plafond annuel de garantie (zone3): <%= @nbi.nbr_client_ac_grade_insure_zone_3 %> </p>
+  <p>Nombre souhaité de Clients avec un Grade de Risque devant être fourni par InsureTrade Service (zone1): <%= @nbi.nbr_client_ac_grade_insure_zone_1 %> </p>
+  <p>Nombre souhaité de Clients avec un Grade de Risque devant être fourni par InsureTrade Service (zone2): <%= @nbi.nbr_client_ac_grade_insure_zone_2 %> </p>
+  <p>Nombre souhaité de Clients avec un Grade de Risque devant être fourni par InsureTrade Service (zone3): <%= @nbi.nbr_client_ac_grade_insure_zone_3 %> </p>
+  <p>Prime HT annuelle forfaitaire: <%= @nbi.prime_ht_annuelle %> </p>
+  <p>Cout de police et frais annexes HT: <%= @nbi.cout_police_frais_annexe_ht %> </p>
+  <p>Total forfaitaire HT annuel: <%= @nbi.total_forfaitaire %> </p>
+
+  <%
+=begin%>
+  <%= @nbi.garantie_1_a_6_zone_1 %>
+  <%= @nbi.garantie_1_a_6_zone_2 %>
+  <%= @nbi.garantie_1_a_6_zone_3 %>
+  <%= @nbi.garantie_7_zone_1 %>
+  <%= @nbi.garantie_7_zone_2 %>
+  <%= @nbi.garantie_7_zone_3 %>
+  <%= @nbi.plafond_annuel_zone_1 %>
+  bug
+  <%= @nbi.plafond_annuel_zone_2 %><br>
+  <%= @nbi.plafond_annuel_zone_3 %><br>
+  <%= @nbi.nbr_client_ac_grade_insure_zone_1 %><br>
+  <%= @nbi.nbr_client_ac_grade_insure_zone_2 %><br>
+  <%= @nbi.nbr_client_ac_grade_insure_zone_3 %><br>
+  <%= @nbi.prime_ht_annuelle %><br>
+  <%= @nbi.cout_police_frais_annexe_ht %><br>
+  <%= @nbi.total_forfaitaire %><br>
+  <%
+=end%>
+  <h3>
+    2. Garantie sur vos Clients Non Dénommés - toute ZONE - sans Grade de risque délivré par InsureTrade Service
+  </h3>
+  <table>
+    <tbody style="height:'0%;">
+      <tr class='ligne-1'>
+        <td style="width: 40%;"></td>
+        <td style="width: 10%;" class="option1">
+          <p class="titre-tableau-1">Option 1</p>
+        </td>
+        <td style="width: 10%;" class=" option2">
+          <p class="titre-tableau-2">Option 2</p>
+        </td>
+        <td style="width: 10%;" class=" option3">
+          <p class="titre-tableau-3">Option 3</p>
+        </td>
+      </tr>
+      <tr class='ligne-2'>
+        <td class="darkk-blue">Plafond annuel de garantie pour vos Clients - toute ZONE - sans Grade de Risque obtenu d'InsureTrade Service</td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@nbi.plafond_annuel_option_1_2_et_3, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency(@nbi.plafond_annuel_option_1_2_et_3, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency(@nbi.plafond_annuel_option_1_2_et_3, unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-3-a-6'>
+        <td STYLE="padding:0 0 0 20px;">
+          <div class="hint-info">
+            3ème ligne du cumul annuel des pertes garanties </div>
+        </td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@nbi.ligme_cumul_annuel_perte_garantie_3_option_1, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency( @nbi.ligme_cumul_annuel_perte_garantie_3_option_2, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency( @nbi.ligme_cumul_annuel_perte_garantie_3_option_3, unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-3-a-6'>
+        <td STYLE="padding:0 0 0 20px;">
+          <div class="hint-info">
+            2ème ligne du cumul annuel des pertes garanties </div>
+        </td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@nbi.ligme_cumul_annuel_perte_garantie_2_option_1, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency( @nbi.ligme_cumul_annuel_perte_garantie_2_option_2, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency( @nbi.ligme_cumul_annuel_perte_garantie_2_option_3, unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-3-a-6'>
+        <td STYLE="padding:0 0 0 20px;">
+          <div class="hint-info">
+            1er ligne du cumul annuel des pertes garanties </div>
+        </td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@nbi.ligme_cumul_annuel_perte_garantie_1_option_1, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency( @nbi.ligme_cumul_annuel_perte_garantie_1_option_2, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency( @nbi.ligme_cumul_annuel_perte_garantie_1_option_3, unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-3-a-6'>
+        <td STYLE="padding:0 0 0 20px;">
+          <div class="hint-info">
+            Franchise Cumulée annuelle
+          </div>
+        </td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@nbi.franchise_cumul_option_1, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency( @nbi.franchise_cumul_option_2, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency( @nbi.franchise_cumul_option_3, unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-3-a-6'>
+        <td STYLE="padding:0 0 0 20px;">
+          <div class="hint-info">
+            Garantie automatique par Client - toute ZONE - sans Grade de risque obtenu d'InsureTrade Service </div>
+        </td>
+        <td class="option1 darkk-blue"><%= number_to_currency( @nbi.police_xol.non_denomme_final , unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency( @nbi.police_xol.non_denomme_final , unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency( @nbi.police_xol.non_denomme_final , unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-4-vh'>
+        <td class="darkk-blue">Prime HT annuelle forfaitaire</td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@nbi.prime_ht_annuelle_option_1, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency(@nbi.prime_ht_annuelle_option_2, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency(@nbi.prime_ht_annuelle_option_3, unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-4-vh'>
+        <td class="darkk-blue">Cout de police et frais annexes HT/td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@nbi.cout_police_frais_annexe_option_1_2_3, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency(@nbi.cout_police_frais_annexe_option_1_2_3, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency(@nbi.cout_police_frais_annexe_option_1_2_3, unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+      <tr class='ligne-4-vh'>
+        <td class="darkk-blue">Total forfaitaire HT annuel</td>
+        <td class="option1 darkk-blue"><%= number_to_currency(@nbi.prime_ht_annuelle_option_1 + @nbi.cout_police_frais_annexe_option_1_2_3, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option2 darkk-blue"><%= number_to_currency(@nbi.prime_ht_annuelle_option_2 + @nbi.cout_police_frais_annexe_option_1_2_3, unit: :€, format: "%n %u", precision: 0) %></td>
+        <td class="option3 darkk-blue"><%= number_to_currency(@nbi.prime_ht_annuelle_option_3 + @nbi.cout_police_frais_annexe_option_1_2_3, unit: :€, format: "%n %u", precision: 0) %></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>
+    Garantie 1. + 2. SUR l'ENSEMBLE DE VOTRE PORTEFEUILLE ClIENTS DENOMMES ET NON DENOMMES
+  </h3>
+  <table>
+    <tbody>
+      <tr class='ligne-4-vh'>
+        <td class="darkk-blue">Prime HT annuelle forfaitaire</td>
+        <td class="option1 darkk-blue"> formule pas bonne je pense</td>
+      </tr>
+      <tr class='ligne-4-vh'>
+        <td class="darkk-blue">Cout de police et frais annexes HT</td>
+        <td class="option1 darkk-blue"> formule pas bonne /td>
+      </tr>
+      <tr class='ligne-4-vh'>
+        <td class="darkk-blue">Total forfaitaire HT annuel</td>
+        <td class="option1 darkk-blue">formule pas bonne</td>
+      </tr>
+    </tbody>
+  </table>
+  <%
+=begin%>
+  <%= @nbi.plafond_annuel_option_1_2_et_3 %><br>
+  <%= @nbi.franchise_cumul_option_1 %><br>
+  <%= @nbi.franchise_cumul_option_2 %><br>
+  <%= @nbi.franchise_cumul_option_3 %><br>
+  <%= @nbi.ligme_cumul_annuel_perte_garantie_1_option_1 %><br>
+  <%= @nbi.ligme_cumul_annuel_perte_garantie_1_option_2 %><br>
+  <%= @nbi.ligme_cumul_annuel_perte_garantie_1_option_3 %><br>
+  <%= @nbi.ligme_cumul_annuel_perte_garantie_2_option_1 %><br>
+  <%= @nbi.ligme_cumul_annuel_perte_garantie_2_option_2 %><br>
+  <%= @nbi.ligme_cumul_annuel_perte_garantie_2_option_3 %><br>
+  <%= @nbi.ligme_cumul_annuel_perte_garantie_3_option_1 %><br>
+  <%= @nbi.ligme_cumul_annuel_perte_garantie_3_option_2 %><br>
+  <%= @nbi.ligme_cumul_annuel_perte_garantie_3_option_3 %><br>
+  <%= @nbi.police_xol.non_denomme_final %><br>
+  <%= @nbi.prime_ht_annuelle_option_1 %><br>
+  <%= @nbi.prime_ht_annuelle_option_2 %><br>
+  <%= @nbi.prime_ht_annuelle_option_3 %><br>
+  <%= @nbi.cout_police_frais_annexe_option_1_2_3 %><br>
+  123456
+  <%
+=end%>
+</div>

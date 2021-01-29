@@ -100,48 +100,50 @@ class PoliceXol < ApplicationRecord
   ]
 
   CUMUL_LOSS = [
-    [1, '< 15.000' ],
-    [1, '15.001 to 25.000' ],
-    [1, '25.001 to 50.000' ],
-    [1, '50.001 to 75.000' ],
-    [1, '75.001 to 100.000' ],
-    [1, '100.001 to 150.000' ],
-    [1, '150.001 to 200.000' ],
-    [1, '200.001 to 250.000' ],
-    [1, '250.001 to 300.000' ],
-    [1, '300.001 to 400.000' ],
-    [1, '400.001 to 500.000' ],
-    [1, '500.001 to 750.000' ],
-    [1, '750.001 to 1.000.000' ],
-    [1, '> 1.000.001' ]
+    [0, '0' ],
+    [15_000, '< 15.000' ],
+    [20_000, '15.001 to 25.000' ],
+    [38_000, '25.001 to 50.000' ],
+    [68_000, '50.001 to 75.000' ],
+    [88_000, '75.001 to 100.000' ],
+    [130_000, '100.001 to 150.000' ],
+    [180_000, '150.001 to 200.000' ],
+    [230_000, '200.001 to 250.000' ],
+    [280_000, '250.001 to 300.000' ],
+    [360_000, '300.001 to 400.000' ],
+    [460_000, '400.001 to 500.000' ],
+    [650_000, '500.001 to 750.000' ],
+    [900_000, '750.001 to 1.000.000' ],
+    [1_100_000, '> 1.000.001' ]
   ]
 
-
   MAX_LOSS = [
-    [1, '< 15.000' ],
-    [1, '15.001 to 25.000' ],
-    [1, '25.001 to 50.000' ],
-    [1, '50.001 to 75.000' ],
-    [1, '75.001 to 100.000' ],
-    [1, '100.001 to 150.000' ],
-    [1, '150.001 to 200.000' ],
-    [1, '200.001 to 250.000' ],
-    [1, '250.001 to 300.000' ],
-    [1, '300.001 to 400.000' ],
-    [1, '400.001 to 500.000' ],
-    [1, '500.001 to 750.000' ],
-    [1, '750.001 to 1.000.000' ],
-    [1, '> 1.000.001' ]
+    [0, '0' ],
+    [15_000, '< 15.000' ],
+    [20_000, '15.001 to 25.000' ],
+    [38_000, '25.001 to 50.000' ],
+    [68_000, '50.001 to 75.000' ],
+    [88_000, '75.001 to 100.000' ],
+    [130_000, '100.001 to 150.000' ],
+    [180_000, '150.001 to 200.000' ],
+    [230_000, '200.001 to 250.000' ],
+    [280_000, '250.001 to 300.000' ],
+    [360_000, '300.001 to 400.000' ],
+    [460_000, '400.001 to 500.000' ],
+    [650_000, '500.001 to 750.000' ],
+    [900_000, '750.001 to 1.000.000' ],
+    [1_100_000, '> 1.000.001' ]
   ]
 
   NUMBER_CLIENT = [
-    [ 1, '0 to 2' ],
-    [ 1, '3 to 6' ],
-    [ 1, '7 to 10' ],
-    [ 1, '11 to 15' ],
-    [ 1, '16 to 20' ],
-    [ 1, '21 to 25' ],
-    [ 1, '> 25' ]
+    [0, '0'],
+    [2, '1 to 3'],
+    [5, '4 to 6'],
+    [9, '7 to 10'],
+    [13, '11 to 15'],
+    [18, '16 to 20'],
+    [23, '21 to 25'],
+    [30, '> 25']
   ]
 
   RISKS_DENOMME = { very_low:	1.2, low:	1.1, good:	1, neutral:	0.9, weak:	0.7, high:	0.6}
@@ -224,8 +226,7 @@ class PoliceXol < ApplicationRecord
     return somme
   end
 
-
-
+  # J63
   def non_denomme_final
     loi_75_25_nbre_de_clients = client_number * 0.75
     ca_moyen_avec_50_des_clients_suivants_les_25_gros = (total_ca_moy - total_ca_moy * 0.75)/(loi_75_25_nbre_de_clients*0.75)
@@ -249,7 +250,261 @@ class PoliceXol < ApplicationRecord
     end
   end
 
+# ICI FAIT JUSTE POUR L'EXEMPLE CE SERA A COMPLETER
+  RISKS = { very_low:	80, low:	70, good:	60, neutral:	40, weak:	20, high:	10}
+  ZIPCODERISKS = { '46' => 70, '35' => 60, '33' => 40, '78' => 40, '17' => 20, '44' => 10 }
+  COUNTRYRISKS = { 'France' => 40, 'Spain' => 50 }
+  INDUSTRYRISKS_ZONE_1 = {
+    '01' => 40,
+    '10' => 20,
+    '23' => 50,
+    '33' => 20,
+    '39' => 10,
+    '62' => 40
+  }
+  INDUSTRYRISKS_ZONE_2 = {
+    '01' => 40,
+    '10' => 20,
+    '23' => 20,
+    '33' => 10,
+    '39' => 10,
+    '62' => 20
+  }
+
+  def credit_risk_environnement_zone_1
+    country_weight = 0.2
+    zip_code_weight = 0.1
+    industry_weight = 0.7
+    zip_code = self.contract.customer.zip_code.to_s
+    country = self.contract.customer.country.capitalize
+    activity_code = self.contract.customer.activity_code.to_s
+    return ZIPCODERISKS[zip_code] * zip_code_weight
+          + COUNTRYRISKS[country] * country_weight
+          + INDUSTRYRISKS[activity_code] * industry_weight
+  end
+
+  def credit_risk_environnement_zone_2
+    country_weight = 0.2
+    zip_code_weight = 0.1
+    industry_weight = 0.7
+    zip_code = self.contract.customer.zip_code.to_s
+    country = self.contract.customer.country.capitalize
+    activity_code = self.contract.customer.activity_code.to_s
+    INDUSTRYRISKS_ZONE_2[activity_code] >= INDUSTRYRISKS_ZONE_1[activity_code] ? risk_industry = INDUSTRYRISKS_ZONE_1[activity_code] : risk_industry = INDUSTRYRISKS_ZONE_2[activity_code]
+    return  ZIPCODERISKS[zip_code] * zip_code_weight
+            + COUNTRYRISKS[country] * country_weight
+            + risk_industry * industry_weight
+  end
+
+  def net_rate_turnover
+    buyer_score = credit_risk_environnement_zone_1
+    admin_fee = 1.3
+    ratio = ((0.75 / 6)/ 100).to_f / admin_fee
+    if buyer_score > 75
+      ratio * 0.5
+    elsif  buyer_score > 70
+      ratio * 1
+    elsif  buyer_score > 65
+      ratio * 1.5
+    elsif  buyer_score > 60
+      ratio * 2
+    elsif  buyer_score > 55
+      ratio * 2.5
+    elsif  buyer_score > 50
+      ratio * 3
+    elsif  buyer_score > 45
+      ratio * 3.5
+    elsif  buyer_score > 40
+      ratio * 4
+    elsif  buyer_score > 35
+      ratio * 4.5
+    elsif  buyer_score > 30
+      ratio * 5
+    elsif  buyer_score > 25
+      ratio * 5.5
+    elsif  buyer_score > 20
+      ratio * 6
+    elsif  buyer_score > 15
+      ratio * 6.5
+    elsif  buyer_score > 13
+      ratio * 7
+    elsif  buyer_score > 10
+      ratio * 7.5
+    elsif  buyer_score > 7
+      ratio * 8
+    elsif  buyer_score > 3
+      ratio * 8.5
+    elsif  buyer_score == 3
+      ratio * 9
+    elsif  buyer_score > 0
+      ratio * 9.5
+    elsif  buyer_score == 0
+      ratio * 10
+    end
+  end
+
+  def net_rate_turnover_zone_2
+    buyer_score = credit_risk_environnement_zone_2
+    admin_fee = 1.3
+    ratio = ((0.75 / 6)/ 100).to_f / admin_fee
+    if buyer_score > 75
+      ratio * 0.5
+    elsif  buyer_score > 70
+      ratio * 1
+    elsif  buyer_score > 65
+      ratio * 1.5
+    elsif  buyer_score > 60
+      ratio * 2
+    elsif  buyer_score > 55
+      ratio * 2.5
+    elsif  buyer_score > 50
+      ratio * 3
+    elsif  buyer_score > 45
+      ratio * 3.5
+    elsif  buyer_score > 40
+      ratio * 4
+    elsif  buyer_score > 35
+      ratio * 4.5
+    elsif  buyer_score > 30
+      ratio * 5
+    elsif  buyer_score > 25
+      ratio * 5.5
+    elsif  buyer_score > 20
+      ratio * 6
+    elsif  buyer_score > 15
+      ratio * 6.5
+    elsif  buyer_score > 13
+      ratio * 7
+    elsif  buyer_score > 10
+      ratio * 7.5
+    elsif  buyer_score > 7
+      ratio * 8
+    elsif  buyer_score > 3
+      ratio * 8.5
+    elsif  buyer_score == 3
+      ratio * 9
+    elsif  buyer_score > 0
+      ratio * 9.5
+    elsif  buyer_score == 0
+      ratio * 10
+    end
+  end
+
+  def insured_risk
+    coeff_year_in_business = 0.2
+    coeff_credit_management  = 0.35
+    coeff_dso = 0.15
+    coeff_crc_credit_rating = 0.3
+    year_in_business = risk_year_in_business(contract.customer.creation_date)
+    crc_credit_rating = 40
+    return coeff_year_in_business * year_in_business
+      + coeff_credit_management * gestion.score
+      + coeff_dso *  self.dso_score
+      + coeff_crc_credit_rating * crc_credit_rating
+  end
+
+  def insured_risk_aggravation
+    case insured_risk
+    when 71..100
+      -0.2
+    when 61..70
+      -0.15
+    when 51..60
+      -0.1
+    when 41..50
+      -0.05
+    when 31..40
+      0
+    when 26..30
+      0.05
+    when 21..25
+      0.1
+    when 16..20
+      0.15
+    when 14..15
+      0.2
+    when 11..13
+      0.25
+    when 7..10
+      0.3
+    when 0..6
+      0.4
+    end
+  end
+
+  def dso_score
+    if dso == 25
+      80
+    elsif dso == 40
+      75
+    elsif dso == 50
+      65
+    elsif dso == 58
+      50
+    elsif dso == 63
+      40
+    elsif dso == 68
+      30
+    elsif dso == 73
+      20
+    elsif dso == 78
+      10
+    elsif dso == 90
+      5
+    elsif dso == 110
+      0
+    end
+  end
+
+  def revised_risk_aggravation_zone_1
+    net_rate_turnover + net_rate_turnover * insured_risk_aggravation
+  end
+
+  def self.historics
+    now = Date.today
+    return {
+      historic_1: {
+        start_date: Date.new(now.year, 1, 1),
+        end_date: now
+      },
+      historic_2: {
+        start_date: Date.new(now.year - 1, 1, 1),
+        end_date: Date.new(now.year - 1, 12, 31)
+      },
+      historic_3: {
+        start_date: Date.new(now.year - 2, 1, 1),
+        end_date: Date.new(now.year - 2, 12, 31)
+      },
+      historic_4: {
+        start_date: Date.new(now.year - 3, 1, 1),
+        end_date: Date.new(now.year - 3, 12, 31)
+      }
+    }
+  end
+
   private
+
+  def risk_year_in_business(date)
+    # pas tres precis , a ameliorer
+    age = Time.now.year  - date.year
+    if age > 25
+      70
+    elsif age > 20
+      60
+    elsif age > 15
+      50
+    elsif age > 12
+      40
+    elsif age > 8
+      30
+    elsif age > 5
+      20
+    elsif age > 3
+      10
+    elsif age >= 0
+      5
+    end
+  end
 
   def require_one_historic
     errors.add(:base, "You must provide at least one historic") if historic_losses_as.size < 1
