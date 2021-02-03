@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :contracts, shallow: true,  only:[:new, :create] do
         resources :police_xols, shallow: true, only:[:new, :create, :show] do
           resources :police_xol_bs, only:[:new, :create, :edit, :update]
-          resources :nbis, only:[:new, :create, :edit, :update]
+          resources :nbis, only:[:new, :create, :edit, :update, :show]
           resources :gestions, only:[:new, :create, :edit, :update]
         end
         resources :insure_trad_supps, shallow: true, only:[:new, :create, :show] do

@@ -1,12 +1,16 @@
-.navbar {
-  display: flex;
+.nvbr {
   background: #050561;
   height: 8vh;
   align-items: center;
-  justify-content: flex-end;
 }
 
 .logo {
   height: 100%;
-  width: 5%;
+  width: 30px;
+}
+
+.logo-principale {
+  height: 100%;
+  width: 100px;
+  padding: 0 8px 2px 2px;
 }

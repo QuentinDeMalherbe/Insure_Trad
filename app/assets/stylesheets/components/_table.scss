@@ -28,9 +28,22 @@ table {
   vertical-align: bottom;
 }
 
+.ligne-1-center {
+  height: 5vh;
+  vertical-align: center;
+}
+
 .ligne-2 {
   height: 6vh;
 
+}
+
+.ligne-2-2-vh {
+  height: 2vh;
+}
+.ligne-2-2-first {
+  height: 3vh;
+  vertical-align: bottom;
 }
 
 .ligne-4-vh {
@@ -78,6 +91,30 @@ table {
   margin-bottom: 0rem;
   color: white;
   background-color: #7764D6;
+  padding: 10px 16px;
+  border-radius: 20px;
+}
+
+.titre-tableau-1-2 {
+  margin-bottom: 0rem;
+  background-color: #3fd122;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+}
+
+.titre-tableau-2-2 {
+  margin-bottom: 0rem;
+  color: white;
+  background-color: #57c54b;
+  padding: 10px 16px;
+  border-radius: 20px;
+}
+
+.titre-tableau-3-2 {
+  margin-bottom: 0rem;
+  color: white;
+  background-color: #6fd664;
   padding: 10px 16px;
   border-radius: 20px;
 }
