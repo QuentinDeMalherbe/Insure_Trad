@@ -201,6 +201,7 @@
               <tr class='mt-2'>
                 <td></td>
                 <td class="option2 center_table">
+                  <% unless @nbi_cinq_un.client_name.nil? %>
                   <%= simple_form_for [@police_cinq_million, @nbi_cinq_un ] do |f| %>
                   <%= f.input :client_name, :as => :hidden, :input_html => { :value => @information[:client_name]} %>
                   <%= f.input :grade, :as => :hidden, :input_html => { :value => @information[:grade]} %>
@@ -212,8 +213,10 @@
                   <%= f.input :montant_forfait_complemmentaire, :as => :hidden, :input_html => { :value => 0} %>
                   <%= f.submit 'Validez', class:'btn btn-primary mt-2' %>
                   <%end%>
+                  <%end%>
                 </td>
                 <td class="option2 center_table">
+                  <% unless @nbi_cinq_un.client_name.nil? %>
                   <%= simple_form_for [@police_cinq_million, @nbi_cinq_un ] do |f| %>
                   <%= f.input :client_name, :as => :hidden, :input_html => { :value => @information[:client_name]} %>
                   <%= f.input :grade, :as => :hidden, :input_html => { :value => @information[:grade]} %>
@@ -224,6 +227,7 @@
                   <%= f.input :montant_perte_complementaire, :as => :hidden, :input_html => { :value => @information[:montant_forfait_base]} %>
                   <%= f.input :montant_forfait_complemmentaire, :as => :hidden, :input_html => { :value => @information[:montant_forfait_complemmentaire]} %>
                   <%= f.submit 'Validez', class:'btn btn-primary mt-2' %>
+                  <%end%>
                   <%end%>
                 </td>
               </tr>

@@ -44,7 +44,8 @@ class NbiCinqUnsController < ApplicationController
   private
 
   def nbi_params
-    params.require(:nbi_cinq_un).permit(:client_name, :grade, :montant_perte_base, :quotite_base, :duree_base, :montant_perte_complementaire, :montant_forfait_base, :montant_forfait_complemmentaire)
+    params.require(:nbi_cinq_un).permit(:client_name, :grade, :montant_perte_base, :quotite_base, :duree_base,
+      :montant_perte_complementaire, :montant_forfait_base, :montant_forfait_complemmentaire)
   end
 
 end
