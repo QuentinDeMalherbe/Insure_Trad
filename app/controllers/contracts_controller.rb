@@ -24,9 +24,12 @@ class ContractsController < ApplicationController
       else
         render 'new'
       end
-    else
-      flash.alert = "Dev not did yet."
-      render 'new'
+    elsif @contract.insure_trade_type.zero?
+      if @contract.save
+        redirect_to controller: 'police_cinq_millions', action: 'new', contract_id: @contract.id , customer_id: @contract.customer.id
+      else
+        render 'new'
+      end
     end
   end
 

@@ -63,6 +63,7 @@ class PoliceXol < ApplicationRecord
     [ 450, "> 400"]
   ]
 
+  # quenitn delai pas utilisé? pas config en tout cas
   DELAI = [
     [ 1, "jusqu'à 30 jours"],
     [ 1, "jusqu'à 60 jours"],

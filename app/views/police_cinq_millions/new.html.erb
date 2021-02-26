@@ -1,0 +1,49 @@
+<div class="avancement">
+  <div class="position-avancement-actif inline-text">
+    <div class="avancement-number">
+      <p class=" actif-number">1</p>
+    </div>
+    <p>
+      Choix de la <br>police
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">2</p>
+    </div>
+    <p>
+      Tarification
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">3</p>
+    </div>
+    <p>
+      Information <br>complémentaires
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">4</p>
+    </div>
+    <p>
+      Création <br>police
+    </p>
+  </div>
+</div>
+<div class="container container-custom">
+  <div class="title my-4">
+  A FINIR DANS LES TITRES ET L'AVANCEMENT
+    <h2>Police XOL pour entreprise de 5 millions € à 20 millions € de chiffre daffaires annuel</h2>
+  </div>
+  <%= simple_form_for [@contract, @police_cinq_million] do |f| %>
+  <p>Quel est le montant du chiffre d'affaires H.T. annuel soumis à InsureTrade ? </p>
+  <%= f.input :ammount_ca , label: false, collection: PoliceCinqMillion::CA,  label_method: :second, value_method: :first  %>
+  <p>Quel est le nombre de clients actifs à garantir?</p>
+  <%= f.input :client_number , label: false, collection: PoliceCinqMillion::NUMBERCLIENT, label_method: :second, value_method: :first %>
+  <p>Quel est la perte maximum garantie par client?</p>
+  <%= f.input :max_loss , label: false, collection: PoliceCinqMillion::MAXLOSS%>
+  <%= f.submit 'Validez', class:'btn btn-primary' %>
+  <% end %>
+</div>

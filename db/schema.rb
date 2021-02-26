@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_142913) do
+ActiveRecord::Schema.define(version: 2021_02_26_130424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "client_info_cinqs", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "city"
+    t.string "zip_code"
+    t.string "num_identification"
+    t.string "terme_paiement"
+    t.string "anciennete"
+    t.string "regularite"
+    t.string "experience"
+    t.string "facture_impayee"
+    t.bigint "police_cinq_million_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["police_cinq_million_id"], name: "index_client_info_cinqs_on_police_cinq_million_id"
+  end
 
   create_table "contracts", force: :cascade do |t|
     t.bigint "user_id"
@@ -163,6 +180,28 @@ ActiveRecord::Schema.define(version: 2020_12_03_142913) do
     t.index ["police_xol_b_id"], name: "index_main_customer_bs_on_police_xol_b_id"
   end
 
+  create_table "nbi_cinq_multiples", force: :cascade do |t|
+    t.bigint "police_cinq_million_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["police_cinq_million_id"], name: "index_nbi_cinq_multiples_on_police_cinq_million_id"
+  end
+
+  create_table "nbi_cinq_uns", force: :cascade do |t|
+    t.bigint "police_cinq_million_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "client_name"
+    t.string "grade"
+    t.string "montant_perte_base"
+    t.string "quotite_base"
+    t.string "duree_base"
+    t.string "montant_perte_complementaire"
+    t.string "montant_forfait_base"
+    t.string "montant_forfait_complemmentaire"
+    t.index ["police_cinq_million_id"], name: "index_nbi_cinq_uns_on_police_cinq_million_id"
+  end
+
   create_table "nbis", force: :cascade do |t|
     t.integer "montant_min"
     t.integer "garantie_1_6_z_1"
@@ -207,6 +246,17 @@ ActiveRecord::Schema.define(version: 2020_12_03_142913) do
     t.datetime "updated_at", null: false
     t.string "optiontype"
     t.index ["insure_trad_supp_id"], name: "index_options_on_insure_trad_supp_id"
+  end
+
+  create_table "police_cinq_millions", force: :cascade do |t|
+    t.bigint "contract_id", null: false
+    t.integer "ammount_ca"
+    t.integer "client_number"
+    t.integer "max_loss"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "client_name"
+    t.index ["contract_id"], name: "index_police_cinq_millions_on_contract_id"
   end
 
   create_table "police_xol_bs", force: :cascade do |t|
@@ -271,6 +321,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_142913) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "client_info_cinqs", "police_cinq_millions"
   add_foreign_key "contracts", "customers"
   add_foreign_key "contracts", "users"
   add_foreign_key "customer_contacts", "insure_trad_supps"
@@ -282,8 +333,11 @@ ActiveRecord::Schema.define(version: 2020_12_03_142913) do
   add_foreign_key "loss_payees", "primary_insurances"
   add_foreign_key "main_customer_as", "police_xols"
   add_foreign_key "main_customer_bs", "police_xol_bs"
+  add_foreign_key "nbi_cinq_multiples", "police_cinq_millions"
+  add_foreign_key "nbi_cinq_uns", "police_cinq_millions"
   add_foreign_key "nbis", "police_xols"
   add_foreign_key "options", "insure_trad_supps"
+  add_foreign_key "police_cinq_millions", "contracts"
   add_foreign_key "police_xol_bs", "police_xols"
   add_foreign_key "police_xols", "contracts"
   add_foreign_key "primary_contacts", "customers"

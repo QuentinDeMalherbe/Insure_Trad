@@ -1,6 +1,7 @@
 class Contract < ApplicationRecord
   belongs_to :user
   belongs_to :customer
+  has_one :police_cinq_million
   has_one :insure_trad_supps
   has_one :police_xol
   validates :insure_trade_type , presence: true
