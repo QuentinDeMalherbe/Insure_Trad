@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     root to: 'pages#home'
     devise_for :users
-    resources :customers, shallow: true, only:[:index, :new, :create, :edit, :update] do
+    resources :customers, shallow: true, only:[:index, :new, :create, :show, :edit, :update] do
       resources :primary_contacts, shallow:true, only:[:new, :create, :edit, :update]
       resources :contracts, shallow: true,  only:[:new, :create] do
         resources :police_xols, shallow: true, only:[:new, :create, :show] do

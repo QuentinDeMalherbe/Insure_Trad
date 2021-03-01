@@ -1,0 +1,9 @@
+<div class="container">
+  <h2 class="darkk-blue">Votre postulant travaille essentiellement avec :</h2>
+  <%= link_to "Des clients épisodiques", "#", class:'btn btn-primary' , disabled: true%>
+  <div>
+  </div>
+  <div class='my-2'>
+    <%= link_to "Des clients récurrents", new_customer_contract_path(@customer) , class:'btn btn-primary'%>
+  </div>
+</div>

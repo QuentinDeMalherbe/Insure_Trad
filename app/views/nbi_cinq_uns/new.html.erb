@@ -63,12 +63,11 @@
       <table class="mb-4 center" style="width: 100%;">
         <tbody style="height:'0%;">
           <tr class='ligne-1'>
-            <td style="width: 40%;"></td>
-            <td style="width: 30%;" class="option1">
+            <td style="width: 50%;"></td>
+            <td style="width: 40%;" class="option1">
               <p class="titre-tableau-1">Garantie de base</p>
             </td>
-            <td style="width: 30%;" class=" option2">
-              <p class="titre-tableau-2">Garantie complémentaire</p>
+            <td style="width: 10%;" class=" option2">
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
@@ -79,9 +78,6 @@
               <% end %>
             </td>
             <td class="option1 darkk-blue">
-              <% unless @nbi_cinq_un.client_name.nil? %>
-              <%= @information[:client_name] %>
-              <% end %>
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
@@ -92,9 +88,6 @@
               <% end %>
             </td>
             <td class="option1 darkk-blue">
-              <% unless @nbi_cinq_un.client_name.nil? %>
-              <%= @information[:grade] %>
-              <% end %>
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
@@ -105,9 +98,6 @@
               <% end %>
             </td>
             <td class="option1 darkk-blue">
-              <% unless @nbi_cinq_un.client_name.nil? %>
-              <%= number_to_currency(@information[:montant_perte_base] , unit: :€, format: "%n %u", precision: 0) %>
-              <% end %>
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
@@ -118,9 +108,6 @@
               <% end %>
             </td>
             <td class="option1 darkk-blue">
-              <% unless @nbi_cinq_un.client_name.nil? %>
-              <%= number_to_percentage(@information[:quotite_base] * 100, precision: 0)  %>
-              <% end %>
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
@@ -131,9 +118,6 @@
               <% end %>
             </td>
             <td class="option1 darkk-blue">
-              <% unless @nbi_cinq_un.client_name.nil? %>
-              <%= @information[:duree_base]   %>
-              <% end %>
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
@@ -144,63 +128,13 @@
               <% end %>
             </td>
             <td class="option1 darkk-blue">
-              <% unless @nbi_cinq_un.client_name.nil? %>
-              <%= number_to_currency(@information[:montant_forfait_base] , unit: :€, format: "%n %u", precision: 0)   %>
-              <% end %>
             </td>
           </tr>
-          <tr class='ligne-2-2-first'>
-            <td class="darkk-blue">Montant complémentaire de la perte garantie:</td>
-            <td class="option1 text-danger">
-              X
+          <tr>
+            <td class="darkk-blue">
+              Choisir cette garantie:
             </td>
-            <td class="option1 darkk-blue">
-              <% unless @nbi_cinq_un.client_name.nil? %>
-              <%= number_to_currency(@information[:montant_perte_complementaire] , unit: :€, format: "%n %u", precision: 0)  %>
-              <% end %>
-            </td>
-          </tr>
-          </tr>
-          <tr class='ligne-2-2-first'>
-            <td class="darkk-blue">Montant forfaitaire de la prime et coût de la police HT pour la durée de garantie complémentaire</td>
-            <td class="option1 text-danger">
-              X
-            </td>
-            <td class="option1 darkk-blue">
-              <% unless @nbi_cinq_un.client_name.nil? %>
-              <%= number_to_currency(@information[:montant_forfait_complemmentaire]  , unit: :€, format: "%n %u", precision: 0)  %>
-              <% end %>
-            </td>
-          </tr>
-          <tr class='ligne-2-2-first'>
-            <td class="darkk-blue">Montant total de la perte de garantie</td>
-            <td class="option1 darkk-blue">
-              <% unless @nbi_cinq_un.client_name.nil? %>
-              <%= number_to_currency(@information[:montant_perte_base]   , unit: :€, format: "%n %u", precision: 0)  %>
-              <% end %>
-            </td>
-            <td class="option1 darkk-blue">
-              <% unless @nbi_cinq_un.client_name.nil? %>
-              <%= number_to_currency(@information[:montant_perte_complementaire] + @information[:montant_perte_base]   , unit: :€, format: "%n %u", precision: 0)  %>
-              <% end %>
-            </td>
-          </tr>
-          <tr class='ligne-2-2-first'>
-            <td class="darkk-blue">Montant total forfaitaire de la prime et coût de police HT pour la durée de garantie</td>
-            <td class="option1 darkk-blue">
-              <% unless @nbi_cinq_un.client_name.nil? %>
-              <%= number_to_currency(@information[:montant_forfait_base]  , unit: :€, format: "%n %u", precision: 0)  %>
-              <% end %>
-            </td>
-            <td class="option1 darkk-blue">
-              <% unless @nbi_cinq_un.client_name.nil? %>
-              <%= number_to_currency(@information[:montant_forfait_base] + @information[:montant_forfait_complemmentaire]  , unit: :€, format: "%n %u", precision: 0)  %>
-              <% end %>
-            </td>
-          </tr>
-          <tr class='mt-2'>
-            <td></td>
-            <td class="option2 center_table">
+            <td class="option2 ">
               <% unless @nbi_cinq_un.client_name.nil? %>
               <%= simple_form_for [@police_cinq_million, @nbi_cinq_un ] do |f| %>
               <%= f.input :client_name, :as => :hidden, :input_html => { :value => @information[:client_name]} %>
@@ -211,9 +145,61 @@
               <%= f.input :montant_forfait_base, :as => :hidden, :input_html => { :value => @information[:montant_perte_complementaire]} %>
               <%= f.input :montant_perte_complementaire, :as => :hidden, :input_html => { :value => 0} %>
               <%= f.input :montant_forfait_complemmentaire, :as => :hidden, :input_html => { :value => 0} %>
-              <%= f.submit 'Validez', class:'btn btn-primary mt-2' %>
+              <%= f.submit 'Validez', class:'btn btn-primary my-2' %>
               <%end%>
               <%end%>
+            </td>
+          </tr>
+          <% if  !@information[:montant_perte_complementaire].zero?%>
+          <tr>
+            <td></td>
+            <td style="width: 30%;" class=" option2">
+              <p class="titre-tableau-2">Garantie complémentaire</p>
+            </td>
+          </tr>
+          <tr class='ligne-2-2-first'>
+            <td class="darkk-blue">Montant complémentaire de la perte garantie:</td>
+            <td class="option1 darkk-blue">
+              <% unless @nbi_cinq_un.client_name.nil? %>
+              <%= number_to_currency(@information[:montant_perte_complementaire] , unit: :€, format: "%n %u", precision: 0)  %>
+              <% end %>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr class='ligne-2-2-first'>
+            <td class="darkk-blue">Montant forfaitaire de la prime et coût de la police HT pour la durée de garantie complémentaire</td>
+            <td class="option1 darkk-blue">
+              <% unless @nbi_cinq_un.client_name.nil? %>
+              <%= number_to_currency(@information[:montant_forfait_complemmentaire]  , unit: :€, format: "%n %u", precision: 0)  %>
+              <% end %>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr class='ligne-2-2-first'>
+            <td class="darkk-blue">Montant total de la perte de garantie</td>
+            <td class="option1 darkk-blue">
+              <% unless @nbi_cinq_un.client_name.nil? %>
+              <%= number_to_currency(@information[:montant_perte_base] + @information[:montant_perte_complementaire]   , unit: :€, format: "%n %u", precision: 0)  %>
+              <% end %>
+            </td>
+            <td class="option1 darkk-blue">
+            </td>
+          </tr>
+          <tr class='ligne-2-2-first'>
+            <td class="darkk-blue">Montant total forfaitaire de la prime et coût de police HT pour la durée de garantie</td>
+            <td class="option1 darkk-blue">
+              <% unless @nbi_cinq_un.client_name.nil? %>
+              <%= number_to_currency(@information[:montant_forfait_base]  + @information[:montant_forfait_complemmentaire], unit: :€, format: "%n %u", precision: 0)  %>
+              <% end %>
+            </td>
+            <td class="option1 darkk-blue">
+            </td>
+          </tr>
+          <tr class='mt-2'>
+            <td class="darkk-blue">
+              Choisir cette garantie:
             </td>
             <td class="option2 center_table">
               <% unless @nbi_cinq_un.client_name.nil? %>
@@ -231,6 +217,7 @@
               <%end%>
             </td>
           </tr>
+          <% end %>
         </tbody>
       </table>
       <% end %>
