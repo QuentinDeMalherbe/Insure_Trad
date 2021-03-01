@@ -1,1 +1,207 @@
-multiple
+<div class="container">
+  <table class="mb-4 center" style="width: 100%;">
+    <tbody style="height:'0%;">
+      <tr>
+        <td colspan="4">
+          <h3 class='my-2'>1. Garantie automatique sur tout impayé sans déclaration ni autorisation préalable</h3>
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue" style='width: 60%'>Impayé garanti maximum sur tout client non gradé:</td>
+        <td class="option1 darkk-blue" colspan="3">
+          <%= number_to_currency(@information[:impaye] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue">Cumul des impayés garantis sur vos clients non gradés ou ayant obtenu un grade de risque 8:</td>
+        <td class="option1 darkk-blue" colspan=" 3">
+          <%= number_to_currency(@information[:cumul_impaye] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue">Règles de calcul indemnitaire:</td>
+        <td class="option1 darkk-blue">
+          Option 1
+        </td>
+        <td class="option1 darkk-blue">
+          Option 2
+        </td>
+        <td class="option1 darkk-blue">
+          Option 3
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue">Franchise cumulée appliquée sur le total du ou des premier(s) impayé(s) garantis:</td>
+        <td class="option1 darkk-blue">
+          <%=   number_to_currency(@information[:franchise_option_1] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+        <td class="option1 darkk-blue">
+          <%=    number_to_currency(@information[:franchise_option_2], unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+        <td class="option1 darkk-blue">
+          <%=     number_to_currency(@information[:franchise_option_3], unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <h3 class='my-2'>2. Garantie automatique après déclaration et autorisation préalable</h3>
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue">Garantie automatique sur tout Client ayant obtenu au préalable un Grade de Risque de 1 à 5 d'InsureTrade Service:</td>
+        <td class="option1 darkk-blue" colspan="3">
+          <%= number_to_currency(@information[:garantie_1_5] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue">Garantie automatique sur tout Client ayant obtenu au préalable un Grade de Risque de 6 d'InsureTrade Service:</td>
+        <td class="option1 darkk-blue" colspan="3">
+          <%= number_to_currency(@information[:garantie_6] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue">Garantie automatique sur tout Client ayant obtenu au préalable un Grade de Risque de 7 d'InsureTrade Service:</td>
+        <td class="option1 darkk-blue" colspan="3">
+          <%= number_to_currency(@information[:garantie_7] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue">Nombre de Grade de Risques pouvant être demandés sans supplément:</td>
+        <td class="option1 darkk-blue" colspan="3">
+          <%= @information[:nombre_grade]%>
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue">Supplément HT payable pour tout Grade de Risques additionnel:</td>
+        <td class="option1 darkk-blue" colspan="3">
+          25 €
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <h3 class='my-2'>Garantie 1. + 2. SUR l'ENSEMBLE DU PORTEFEUILLE ClIENTS </h3>
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue">Plafond annuel de garantie de la police InsureTrade:</td>
+        <td class="option1 darkk-blue" colspan="3">
+          <%= number_to_currency(@information[:plafond_annuel], unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue"></td>
+        <td class="option1 darkk-blue">
+          Option 1
+        </td>
+        <td class="option1 darkk-blue">
+          Option 2
+        </td>
+        <td class="option1 darkk-blue">
+          Option 3
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue">Prime annuelle forfaitaire Ht</td>
+        <td class="option1 darkk-blue">
+          <%= number_to_currency( @information[:prime_annuelle_1] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+        <td class="option1 darkk-blue">
+          <%= number_to_currency( @information[:prime_annuelle_2] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+        <td class="option1 darkk-blue">
+          <%= number_to_currency( @information[:prime_annuelle_3] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue">Cout annuel de police y inclus frais annexes HT</td>
+        <td class="option1 darkk-blue">
+          <%= number_to_currency( @information[:cout_police] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+        <td class="option1 darkk-blue">
+          <%= number_to_currency( @information[:cout_police] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+        <td class="option1 darkk-blue">
+          <%= number_to_currency( @information[:cout_police] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue">Minimum de Prime HT et Cout de police HT</td>
+        <td class="option1 darkk-blue">
+          <%= number_to_currency( @information[:minimum_prime_1] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+        <td class="option1 darkk-blue">
+          <%= number_to_currency( @information[:minimum_prime_2] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+        <td class="option1 darkk-blue">
+          <%= number_to_currency( @information[:minimum_prime_3] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+      </tr>
+      <tr class='ligne-2-2-first'>
+        <td class="darkk-blue">Échéance mensuelle HT sur les 11 mois restants</td>
+        <td class="option1 darkk-blue">
+          <%= number_to_currency( @information[:echeance_mensuelle_1] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+        <td class="option1 darkk-blue">
+          <%= number_to_currency( @information[:echeance_mensuelle_2] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+        <td class="option1 darkk-blue">
+          <%= number_to_currency( @information[:echeance_mensuelle_3] , unit: :€, format: "%n %u", precision: 0)%>
+        </td>
+      </tr>
+      <tr class='mt-2'>
+        <td class="darkk-blue">Option retenue</td>
+        <td class="option2 center_table">
+          <%= simple_form_for [@police_cinq_million, @nbi_cimq_multiple ] do |f| %>
+          <%= f.input :impaye, :as => :hidden, :input_html => { :value => @information[:impaye]} %>
+          <%= f.input :cumul_impaye, :as => :hidden, :input_html => { :value => @information[:cumul_impaye]} %>
+          <%= f.input :franchise_option, :as => :hidden, :input_html => { :value => @information[:franchise_option_1]} %>
+          <%= f.input :garantie_1_5, :as => :hidden, :input_html => { :value => @information[:garantie_1_5]} %>
+          <%= f.input :garantie_6, :as => :hidden, :input_html => { :value => @information[:garantie_6]} %>
+          <%= f.input :garantie_7, :as => :hidden, :input_html => { :value => @information[:garantie_7]} %>
+          <%= f.input :nombre_grade, :as => :hidden, :input_html => { :value => @information[:nombre_grade]} %>
+          <%= f.input :plafond_annuel, :as => :hidden, :input_html => { :value => @information[:plafond_annuel]} %>
+          <%= f.input :prime_annuelle, :as => :hidden, :input_html => { :value => @information[:prime_annuelle_1]} %>
+          <%= f.input :cout_police, :as => :hidden, :input_html => { :value => @information[:cout_police]} %>
+          <%= f.input :minimum_prime, :as => :hidden, :input_html => { :value => @information[:minimum_prime_1]} %>
+          <%= f.input :echeance_mensuelle, :as => :hidden, :input_html => { :value => @information[:echeance_mensuelle_1]} %>
+          <%= f.submit 'Validez', class:'btn btn-primary mt-2' %>
+          <%end%>
+        </td>
+        <td class="option2 center_table">
+          <%= simple_form_for [@police_cinq_million, @nbi_cimq_multiple ] do |f| %>
+          <%= f.input :impaye, :as => :hidden, :input_html => { :value => @information[:impaye]} %>
+          <%= f.input :cumul_impaye, :as => :hidden, :input_html => { :value => @information[:cumul_impaye]} %>
+          <%= f.input :franchise_option, :as => :hidden, :input_html => { :value => @information[:franchise_option_2]} %>
+          <%= f.input :garantie_1_5, :as => :hidden, :input_html => { :value => @information[:garantie_1_5]} %>
+          <%= f.input :garantie_6, :as => :hidden, :input_html => { :value => @information[:garantie_6]} %>
+          <%= f.input :garantie_7, :as => :hidden, :input_html => { :value => @information[:garantie_7]} %>
+          <%= f.input :nombre_grade, :as => :hidden, :input_html => { :value => @information[:nombre_grade]} %>
+          <%= f.input :plafond_annuel, :as => :hidden, :input_html => { :value => @information[:plafond_annuel]} %>
+          <%= f.input :prime_annuelle, :as => :hidden, :input_html => { :value => @information[:prime_annuelle_2]} %>
+          <%= f.input :cout_police, :as => :hidden, :input_html => { :value => @information[:cout_police]} %>
+          <%= f.input :minimum_prime, :as => :hidden, :input_html => { :value => @information[:minimum_prime_2]} %>
+          <%= f.input :echeance_mensuelle, :as => :hidden, :input_html => { :value => @information[:echeance_mensuelle_2]} %>
+          <%= f.submit 'Validez', class:'btn btn-primary mt-2' %>
+          <%end%>
+        </td>
+        <td class="option2 center_table">
+          <%= simple_form_for [@police_cinq_million, @nbi_cimq_multiple ] do |f| %>
+          <%= f.input :impaye, :as => :hidden, :input_html => { :value => @information[:impaye]} %>
+          <%= f.input :cumul_impaye, :as => :hidden, :input_html => { :value => @information[:cumul_impaye]} %>
+          <%= f.input :franchise_option, :as => :hidden, :input_html => { :value => @information[:franchise_option_3]} %>
+          <%= f.input :garantie_1_5, :as => :hidden, :input_html => { :value => @information[:garantie_1_5]} %>
+          <%= f.input :garantie_6, :as => :hidden, :input_html => { :value => @information[:garantie_6]} %>
+          <%= f.input :garantie_7, :as => :hidden, :input_html => { :value => @information[:garantie_7]} %>
+          <%= f.input :nombre_grade, :as => :hidden, :input_html => { :value => @information[:nombre_grade]} %>
+          <%= f.input :plafond_annuel, :as => :hidden, :input_html => { :value => @information[:plafond_annuel]} %>
+          <%= f.input :prime_annuelle, :as => :hidden, :input_html => { :value => @information[:prime_annuelle_2]} %>
+          <%= f.input :cout_police, :as => :hidden, :input_html => { :value => @information[:cout_police]} %>
+          <%= f.input :minimum_prime, :as => :hidden, :input_html => { :value => @information[:minimum_prime_2]} %>
+          <%= f.input :echeance_mensuelle, :as => :hidden, :input_html => { :value => @information[:echeance_mensuelle_2]} %>
+          <%= f.submit 'Validez', class:'btn btn-primary mt-2' %>
+          <%end%>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

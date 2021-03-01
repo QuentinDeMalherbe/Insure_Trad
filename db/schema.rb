@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_130424) do
+ActiveRecord::Schema.define(version: 2021_03_01_110013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -184,6 +184,18 @@ ActiveRecord::Schema.define(version: 2021_02_26_130424) do
     t.bigint "police_cinq_million_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "impaye"
+    t.integer "cumul_impaye"
+    t.integer "franchise_option"
+    t.integer "garantie_1_5"
+    t.integer "garantie_6"
+    t.integer "garantie_7"
+    t.integer "nombre_grade"
+    t.integer "plafond_annuel"
+    t.integer "prime_annuelle"
+    t.integer "cout_police"
+    t.integer "minimum_prime"
+    t.integer "echeance_mensuelle"
     t.index ["police_cinq_million_id"], name: "index_nbi_cinq_multiples_on_police_cinq_million_id"
   end
 
