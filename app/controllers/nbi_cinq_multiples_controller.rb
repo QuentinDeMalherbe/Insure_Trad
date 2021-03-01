@@ -18,6 +18,10 @@ class NbiCinqMultiplesController < ApplicationController
     end
   end
 
+  def show
+    @police_cinq_million = PoliceCinqMillion.find(params[:police_cinq_million_id])
+    @nbi_cimq_multiple = NbiCinqMultiple.find(params[:nbi_cinq_multiple_id])
+  end
 
 
   def client_creation(police)
