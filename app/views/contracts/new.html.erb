@@ -1,10 +1,17 @@
+<% if params["locale"] === "fr" %>
+<% langage = :second %>
+<% elsif params["locale"] === "en" %>
+<% langage = :third %>
+<% else %>
+<% langage = :third %>
+<% end %>
 <div class="avancement">
   <div class="position-avancement-actif inline-text">
     <div class="avancement-number">
       <p class=" actif-number">1</p>
     </div>
     <p>
-      Choix de la <br>police
+      <%= t 'avancement.title1' %><br><%= t 'avancement.title1_suite' %>
     </p>
   </div>
   <div class="position-avancement-a-faire inline-text">
@@ -12,7 +19,7 @@
       <p class=" a-faire-number">2</p>
     </div>
     <p>
-      Tarification
+      <%= t 'avancement.title2' %>
     </p>
   </div>
   <div class="position-avancement-a-faire inline-text">
@@ -20,7 +27,7 @@
       <p class=" a-faire-number">3</p>
     </div>
     <p>
-      Information <br>complémentaires
+      <%= t 'avancement.title3' %>
     </p>
   </div>
   <div class="position-avancement-a-faire inline-text">
@@ -28,7 +35,7 @@
       <p class=" a-faire-number">4</p>
     </div>
     <p>
-      Création <br>police
+      <%= t 'avancement.title4' %> <br><%= t 'avancement.title4_suite' %>
     </p>
   </div>
 </div>
@@ -36,10 +43,10 @@
 
 <div class="container ">
   <div class="title  center my-4">
-    <h2>Police d'assurance souhaitée </h2>
+    <h2><%= t 'contract.new.police' %></h2>
   </div>
   <%= simple_form_for [@customer, @contract] , html: { class: "center-form"}  do |f| %>
-  <%= f.input :insure_trade_type, as: :radio_buttons, collection: Contract::INSURETRADTYPE, label_method: :second, value_method: :first, legend_tag: false  %>
-  <%= f.submit 'Validez', class:'btn btn-primary' %>
+  <%= f.input :insure_trade_type, as: :radio_buttons, collection: Contract::INSURETRADTYPE, label_method: langage, value_method: :first, legend_tag: false  %>
+  <%= f.submit "#{t 'contract.new.button' }", class:'btn btn-primary' %>
   <% end %>
 </div>

@@ -1,22 +1,28 @@
-<p>Merci de bien vouloir compléter les informations ci-après. Chaque
-  section doit être complétée. Cette declaration une fois remplie fera partie de la police d’assurance.</p>
+<% if params["locale"] === "fr" %>
+<% langage = :first %>
+<% elsif params["locale"] === "en" %>
+<% langage = :second %>
+<% else %>
+<% langage = :second %>
+<% end %>
+
 <%= simple_form_for([@police_cinq_million, @client_info_cinq]) do |f| %>
 <div class="inline trois-enfant">
-  <%= f.input :name , label: 'Raison sociale'%>
-  <%= f.input :num_identification , label: "Siret" %>
+  <%= f.input :name , label: "#{t 'client_info_cinq.new.label1'}"%>
+  <%= f.input :num_identification , label: "#{t 'client_info_cinq.new.label2'}" %>
 </div>
 
-<%= f.input :address , label: 'Adresse'%>
+<%= f.input :address , label: "#{t 'client_info_cinq.new.label3'}"%>
 <div class="inline trois-enfant">
-  <%= f.input :zip_code , label: 'Code postal'%>
-  <%= f.input :city , label: 'Ville'%>
+  <%= f.input :zip_code , label: "#{t 'client_info_cinq.new.label4'}"%>
+  <%= f.input :city , label: "#{t 'client_info_cinq.new.label5'}"%>
 </div>
-<%= f.input :terme_paiement , label: "Vos termes de paiement", collection: ClientInfoCinq::PAIEMENT %>
-<%= f.input :anciennete , label: "L'ancienneté de vos relations avec ce client", collection: ClientInfoCinq::ANCIENNETE %>
-<%= f.input :regularite , label: "La régularité de vos relations avec ce client", collection: ClientInfoCinq::REGULARITE %>
-<%= f.input :experience , label: "Votre expérience de paiement", collection: ClientInfoCinq::EXPERIENCE %>
-<%= f.input :facture_impayee , label: "Avez-vous à ce jour une facture restant impayée - méme partiellement - de plus de 15 jours ?", collection: ClientInfoCinq::OUINON %>
-<%= f.submit 'Validez', class:'btn btn-primary mb-2', id:'btn-police' %>
+<%= f.input :terme_paiement , label: "#{t 'client_info_cinq.new.label6'}", collection: ClientInfoCinq::PAIEMENT, label_method: langage, legend_tag: false  %>
+<%= f.input :anciennete , label: "#{t 'client_info_cinq.new.label7'}", collection: ClientInfoCinq::ANCIENNETE, label_method: langage, legend_tag: false  %>
+<%= f.input :regularite , label: "#{t 'client_info_cinq.new.label8'}", collection: ClientInfoCinq::REGULARITE, label_method: langage, legend_tag: false %>
+<%= f.input :experience , label: "#{t 'client_info_cinq.new.label9'}", collection: ClientInfoCinq::EXPERIENCE, label_method: langage, legend_tag: false  %>
+<%= f.input :facture_impayee , label: "#{t 'client_info_cinq.new.label10'}", collection: ClientInfoCinq::OUINON , label_method: langage, legend_tag: false %>
+<%= f.submit "#{t 'button_valider'}", class:'btn btn-primary mb-2', id:'btn-police' %>
 <% end %>
 
 <%
@@ -32,17 +38,5 @@ t.string "regularite"
 t.string "experience"
 t.string "facture_impayee"
 t.bigint "police_cinq_million_id", null: false
-<%
-=end%>
-<%
-=begin%>
- PAIEMENT
-
-ANCIENNETE
-
-REGULARITE
-
-EXPERIENCE
-OUINON
 <%
 =end%>

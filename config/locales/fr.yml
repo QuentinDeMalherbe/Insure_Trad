@@ -1,14 +1,23 @@
 fr:
+  button_valider_infos: "Validez les informations"
+  button_valider: "Validez"
+  avancement:
+    title1: 'Choix de la'
+    title1_suite: 'police'
+    title2: 'Tarification'
+    title3: 'Informations complémentaires'
+    title4: 'Création'
+    title4_suite: 'police'
   customer:
     index:
-      title1: "L'ASSURÉ"
-      p1: "Veuillez préciser le nom ou numéro siren de votre assuré"
-      placeholder1: "Trouver une compagnie"
+      title1: "L'Assuré"
+      p1: "Veuillez préciser le nom ou le numéro siren de votre assuré"
+      placeholder1: "Nom, N° de siret, etc"
       button1: "Recherche"
     edit:
-      title1: "INFORMATIONS ASSURÉ"
-      p1: 'Confirmez les informations obtenues sur votre assuré'
-      label1: 'Nom de la société'
+      title1: "Information  Assuré"
+      p1: 'Confirmez les informations suivantes obtenues sur votre assuré'
+      label1: 'Raison sociale'
       label2: 'Siret'
       label3: 'Adresse'
       label4: 'Code Postale'
@@ -18,3 +27,75 @@ fr:
       label8: "Date de creation"
       p2: 'Merci de modifier ou compléter les informations erronées ou manquantes'
       submit1: 'Validez les informations'
+    show:
+      title1: 'Votre assuré travaille-t-il essentiellement avec ?'
+      link1: 'Des Clients récurrents'
+      link2: 'Des Clients occasionels'
+  primary_contact:
+    new:
+      title1: 'Veuillez indiquer les détails de votre interlocuteur.'
+      title1_suite: '*Champs obligatoires.'
+      label_nom: 'Nom de famille'
+      label_prenom: 'Prénom'
+      label_fonction: 'Fonction'
+      label_mail: 'Adresse email'
+      label_tel: 'N° de téléphone'
+      button: "Validez les informations"
+  contract:
+    new:
+      police: "Police d'Assurance des Impayés souhaitée"
+      button: 'Validez'
+  police_cinq_million:
+    new:
+      label1: "Montant annuel du chiffre d'affaires soumis à InsureTrade ?"
+      label2: 'Nombre de clients actifs à garantir ?'
+      label3: 'Montant maximum de perte par client à garantir ?'
+  nbi_cinq_un:
+    new:
+      title1: 'Identification du Client à garantir'
+      title1_bis: 'Le client à garantir est'
+      title2: 'Informations complémentaires'
+      table0: 'Client garanti'
+      table1: 'Grade de risque'
+      table2: 'Montant Garanti'
+      table3: "Quotité d'indemnisation"
+      table4: 'Durée de la garantie'
+      table5: 'Prime et cout de police HT pour la durée de garantie'
+      table6: 'Acheter cette garantie de base'
+      table7: 'Montant complémentaire Garanti'
+      table8: 'Prime et cout de police HT commplémentaire pour la durée de garantie'
+      table9: 'Acheter cette garantie complémentaire'
+      table_titre1: 'Garantie de base'
+      table_titre2: 'Garantie complémentaire'
+  nbi_cinq_multiple:
+    new:
+      title1: '1.Garantie  automatique sur tout impayé '
+      title2: '2.Garanties automatiques sur tout impayé avec des Clients gradés'
+      title3: "Garantie globale 1+2 SUR L'ENSEMBLE DU PORTEFEUILLE CLIENTS"
+      table1: 'Total des impayés garanti sur tout Client non gradé'
+      table2: 'Plafond  sur des impayés garantis sur des clients non gradés ou ayant obtenu un grade de risque 8'
+      table3: 'Calcul indemnitaire'
+      table4: 'Franchise cumulée '
+      table5: 'Total  des Impayés garanti sur tout Client avec un grade de risque de 1 à 5'
+      table6: 'Total  des Impayés garanti sur tout Client avec un grade de risque de 6'
+      table7: 'Total  des Impayés garanti sur tout Client avec un grade de risque de 7'
+      table8: 'Nombre de Grades de Risque pouvant être demandé sans supplément'
+      table9: 'Supplément HT payable pour tout Grade de Risque additionnel'
+      table10: "Plafond des impayés garantis sur l'ensemble du portefeuille Clients"
+      table11: 'Prime annuelle forfaitaire HT'
+      table12: 'Cout annuel de police y inclus des frais annexes HT'
+      table13: 'Minimum de prime et cout de police HT'
+      table14: 'Échéance mensuelle HT sur les 11 mois restants'
+      table15: 'Option Achetée'
+  client_info_cinq:
+    new:
+      label1: 'Nom de la société'
+      label2: 'Siret'
+      label3: 'Adresse'
+      label4: 'Code postal'
+      label5: 'Ville'
+      label6: 'Termes de paiement accordés à ce Client ?'
+      label7: 'Ancienneté des relations commerciales avec ce client ?'
+      label8: 'Régularité de ces relations commerciales avec ce Client ?'
+      label9: 'Votre Expérience des paiements de votre assuré avec ce client ?'
+      label10: 'Votre assuré a-t-il à ce jour une facture restant impayée- même partiellement - de plus de 15 jours calendaires ?'

@@ -1,22 +1,20 @@
 <div class="container">
   <p>
-    Veuillez indiquer les détails des contacts de l ‘Assuré.
-    Cette déclaration une fois remplie fera partie de la police
-    d’assurance crédit de second rang.<br><em>*Champs obligatoires.</em>
+    <%= t 'primary_contact.new.title1' %>
+    <br><em><%= t 'primary_contact.new.title1_suite' %></em>
   </p>
   <%= simple_form_for([@customer, @primary_contact]) do |f| %>
   <div class="contact">
-    <p>Détails des Contacts de l’Assuré</p>
     <div class="inline">
-      <%= f.input :last_name, label: 'Nom de Famille' %>
-      <%= f.input :first_name, label: 'Prénom' %>
+      <%= f.input :last_name, label: "#{t('primary_contact.new.label_nom' )}"%>
+      <%= f.input :first_name, label: "#{t('primary_contact.new.label_prenom' )}"%>
     </div>
-      <%= f.input :position, label: 'Fonction' %>
+    <%= f.input :position, label: "#{t('primary_contact.new.label_fonction' )}" %>
     <div class="inline">
-      <%= f.input :email, label: 'Adresse email' %>
-      <%= f.input :tel , label: 'N° de téléphone' %>
+      <%= f.input :email, label: "#{t('primary_contact.new.label_mail' )}" %>
+      <%= f.input :tel , label: "#{t('primary_contact.new.label_tel' )}" %>
     </div>
-    <%= f.submit 'Validez les informations' , class: 'btn btn-primary'  %>
+    <%= f.submit "#{t('primary_contact.new.button' )}" , class: 'btn btn-primary'  %>
   </div>
   <% end %>
 </div>

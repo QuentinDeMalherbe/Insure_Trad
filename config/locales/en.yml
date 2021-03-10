@@ -30,22 +30,103 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  button_valider_infos: 'Validate the informations'
+  button_valider: "Validate"
+  avancement:
+    title1: 'Policy'
+    title1_suite: 'choice'
+    title2: 'Pricing'
+    title3: 'Further information'
+    title4: 'Policy'
+    title4_suite: 'creation'
   customer:
     index:
-      title1: "THE INSURED"
-      p1: "Please specify the name or siren number of your insured"
-      placeholder1: "Find a company"
+      title1: "Insured"
+      p1: "Name or national identification number"
+      placeholder1: "Name, identification, etc"
       button1: "Search"
     edit:
-      title1: "INSURED INFORMATIONS"
+      title1: "Insured details"
       p1: 'Confirm the information obtained on your insured'
       label1: 'Company name'
-      label2: 'Siret'
+      label2: 'National identification number'
       label3: 'Address'
       label4: 'Zipcode'
       label5: 'City'
       label6: 'Country'
-      label7: 'Activity code'
-      label8: "Creation date"
-      p2: 'Please modify or complete the incorrect or missing information'
-      submit1: 'Validate the information'
+      label7: 'Business activity code'
+      label8: "Date of establishment"
+      p2: 'Please correct or add any error or missing information'
+      submit1: 'Validate the informations'
+    show:
+      title1: 'Your insured is mainly trading with:'
+      link1: 'Regular Buyers'
+      link2: 'One off Buyers'
+  primary_contact:
+    new:
+      title1: 'Please indicate your contact details.'
+      title1_suite: '* Required.'
+      label_nom: 'Last name'
+      label_prenom: 'First name'
+      label_fonction: 'Position'
+      label_mail: 'Email address'
+      label_tel: 'Telephone number'
+      button: 'Validate the informations'
+  contract:
+    new:
+      police: 'Type of Bad Debts Insurance to be selected'
+      button: 'Validate'
+  police_cinq_million:
+    new:
+      label1: "Annual Turnover submitted to InsureTrade ?"
+      label2: 'Number of Buyers to be covered ?'
+      label3: 'Maximum loss amount on any buyer to be insured ?'
+  nbi_cinq_un:
+    new:
+      title1: 'Details of the Buyer to be covered '
+      title1_bis: 'The customer to be guaranteed is'
+      title2: 'Additional Informations'
+      table0: 'Insured Buyer'
+      table1: 'Risk Grade'
+      table2: 'Insured amount'
+      table3: 'Insured percentage'
+      table4: 'Validity of the coverage'
+      table5: 'Flat premium and policy fees  excluding tax for the validity coverage'
+      table6: 'Buy this primary coverage'
+      table7: 'Additional Insured amount'
+      table8: 'Additional  flat premium and policy fees  excluding tax for the validity coverage'
+      table9: 'Buy this additional coverage'
+      table_titre1: 'Primary coverage'
+      table_titre2: 'Additionnal coverage'
+  nbi_cinq_multiple:
+    new:
+      title1: '1. Automatic coverage amount on any bad debt'
+      title2: '2. Automatic coverage amounts on any bad debt wiht any Buyer with a Risk Grade'
+      title3: 'Global Coverage 1+2 on the whole Buyers portfolio'
+      table1: 'Maximum cumulated Insured bad debts on any Buyer without a Risk Grade'
+      table2: 'Sub policy Limit of the insured bad debts on  Buyers without a Risk Grade or with Risk Grade 8'
+      table3: 'Levels of Indemnification '
+      table4: 'Aggregate Deductible'
+      table5: 'Maximum cumulated Insured bad debts on any Buyer with a Risk Grade from 1 to 5'
+      table6: 'Maximum cumulated Insured bad debts on any Buyer with a Risk Grade 6'
+      table7: 'Maximum cumulated Insured bad debts on any Buyer with a Risk Grade 7'
+      table8: 'Number of Risk Grade to be requested without any additional fee'
+      table9: 'Fee payable for any additional Risk Grade'
+      table10: 'Policy Limit of the insured bad debts on the whole Buyers portfolio'
+      table11: 'Flat annual premium excluding tax'
+      table12: 'Annual policy administration fees exclduding tax'
+      table13: 'Minimum and Deposit Premium including policy administration fees excluding tac'
+      table14: 'Monthly instalment on remaining 11 months'
+      table15: 'Selected binding Option'
+  client_info_cinq:
+    new:
+      label1: 'Compagny name'
+      label2: 'National identification number'
+      label3: 'Address'
+      label4: 'Zip code'
+      label5: 'City'
+      label6: 'Payment terms granted to this Buyer ?'
+      label7: 'How long for your insured have been working with this Buyer ?'
+      label8: 'How frequently  your insured is working with this Buyer ?'
+      label9: 'Payment experience of your Insured with this Buyer ?'
+      label10: 'Is your Insured faced any overdue for more than 15 days with this Buyer ?'

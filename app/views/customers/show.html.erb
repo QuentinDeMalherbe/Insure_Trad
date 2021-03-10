@@ -1,9 +1,9 @@
 <div class="container">
-  <h2 class="darkk-blue">Votre postulant travaille essentiellement avec :</h2>
-  <%= link_to "Des clients épisodiques", "#", class:'btn btn-primary' , disabled: true%>
-  <div>
-  </div>
+  <h2 class="darkk-blue"><%= t 'customer.show.title1' %></h2>
   <div class='my-2'>
-    <%= link_to "Des clients récurrents", new_customer_contract_path(@customer) , class:'btn btn-primary'%>
+    <%= link_to "#{t('customer.show.link1' )}", new_customer_contract_path(@customer) , class:'btn btn-primary'%>
+  </div>
+  <div>
+    <%= link_to "#{t('customer.show.link2' )}" , class:'btn btn-primary' , disabled: true%>
   </div>
 </div>

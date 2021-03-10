@@ -1,22 +1,23 @@
-<p>
-  mettre de l'editage ici et remplissage client
-</p>
-
 <div class="container ">
-  <div id="police-second-rang" class="card-info mt-2">
+  <div id="police-second-rang" class="card-info mt-2">.
     <div class="number">
-      <% if @police_cinq_million.client_info_cinq.id == nil %>
+      <% if @police_cinq_million.client_name == nil %>
       <p class="card-number card-number-active">1</p>
       <% else%>
       <p class="card-number card-number-inactive">1</p>
       <% end %>
     </div>
     <div class="card-content ">
-      <h3 class="mt-2">Quel est votre client?</h3>
+      <% if @police_cinq_million.client_name == nil %>
+      <h3><%= t 'nbi_cinq_un.new.title1' %>:</h3>
+      <% else%>
+      <h3><%= t 'nbi_cinq_un.new.title1_bis' %>: <%= @police_cinq_million.client_name  %></h3>
+      <% end %>
+
       <% if @police_cinq_million.client_name == nil %>
       <%= simple_form_for @police_cinq_million, remote: true do |f| %>
       <%= f.input :client_name , label: false, collection: NbiCinqUn::CLIENT %>
-      <%= f.submit 'Validez', class:'btn btn-primary mb-2' %>
+      <%= f.submit "#{t 'button_valider'}", class:'btn btn-primary mb-2' %>
       <% end %>
       <% end %>
     </div>
@@ -26,9 +27,7 @@
     </div>
     <% end %>
   </div>
-  <div class="title my-4">
-    <p>Pour finaliser votre contrat nous avons besoin de ...</p>
-  </div>
+
   <div id="police-second-rang" class="card-info">
     <div class="number">
       <% if !@police_cinq_million.client_info_cinq.name.nil? && @police_cinq_million.client_info_cinq.id.nil? %>
@@ -38,7 +37,7 @@
       <% end %>
     </div>
     <div class="card-content">
-      <h3>Informations complémentaires client</h3>
+      <h3><%= t 'nbi_cinq_un.new.title2' %></h3>
       <% if !@police_cinq_million.client_info_cinq.name.nil? && @police_cinq_million.client_info_cinq.id.nil? %>
       <%= render 'client_info_cinqs/new' %>
       <% end %>
@@ -49,6 +48,7 @@
     </div>
     <% end %>
   </div>
+
   <div id="police-second-rang" class="card-info">
     <div class="number">
       <% if !@police_cinq_million.client_info_cinq.name.nil? && !@police_cinq_million.client_info_cinq.id.nil? %>
@@ -65,13 +65,13 @@
           <tr class='ligne-1'>
             <td style="width: 50%;"></td>
             <td style="width: 40%;" class="option1">
-              <p class="titre-tableau-1">Garantie de base</p>
+              <p class="titre-tableau-1"><%= t 'nbi_cinq_un.new.table_titre1' %></p>
             </td>
             <td style="width: 10%;" class=" option2">
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
-            <td class="darkk-blue">Client garanti:</td>
+            <td class="darkk-blue"><%= t 'nbi_cinq_un.new.table0' %>:</td>
             <td class="option1 darkk-blue">
               <% unless @nbi_cinq_un.client_name.nil? %>
               <%= @information[:client_name] %>
@@ -81,7 +81,7 @@
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
-            <td class="darkk-blue">Grade de risque:</td>
+            <td class="darkk-blue"><%= t 'nbi_cinq_un.new.table1' %>:</td>
             <td class="option1 darkk-blue">
               <% unless @nbi_cinq_un.client_name.nil? %>
               <%= @information[:grade] %>
@@ -91,7 +91,7 @@
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
-            <td class="darkk-blue">Montant de la perte garantie:</td>
+            <td class="darkk-blue"><%= t 'nbi_cinq_un.new.table2' %>:</td>
             <td class="option1 darkk-blue">
               <% unless @nbi_cinq_un.client_name.nil? %>
               <%= number_to_currency(@information[:montant_perte_base] , unit: :€, format: "%n %u", precision: 0)%>
@@ -101,7 +101,7 @@
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
-            <td class="darkk-blue">Quotité d'indemnisation:</td>
+            <td class="darkk-blue"><%= t 'nbi_cinq_un.new.table3' %>:</td>
             <td class="option1 darkk-blue">
               <% unless @nbi_cinq_un.client_name.nil? %>
               <%= number_to_percentage(@information[:quotite_base] * 100, precision: 0)  %>
@@ -111,7 +111,7 @@
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
-            <td class="darkk-blue">Durée de la garantie:</td>
+            <td class="darkk-blue"><%= t 'nbi_cinq_un.new.table4' %>:</td>
             <td class="option1 darkk-blue">
               <% unless @nbi_cinq_un.client_name.nil? %>
               <%= @information[:duree_base]   %>
@@ -121,7 +121,7 @@
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
-            <td class="darkk-blue">Montant forfaitaire de la prime et coût de police ht pour la durée de la garantie:</td>
+            <td class="darkk-blue"><%= t 'nbi_cinq_un.new.table5' %>:</td>
             <td class="option1 darkk-blue">
               <% unless @nbi_cinq_un.client_name.nil? %>
               <%= number_to_currency(@information[:montant_forfait_base] , unit: :€, format: "%n %u", precision: 0)   %>
@@ -132,7 +132,7 @@
           </tr>
           <tr>
             <td class="darkk-blue">
-              Choisir cette garantie:
+              <%= t 'nbi_cinq_un.new.table6' %>:
             </td>
             <td class="option2 ">
               <% unless @nbi_cinq_un.client_name.nil? %>
@@ -145,7 +145,7 @@
               <%= f.input :montant_forfait_base, :as => :hidden, :input_html => { :value => @information[:montant_perte_complementaire]} %>
               <%= f.input :montant_perte_complementaire, :as => :hidden, :input_html => { :value => 0} %>
               <%= f.input :montant_forfait_complemmentaire, :as => :hidden, :input_html => { :value => 0} %>
-              <%= f.submit 'Validez', class:'btn btn-primary my-2' %>
+              <%= f.submit "#{t 'button_valider'}", class:'btn btn-primary my-2' %>
               <%end%>
               <%end%>
             </td>
@@ -154,11 +154,11 @@
           <tr>
             <td></td>
             <td style="width: 30%;" class=" option2">
-              <p class="titre-tableau-2">Garantie complémentaire</p>
+              <p class="titre-tableau-2"><%= t 'nbi_cinq_un.new.table_titre2' %></p>
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
-            <td class="darkk-blue">Montant complémentaire de la perte garantie:</td>
+            <td class="darkk-blue"><%= t 'nbi_cinq_un.new.table7' %>:</td>
             <td class="option1 darkk-blue">
               <% unless @nbi_cinq_un.client_name.nil? %>
               <%= number_to_currency(@information[:montant_perte_complementaire] , unit: :€, format: "%n %u", precision: 0)  %>
@@ -168,7 +168,7 @@
             </td>
           </tr>
           <tr class='ligne-2-2-first'>
-            <td class="darkk-blue">Montant forfaitaire de la prime et coût de la police HT pour la durée de garantie complémentaire</td>
+            <td class="darkk-blue"><%= t 'nbi_cinq_un.new.table8' %></td>
             <td class="option1 darkk-blue">
               <% unless @nbi_cinq_un.client_name.nil? %>
               <%= number_to_currency(@information[:montant_forfait_complemmentaire]  , unit: :€, format: "%n %u", precision: 0)  %>
@@ -199,7 +199,7 @@
           </tr>
           <tr class='mt-2'>
             <td class="darkk-blue">
-              Choisir cette garantie:
+              <%= t 'nbi_cinq_un.new.table6' %>:
             </td>
             <td class="option2 center_table">
               <% unless @nbi_cinq_un.client_name.nil? %>
@@ -212,7 +212,7 @@
               <%= f.input :montant_forfait_base, :as => :hidden, :input_html => { :value => @information[:montant_perte_complementaire]} %>
               <%= f.input :montant_perte_complementaire, :as => :hidden, :input_html => { :value => @information[:montant_forfait_base]} %>
               <%= f.input :montant_forfait_complemmentaire, :as => :hidden, :input_html => { :value => @information[:montant_forfait_complemmentaire]} %>
-              <%= f.submit 'Validez', class:'btn btn-primary mt-2' %>
+              <%= f.submit "#{t 'button_valider'}", class:'btn btn-primary mt-2' %>
               <%end%>
               <%end%>
             </td>
@@ -224,3 +224,5 @@
     </div>
   </div>
 </div>
+
+manque deux traduction ( les deux derniere)

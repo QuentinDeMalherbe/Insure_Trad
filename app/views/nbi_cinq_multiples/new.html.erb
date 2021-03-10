@@ -1,25 +1,59 @@
+<div class="avancement">
+  <div class="position-avancement-actif inline-text">
+    <div class="avancement-number">
+      <p class=" a-faire-number">1</p>
+    </div>
+    <p>
+      <%= t 'avancement.title1' %> <br><%= t 'avancement.title1_suite' %>
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" actif-number">2</p>
+    </div>
+    <p>
+      <%= t 'avancement.title2' %>
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" actif-number">3</p>
+    </div>
+    <p>
+      <%= t 'avancement.title3' %>
+    </p>
+  </div>
+  <div class="position-avancement-a-faire inline-text">
+    <div class="avancement-number">
+      <p class=" actif-number">4</p>
+    </div>
+    <p>
+      <%= t 'avancement.title4' %><br><%= t 'avancement.title4_suite' %>
+    </p>
+  </div>
+</div>
 <div class="container">
   <table class="mb-4 center" style="width: 100%;">
     <tbody style="height:'0%;">
       <tr>
         <td colspan="4">
-          <h3 class='my-2'>1. Garantie automatique sur tout impayé sans déclaration ni autorisation préalable</h3>
+          <h3 class='my-2'><%= t 'nbi_cinq_multiple.new.title1' %></h3>
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue" style='width: 60%'>Impayé garanti maximum sur tout client non gradé:</td>
+        <td class="darkk-blue" style='width: 60%'><%= t 'nbi_cinq_multiple.new.table1' %>:</td>
         <td class="option1 darkk-blue" colspan="3">
           <%= number_to_currency(@information[:impaye] , unit: :€, format: "%n %u", precision: 0)%>
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue">Cumul des impayés garantis sur vos clients non gradés ou ayant obtenu un grade de risque 8:</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table2' %>:</td>
         <td class="option1 darkk-blue" colspan=" 3">
           <%= number_to_currency(@information[:cumul_impaye] , unit: :€, format: "%n %u", precision: 0)%>
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue">Règles de calcul indemnitaire:</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table3' %>:</td>
         <td class="option1 darkk-blue">
           Option 1
         </td>
@@ -31,7 +65,7 @@
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue">Franchise cumulée appliquée sur le total du ou des premier(s) impayé(s) garantis:</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table4' %>:</td>
         <td class="option1 darkk-blue">
           <%=   number_to_currency(@information[:franchise_option_1] , unit: :€, format: "%n %u", precision: 0)%>
         </td>
@@ -44,46 +78,46 @@
       </tr>
       <tr>
         <td colspan="4">
-          <h3 class='my-2'>2. Garantie automatique après déclaration et autorisation préalable</h3>
+          <h3 class='my-2'><%= t 'nbi_cinq_multiple.new.title2' %></h3>
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue">Garantie automatique sur tout Client ayant obtenu au préalable un Grade de Risque de 1 à 5 d'InsureTrade Service:</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table5' %>:</td>
         <td class="option1 darkk-blue" colspan="3">
           <%= number_to_currency(@information[:garantie_1_5] , unit: :€, format: "%n %u", precision: 0)%>
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue">Garantie automatique sur tout Client ayant obtenu au préalable un Grade de Risque de 6 d'InsureTrade Service:</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table6' %>:</td>
         <td class="option1 darkk-blue" colspan="3">
           <%= number_to_currency(@information[:garantie_6] , unit: :€, format: "%n %u", precision: 0)%>
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue">Garantie automatique sur tout Client ayant obtenu au préalable un Grade de Risque de 7 d'InsureTrade Service:</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table7' %>:</td>
         <td class="option1 darkk-blue" colspan="3">
           <%= number_to_currency(@information[:garantie_7] , unit: :€, format: "%n %u", precision: 0)%>
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue">Nombre de Grade de Risques pouvant être demandés sans supplément:</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table8' %>:</td>
         <td class="option1 darkk-blue" colspan="3">
           <%= @information[:nombre_grade]%>
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue">Supplément HT payable pour tout Grade de Risques additionnel:</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table9' %>:</td>
         <td class="option1 darkk-blue" colspan="3">
           25 €
         </td>
       </tr>
       <tr>
         <td colspan="4">
-          <h3 class='my-2'>Garantie 1. + 2. SUR l'ENSEMBLE DU PORTEFEUILLE ClIENTS </h3>
+          <h3 class='my-2'><%= t 'nbi_cinq_multiple.new.title3' %> </h3>
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue">Plafond annuel de garantie de la police InsureTrade:</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table10' %>:</td>
         <td class="option1 darkk-blue" colspan="3">
           <%= number_to_currency(@information[:plafond_annuel], unit: :€, format: "%n %u", precision: 0)%>
         </td>
@@ -101,7 +135,7 @@
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue">Prime annuelle forfaitaire Ht</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table11' %></td>
         <td class="option1 darkk-blue">
           <%= number_to_currency( @information[:prime_annuelle_1] , unit: :€, format: "%n %u", precision: 0)%>
         </td>
@@ -113,7 +147,7 @@
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue">Cout annuel de police y inclus frais annexes HT</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table12' %></td>
         <td class="option1 darkk-blue">
           <%= number_to_currency( @information[:cout_police] , unit: :€, format: "%n %u", precision: 0)%>
         </td>
@@ -125,7 +159,7 @@
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue">Minimum de Prime HT et Cout de police HT</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table13' %></td>
         <td class="option1 darkk-blue">
           <%= number_to_currency( @information[:minimum_prime_1] , unit: :€, format: "%n %u", precision: 0)%>
         </td>
@@ -137,7 +171,7 @@
         </td>
       </tr>
       <tr class='ligne-2-2-first'>
-        <td class="darkk-blue">Échéance mensuelle HT sur les 11 mois restants</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table14' %></td>
         <td class="option1 darkk-blue">
           <%= number_to_currency( @information[:echeance_mensuelle_1] , unit: :€, format: "%n %u", precision: 0)%>
         </td>
@@ -149,7 +183,7 @@
         </td>
       </tr>
       <tr class='mt-2'>
-        <td class="darkk-blue">Option retenue</td>
+        <td class="darkk-blue"><%= t 'nbi_cinq_multiple.new.table15' %></td>
         <td class="option2 center_table">
           <%= simple_form_for [@police_cinq_million, @nbi_cimq_multiple ] do |f| %>
           <%= f.input :impaye, :as => :hidden, :input_html => { :value => @information[:impaye]} %>
@@ -164,7 +198,7 @@
           <%= f.input :cout_police, :as => :hidden, :input_html => { :value => @information[:cout_police]} %>
           <%= f.input :minimum_prime, :as => :hidden, :input_html => { :value => @information[:minimum_prime_1]} %>
           <%= f.input :echeance_mensuelle, :as => :hidden, :input_html => { :value => @information[:echeance_mensuelle_1]} %>
-          <%= f.submit 'Validez', class:'btn btn-primary mt-2' %>
+          <%= f.submit "#{t 'button_valider'}", class:'btn btn-primary mt-2' %>
           <%end%>
         </td>
         <td class="option2 center_table">
@@ -181,7 +215,7 @@
           <%= f.input :cout_police, :as => :hidden, :input_html => { :value => @information[:cout_police]} %>
           <%= f.input :minimum_prime, :as => :hidden, :input_html => { :value => @information[:minimum_prime_2]} %>
           <%= f.input :echeance_mensuelle, :as => :hidden, :input_html => { :value => @information[:echeance_mensuelle_2]} %>
-          <%= f.submit 'Validez', class:'btn btn-primary mt-2' %>
+          <%= f.submit "#{t 'button_valider'}", class:'btn btn-primary mt-2' %>
           <%end%>
         </td>
         <td class="option2 center_table">
@@ -198,7 +232,7 @@
           <%= f.input :cout_police, :as => :hidden, :input_html => { :value => @information[:cout_police]} %>
           <%= f.input :minimum_prime, :as => :hidden, :input_html => { :value => @information[:minimum_prime_2]} %>
           <%= f.input :echeance_mensuelle, :as => :hidden, :input_html => { :value => @information[:echeance_mensuelle_2]} %>
-          <%= f.submit 'Validez', class:'btn btn-primary mt-2' %>
+          <%= f.submit "#{t 'button_valider'}", class:'btn btn-primary mt-2' %>
           <%end%>
         </td>
       </tr>
