@@ -85,8 +85,9 @@ en:
   nbi_cinq_un:
     new:
       title1: 'Details of the Buyer to be covered '
-      title1_bis: 'The buyer: '
+      title1_bis: 'The buyer '
       title2: 'Additional Informations'
+      title3: 'Pricing'
       table0: 'Insured Buyer'
       table1: 'Risk Grade'
       table2: 'Primary insured amount'
@@ -130,7 +131,7 @@ en:
       label4: 'Zip code'
       label5: 'City'
       label6: 'Payment terms granted to this Buyer ?'
-      label7: 'How long for your insured have been working with this Buyer ?'
+      label7: 'How long for your insured has been working with this Buyer ?'
       label8: 'How frequently  your insured is working with this Buyer ?'
       label9: 'Payment experience of your Insured with this Buyer ?'
       label10: 'Is your Insured facing any overdue for more than 15 days with this Buyer ?'

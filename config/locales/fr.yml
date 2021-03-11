@@ -56,6 +56,7 @@ fr:
       title1: 'Identification du Client à garantir'
       title1_bis: 'Le client à garantir est'
       title2: 'Informations complémentaires'
+      title3: 'Tarification'
       table0: 'Client garanti'
       table1: 'Grade de risque'
       table2: 'Montant Garanti'
