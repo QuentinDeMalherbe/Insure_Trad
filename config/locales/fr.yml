@@ -47,6 +47,7 @@ fr:
       button: 'Validez'
   police_cinq_million:
     new:
+      title1: "Assurance des Impayés pour les artisans,commerçants, TPE/PMI avec un chiffre d'affaires jusquà 5 millions €"
       label1: "Montant annuel du chiffre d'affaires soumis à InsureTrade ?"
       label2: 'Nombre de clients actifs à garantir ?'
       label3: 'Montant maximum de perte par client à garantir ?'

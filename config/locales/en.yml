@@ -78,6 +78,7 @@ en:
       button: 'Validate'
   police_cinq_million:
     new:
+      title1: "Bad Debts insurance for Smes up to € 5 million turnover"
       label1: "Annual Turnover submitted to InsureTrade ?"
       label2: 'Number of Buyers to be covered ?'
       label3: 'Maximum loss amount on any buyer to be insured ?'
@@ -132,4 +133,4 @@ en:
       label7: 'How long for your insured have been working with this Buyer ?'
       label8: 'How frequently  your insured is working with this Buyer ?'
       label9: 'Payment experience of your Insured with this Buyer ?'
-      label10: 'Is your Insured faced any overdue for more than 15 days with this Buyer ?'
+      label10: 'Is your Insured facing any overdue for more than 15 days with this Buyer ?'

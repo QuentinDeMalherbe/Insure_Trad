@@ -10,7 +10,7 @@ class NbiCinqUnsController < ApplicationController
     @nbi_cinq_un = NbiCinqUn.new
     unless @police_cinq_million.client_name.nil?
       @nbi_cinq_un.client_name = @police_cinq_million.client_name
-      client_creation @police_cinq_million
+      client_creation @police_cinq_million, params["locale"]
       @client_info_cinq.name = @police_cinq_million.client_name
     end
   end
@@ -29,13 +29,13 @@ class NbiCinqUnsController < ApplicationController
   end
 
 
-  def client_creation(police)
+  def client_creation(police, langue)
     @information = {}
     @information[:client_name] = police.client_name
     @information[:grade] = NbiCinqUn::CLIENT_AND_GRADE[police.client_name.to_sym]
     @information[:montant_perte_base] = NbiCinqUn.montant_perte_base(@information[:grade], police)
     @information[:quotite_base] = NbiCinqUn.quotite_base(@information[:grade])
-    @information[:duree_base] = NbiCinqUn.duree_base(@information[:grade])
+    @information[:duree_base] = NbiCinqUn.duree_base(@information[:grade], langue)
     @information[:montant_perte_complementaire] = NbiCinqUn.montant_perte_complementaire(@information[:grade], police)
     @information[:montant_forfait_base] = NbiCinqUn.montant_forfait_base(@information[:grade], police, @information[:montant_perte_base])
     @information[:montant_forfait_complemmentaire] = NbiCinqUn.montant_forfait_complementaire(@information[:grade], police )

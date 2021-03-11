@@ -85,17 +85,45 @@ class NbiCinqUn < ApplicationRecord
     end
   end
 
-  def self.duree_base(grade)
+  def self.duree_base(grade, langue)
+    # quentin pas bon car enregistre des valeurs diff selon les lanquges mais pour le moment ca passe
     case grade
     when 1..3
-      "12 mois sous réserve de votre accord dans les prochains 5 jours ouvrés"
+      if langue == 'fr'
+        "12 mois sous réserve de votre accord dans les prochains 5 jours ouvrés"
+      elsif langue == 'en'
+        "12 months subject to our receipt of your writing binding order within the next 5 business days"
+      else
+        "12 months subject to our receipt of your writing binding order within the next 5 business days"
+      end
     when 4..6
-      "6 mois sous réserve de votre accord dans les prochains 5 jours ouvrés"
+      if langue == 'fr'
+        "6 mois sous réserve de votre accord dans les prochains 5 jours ouvrés"
+      elsif langue == 'en'
+        "6 months subject to our receipt of your writing binding order within the next 5 business days"
+      else
+        "6 months subject to our receipt of your writing binding order within the next 5 business days"
+      end
     when 7
-      "3  mois sous réserve de votre accord dans les prochains 5 jours ouvrés"
+      if langue == 'fr'
+        "3  mois sous réserve de votre accord dans les prochains 5 jours ouvrés"
+      elsif langue == 'en'
+        "3 months subject to our receipt of your writing binding order within the next 5 business days"
+      else
+        "3 months subject to our receipt of your writing binding order within the next 5 business days"
+      end
     else
-      "Grade de risque insuffisant pour accorder une garantie sur ce client"
+      if langue == 'fr'
+        "Grade de risque insuffisant pour accorder une garantie sur ce client"
+      elsif params["locale"] == 'en'
+        "Insufficient risk level to grant a guarantee on this buyer"
+      else
+        "Insufficient risk level to grant a guarantee on this buyer"
+      end
     end
+
+
+
   end
   #j4
   def self.montant_perte_complementaire(grade, police)
