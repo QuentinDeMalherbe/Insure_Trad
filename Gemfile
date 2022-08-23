@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
@@ -32,7 +32,7 @@ gem 'devise'
 
 
 gem 'autoprefixer-rails'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 5.15.1'
 gem 'simple_form'
 gem 'pg_search', '~> 2.3.0'
 gem 'wkhtmltopdf-binary'
@@ -40,6 +40,7 @@ gem 'wicked_pdf'
 gem 'turbolinks_render'
 gem 'rails-i18n'
 gem 'devise-i18n'
+gem 'psych', '< 4'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
