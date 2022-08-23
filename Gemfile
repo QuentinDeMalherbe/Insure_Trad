@@ -42,6 +42,8 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'psych', '< 4'
 gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
