@@ -17,10 +17,12 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+      <%= f.text_field :status, label: false,
+                  value: params[:status], class:'hidden'  %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, t(".sign_up") %>
+      <%= f.button :submit, t(".sign_up"), class: 'btn btn-primary'  %>
     </div>
   <% end %>
 

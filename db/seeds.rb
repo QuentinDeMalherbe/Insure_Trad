@@ -9,7 +9,8 @@
 puts 'Creating user'
     user = User.new(
       email: 'test@test.com',
-      password:'123456'
+      password:'123456',
+      status: 'expert'
     )
     user.save!
 puts 'Creating  6 customers'

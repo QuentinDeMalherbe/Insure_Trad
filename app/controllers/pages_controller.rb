@@ -1,11 +1,17 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [ :home, :intermediaire, :assure]
 
   def home
-    if current_user.nil?
-      redirect_to new_user_session_path
-    else
-      redirect_to customers_path
-    end
+    render layout: "homepage"
+  end
+
+  def intermediaire
+    render layout: "homepage"
+    p current_user
+  end
+
+  def assure
+    render layout: "homepage"
+    p current_user
   end
 end

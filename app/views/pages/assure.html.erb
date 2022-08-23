@@ -1,0 +1,7 @@
+coucou
+<div class="container mt-4">
+  A faire
+  <% if !current_user %>
+    <%= link_to "inscrivez-vous", new_user_registration_path(status: "assure"), class: 'btn btn-primary' %>
+  <% end %>
+</div>
