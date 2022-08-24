@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Insure Trade</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item " >
+        <a class="nav-link" href="#">Mes garanties</a>
+      </li>
+      <li class="nav-item " >
+        <a class="nav-link" href="#">Garantie Click & Cover</a>
+      </li>
+      <li class="nav-item " >
+        <a class="nav-link" href="#">Garantie additionnelle à la carte</a>
+      </li>
+      <li class="nav-item " >
+        <a class="nav-link" href="#">Impayé/Recouvrement</a>
+      </li>
+      <li class="nav-item " >
+        <a class="nav-link" href="#">Sinistre</a>
+      </li>
+      <li class="nav-item " >
+        <a class="nav-link" href="#">Gestion Police</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Mon profil
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <% if current_user %>
+          <% current_user %>
+            <%= link_to "Déconnectez-vous", destroy_user_session_path, class: "nav-link", method: :delete%>
+          <% else %>
+            <%= link_to "Connectez-vous", new_user_session_path, class: "nav-link" %>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

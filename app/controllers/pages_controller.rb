@@ -2,7 +2,13 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :intermediaire, :assure]
 
   def home
-    render layout: "homepage"
+    if current_user && current_user.status == "expert"
+      redirect_to profiles_intermediaire_home_path
+    elsif current_user && current_user.status == "assure"
+      redirect_to profiles_insured_home_path
+    else
+      render layout: "homepage"
+    end
   end
 
   def intermediaire
