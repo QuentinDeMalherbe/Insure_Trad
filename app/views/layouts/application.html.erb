@@ -12,7 +12,11 @@
   </head>
 
   <body>
-    <%= render "shared/profiles_navbar" %>
+    <% if current_user.status == 'expert' %>
+      <%= render "shared/expert_navbar" %>
+    <% elsif current_user.status == 'assure' %>
+      <%= render "shared/assure_navbar" %>
+    <% end %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 

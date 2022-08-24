@@ -25,6 +25,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource_or_scope)
+    p "on est la "
     if current_user.status == "expert"
       profiles_intermediaire_home_path
     elsif current_user.status == "assure"
