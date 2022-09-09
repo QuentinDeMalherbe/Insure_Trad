@@ -35,7 +35,6 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'simple_form'
 gem 'pg_search', '~> 2.3.0'
-gem "wkhtmltopdf-binary"
 gem 'wkhtmltopdf-heroku', '2.12.6.1.pre.jammy'
 gem 'wicked_pdf'
 gem 'turbolinks_render'
@@ -47,6 +46,7 @@ gem 'net-imap', require: false
 gem 'net-pop', require: false
 
 group :development, :test do  gem 'pry-byebug'
+  gem "wkhtmltopdf-binary"
   gem 'pry-rails'
   gem 'dotenv-rails'
 
