@@ -12,7 +12,8 @@ def create
   if @primary_contact.save
     # redirect_to new_customer_contract_path(@customer, @contract)
     # redirect_to controller: 'contracts', action: 'new', customer_id: @customer.id
-    redirect_to @customer
+    # redirect_to @customer
+    redirect_to new_customer_contract_path(@customer)
   else
     render 'new'
   end

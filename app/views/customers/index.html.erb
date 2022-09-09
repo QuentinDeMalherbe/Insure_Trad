@@ -17,7 +17,6 @@ commentaire : ici on peut faire creation nouveau client
   %>
   <%= submit_tag "#{t('customer.index.button1' )}", class: "btn btn-primary my-2" %>
   <% end %>
-  <% if (!(@customers == Customer.all)) %>
   <div class="row">
     <div class="col-sm-8 offset-sm-2">
       <div id="customers">
@@ -32,6 +31,4 @@ commentaire : ici on peut faire creation nouveau client
       </div>
     </div>
   </div>
-  <% else %>
-  <% end %>
 </div>

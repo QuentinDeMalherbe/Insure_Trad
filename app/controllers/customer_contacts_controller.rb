@@ -6,15 +6,25 @@ class CustomerContactsController < ApplicationController
   end
 
   def create
-    @insure_trad_supp = InsureTradSupp.find(params[:insure_trad_supp_id])
     @customer_contact = CustomerContact.new(customers_contact_params)
-    @customer_contact.insure_trad_supp = @insure_trad_supp
-    @customer = @insure_trad_supp.contract.customer
+    if params[:insure_trad_supp_id]
+      @insure_trad_supp = InsureTradSupp.find(params[:insure_trad_supp_id])
+      @customer_contact.insure_trad_supp = @insure_trad_supp
+      @customer = @insure_trad_supp.contract.customer
+    elsif
+      @police_cinq_million = PoliceCinqMillion.find(params[:police_cinq_million_id])
+      @customer_contact.police_cinq_million = @police_cinq_million
+      @customer = @police_cinq_million.contract.customer
+    end
     @primary_contact = PrimaryContact.where(customer_id: @customer.id).last
-    if @customer_contact.save
+    if params[:insure_trad_supp_id] && @customer_contact.save
       redirect_to @insure_trad_supp
-    else
-    render 'insure_trad_supps/show'
+    elsif params[:insure_trad_supp_id]
+      render 'insure_trad_supps/show'
+    elsif params[:police_cinq_million_id] && @customer_contact.save
+      redirect_to @police_cinq_million
+    elsif
+      render 'nbi_cinq_multiples/show'
     end
   end
 

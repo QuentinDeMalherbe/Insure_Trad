@@ -27,11 +27,13 @@ Rails.application.routes.draw do
           resources :nbi_cinq_uns, only:[:new, :create, :edit, :update, :show]
           resources :nbi_cinq_multiples, only:[:new, :create, :edit, :update, :show]
           resources :client_info_cinqs, only:[:new, :create, :edit, :update, :show]
+          resources :customer_contacts, only:[:new, :create, :edit, :update]
         end
       end
     end
 
     get '/insure_trad_supps/:id/createpdf', to: 'insure_trad_supps#creationpdf', as: 'creation'
+    get '/police_cinq_millions/:id/createpdf', to: 'police_cinq_millions#creationpdf', as: 'police_creation'
     get '/police_xols/:id/createpdf', to: 'police_xols#creationpdf', as: 'creation_police'
     get 'police_xols/:id/montant_important', to: 'police_xols#montant_important', as: 'montant_important'
     # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

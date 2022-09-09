@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_23_144105) do
+ActiveRecord::Schema.define(version: 2022_08_26_143447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,9 @@ ActiveRecord::Schema.define(version: 2022_08_23_144105) do
     t.bigint "insure_trad_supp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "police_cinq_million_id"
     t.index ["insure_trad_supp_id"], name: "index_customer_contacts_on_insure_trad_supp_id"
+    t.index ["police_cinq_million_id"], name: "index_customer_contacts_on_police_cinq_million_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -338,6 +340,7 @@ ActiveRecord::Schema.define(version: 2022_08_23_144105) do
   add_foreign_key "contracts", "customers"
   add_foreign_key "contracts", "users"
   add_foreign_key "customer_contacts", "insure_trad_supps"
+  add_foreign_key "customer_contacts", "police_cinq_millions"
   add_foreign_key "customers_infos", "insure_trad_supps"
   add_foreign_key "gestions", "police_xols"
   add_foreign_key "historic_losses_as", "police_xols"

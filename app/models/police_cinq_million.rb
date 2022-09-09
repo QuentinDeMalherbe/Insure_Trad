@@ -3,6 +3,7 @@ class PoliceCinqMillion < ApplicationRecord
   has_one :nbi_cinq_un
   has_one :nbi_cinq_multiple
   has_one :client_info_cinq
+  has_one :customer_contact
   CA = [
     [100_000, '< 100.000', '< 100.000'],
     [250_000, '100.001 à 250.000', '100.001 to 250.000'],

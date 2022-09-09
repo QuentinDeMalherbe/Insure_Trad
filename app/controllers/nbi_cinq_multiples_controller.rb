@@ -2,6 +2,7 @@ class NbiCinqMultiplesController < ApplicationController
   def new
     @police_cinq_million = PoliceCinqMillion.find(params[:police_cinq_million_id])
     @nbi_cimq_multiple = NbiCinqMultiple.new
+    p params
     client_creation @police_cinq_million
   end
 
@@ -19,7 +20,18 @@ class NbiCinqMultiplesController < ApplicationController
   end
 
   def show
-    @nbi_cimq_multiple = NbiCinqMultiple.find(params[:id])
+    @nbi_cinq_multiple = NbiCinqMultiple.find(params[:id])
+    @police_cinq_million = @nbi_cinq_multiple.police_cinq_million
+    if @police_cinq_million.customer_contact
+      @customer_contact = CustomerContact.find(@police_cinq_million.customer_contact.id)
+    else
+      @customer_contact = CustomerContact.new
+      @customer = @police_cinq_million.contract.customer
+      @primary_contact = PrimaryContact.where(customer_id: @customer.id).last
+      #  pas optimal mais  a reflechir
+      # @customer_contact.police_cinq_million = @nbi_cinq_multiple
+    end
+
   end
 
 

@@ -24,6 +24,23 @@ class PoliceCinqMillionsController < ApplicationController
     end
   end
 
+  def show
+    @police_cinq_million = PoliceCinqMillion.find(params[:id])
+  end
+
+  def creationpdf
+    @police_cinq_million = PoliceCinqMillion.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Contrat",
+               template: "police_cinq_millions/creationpdf.html.erb",
+               layout: 'pdf.html',
+               formats: :html, encoding: 'utf8'
+      end
+    end
+  end
+
 
   private
 
