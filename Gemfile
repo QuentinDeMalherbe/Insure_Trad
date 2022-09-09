@@ -45,6 +45,11 @@ gem 'net-smtp', require: false
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 
+group :production do
+  gem 'wkhtmltopdf-heroku', '2.12.6.1.pre.jammy'
+  gem 'wkhtmltopdf-binary'
+end
+
 group :development, :test do  gem 'pry-byebug'
   gem "wkhtmltopdf-binary"
   gem 'pry-rails'
