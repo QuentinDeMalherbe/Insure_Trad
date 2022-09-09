@@ -25,3 +25,7 @@ WickedPdf.config = {
   #
   # use_xvfb: true,
 }
+# config/initializers/wicked_pdf.rb
+WickedPdf.config.merge!({
+  layout: "pdf.html.erb",
+})
