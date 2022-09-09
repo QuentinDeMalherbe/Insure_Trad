@@ -35,8 +35,9 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'simple_form'
 gem 'pg_search', '~> 2.3.0'
-gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
+gem "wkhtmltopdf-binary", group: :development
+gem "wkhtmltopdf-heroku", group: :production
 gem 'turbolinks_render'
 gem 'rails-i18n'
 gem 'devise-i18n'
