@@ -1,8 +1,8 @@
 class CustomerContactsController < ApplicationController
   def new
-    @insure_trad_supp = InsureTradSupp.find(params[:insure_trad_supp_id])
     @customer_contact = CustomerContact.new
-    @customer_contact.insure_trad_supp = @insure_trad_supp
+    # @insure_trad_supp = InsureTradSupp.find(params[:insure_trad_supp_id])
+    # @customer_contact.insure_trad_supp = @insure_trad_supp
   end
 
   def create
@@ -12,6 +12,11 @@ class CustomerContactsController < ApplicationController
       @customer_contact.insure_trad_supp = @insure_trad_supp
       @customer = @insure_trad_supp.contract.customer
     elsif
+      p '-----------'
+      p params
+      p '-----------'
+      p params[:police_cinq_million_id]
+      p '----------'
       @police_cinq_million = PoliceCinqMillion.find(params[:police_cinq_million_id])
       @customer_contact.police_cinq_million = @police_cinq_million
       @customer = @police_cinq_million.contract.customer
