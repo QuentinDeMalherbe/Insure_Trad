@@ -17,9 +17,15 @@
     <% elsif current_user.status == 'assure' %>
       <%= render "shared/assure_navbar" %>
     <% end %>
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
-    <%= yield %>
+    <% if current_user.status == 'expert'%>
+      <div class=' d-flex'>
+        <%= render "shared/expert_sidebar" %>
+        <%= yield %>
+      </div>
+    <% elsif current_user.status == 'assure'  %>
+      <%= render "shared/assure_sidebar" %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>
