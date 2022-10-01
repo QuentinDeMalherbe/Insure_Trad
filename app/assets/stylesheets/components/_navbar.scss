@@ -14,3 +14,23 @@
   width: 100px;
   padding: 0 8px 2px 2px;
 }
+
+.navbar {
+  background: $dark-blue !important;
+  padding: 16px 32px 16px 24px;
+  color: white;
+  justify-content: space-between !important;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.navbar-brand{
+  color: white !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
