@@ -1,0 +1,22 @@
+.sidebar {
+  width: 110px;
+  flex-shrink: 0;
+  color: white;
+  text-align: center;
+}
+
+.sidebar-button {
+  :hover {
+    background-color: $primary;
+  }
+}
+
+.sidebar-button div {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+}
+
+.sidebar-active {
+  background-color: $primary !important;
+}

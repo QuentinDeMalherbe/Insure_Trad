@@ -1,38 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Insure Trade</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item " >
-        <a class="nav-link" href="#">Tarification/Souscription</a>
-      </li>
-      <li class="nav-item " >
-        <a class="nav-link" href="#">Prospects</a>
-      </li>
-      <li class="nav-item " >
-        <a class="nav-link" href="#">Assurés/Polices</a>
-      </li>
-      <li class="nav-item " >
-        <a class="nav-link" href="#">Demande de Grade</a>
-      </li>
-      <li class="nav-item " >
-        <a class="nav-link" href="#">Gestion Comptable</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Mon profil
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <% if current_user %>
-          <% current_user %>
-            <%= link_to "Déconnectez-vous", destroy_user_session_path, class: "nav-link", method: :delete%>
-          <% else %>
-            <%= link_to "Connectez-vous", new_user_session_path, class: "nav-link" %>
-          <% end %>
-        </div>
-      </li>
+<nav class="navbar  navbar-app">
+  <%= link_to root_path, class: "navbar-brand navbar-brand-app" do %>
+    <div class=" div-logo bg-dark-blue h-100 border-0">
+      <%= image_tag "logo-2-small.png", size: "57*55", class: 'logo-app' %>
+    </div>
+  <% end %>
+  <div class=" justify-content-end bg-primary h-100 d-flex justify-content-center align-items-center" id="navbarNavDropdown">
+      <div class="mx-4 " >
+        <p class='m-0'><%= current_user.full_name %></p>
+        <p class="m-0 font-weight-bold">Gérer mon compte</p>
+      </div>
+      <div class="mx-4 ">
+        <%= link_to  destroy_user_session_path, method: :delete do%>
+          <%= render "shared/svg/fi_power.svg" %>
+        <% end %>
+      </div>
     </ul>
   </div>
 </nav>

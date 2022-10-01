@@ -13,12 +13,8 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Devis indicatif</a>
       </li>
-      <li class="nav-item <%= params[:action] == 'intermediaire' ? "active" : ""  %>" >
-        <%= link_to "Espace intermédiaire", pages_intermediaire_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item <%= params[:action] == 'assure' ? "active" : ""  %>">
-        <%= link_to "Espace Assuré", pages_assure_path, class: "nav-link" %>
-      </li>
+
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Qui sommes-nous?
@@ -29,17 +25,36 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
+
+      <li class="nav-item mx-4" >
+        <%= link_to "Devenir partenaire", pages_intermediaire_path, class: "btn btn-primary btn-small" %>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Mon profil
+         Langues
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <% if current_user %>
-          <% current_user %>
-            <%= link_to "Déconnectez-vous", destroy_user_session_path, class: "nav-link", method: :delete%>
-          <% else %>
-            <%= link_to "Connectez-vous", new_user_session_path, class: "nav-link" %>
+          <%= link_to  root_path(locale: :en), class:"dropdown-item" do %>
+            <div class="d-flex">
+              <%= image_tag  "united-kingdom-flag-wave-xs.png" , class: 'logo pt-1' %>
+              <p class='ml-2 py-0'>English</p>
+            </div>
           <% end %>
+
+          <%= link_to  root_path(locale: :fr), class:"dropdown-item" do %>
+            <div class="d-flex">
+              <%= image_tag  "france-flag-wave-xs.png" , class: 'logo pt-1'%>
+              <p class='ml-2 pb-0'>Français</p>
+            </div>
+          <% end %>
+
+          <%= link_to  root_path(locale: :es), class:"dropdown-item" do %>
+            <div class="d-flex">
+              <%= image_tag  "spain-flag-wave-xs.png" , class: 'logo pt-1' %>
+              <p class='ml-2 pb-0'>Espanol</p>
+            </div>
+          <% end %>
+
         </div>
       </li>
     </ul>

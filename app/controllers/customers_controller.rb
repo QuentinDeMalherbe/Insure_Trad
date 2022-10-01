@@ -1,6 +1,5 @@
 class CustomersController < ApplicationController
   def index
-    # mettre un pgsearch ici
     @customers = Customer.all
     if params[:search].present?
       @customers = @customers.search_by_compagny_name_and_siret(params[:search])

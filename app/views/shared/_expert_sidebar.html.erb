@@ -1,0 +1,37 @@
+<div class= 'sidebar bg-dark-blue h-screen'>
+  <%= link_to  customers_path, class: "sidebar-button " do %>
+    <div class= <%= params[:controller] == "customers" ? "sidebar-active" : "" %> >
+      <%= render "shared/svg/fi_tarif.svg" %>
+      <p class="mt-1">Tarifs</p>
+    </div>
+  <% end %>
+
+  <%= link_to  root_path, class: 'sidebar-button '  do%>
+    <div >
+      <%= render "shared/svg/2.svg" %>
+      <p class="mt-1">Contacts</p>
+    </div>
+  <% end %>
+
+  <%= link_to  root_path, class: 'sidebar-button' do %>
+    <div >
+      <%= render "shared/svg/3.svg" %>
+      <p class="mt-1">Assurances<br>Polices</p>
+    </div>
+  <% end %>
+
+  <%= link_to  root_path, class: 'sidebar-button' do %>
+    <div >
+      <%= render "shared/svg/fi_calcul.svg" %>
+      <p class="mt-1">Gestion<br>comptable</p>
+    </div>
+  <% end %>
+
+  <%= link_to  root_path, class: 'sidebar-button' do %>
+    <div >
+      <%= render "shared/svg/fi_help-circle.svg" %>
+      <p class="mt-1">Aide</p>
+    </div>
+  <% end %>
+
+</div>
