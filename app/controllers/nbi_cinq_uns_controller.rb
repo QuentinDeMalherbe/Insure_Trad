@@ -1,5 +1,8 @@
 class NbiCinqUnsController < ApplicationController
+
   def new
+    @avancement = true
+    @step = 2
     @police_cinq_million = PoliceCinqMillion.find(params[:police_cinq_million_id])
     if @police_cinq_million.client_info_cinq
       @client_info_cinq = ClientInfoCinq.find(@police_cinq_million.client_info_cinq.id)
@@ -26,6 +29,11 @@ class NbiCinqUnsController < ApplicationController
       flash[:error] = "Something went wrong"
       render 'new'
     end
+  end
+
+  def show
+    @avancement = true
+    @step = 4
   end
 
 

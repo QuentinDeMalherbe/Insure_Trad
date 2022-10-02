@@ -4,6 +4,9 @@
       <%= image_tag "logo-2-small.png", size: "57*55", class: 'logo-app' %>
     </div>
   <% end %>
+  <% if @avancement == true %>
+    <%= render "shared/avancement" %>
+  <% end %>
   <div class=" justify-content-end bg-primary h-100 d-flex justify-content-center align-items-center" id="navbarNavDropdown">
       <div class="mx-4 " >
         <p class='m-0'><%= current_user.full_name %></p>

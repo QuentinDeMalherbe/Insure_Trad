@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="title">
-    <h2><%= t 'customer.edit.title1' %></h2>
+  <div class='mb-4'>
+    <h2 class="title pb-0"><%= t 'customer.edit.title1' %></h2>
     <p><%= t 'customer.edit.p1' %></p>
   </div>
   <%= simple_form_for(@customer) do |f| %>
@@ -18,7 +18,9 @@
   <%= f.input :creation_date, label: "#{t 'customer.edit.label8' }"  %>
   <p><%= t 'customer.edit.p2' %>
   </p>
-  <%= f.submit "#{t 'customer.edit.submit1' }" , class: 'btn btn-primary'  %>
+  <div class="d-flex justify-content-center">
+    <%= f.submit "#{t 'customer.edit.submit1' }" , class: 'btn btn-primary ' %>
+  </div>
   <%# probleme de boutton avec simple_form prend pas en compte la class peut etre change de simple avec tag par exemple ( cf index customers) %>
   <% end %>
 </div>

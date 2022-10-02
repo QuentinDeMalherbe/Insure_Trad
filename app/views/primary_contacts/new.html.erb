@@ -1,8 +1,7 @@
 <div class="container">
-  <p>
-    <%= t 'primary_contact.new.title1' %>
-    <br><em><%= t 'primary_contact.new.title1_suite' %></em>
-  </p>
+  <div class='mb-4'>
+    <h2 class="title pb-0">Détails de votre interlocuteur.</h2>
+  </div>
   <%= simple_form_for([@customer, @primary_contact]) do |f| %>
   <div class="contact">
     <div class="inline">

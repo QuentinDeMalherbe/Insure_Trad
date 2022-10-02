@@ -17,11 +17,11 @@
   <%= f.input :zip_code , label: "#{t 'client_info_cinq.new.label4'}"%>
   <%= f.input :city , label: "#{t 'client_info_cinq.new.label5'}"%>
 </div>
-<%= f.input :terme_paiement , label: "#{t 'client_info_cinq.new.label6'}", collection: ClientInfoCinq::PAIEMENT, label_method: langage, legend_tag: false  %>
-<%= f.input :anciennete , label: "#{t 'client_info_cinq.new.label7'}", collection: ClientInfoCinq::ANCIENNETE, label_method: langage, legend_tag: false  %>
-<%= f.input :regularite , label: "#{t 'client_info_cinq.new.label8'}", collection: ClientInfoCinq::REGULARITE, label_method: langage, legend_tag: false %>
-<%= f.input :experience , label: "#{t 'client_info_cinq.new.label9'}", collection: ClientInfoCinq::EXPERIENCE, label_method: langage, legend_tag: false  %>
-<%= f.input :facture_impayee , label: "#{t 'client_info_cinq.new.label10'}", collection: ClientInfoCinq::OUINON , label_method: langage, legend_tag: false %>
+<%= f.input :terme_paiement , label: "#{t 'client_info_cinq.new.label6'}", collection: ClientInfoCinq::PAIEMENT, label_method: langage, legend_tag: false , input_html: { class: 'form-select'} %>
+<%= f.input :anciennete , label: "#{t 'client_info_cinq.new.label7'}", collection: ClientInfoCinq::ANCIENNETE, label_method: langage, legend_tag: false , input_html: { class: 'form-select'} %>
+<%= f.input :regularite , label: "#{t 'client_info_cinq.new.label8'}", collection: ClientInfoCinq::REGULARITE, label_method: langage, legend_tag: false , input_html: { class: 'form-select'}%>
+<%= f.input :experience , label: "#{t 'client_info_cinq.new.label9'}", collection: ClientInfoCinq::EXPERIENCE, label_method: langage, legend_tag: false , input_html: { class: 'form-select'} %>
+<%= f.input :facture_impayee , label: "#{t 'client_info_cinq.new.label10'}", collection: ClientInfoCinq::OUINON , label_method: langage, legend_tag: false , input_html: { class: 'form-select'}%>
 <%= f.submit "#{t 'button_valider'}", class:'btn btn-primary mb-2', id:'btn-police' %>
 <% end %>
 

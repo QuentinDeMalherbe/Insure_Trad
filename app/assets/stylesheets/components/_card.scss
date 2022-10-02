@@ -10,13 +10,17 @@ a {
 }
 
 .card {
-  background-color: $primary;
+  background-color: white;
+  border: 1px solid $dark-blue;
+  color: $dark-blue;
   border-radius: 10px;
   padding: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  padding-left: 24px;
   &:hover {
-    background-color: #0982f8;
-    color: white;
+    background-color: #50C0C71A;
+    color: $primary;
+    border: 1px solid $primary;
   }
 }
 

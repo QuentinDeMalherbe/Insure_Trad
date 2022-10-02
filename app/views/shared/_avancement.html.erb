@@ -1,33 +1,34 @@
 <div class="avancement">
-  <div class="position-avancement-realise inline-text">
-    <i class="fas fa-check-circle tick"></i>
-    <p>
-      Choix de la <br>police
-    </p>
-  </div>
-  <div class="position-avancement-actif inline-text">
+  <div class=" <%= @step == 1 ?  "position-avancement-actif" : "position-avancement-a-faire" %>  d-flex">
     <div class="avancement-number">
-      <p class=" actif-number">2</p>
+      <p class=" actif-number mr-2">1.</p>
     </div>
     <p>
-      Tarification
+      <%= t 'avancement.title1' %> <%= t 'avancement.title1_suite' %>
     </p>
   </div>
-  <div class="position-avancement-a-faire inline-text">
+  <div class="<%= @step == 2 ?  "position-avancement-actif" : "position-avancement-a-faire" %> d-flex">
     <div class="avancement-number">
-      <p class=" actif-number">3</p>
+      <p class=" a-faire-number mr-2">2.</p>
     </div>
     <p>
-      Information <br>complémentaires
+      <%= t 'avancement.title2' %>
     </p>
   </div>
-  <div class="position-avancement-a-faire inline-text">
+  <div class="<%= @step == 3 ?  "position-avancement-actif" : "position-avancement-a-faire" %> d-flex">
     <div class="avancement-number">
-      <p class=" a-faire-number">4</p>
+      <p class=" a-faire-number mr-2">3.</p>
     </div>
     <p>
-      Création <br>police
+      <%= t 'avancement.title3' %>
+    </p>
+  </div>
+  <div class="<%= @step == 4 ?  "position-avancement-actif" : "position-avancement-a-faire" %> d-flex">
+    <div class="avancement-number">
+      <p class=" a-faire-number mr-2">4.</p>
+    </div>
+    <p>
+      <%= t 'avancement.title4' %> <%= t 'avancement.title4_suite' %>
     </p>
   </div>
 </div>
-

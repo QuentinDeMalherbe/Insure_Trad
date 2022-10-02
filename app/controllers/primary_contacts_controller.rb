@@ -1,5 +1,7 @@
 class PrimaryContactsController < ApplicationController
 def new
+  @avancement = true
+  @step = 1
   @customer = Customer.find(params[:customer_id])
   @primary_contact = PrimaryContact.new
 end
