@@ -5,26 +5,25 @@ commentaire : ici on peut faire creation nouveau client
 =end%>
 
 <div class="container">
-  <div class="title">
-    <h2><%= t 'customer.index.title1' %></h2>
-    <p> <%= t 'customer.index.p1' %></p>
-  </div>
+  <h2 class="title text-center">Rechercher l'Assuré</h2>
   <%= form_tag customers_path, method: :get do %>
-  <%= text_field_tag :search,
-      params[:search],
-      class: "form-control",
-      placeholder: "#{t('customer.index.placeholder1' )}"
-  %>
-  <%= submit_tag "#{t('customer.index.button1' )}", class: "btn btn-primary my-2" %>
+    <div class="d-flex mb-6 ">
+      <%= text_field_tag :search,
+          params[:search],
+          class: "form-control",
+          placeholder: "#{t('customer.index.placeholder1' )}"
+      %>
+      <%= submit_tag "#{t('customer.index.button1' )}", class: "btn btn-primary  ml-4" %>
+    </div>
   <% end %>
-  <div class="row">
-    <div class="col-sm-8 offset-sm-2">
+  <div class="row overflow-auto">
+    <div class="col-sm-8 offset-sm-2 overflow-auto">
       <div id="customers">
         <% @customers.each do |customer| %>
         <%= link_to(edit_customer_path(customer)) do %>
         <div class='card'>
-          <h4><%= customer.compagny_name %></h4>
-          <p>Siren: <%= customer.siret %></p>
+          <h3 class='mt-2 mb-0'><%= customer.compagny_name %></h3>
+          <p>SIRET : <%= customer.siret %></p>
         </div>
         <% end %>
         <% end %>

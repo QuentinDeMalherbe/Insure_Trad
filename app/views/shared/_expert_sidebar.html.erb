@@ -1,6 +1,6 @@
 <div class= 'sidebar bg-dark-blue h-screen'>
   <%= link_to  customers_path, class: "sidebar-button " do %>
-    <div class= <%= params[:controller] == "customers" ? "sidebar-active" : "" %> >
+    <div class= <%= %w(customers primary_contacts contracts police_cinq_millions nbi_cinq_multiples nbi_cinq_uns).include?(params[:controller]) ? "sidebar-active" : "" %> >
       <%= render "shared/svg/fi_tarif.svg" %>
       <p class="mt-1">Tarifs</p>
     </div>

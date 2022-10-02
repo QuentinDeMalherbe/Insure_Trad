@@ -1,5 +1,7 @@
 class CustomersController < ApplicationController
   def index
+    @avancement = true
+    @step = 1
     @customers = Customer.all
     if params[:search].present?
       @customers = @customers.search_by_compagny_name_and_siret(params[:search])
@@ -7,6 +9,8 @@ class CustomersController < ApplicationController
   end
 
   def edit
+    @avancement = true
+    @step = 1
     @customer = Customer.find(params[:id])
     @primary_contact = PrimaryContact.new
   end

@@ -1,33 +1,4 @@
-<div class="avancement">
-  <div class="position-avancement-realise inline-text">
-    <i class="fas fa-check-circle tick"></i>
-    <p>
-      Choix de la <br>police
-    </p>
-  </div>
-  <div class="position-avancement-realise inline-text">
-    <i class="fas fa-check-circle tick"></i>
-    <p>
-      Tarification
-    </p>
-  </div>
-  <div class="position-avancement-a-faire inline-text">
-    <div class="avancement-number">
-      <p class=" actif-number">3</p>
-    </div>
-    <p>
-      Information <br>complémentaires
-    </p>
-  </div>
-  <div class="position-avancement-a-faire inline-text">
-    <div class="avancement-number">
-      <p class=" a-faire-number">4</p>
-    </div>
-    <p>
-      Création <br>police
-    </p>
-  </div>
-</div>
+
 
 <div class="container ">
   <div class="title my-4">
@@ -47,7 +18,7 @@
       </p>
       <%= simple_form_for([@police_cinq_million, @customer_contact]) do |f| %>
       <div class="contact">
-        <p>Détails des Contacts de l’Assuré</p>
+        <p class='text-dark-blue font-weight-bold'> Contacts de l’Assuré</p>
         <div class="inline">
           <%= f.input :last_name_contact , label: 'Nom de Famille', input_html: {value:  @primary_contact.last_name || ''}%>
           <%= f.input :position_contact , label: 'Fonction', input_html: {value:  @primary_contact.position || ''}%>
@@ -57,8 +28,8 @@
           <%= f.input :tel_contact , label: 'N° de téléphone', input_html: {value:  @primary_contact.tel || ''} %>
         </div>
       </div>
-      <div class="contact">
-        <p style='margin-bottom: 0rem;'>Détails des contacts du dirigeant de l’Assuré</p>
+      <div class="contact mt-4">
+        <p style='margin-bottom: 0rem;' class='text-dark-blue font-weight-bold'>Contacts du dirigeant de l’Assuré</p>
         <input id="dirigeant" type="checkbox" style='margin-bottom: 1rem;'> Cochez si pareil que précédemment
         <div class="inline">
           <%= f.input :last_name_dirigeant , label: 'Nom de Famille' %>
@@ -69,8 +40,8 @@
           <%= f.input :tel_dirigeant , label: 'N° de téléphone' %>
         </div>
       </div>
-      <div class="contact">
-        <p style='margin-bottom: 0rem;'>La correspondance quotidienne au titre de la police d’assurance doit être adressée à</p>
+      <div class="contact mt-4">
+        <p style='margin-bottom: 0rem;' class='text-dark-blue font-weight-bold'>Correspondance quotidienne </p>
         <input id="correspondance" type="checkbox" style='margin-bottom: 1rem;'> Cochez si pareil que précédemment
         <div class="inline">
           <%= f.input :last_name_correspondance , label: 'Nom de Famille' %>

@@ -1,5 +1,7 @@
 class PoliceCinqMillionsController < ApplicationController
   def new
+    @avancement = true
+    @step = 2
     @contract = Contract.find(params[:contract_id])
     @police_cinq_million = PoliceCinqMillion.new
   end
@@ -25,6 +27,8 @@ class PoliceCinqMillionsController < ApplicationController
   end
 
   def show
+    @avancement = true
+    @step = 4
     @police_cinq_million = PoliceCinqMillion.find(params[:id])
   end
 

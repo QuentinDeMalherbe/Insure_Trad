@@ -1,5 +1,7 @@
 class ContractsController < ApplicationController
   def new
+    @avancement = true
+    @step = 2
     @customer = Customer.find(params[:customer_id])
     @contract = Contract.new
   end

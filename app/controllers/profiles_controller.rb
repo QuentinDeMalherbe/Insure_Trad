@@ -5,6 +5,6 @@ class ProfilesController < ApplicationController
   end
 
   def intermediaire_home
-
+    @avancement = false
   end
 end

@@ -1,8 +1,10 @@
 class NbiCinqMultiplesController < ApplicationController
   def new
+    @avancement = true
+    @step = 2
     @police_cinq_million = PoliceCinqMillion.find(params[:police_cinq_million_id])
     @nbi_cimq_multiple = NbiCinqMultiple.new
-    p params
+
     client_creation @police_cinq_million
   end
 
@@ -20,6 +22,8 @@ class NbiCinqMultiplesController < ApplicationController
   end
 
   def show
+    @avancement = true
+    @step = 3
     @nbi_cinq_multiple = NbiCinqMultiple.find(params[:id])
     @police_cinq_million = @nbi_cinq_multiple.police_cinq_million
     if @police_cinq_million.customer_contact
