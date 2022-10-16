@@ -58,12 +58,15 @@ class NbiCinqMultiple < ApplicationRecord
       1.3
     when 'METALURGIA GALAICA '
       1
-    when 'Pophin'
+    when 'Alexandre Pophin'
       1.3
     when 'Mialon et fils'
       1.5
     when 'Emergence Agro'
       1
+      #  DEMO J'AI MIS TOUT A 1.3 A CHANGER !!!!!!!!!!!
+    else
+      1.3
     end
   end
 
