@@ -3,7 +3,12 @@ class CustomersController < ApplicationController
     @avancement = true
     @step = 1
     @customers = Customer.all
+    @select_customers = Customer.all
+    @customer = nil
+    @hide = true
     if params[:search].present?
+      @hide = false
+      @customer = Customer.find params[:search]
       @customers = @customers.search_by_compagny_name_and_siret(params[:search])
     end
   end

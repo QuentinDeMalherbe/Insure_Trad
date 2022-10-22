@@ -12,11 +12,6 @@ class CustomerContactsController < ApplicationController
       @customer_contact.insure_trad_supp = @insure_trad_supp
       @customer = @insure_trad_supp.contract.customer
     elsif
-      p '-----------'
-      p params
-      p '-----------'
-      p params[:police_cinq_million_id]
-      p '----------'
       @police_cinq_million = PoliceCinqMillion.find(params[:police_cinq_million_id])
       @customer_contact.police_cinq_million = @police_cinq_million
       @customer = @police_cinq_million.contract.customer

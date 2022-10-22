@@ -11,14 +11,29 @@
     <h2><%= t 'police_cinq_million.new.title1' %></h2>
   </div>
   <%= simple_form_for [@contract, @police_cinq_million] do |f| %>
-    <p><%= t 'police_cinq_million.new.label1' %></p>
+    <div class="hint-info mb-3">
+      <%= t 'police_cinq_million.new.label1' %>
+      <span><i class="fas fa-info-circle"></i></span>
+      <div class="hint">
+        Ventes annuelles HT ou TTC avec des entreprises ou administration en France et dans la CEE + Royaume Uni
+      </div>
+    </div>
     <%= f.input :ammount_ca , label: false, collection: PoliceCinqMillion::CA,  label_method: langage, value_method: :first, input_html: { class: 'form-select'}  %>
-    <p><%= t 'police_cinq_million.new.label2' %></p>
+    <div class="hint-info mb-3">
+      <%= t 'police_cinq_million.new.label2' %>
+      <span><i class="fas fa-info-circle"></i></span>
+      <div class="hint">
+        Clients réguliers entreprises et administration. Les ventes aux particuliers ne sont pas garanties
+      </div>
+    </div>
+
     <%= f.input :client_number , label: false, collection: PoliceCinqMillion::NUMBERCLIENT, label_method: langage, value_method: :first , input_html: { class: 'form-select'}%>
-    <p><%= t 'police_cinq_million.new.label3' %></p>
-    <%= f.input :max_loss , label: false, collection: PoliceCinqMillion::MAXLOSS , input_html: { class: 'form-select'}%>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center mt-4">
       <%= f.submit "#{t 'button_valider_infos'}", class:'btn btn-primary ' %>
+    </div>
+    <div class="hidden">
+      <p><%= t 'police_cinq_million.new.label3' %></p>
+      <%= f.input :max_loss , label: false, collection: PoliceCinqMillion::MAXLOSS , input_html: { class: 'form-select'}%>
     </div>
   <% end %>
 </div>
