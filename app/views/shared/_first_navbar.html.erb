@@ -27,11 +27,11 @@
       </li>
 
       <li class="nav-item mx-4" >
-        <%= link_to "Devenir partenaire", pages_intermediaire_path, class: "btn btn-primary btn-small" %>
+        <%= link_to "Devenir partenaire", new_user_registration_path(status: "expert"), class: 'btn btn-primary btn-small' %>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Langues
+          Langues
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <%= link_to  root_path(locale: :en), class:"dropdown-item" do %>

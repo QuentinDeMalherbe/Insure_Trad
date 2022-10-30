@@ -1,31 +1,90 @@
 
 <div class="container">
-  coucou
-  <h2><%= t(".sign_up") %></h2>
-
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true ,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: (t('devise.shared.minimum_password_length', count: @minimum_password_length) if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :status, label: false,
-                  input_html: { value: params[:status], class: 'hidden' }  %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, t(".sign_up"), class: 'btn btn-primary'  %>
+  <%= link_to  :back  do %>
+    <div class="d-flex">
+      <%= render "shared/svg/fi_arrow-left" %>
+      <p class=' ml-2 text-dark-grey font-weight-bold'>Retour</p>
     </div>
   <% end %>
+  <h2 class="mb-5">Pour obtenir votre code Partenaire, veuillez remplir le formulaire ci-dessous</h2>
+  <div>
+    <div class="d-flex mb-4">
+      <div class='text-white bg-dark-blue p-2 rounded-circle d-flex align-items-center justify-content-center' style="width:30px;height:30px;">1</div>
+      <div class=' ml-2 text-dark-blue font-weight-bold d-flex align-items-center justify-content-center' >Informations inscrit</div>
+    </div>
+    <div class="d-flex align-items-center justify-content-beetween mb-4">
+      <p class='mb-0 mr-6' style="width:150px">PRENOM</p>
+      <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
+    </div>
+    <div class="d-flex align-items-center justify-content-beetween mb-4">
+      <p class='mb-0 mr-6' style="width:150px">NOM</p>
+      <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
+    </div>
+    <div class="d-flex align-items-center justify-content-beetween mb-5">
+      <p class='mb-0 mr-6' style="width:150px">EMAIL</p>
+      <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
+    </div>
+  </div>
+  <div>
+    <div class="d-flex mb-4">
+      <div class='text-white bg-dark-blue p-2 rounded-circle d-flex align-items-center justify-content-center' style="width:30px;height:30px;">1</div>
+      <div class=' ml-2 text-dark-blue font-weight-bold d-flex align-items-center justify-content-center' >Informations du cabinet</div>
+    </div>
+    <div class="d-flex align-items-center justify-content-beetween mb-4">
+      <p class='mb-0 mr-6' style="width:150px">SIRET/SIREN</p>
+      <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
+    </div>
+    <div class="d-flex align-items-center justify-content-beetween mb-5">
+      <p class='mb-0 mr-6' style="width:150px">ORIAS</p>
+      <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
+    </div>
+  </div>
+  <div>
+    <div class="d-flex mb-4">
+      <div class='text-white bg-dark-blue p-2 rounded-circle d-flex align-items-center justify-content-center' style="width:30px;height:30px;">2</div>
+      <div class=' ml-2 text-dark-blue font-weight-bold d-flex align-items-center justify-content-center'>Transmettre votre Kbis et votre RIB</div>
+    </div>
+    <div class="d-flex align-items-center justify-content-beetween mb-4">
+      <p class='mb-0 mr-6' style="width:150px">Joindre votre Kbis</p>
+      <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
+    </div>
+    <div class="d-flex align-items-center justify-content-beetween mb-5">
+      <p class='mb-0 mr-6' style="width:150px">Joindre votre RIB</p>
+      <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
+    </div>
+  </div>
+  <div class=" ml-7 mb-6 btn btn-primary">
+    Validez
+  </div>
 
-  <%= render "devise/shared/links" %>
+
+<%
+=begin%>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true ,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    required: true,
+                    hint: (t('devise.shared.minimum_password_length', count: @minimum_password_length) if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :status, label: false,
+                    input_html: { value: params[:status], class: 'hidden' }  %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, t(".sign_up"), class: 'btn btn-primary'  %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+<%
+=end%>
 </div>
