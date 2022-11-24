@@ -44,3 +44,11 @@
 .border-classic {
   border-radius: 12px !important;
 }
+
+.border-classic-left {
+  border-radius: 12px 0 0 12px !important;
+}
+
+.border-classic-right {
+  border-radius: 0 12px 12px 0 !important;
+}
