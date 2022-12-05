@@ -1,0 +1,322 @@
+<% if params["locale"] === "fr" %>
+<% langage = :second %>
+<% elsif params["locale"] === "en" %>
+<% langage = :third %>
+<% else %>
+<% langage = :third %>
+<% end %>
+
+<div class="container h-screen mt-8 mx-6">
+  <h2 class='mb-5'>Devis</h2>
+  <div class="custom-wrapper-input mb-4 ">
+    <h5>Seuil d'intervention
+      <span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
+          <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </h5>
+    <div class='label'>Montant en €</div>
+    <div class="input">180 000</div>
+  </div>
+
+  <div class="d-flex">
+    <div class="custom-wrapper-input mb-4 flex-grow-1">
+      <h5>Par sinistre et par exercice. Montant en €
+        <span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
+            <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </h5>
+      <div class='label'>Montant en €</div>
+      <div class="input">180 000</div>
+    </div>
+    <div class="custom-wrapper-input mb-4 ml-4">
+      <h5 style='height:32px'>
+      </h5>
+      <div class='label'>Franchise</div>
+      <div class="input ">30%</div>
+    </div>
+  </div>
+
+  <div class="custom-wrapper-input mb-4 ">
+    <h5>Reconstitution automatique de la garantie plancher en cas d’épuisement
+      <span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
+          <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </h5>
+
+    <div class="d-flex justify-content-start">
+      <div class='custom-checkbox'>
+        <div class="d-flex  ">
+          <div class=' custom-checkbox-circle'>
+            <div>
+            </div>
+          </div>
+          <p class="ml-4">1 fois</p>
+        </div>
+        <div>
+          <p class='mb-0'>Franchise à 35%
+            <span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
+                <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div class='custom-checkbox-selected'>
+        <div class="d-flex  ">
+          <div class=' custom-checkbox-circle'>
+            <div class='custom-checkbox-circle-selected'>
+            </div>
+          </div>
+          <p class="ml-4">2 fois</p>
+        </div>
+        <div>
+          <p class='mb-0'>Franchise à 40%
+            <span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
+                <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div class='custom-checkbox'>
+        <div class="d-flex  ">
+          <div class=' custom-checkbox-circle'>
+            <div >
+            </div>
+          </div>
+          <p class="ml-4">3 fois</p>
+        </div>
+        <div>
+          <p class='mb-0'>Franchise à 45%
+            <span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
+                <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="d-flex">
+    <div class="custom-wrapper-input mb-4 flex-grow-1">
+      <h5>Garantie <strong>Click & Cover</strong>
+        <span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
+            <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </h5>
+      <div class="d-flex align-items-center">
+        <div class="mr-4 text-white rounded-circle bg-dark-blue px-2 pt-1 text-center " style="height:32px;width:32px">A</div>
+        <div class="flex-grow-1">
+          <div class='label'>Client avec un grade de risque A</div>
+          <div class="input">180 000</div>
+        </div>
+        <div class="custom-wrapper-input ml-4">
+          <div class='label'>Franchise</div>
+          <div class="input ">30%</div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center mt-4">
+        <div class="mr-4 text-white rounded-circle bg-dark-blue px-2 pt-1 text-center " style="height:32px;width:32px">B</div>
+        <div class="flex-grow-1">
+          <div class='label'>Client avec un grade de risque B</div>
+          <div class="input">180 000</div>
+        </div>
+        <div class="custom-wrapper-input ml-4">
+          <div class='label'>Franchise</div>
+          <div class="input ">30%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-wrapper-input mb-4 ">
+    <h5>Primes et honoraires annuelles
+      <span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
+          <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </h5>
+    <div class='label'>Montant en €</div>
+    <div class="input w-25">300</div>
+  </div>
+
+  <div class="custom-wrapper-input mb-4 ">
+    <h5>Nombre de consultations Click & Cover compris
+      <span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
+          <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </h5>
+
+    <div class="input w-25">3</div>
+  </div>
+
+  <div class='mb-4'>
+    <div class='w-100 border bg-turquoise rounded-t-2  py-2 px-4 text-white font-bold '>
+      <strong>
+        Complémentaire
+      </strong>
+    </div>
+    <div class='bg-light-turquoise p-4 rounded-b-2 '>
+      <div class="custom-wrapper-input mb-4 ">
+        <h5>L’assuré peut demander à tout moment un doublement temporaire de garantie(s) <strong>Click & Cover</strong>  moyennant :</h5>
+      </div>
+
+      <div class="d-flex mb-4">
+        <div class="custom-wrapper-input mb-4 flex-grow-1">
+          <div class="d-flex align-items-center">
+            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="21" height="20" rx="10" fill="#50C0C7"/>
+              <path d="M14.473 6.8067C14.411 6.74421 14.3373 6.69461 14.256 6.66077C14.1748 6.62692 14.0876 6.6095 13.9996 6.6095C13.9116 6.6095 13.8245 6.62692 13.7433 6.66077C13.662 6.69461 13.5883 6.74421 13.5263 6.8067L8.55964 11.78L6.47297 9.6867C6.40863 9.62454 6.33267 9.57566 6.24943 9.54286C6.16619 9.51006 6.07731 9.49397 5.98786 9.49552C5.8984 9.49706 5.81013 9.51622 5.72808 9.55188C5.64602 9.58754 5.5718 9.63902 5.50964 9.70336C5.44748 9.76771 5.39861 9.84367 5.3658 9.92691C5.333 10.0101 5.31691 10.099 5.31846 10.1885C5.32001 10.2779 5.33916 10.3662 5.37482 10.4483C5.41049 10.5303 5.46196 10.6045 5.52631 10.6667L8.08631 13.2267C8.14828 13.2892 8.22202 13.3388 8.30326 13.3726C8.3845 13.4065 8.47163 13.4239 8.55964 13.4239C8.64765 13.4239 8.73479 13.4065 8.81603 13.3726C8.89727 13.3388 8.971 13.2892 9.03297 13.2267L14.473 7.7867C14.5406 7.72427 14.5946 7.6485 14.6316 7.56417C14.6685 7.47983 14.6876 7.38876 14.6876 7.2967C14.6876 7.20463 14.6685 7.11356 14.6316 7.02923C14.5946 6.94489 14.5406 6.86912 14.473 6.8067Z" fill="#05455E"/>
+            </svg>
+            <h5 class='ml-4'>le paiement d’une prime complémentaire sur tout Client avec <strong>un grade de risque A pour une période de garantie de 6 mois </strong> :
+            </h5>
+          </div>
+          <div class=" ml-5 d-flex align-items-center">
+            <div class="mr-4 text-white rounded-circle bg-dark-blue px-2 pt-1 text-center " style="height:32px;width:32px">A</div>
+            <div class="flex-grow-1">
+              <div class='label'>Client avec un grade de risque A. Montant HT</div>
+              <div class="input">500</div>
+            </div>
+            <div class="custom-wrapper-input ml-4">
+              <div class='label'>Période de garantie</div>
+              <div class="input ">6 mois</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="custom-wrapper-input mb-4 flex-grow-1">
+          <div class="d-flex align-items-center">
+            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="21" height="20" rx="10" fill="#50C0C7"/>
+              <path d="M14.473 6.8067C14.411 6.74421 14.3373 6.69461 14.256 6.66077C14.1748 6.62692 14.0876 6.6095 13.9996 6.6095C13.9116 6.6095 13.8245 6.62692 13.7433 6.66077C13.662 6.69461 13.5883 6.74421 13.5263 6.8067L8.55964 11.78L6.47297 9.6867C6.40863 9.62454 6.33267 9.57566 6.24943 9.54286C6.16619 9.51006 6.07731 9.49397 5.98786 9.49552C5.8984 9.49706 5.81013 9.51622 5.72808 9.55188C5.64602 9.58754 5.5718 9.63902 5.50964 9.70336C5.44748 9.76771 5.39861 9.84367 5.3658 9.92691C5.333 10.0101 5.31691 10.099 5.31846 10.1885C5.32001 10.2779 5.33916 10.3662 5.37482 10.4483C5.41049 10.5303 5.46196 10.6045 5.52631 10.6667L8.08631 13.2267C8.14828 13.2892 8.22202 13.3388 8.30326 13.3726C8.3845 13.4065 8.47163 13.4239 8.55964 13.4239C8.64765 13.4239 8.73479 13.4065 8.81603 13.3726C8.89727 13.3388 8.971 13.2892 9.03297 13.2267L14.473 7.7867C14.5406 7.72427 14.5946 7.6485 14.6316 7.56417C14.6685 7.47983 14.6876 7.38876 14.6876 7.2967C14.6876 7.20463 14.6685 7.11356 14.6316 7.02923C14.5946 6.94489 14.5406 6.86912 14.473 6.8067Z" fill="#05455E"/>
+            </svg>
+            <h5 class='ml-4'>le paiement d’une prime complémentaire sur tout Client avec <strong>un grade de risque A pour une période de garantie de 4 mois </strong>  :
+            </h5>
+          </div>
+          <div class=" ml-5 d-flex align-items-center">
+            <div class="mr-4 text-white rounded-circle bg-dark-blue px-2 pt-1 text-center " style="height:32px;width:32px">B</div>
+            <div class="flex-grow-1">
+              <div class='label'>Client avec un grade de risque A. Montant HT</div>
+              <div class="input">250</div>
+            </div>
+            <div class="custom-wrapper-input ml-4">
+              <div class='label'>Période de garantie</div>
+              <div class="input ">4 mois</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between mb-7">
+    <div>
+    <%= link_to  root_path do %>
+      <div class='btn btn-danger d-flex'>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 11V17" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 11V17" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class='ml-4'>
+          Annuler
+        </div>
+      </div>
+    <% end %>
+    </div>
+    <div>
+    <%= link_to  comparaison_quotes_path() do %>
+      <div class='btn btn-primary d-flex'>
+        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.5 11.08V12C22.4988 14.1564 21.8005 16.2547 20.5093 17.9818C19.2182 19.709 17.4033 20.9725 15.3354 21.5839C13.2674 22.1953 11.0573 22.1219 9.03447 21.3746C7.01168 20.6273 5.28465 19.2461 4.11096 17.4371C2.93727 15.628 2.37979 13.4881 2.52168 11.3363C2.66356 9.18455 3.49721 7.13631 4.89828 5.49706C6.29935 3.85781 8.19279 2.71537 10.2962 2.24013C12.3996 1.7649 14.6003 1.98232 16.57 2.85999" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22.5 4L12.5 14.01L9.5 11.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class='ml-4'>
+          Valider ce devis
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+<div class="right-sidebar h-screen  w-20 bg-light-grey py-6 px-4">
+  <div>
+    <p class='text-small'>Société</p>
+    <p class='text-important'>NOM</p>
+  </div>
+  <div>
+    <p class='text-small'>Référence</p>
+    <p class='text-important'>SIRET</p>
+  </div>
+  <div class='bg-white p-1 d-flex mb-4 rounded-2 aligns-middle'>
+    <div class='mt-1'>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" fill="white"/>
+        <path d="M22.0004 16.92V19.92C22.0016 20.1985 21.9445 20.4742 21.8329 20.7294C21.7214 20.9845 21.5577 21.2136 21.3525 21.4019C21.1473 21.5901 20.905 21.7335 20.6412 21.8227C20.3773 21.9119 20.0978 21.9451 19.8204 21.92C16.7433 21.5856 13.7874 20.5342 11.1904 18.85C8.77425 17.3147 6.72576 15.2662 5.19042 12.85C3.5004 10.2412 2.44866 7.271 2.12042 4.18001C2.09543 3.90347 2.1283 3.62477 2.21692 3.36163C2.30555 3.09849 2.44799 2.85669 2.63519 2.65163C2.82238 2.44656 3.05023 2.28271 3.30421 2.17053C3.5582 2.05834 3.83276 2.00027 4.11042 2.00001H7.11042C7.59573 1.99523 8.06621 2.16708 8.43418 2.48354C8.80215 2.79999 9.0425 3.23945 9.11042 3.72001C9.23704 4.68007 9.47187 5.62273 9.81042 6.53001C9.94497 6.88793 9.97408 7.27692 9.89433 7.65089C9.81457 8.02485 9.62928 8.36812 9.36042 8.64001L8.09042 9.91001C9.51398 12.4136 11.5869 14.4865 14.0904 15.91L15.3604 14.64C15.6323 14.3711 15.9756 14.1859 16.3495 14.1061C16.7235 14.0263 17.1125 14.0555 17.4704 14.19C18.3777 14.5286 19.3204 14.7634 20.2804 14.89C20.7662 14.9585 21.2098 15.2032 21.527 15.5775C21.8441 15.9518 22.0126 16.4296 22.0004 16.92Z" fill="#50C0C7"/>
+      </svg>
+    </div>
+    <div class='ml-2'>
+      <p class='mb-0 text-small'>Support</p>
+      <p class='text-semi-important mb-0'>PHONE</p>
+    </div>
+  </div>
+  <div class='d-flex align-middle'>
+    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11.8818 12.5049C11.6377 11.7236 11.6426 10.2148 11.7842 10.2148C12.1943 10.2148 12.1553 12.0166 11.8818 12.5049ZM11.7988 14.8096C11.4229 15.7959 10.9541 16.9238 10.4121 17.8711C11.3057 17.5293 12.3164 17.0312 13.4834 16.8018C12.8633 16.333 12.2676 15.6592 11.7988 14.8096ZM7.2041 20.9033C7.2041 20.9424 7.84863 20.6396 8.9082 18.9404C8.58105 19.248 7.4873 20.1367 7.2041 20.9033ZM15.1094 7.8125H21.75V23.8281C21.75 24.4775 21.2275 25 20.5781 25H4.17188C3.52246 25 3 24.4775 3 23.8281V1.17188C3 0.522461 3.52246 0 4.17188 0H13.9375V6.64062C13.9375 7.28516 14.4648 7.8125 15.1094 7.8125ZM14.7188 16.2012C13.7422 15.6055 13.0928 14.7852 12.6338 13.5742C12.8535 12.6709 13.2002 11.2988 12.9365 10.4395C12.707 9.00391 10.8662 9.14551 10.6025 10.1074C10.3584 11.001 10.583 12.2607 10.998 13.8672C10.4316 15.2148 9.59668 17.0215 9.00586 18.0566C9.00098 18.0566 9.00098 18.0615 8.99609 18.0615C7.67285 18.7402 5.40234 20.2344 6.33496 21.3818C6.6084 21.7188 7.11621 21.8701 7.38477 21.8701C8.25879 21.8701 9.12793 20.9912 10.3682 18.8525C11.6279 18.4375 13.0098 17.9199 14.2256 17.7197C15.2852 18.2959 16.5254 18.6719 17.3506 18.6719C18.7764 18.6719 18.874 17.1094 18.3125 16.5527C17.6338 15.8887 15.6611 16.0791 14.7188 16.2012ZM21.4082 5.12695L16.623 0.341797C16.4033 0.12207 16.1055 0 15.793 0H15.5V6.25H21.75V5.95215C21.75 5.64453 21.6279 5.34668 21.4082 5.12695ZM17.79 17.5928C17.9902 17.4609 17.668 17.0117 15.7002 17.1533C17.5117 17.9248 17.79 17.5928 17.79 17.5928Z" fill="#50C0C7"/>
+    </svg>
+    <p class='text-semi-important ml-2 mb-0'>Specimen de contrat</p>
+  </div>
+  <p class='title border-bottom pb-2'>Détails</p>
+  <p class='text-important mt-2'>Assurance des Impayés pour les PME avec un chiffre d'affaires entre 5 et 25 millions €</p>
+  <div>
+    <p class='text-small'>Nombre d'acheteurs</p>
+    <p class='text-important'>NBR</p>
+  </div>
+  <div>
+    <p class='text-small'>CA dom</p>
+    <p class='text-important'>5 000 000 €</p>
+  </div>
+  <div>
+    <p class='text-small'>CA exp.</p>
+    <p class='text-important border-bottom pb-2'>0 €</p>
+  </div>
+</div>

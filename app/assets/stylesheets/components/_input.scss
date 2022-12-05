@@ -1,0 +1,85 @@
+
+.custom-wrapper-input  {
+  h5 {
+    color: $dark-blue;
+    margin-top: 8px;
+    padding-bottom: 8px;
+    margin-block-end: 0;
+    font-weight: 500;
+    line-height: 18px;
+    font-size: 16px;
+  }
+  .label {
+    font-weight: 400;
+    line-height: 15px;
+    font-size: 12px;
+    color: #657778;
+    padding-bottom: 8px;
+  }
+  .input {
+    color: #657778;
+    background-color: #F2F4F5 ;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    font-size: 16px;
+    width: fill-content;
+    border-radius: 8px;
+    border: 1px solid #DDE2E5;
+  }
+
+
+}
+
+
+.custom-checkbox {
+  color: #83898C;
+  border: 1px solid #DDE2E5;
+  padding: 24px;
+  border-radius: 8px;
+  margin-right: 24px;
+}
+
+
+.custom-checkbox-selected {
+  color: #83898C;
+
+  border: 1px solid #46A4AA;
+  padding: 24px;
+  background-color: #EEF9F9;
+  border-radius: 8px;
+  margin-right: 24px;
+}
+
+.custom-checkbox-circle-selected {
+  height: 18px;
+  width: 18px;
+  margin: 2px;
+  border: 1px solid #46A4AA;
+  background-color: #46A4AA;
+  border-radius: 50%;
+}
+
+.custom-checkbox-circle {
+  height: 24px;
+  width: 24px;
+  border: 1px solid #DDE2E5;
+  border-radius: 50%;
+}
+
+.rounded-2 {
+  border-radius: 8px;
+}
+
+.rounded-t-2 {
+  border-radius: 8px 8px 0px 0px;
+}
+.rounded-b-2 {
+  border-radius: 0px 0px 8px 8px ;
+}
+
+.border-light-turquoise {
+  border: 1px solid $primary;
+}

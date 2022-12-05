@@ -10,3 +10,46 @@
 .border-dark-blue {
   border-color: $dark-blue !important;
 }
+
+.text-small {
+  color: #5E6366;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.5px;
+  margin-bottom: 0px;
+}
+
+.text-important {
+  color: #05455E;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19.3px;
+}
+
+.text-semi-important {
+  color: #50C0C7;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.text-important-bold {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19.3px;
+  color: #05455E;
+}
+
+.text-grey {
+  color: #657778;
+}
+
+.text-semibold {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.mb-35 {
+  margin-bottom: 35px;
+}
