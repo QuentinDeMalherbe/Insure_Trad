@@ -7,6 +7,11 @@ Rails.application.routes.draw do
     get '/pages/assure', to: 'pages#assure'
     get '/profiles/insured_home', to: 'profiles#insured_home'
     get '/profiles/intermediaire_home', to: 'profiles#intermediaire_home'
+    resources :quotes do
+      collection do
+        get :comparaison
+      end
+    end
     resources :customers, shallow: true, only:[:index, :new, :create, :show, :edit, :update] do
       resources :primary_contacts, shallow:true, only:[:new, :create, :edit, :update]
       resources :contracts, shallow: true,  only:[:new, :create] do

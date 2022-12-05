@@ -8,9 +8,20 @@
 
 
 .h-screen {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .container {
   margin-top: 3rem;
+}
+
+.bg-light-grey {
+  background-color: $light-grey;
+}
+.bg-turquoise {
+  background-color: $turquoise;
+}
+
+.bg-light-turquoise {
+  background-color: #EEF9F9;
 }
