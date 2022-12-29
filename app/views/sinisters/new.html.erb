@@ -1,0 +1,46 @@
+<div class="container">
+  <div class='mb-4'>
+    <h2 class="title pb-0">Déclarer un sinistre</h2>
+  </div>
+  <%= simple_form_for(:new_guarantee_cc) do |f| %>
+  <div class="inline">
+    <%= f.input :siret, label: "N° SIREN" %>
+    <%= f.input :country, as: :string, label: "Pays"  %>
+  </div>
+  <%= f.input :name, label: "Raison Sociale"  %>
+  <div class="inline">
+    <%= f.input :date, label: "Date 1ère échéance impayée"  %>
+    <%= f.input :amount_ttc, label: "Montant TTC de la créance impayée" %>
+  </div>
+  <div class="d-flex">
+    <%= f.input :procedure, label: "Votre client est en procédure collective", wrapper_html: { class:'flex-grow-1 mr-2'}  %>
+    <%= f.input :date_2, label: "Montant TTC de la créance impayée" %>
+  </div>
+  <%= f.input :mandataire, label: "Mandataire judiciaire" %>
+
+  <div class="mt-4">
+    <p class="text-important text-semibold">Votre créance est déjà déclarée au mandataire</p>
+    <div class="d-flex">
+        <%= f.input :yes, as: :boolean, label: "Oui", wrapper_html: { class: 'mr-6'}  %>
+        <%= f.input :no, as: :boolean, label: "Non"  %>
+    </div>
+    <p class="text-warning text-semibold">Merci de joindre votre bordereau de déclaration aux pièces jointes</p>
+    <p class="text-important text-semibold">Nous mandatons Insuretrade pour effectuer toutes les démarches légales concernant notre créance impayée à l’encontre de notre Client ci-dessus mentionné.</p>
+    <h2 class="title pb-0 mt-4">Ajouter des pièces jointes justificatives</h2>
+    <p class="text-important text-semibold mb-4">
+      Pour ajouter vos pièces jointes et justificatifs, renseignez le “type de pièce” puis cliquez sur “Importer un fichier” pour joindre votre fichier.
+    </p>
+    <div class="d-flex">
+      <%= f.input :type, label: "Type de pièce jointe" %>
+      <%= f.input :date_2, label: "Importer un fichier" , wrapper_html: { class:'flex-grow-1 ml-2'} %>
+    </div>
+    <%= f.input :yes, as: :boolean, label: "Nous certifions qu’à ce jour 12/12/2022 et à notre connaissance cette créance ne fait l’objet d’aucune contestation."  %>
+    <div class="d-flex justify-content-center mb-4">
+      <%= f.submit "Envoyer la déclaration de sinitre" , class: 'btn btn-primary ' %>
+    </div>
+  </div>
+
+
+  <%# probleme de boutton avec simple_form prend pas en compte la class peut etre change de simple avec tag par exemple ( cf index customers) %>
+  <% end %>
+</div>

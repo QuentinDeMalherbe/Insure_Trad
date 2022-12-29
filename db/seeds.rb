@@ -22,9 +22,15 @@ puts 'Creating user'
       password:'123456',
       status: 'expert'
     )
+    user_4 = User.new(
+      email: 'quentin@assure.com',
+      password:'123456',
+      status: 'assure'
+    )
     user_1.save!
     user_2.save!
     user_3.save!
+    user_4.save!
 puts 'Creating  6 customers/primary_contacts/contracts/police_cinq_millions/nbi_cinq_multiple'
 
   # 1 POPHIN

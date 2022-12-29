@@ -1,0 +1,40 @@
+<div class="container">
+  <div class='mb-4'>
+    <h2 class="title pb-0">Identifiez votre Client avec un impayé</h2>
+  </div>
+  <%= simple_form_for(:new_guarantee_cc) do |f| %>
+  <div class="inline">
+    <%= f.input :siret, label: "N° SIREN" %>
+    <%= f.input :country, as: :string, label: "Pays"  %>
+  </div>
+  <%= f.input :name, label: "Raison Sociale"  %>
+  <%= f.input :address, label: "Adresse postale"  %>
+  <div class="inline">
+    <%= f.input :zip_code, label: "#{t 'customer.edit.label4' }"  %>
+    <%= f.input :city, label: "#{t 'customer.edit.label5' }" %>
+  </div>
+  <div class="mt-4">
+    <p class="text-important text-semibold">Est-ce une insolvabilité de droit ?</p>
+    <div class="d-flex">
+        <%= f.input :yes, as: :boolean, label: "Oui", wrapper_html: { class: 'mr-6'}  %>
+        <%= f.input :no, as: :boolean, label: "Non"  %>
+    </div>
+    <div class="inline">
+      <%= f.input :amount_creance, label: "Montant TTC de votre créance"  %>
+      <%= f.input :amount_invoice, label: "Montant TTC 1ère facture créance impayée" %>
+    </div>
+    <%= f.input :date, label: "Date échéance de votre 1ere facture impayée" %>
+    <p class="text-important text-semibold">Êtes-vous informé d’un litige ?</p>
+    <div class="d-flex">
+        <%= f.input :yes, as: :boolean, label: "Oui", wrapper_html: { class: 'mr-6'}  %>
+        <%= f.input :no, as: :boolean, label: "Non"  %>
+    </div>
+    <div class="d-flex justify-content-center mb-4">
+      <%= f.submit "Déclarer un impayé" , class: 'btn btn-primary ' %>
+    </div>
+  </div>
+
+
+  <%# probleme de boutton avec simple_form prend pas en compte la class peut etre change de simple avec tag par exemple ( cf index customers) %>
+  <% end %>
+</div>

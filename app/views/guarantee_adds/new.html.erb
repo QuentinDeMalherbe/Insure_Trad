@@ -1,0 +1,35 @@
+<div class="container">
+  <div class='mb-4'>
+    <h2 class="title pb-0">Garantie Additionnelle</h2>
+  </div>
+  <%= simple_form_for(:new_guarantee_cc) do |f| %>
+  <div class="inline">
+    <%= f.input :siret, label: "N° SIREN" %>
+    <%= f.input :country, as: :string, label: "Pays"  %>
+  </div>
+  <%= f.input :name, label: "Raison Sociale"  %>
+  <%= f.input :address, label: "Adresse postale"  %>
+  <div class="inline">
+    <%= f.input :zip_code, label: "#{t 'customer.edit.label4' }"  %>
+    <%= f.input :city, label: "#{t 'customer.edit.label5' }" %>
+  </div>
+  <div class="mt-4">
+    <h3 class="small-title ">Garantie Additionnelle</h3>
+    <div class="d-flex align-items-center">
+      <%= f.input :grade, label: "Montant de la garantie additionnelle souhaitée", wrapper_html: {class:'flex-grow-1 mx-2'}  %>
+      <%= f.input :date, label: "Date", wrapper_html: {class:'w-25'} %>
+    </div>
+    <%= f.input :payment_terms, as: :text, label: "Termes de paiement"  %>
+    <%= f.input :payment_terms, as: :text, label: "Vous travaillez avec ce client"  %>
+    <%= f.input :payment_terms, as: :text, label: "Vos encaissements avec ce client"  %>
+    <%= f.input :payment_terms, as: :text, label: "Vous considérez ce client pour votre entreprise"  %>
+    <%= f.input :payment_terms, as: :boolean, label: "Vous certifiez ne pas avoir connaissance de fait ou situation..."  %>
+    <div class="d-flex justify-content-center mb-4">
+      <%= f.submit "Envoyez votre demande" , class: 'btn btn-primary ' %>
+    </div>
+  </div>
+
+
+  <%# probleme de boutton avec simple_form prend pas en compte la class peut etre change de simple avec tag par exemple ( cf index customers) %>
+  <% end %>
+</div>
