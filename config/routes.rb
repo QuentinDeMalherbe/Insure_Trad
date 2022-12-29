@@ -36,6 +36,10 @@ Rails.application.routes.draw do
         end
       end
     end
+    resources :guarantee_ccs
+    resources :guarantee_adds
+    resources :unpaids
+    resources :sinisters
 
     get '/insure_trad_supps/:id/createpdf', to: 'insure_trad_supps#creationpdf', as: 'creation'
     get '/police_cinq_millions/:id/createpdf', to: 'police_cinq_millions#creationpdf', as: 'police_creation'
