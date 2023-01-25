@@ -33,36 +33,35 @@ import { changeSelect } from '../pages/comparaison';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  console.log(document.getElementById('comparaison') !== null);
+  if (document.getElementById('comparaison') !== null) {
+    const select = document.getElementById('grade_a');
+    select.addEventListener('change', () => {
+      changeSelect(select.value)
+    });
+  };
+  if (document.getElementById('dirigeant') !== null) {
+    const dirigeant = document.getElementById('dirigeant');
+    dirigeant.addEventListener('change', () => {
+      if (document.getElementById('dirigeant').checked) {
+        memePersonne('dirigeant');
+      } else {
+        pasMemePersonne('dirigeant');
+      }
+    });
+  };
 
+  if (document.getElementById('correspondance') !== null) {
+    const dirigeant = document.getElementById('correspondance');
+    dirigeant.addEventListener('change', () => {
+      if (document.getElementById('correspondance').checked) {
+        memePersonne('correspondance');
+      } else {
+        pasMemePersonne('correspondance');
+      }
+    });
+  };
 });
 
-if (document.getElementById('dirigeant') !== null) {
-  const dirigeant = document.getElementById('dirigeant');
-  dirigeant.addEventListener('change', () => {
-    if (document.getElementById('dirigeant').checked) {
-      memePersonne('dirigeant');
-    } else {
-      pasMemePersonne('dirigeant');
-    }
-  });
-};
 
-if (document.getElementById('correspondance') !== null) {
-  const dirigeant = document.getElementById('correspondance');
-  dirigeant.addEventListener('change', () => {
-    if (document.getElementById('correspondance').checked) {
-      memePersonne('correspondance');
-    } else {
-      pasMemePersonne('correspondance');
-    }
-  });
-};
-
-if (document.getElementById('comparaison') !== null) {
-  console.log('coucou');
-  const select = document.getElementById('grade_a');
-  select.addEventListener('change', () => {
-    changeSelect(select.value)
-  });
-};
 
