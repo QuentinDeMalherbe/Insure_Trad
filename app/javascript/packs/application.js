@@ -59,6 +59,7 @@ if (document.getElementById('correspondance') !== null) {
 };
 
 if (document.getElementById('comparaison') !== null) {
+  console.log('coucou');
   const select = document.getElementById('grade_a');
   select.addEventListener('change', () => {
     changeSelect(select.value)
