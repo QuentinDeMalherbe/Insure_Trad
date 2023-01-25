@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_26_143447) do
+ActiveRecord::Schema.define(version: 2023_01_23_094658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -323,6 +323,36 @@ ActiveRecord::Schema.define(version: 2022_08_26_143447) do
     t.index ["insure_trad_supp_id"], name: "index_primary_insurances_on_insure_trad_supp_id"
   end
 
+  create_table "quotes", force: :cascade do |t|
+    t.integer "seuil"
+    t.integer "guarantie"
+    t.integer "guarantie_a"
+    t.integer "guarantie_b"
+    t.integer "consultation_number"
+    t.integer "prime"
+    t.integer "prime_a"
+    t.integer "prime_b"
+    t.integer "reconstitution_1"
+    t.integer "reconstitution_2"
+    t.integer "reconstitution_3"
+    t.integer "g_a_up"
+    t.integer "g_a_down"
+    t.integer "prime_up"
+    t.integer "prime_down"
+    t.integer "r_1_up"
+    t.integer "r_1_down"
+    t.integer "r_2_up"
+    t.integer "r_2_down"
+    t.integer "r_3_up"
+    t.integer "r_3_down"
+    t.bigint "user_id", null: false
+    t.bigint "customer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_quotes_on_customer_id"
+    t.index ["user_id"], name: "index_quotes_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -358,4 +388,6 @@ ActiveRecord::Schema.define(version: 2022_08_26_143447) do
   add_foreign_key "police_xols", "contracts"
   add_foreign_key "primary_contacts", "customers"
   add_foreign_key "primary_insurances", "insure_trad_supps"
+  add_foreign_key "quotes", "customers"
+  add_foreign_key "quotes", "users"
 end

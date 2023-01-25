@@ -31,7 +31,7 @@ class PoliceCinqMillionsController < ApplicationController
     @contract = Contract.find(params[:contract_id])
     @police_cinq_million = @contract.police_cinq_million
     # redirect_to  new_police_cinq_million_nbi_cinq_multiple_path(@police_cinq_million)
-    redirect_to new_quote_path()
+    redirect_to new_quote_path(customer_id: @contract.customer_id)
   end
 
   def update

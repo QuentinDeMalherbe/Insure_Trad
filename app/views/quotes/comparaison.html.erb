@@ -7,58 +7,46 @@
 <% end %>
 
 <div class="container ">
-  <h2 class='mb-5 title'>Comparaison des devis</h2>
+  <h2 id='comparaison' class='mb-5 title'>Devis personnalisé</h2>
   <div class="d-flex">
-    <div class='w-33'></div>
+    <div class='w-25'></div>
+    <div class='flex-grow-1 small-title'>Devis personnalisé</div>
     <div class='w-33 small-title'>Devis initial</div>
-    <div class='w-33 small-title'>Devis personnalisé</div>
   </div>
 
+  <%# seuil %>
   <div class="d-flex bg-light-turquoise align-items-center border-top">
-    <div class='w-33 p-2 sub-title-1'> Seuil d'intervention</div>
-    <div class='w-33 p-2 '><p class='text-important-bold text-semibold mb-0'>180 000 €</p></div>
-    <div class='w-33 p-2 '><p class='text-important-bold text-semibold mb-0'>180 000 €</p></div>
+    <div class='w-25 p-2 sub-title-1'> Seuil d'intervention</div>
+    <div class='flex-grow-1 p-2 '><p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.seuil, delimiter: " ") %> €</p></div>
+    <div class='w-33 p-2 '><p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.seuil, delimiter: " ") %> €</p></div>
   </div>
 
+  <%# guarantie %>
   <div class="d-flex  align-items-center border-top">
-    <div class='w-33 p-2 sub-title-1'>Garantie plancher </div>
-    <div class='w-33 p-2 '>
-      <p class='text-important-bold text-semibold mb-0'>130 000 €</p>
+    <div class='w-25 p-2 sub-title-1'>Garantie plancher </div>
+    <div class='flex-grow-1 p-2 '>
+      <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.guarantie, delimiter: " ") %> €</p>
       <p class='sub-title-1'>Reconstitution 2 fois Franchise à 35%</p>
     </div>
     <div class='w-33 p-2 '>
-      <p class='text-important-bold text-semibold mb-0'>130 000 €</p>
+      <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.guarantie, delimiter: " ") %> €</p>
       <p class='sub-title-1'>Reconstitution 2 fois Franchise à 35%</p>
     </div>
   </div>
 
+  <%# guarantie a et b %>
   <div class="d-flex bg-light-turquoise align-items-center border-top">
-    <div class='w-33 p-2 sub-title-1'>Garantie Click & Cover </div>
+    <div class='w-25 p-2 sub-title-1'>Garantie Click & Cover </div>
 
-
-
-    <div class='w-33 px-2 pb-2 '>
-      <div class='mb-2'>
-        <p class='text-important-bold text-semibold mb-2'>Client grade A</p>
-        <p class='text-important-bold text-semibold mb-2'>140 000 €</p>
-        <p class='sub-title-1 mb-35'>Reconstitution 2 fois Franchise à 15%</p>
-      </div>
-      <div>
-        <p class='text-important-bold text-semibold mb-2'>Client grade B</p>
-        <p class='text-important-bold text-semibold mb-2'>90 000 €</p>
-        <p class='sub-title-1'>Reconstitution 2 fois Franchise à 15%</p>
-      </div>
-    </div>
-
-    <div class='w-33 p-2 '>
+    <div class='flex-grow-1 p-2 '>
       <div class='mb-2'>
         <label for="client-a" class='text-important-bold text-semibold mb-2 pb-0'>Client grade A</label>
 
         <div class='text-important-bold text-semibold mb-2'>
-          <select name="client-a" id="pet-select" class='w-100 p-2 rounded-2 bg-light-turquoise text-important-bold text-semibold border-light-turquoise'>
-              <option value="">140 000 €</option>
-              <option value="-10">130 000 €</option>
-              <option value="+10">150 000 €</option>
+          <select id='grade_a' name="client-a" id="pet-select" class='w-50 p-2 rounded-2 bg-light-turquoise text-important-bold text-semibold border-light-turquoise'>
+              <option value="down"><%= number_with_delimiter(@quote.g_a_down, delimiter: " ") %> €</option>
+              <option value="normal" selected><%= number_with_delimiter(@quote.guarantie_a, delimiter: " ") %> €</option>
+              <option value="up"><%= number_with_delimiter(@quote.g_a_up, delimiter: " ") %> €</option>
           </select>
         </div>
         <p class='sub-title-1 mb-4'>Reconstitution 2 fois Franchise à 15%</p>
@@ -67,53 +55,114 @@
         <label for="client-a" class='text-important-bold text-semibold mb-2 pb-0'>Client grade B</label>
 
         <div class='text-important-bold text-semibold mb-2'>
-          <select name="client-a" id="pet-select" class='w-100 p-2 rounded-2 bg-light-turquoise text-important-bold text-semibold border-light-turquoise'>
-              <option value="">90 000 €</option>
-              <option value="-10">80 000 €</option>
-              <option value="+10">100 000 €</option>
-          </select>
+          <p class='text-important-bold text-semibold mb-2'          >
+            <%= number_with_delimiter(@quote.guarantie_b, delimiter: " ") %> €
+          </p>
+
         </div>
+      </div>
+    </div>
+
+    <div class='w-33 px-2 pb-2 '>
+      <div class='mb-2'>
+        <p class='text-important-bold text-semibold mb-2'>Client grade A</p>
+        <p class='text-important-bold text-semibold mb-2'><%= number_with_delimiter(@quote.guarantie_a, delimiter: " ") %> €</p>
+        <p class='sub-title-1 mb-35'>Reconstitution 2 fois Franchise à 15%</p>
+      </div>
+      <div>
+        <p class='text-important-bold text-semibold mb-2'>Client grade B</p>
+        <p class='text-important-bold text-semibold mb-2'><%= number_with_delimiter(@quote.guarantie_b, delimiter: " ") %> €</p>
+        <p class='sub-title-1'>Reconstitution 2 fois Franchise à 15%</p>
       </div>
     </div>
   </div>
 
+  <%# prime %>
   <div class="d-flex  align-items-center border-top">
-    <div class='w-33 p-2 sub-title-1'>Prime honoraires annuels </div>
-    <div class='w-33 p-2 '>
-      <p class='text-important-bold text-semibold mb-0'>300 €</p>
+    <div class='w-25 p-2 sub-title-1'>Prime honoraires annuels </div>
+    <div class='flex-grow-1 p-2 '>
+      <p id='prime'class='text-important-bold text-semibold mb-0'
+        down='<%= number_with_delimiter(@quote.prime_down, delimiter: " ") %> €'
+        normal='<%= number_with_delimiter(@quote.prime, delimiter: " ") %> €'
+        up='<%= number_with_delimiter(@quote.prime_up, delimiter: " ") %> €'
+      >
+        <%= number_with_delimiter(@quote.prime, delimiter: " ") %> €
+        </p>
       <p class='sub-title-1'>Comprenant 3 consultations Click & Cover</p>
     </div>
     <div class='w-33 p-2 '>
-      <p class='text-important-bold text-semibold mb-0'>300 €</p>
+      <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.prime, delimiter: " ") %> €</p>
       <p class='sub-title-1'>Comprenant 3 consultations Click & Cover</p>
     </div>
   </div>
+
+  <%# nombre de consulation %>
   <div class="d-flex  bg-light-turquoise align-items-center border-top">
-    <div class='w-33 p-2 sub-title-1'>Doublement temporaire de garantie(s) </div>
-    <div class='w-33 p-2 '>
+    <div class='w-25 py-3 pl-2 sub-title-1'>Nombre de consultations Click & Cover </div>
+    <div class='flex-grow-1 py-3 pl-2 '>
+      <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.consultation_number, delimiter: " ") %> </p>
+    </div>
+    <div class='w-33 py-3 pl-2'>
+      <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.consultation_number, delimiter: " ") %> </p>
+    </div>
+  </div>
+
+  <%# reconstitution %>
+  <div class="d-flex   align-items-center border-top">
+    <div class='w-25 p-2 sub-title-1'>Reconstitution </div>
+    <div class='flex-grow-1 p-2 '>
       <div class='mb-4'>
-        <p class='text-important-bold text-semibold mb-0'>300 €</p>
-        <p class='sub-title-1'>Comprenant 3 consultations Click & Cover</p>
+        <p id='r_1'class='text-important-bold text-semibold mb-0'
+          down='<%= number_with_delimiter(@quote.r_1_down, delimiter: " ") %> €'
+          normal='<%= number_with_delimiter(@quote.reconstitution_1, delimiter: " ") %> €'
+          up='<%= number_with_delimiter(@quote.r_1_up, delimiter: " ") %> €'
+        >
+          <%= number_with_delimiter(@quote.reconstitution_1, delimiter: " ") %> €
+        </p>
+        <p class='sub-title-1'>En 1 fois</p>
+      </div>
+      <div class='mb-4'>
+        <p id='r_2'class='text-important-bold text-semibold mb-0'
+          down='<%= number_with_delimiter(@quote.r_2_down, delimiter: " ") %> €'
+          normal='<%= number_with_delimiter(@quote.reconstitution_2, delimiter: " ") %> €'
+          up='<%= number_with_delimiter(@quote.r_2_up, delimiter: " ") %> €'
+        >
+          <%= number_with_delimiter(@quote.reconstitution_2, delimiter: " ") %> €
+        </p>
+        <p class='sub-title-1'>En 2 fois</p>
       </div>
       <div>
-        <p class='text-important-bold text-semibold mb-0'>300 €</p>
-        <p class='sub-title-1'>Comprenant 3 consultations Click & Cover</p>
+        <p id='r_3'class='text-important-bold text-semibold mb-0'
+          down='<%= number_with_delimiter(@quote.r_3_down, delimiter: " ") %> €'
+          normal='<%= number_with_delimiter(@quote.reconstitution_3, delimiter: " ") %> €'
+          up='<%= number_with_delimiter(@quote.r_3_up, delimiter: " ") %> €'
+        >
+          <%= number_with_delimiter(@quote.reconstitution_3, delimiter: " ") %> €
+        </p>
+        <p class='sub-title-1'>En 3 fois</p>
       </div>
     </div>
+
     <div class='w-33 p-2 '>
       <div class='mb-4'>
-        <p class='text-important-bold text-semibold mb-0'>300 €</p>
-        <p class='sub-title-1'>Comprenant 3 consultations Click & Cover</p>
+        <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.reconstitution_1, delimiter: " ") %> €</p>
+        <p class='sub-title-1'>En 1 fois</p>
+      </div>
+      <div class='mb-4'>
+        <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.reconstitution_2, delimiter: " ") %> €</p>
+        <p class='sub-title-1'>En 2 fois</p>
       </div>
       <div>
-        <p class='text-important-bold text-semibold mb-0'>300 €</p>
-        <p class='sub-title-1'>Comprenant 3 consultations Click & Cover</p>
+        <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.reconstitution_3, delimiter: " ") %> €</p>
+        <p class='sub-title-1'>En 3 fois</p>
       </div>
     </div>
   </div>
+
+
   <div class="d-flex  align-items-center border-top">
-    <div class='w-33 p-2 sub-title-1'></div>
-    <div class='w-33 p-2 '>
+    <div class='w-25 p-2 sub-title-1'></div>
+    <div class='flex-grow-1 p-2 '>
       <div class='btn btn-primary w-100' >
         Acheter
       </div>

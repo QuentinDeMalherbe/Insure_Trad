@@ -27,6 +27,7 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { memePersonne, pasMemePersonne } from '../components/button';
+import { changeSelect } from '../pages/comparaison';
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
@@ -44,7 +45,7 @@ if (document.getElementById('dirigeant') !== null) {
       pasMemePersonne('dirigeant');
     }
   });
-}
+};
 
 if (document.getElementById('correspondance') !== null) {
   const dirigeant = document.getElementById('correspondance');
@@ -55,6 +56,12 @@ if (document.getElementById('correspondance') !== null) {
       pasMemePersonne('correspondance');
     }
   });
-}
+};
 
+if (document.getElementById('comparaison') !== null) {
+  const select = document.getElementById('grade_a');
+  select.addEventListener('change', () => {
+    changeSelect(select.value)
+  });
+};
 
