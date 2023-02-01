@@ -12,4 +12,22 @@ class QuotesController < ApplicationController
     @quote = Quote.find_by(customer_id: params[:customer_id], user_id: current_user.id)
   end
 
+  def pdf
+    @quote = Quote.find(params[:id])
+    @expert = current_user
+    @assure = Customer.find @quote.customer_id
+    chosen = params[:chosen] ? params[:chosen] : "normal"
+    p chosen
+    respond_to do |format|
+      format.html do
+        render layout: 'pdf.html.erb'
+      end
+      format.pdf do
+        render pdf: "Contrat",
+              template: "quotes/pdf.html.erb",
+              layout: 'pdf.html',
+              formats: :html, encoding: 'utf8'
+      end
+    end
+  end
 end

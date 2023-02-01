@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       collection do
         get :comparaison
       end
+      member do
+        get :pdf
+      end
     end
     resources :customers, shallow: true, only:[:index, :new, :create, :show, :edit, :update] do
       resources :primary_contacts, shallow:true, only:[:new, :create, :edit, :update]
