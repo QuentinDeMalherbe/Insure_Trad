@@ -1,0 +1,113 @@
+<h1>DISPOSITIONS CONTRACTUELLES DE VOTRE POLICE IMPAYE INSURETRADE</h1>
+<p>Votre police d’assurance Impayé (la " <span class="bold">Police</span>" ) est composée des éléments suivants :</p>
+
+<ul>
+  <li>Les Conditions Générales « InsureTrade»</li>
+  <li>Les Conditions Particulières</li>
+  <li>Convention de Prestations de Services au titre de la police « Trade Insure »</li>
+  <li>Le Devis que vous avez réalisé en ligne</li>
+  <li>Un Mandat de Prélèvement au profit d’ InsureTrade Assurances</li>
+  <li>Un Mandat de Prélèvement au profit d’ InsureTrade Servicing</li>
+</ul>
+<p class="space-top">Les mots en italique se réfèrent à une valeur et sont expliqués dans les Conditions Particulières.</p>
+<p class="space-top">Les termes en caractères <span class="bold">gras</span>  sont définis à l’article 7 – Définitions des conditions générales</p>
+<h2>CONDITIONS PARTICULIÈRES</h2>
+<p>
+<span class="bold">
+Votre Intermédiaire d’assurance :
+</span>
+<%= current_user.full_name %>, expert addresse
+</p>
+<div class="h3">
+  <div class="bullet-h3"></div>
+  <div class="title-h3">Article 1. Vous/Assuré</div>
+</div>
+<%# array %>
+<div>
+  <div class="table-row-first">
+    <div class=" table-case-left-first bold">
+      Raison Sociale
+    </div>
+    <div class="table-case-right-first">
+      <%= @assure.compagny_name %>
+    </div>
+  </div>
+  <div class="table-row">
+    <div class=" table-case-left bold">
+      Adresse
+    </div>
+    <div class="table-case-right">
+      <%= @assure.address %>
+    </div>
+  </div>
+  <div class="table-row">
+    <div class=" table-case-left bold">
+      Code Postale
+    </div>
+    <div class="table-case-right">
+      <%= @assure.zip_code %>
+    </div>
+  </div>
+  <div class="table-row">
+    <div class=" table-case-left bold">
+      Ville
+    </div>
+    <div class="table-case-right">
+      <%= @assure.city %>
+    </div>
+  </div>
+  <div class="table-row">
+    <div class=" table-case-left bold">
+      Pays
+    </div>
+    <div class="table-case-right">
+      <%= @assure.country %>
+    </div>
+  </div>
+  <div class="table-row">
+    <div class=" table-case-left bold">
+      N° Siren
+    </div>
+    <div class="table-case-right">
+      <%= @assure.siret %>
+    </div>
+  </div>
+  <div class="table-row">
+    <div class=" table-case-left bold">
+      Adresse de notification électronique
+    </div>
+    <div class="table-case-right">
+      addresse mail a mettre
+    </div>
+  </div>
+</div>
+<div class="h3">
+  <div class="bullet-h3"></div>
+  <div class="title-h3">Article 2 . Durée de la Police</div>
+</div>
+<p class='space-top'>La <span class="bold">police</span> entre en vigueur le AFAIRE et prendra fin le AFAIRE</p>
+<p class="space-top">
+  <span class="bold">Vous</span>bénéficiez d’un droit de renonciation à la mise en vigueur de cette police pendant un délai de
+  quatorze jours (calendaires) jusqu’au AFAIRE sans frais ni pénalité et vous renoncerez de ce fait
+  à tous vos droits à indemnisation au titre de cette police. Passé cette date, la police est réputée
+  être en vigueur et la prime pour le premier trimestre est due à InsureTrade Assurances.
+</p>
+<p class="space-top">
+  Cette police est renouvelable par tacite reconduction. <span class="bold">Vous</span> pouvez résilier cette police à la fin de
+  chaque exercice annuel de la police moyennant un préavis de 30 jours et cette police peut être
+  résiliée par <span class="bold">Nous</span> moyennant un préavis de 30 jours avant chaque date d’expiration d’exercice
+  annuel d’assurance.
+</p>
+<div class="h3">
+  <div class="bullet-h3"></div>
+  <div class="title-h3">Article 3 Nature des activités assurées : <%= @assure.activity_code %> AFAIRE</div>
+</div>
+<div class="h3">
+  <div class="bullet-h3"></div>
+  <div class="title-h3">Article 4 Description des produits/prestations de services assurés : AFAIRE</div>
+</div>
+<div class="h3">
+  <div class="bullet-h3"></div>
+  <div class="title-h3">Article 5 Seuil d’Intervention</div>
+</div>
+<p class="space-top"><span clas='bold'>Vous</span> gardez à votre charge toute <span class="bold">Perte</span> inférieure ou égale à <%= @quote.seuil %> Euros.</p>

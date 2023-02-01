@@ -55,7 +55,11 @@
         <label for="client-a" class='text-important-bold text-semibold mb-2 pb-0'>Client grade B</label>
 
         <div class='text-important-bold text-semibold mb-2'>
-          <p class='text-important-bold text-semibold mb-2'          >
+          <p id='grade_b' class='text-important-bold text-semibold mb-2'
+            down='<%= number_with_delimiter(@quote.g_a_down / 2, delimiter: " ") %> €'
+            normal='<%= number_with_delimiter(@quote.guarantie_a / 2, delimiter: " ") %> €'
+            up='<%= number_with_delimiter(@quote.g_a_up / 2, delimiter: " ") %> €'
+          >
             <%= number_with_delimiter(@quote.guarantie_b, delimiter: " ") %> €
           </p>
 
@@ -112,65 +116,132 @@
     <div class='w-25 p-2 sub-title-1'>Reconstitution </div>
     <div class='flex-grow-1 p-2 '>
       <div class='mb-4'>
-        <p id='r_1'class='text-important-bold text-semibold mb-0'
-          down='<%= number_with_delimiter(@quote.r_1_down, delimiter: " ") %> €'
-          normal='<%= number_with_delimiter(@quote.reconstitution_1, delimiter: " ") %> €'
-          up='<%= number_with_delimiter(@quote.r_1_up, delimiter: " ") %> €'
-        >
-          <%= number_with_delimiter(@quote.reconstitution_1, delimiter: " ") %> €
-        </p>
-        <p class='sub-title-1'>En 1 fois</p>
+
+        <div class="d-flex  mt-4">
+          <div class=' custom-checkbox-circle'>
+            <div>
+            </div>
+          </div>
+          <div>
+            <p id='r_1'class='text-important-bold text-semibold ml-4 mb-0'
+              down='<%= number_with_delimiter(@quote.r_1_down, delimiter: " ") %> €'
+              normal='<%= number_with_delimiter(@quote.reconstitution_1, delimiter: " ") %> €'
+              up='<%= number_with_delimiter(@quote.r_1_up, delimiter: " ") %> €'
+            >
+              <%= number_with_delimiter(@quote.reconstitution_1, delimiter: " ") %> €
+            </p>
+            <p class='sub-title-1 ml-4'>En 1 fois</p>
+          </div>
+        </div>
+
       </div>
       <div class='mb-4'>
-        <p id='r_2'class='text-important-bold text-semibold mb-0'
-          down='<%= number_with_delimiter(@quote.r_2_down, delimiter: " ") %> €'
-          normal='<%= number_with_delimiter(@quote.reconstitution_2, delimiter: " ") %> €'
-          up='<%= number_with_delimiter(@quote.r_2_up, delimiter: " ") %> €'
-        >
-          <%= number_with_delimiter(@quote.reconstitution_2, delimiter: " ") %> €
-        </p>
-        <p class='sub-title-1'>En 2 fois</p>
+        <div class="d-flex  mt-4">
+          <div class=' custom-checkbox-circle-selected'>
+            <div>
+            </div>
+          </div>
+          <div>
+            <p id='r_2'class='text-important-bold text-semibold ml-4 mb-0'
+              down='<%= number_with_delimiter(@quote.r_2_down, delimiter: " ") %> €'
+              normal='<%= number_with_delimiter(@quote.reconstitution_2, delimiter: " ") %> €'
+              up='<%= number_with_delimiter(@quote.r_1_up, delimiter: " ") %> €'
+            >
+              <%= number_with_delimiter(@quote.reconstitution_2, delimiter: " ") %> €
+            </p>
+            <p class='sub-title-1 ml-4'>En 2 fois</p>
+          </div>
+        </div>
       </div>
       <div>
-        <p id='r_3'class='text-important-bold text-semibold mb-0'
-          down='<%= number_with_delimiter(@quote.r_3_down, delimiter: " ") %> €'
-          normal='<%= number_with_delimiter(@quote.reconstitution_3, delimiter: " ") %> €'
-          up='<%= number_with_delimiter(@quote.r_3_up, delimiter: " ") %> €'
-        >
-          <%= number_with_delimiter(@quote.reconstitution_3, delimiter: " ") %> €
-        </p>
-        <p class='sub-title-1'>En 3 fois</p>
+        <div class="d-flex  mt-4">
+          <div class=' custom-checkbox-circle'>
+            <div>
+            </div>
+          </div>
+          <div>
+            <p id='r_3'class='text-important-bold text-semibold ml-4 mb-0'
+              down='<%= number_with_delimiter(@quote.r_3_down, delimiter: " ") %> €'
+              normal='<%= number_with_delimiter(@quote.reconstitution_3, delimiter: " ") %> €'
+              up='<%= number_with_delimiter(@quote.r_3_up, delimiter: " ") %> €'
+            >
+              <%= number_with_delimiter(@quote.reconstitution_3, delimiter: " ") %> €
+            </p>
+            <p class='sub-title-1 ml-4'>En 3 fois</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class='w-33 p-2 '>
       <div class='mb-4'>
-        <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.reconstitution_1, delimiter: " ") %> €</p>
-        <p class='sub-title-1'>En 1 fois</p>
+        <div class="d-flex  mt-4">
+          <div class=' custom-checkbox-circle'>
+            <div>
+            </div>
+          </div>
+          <div>
+            <p class='text-important-bold text-semibold ml-4 mb-0'  >
+              <%= number_with_delimiter(@quote.reconstitution_1, delimiter: " ") %> €
+            </p>
+            <p class='sub-title-1 ml-4'>En 1 fois</p>
+          </div>
+        </div>
       </div>
       <div class='mb-4'>
-        <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.reconstitution_2, delimiter: " ") %> €</p>
-        <p class='sub-title-1'>En 2 fois</p>
+        <div class="d-flex  mt-4">
+          <div class=' custom-checkbox-circle-selected'>
+            <div>
+            </div>
+          </div>
+          <div>
+            <p class='text-important-bold text-semibold ml-4 mb-0'  >
+              <%= number_with_delimiter(@quote.reconstitution_2, delimiter: " ") %> €
+            </p>
+            <p class='sub-title-1 ml-4'>En 2 fois</p>
+          </div>
+        </div>
       </div>
       <div>
-        <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.reconstitution_3, delimiter: " ") %> €</p>
-        <p class='sub-title-1'>En 3 fois</p>
+        <div class="d-flex  mt-4">
+          <div class=' custom-checkbox-circle'>
+            <div>
+            </div>
+          </div>
+          <div>
+            <p class='text-important-bold text-semibold ml-4 mb-0'  >
+              <%= number_with_delimiter(@quote.reconstitution_3, delimiter: " ") %> €
+            </p>
+            <p class='sub-title-1 ml-4'>En 3 fois</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-
+<ul>
+  <li>coucopu</li>
+</ul>
   <div class="d-flex  align-items-center border-top">
     <div class='w-25 p-2 sub-title-1'></div>
     <div class='flex-grow-1 p-2 '>
-      <div class='btn btn-primary w-100' >
-        Acheter
-      </div>
+      <%= link_to pdf_quote_path(id: @quote.id , :format => :pdf), id: 'customQuote' do %>
+        <div class='btn btn-primary w-100' >
+          Acheter
+        </div>
+      <% end %>
+      <%= link_to pdf_quote_path(id: @quote.id , ), id: 'customQuote' do %>
+        <div class='btn btn-primary w-100' >
+          html
+        </div>
+      <% end %>
     </div>
     <div class='w-33 p-2 '>
-      <div class='btn btn-primary w-100' >
-        Acheter
-      </div>
+      <%= link_to pdf_quote_path(id: @quote.id, :format => :pdf ) , id: 'normalQuote' do %>
+        <div class='btn btn-primary w-100' >
+          Acheter
+        </div>
+      <% end %>
     </div>
   </div>
 
