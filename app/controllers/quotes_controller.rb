@@ -16,8 +16,9 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
     @expert = current_user
     @assure = Customer.find @quote.customer_id
-    chosen = params[:chosen] ? params[:chosen] : "normal"
-    p chosen
+    @police_cinq_million = @assure.contracts.first.police_cinq_million
+    @primary_contact = @assure.primary_contacts.first
+    @chosen = params[:chosen] ? params[:chosen] : "normal"
     respond_to do |format|
       format.html do
         render layout: 'pdf.html.erb'

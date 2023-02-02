@@ -83,11 +83,11 @@ Votre Intermédiaire d’assurance :
 </div>
 <div class="h3">
   <div class="bullet-h3"></div>
-  <div class="title-h3">Article 2 . Durée de la Police</div>
+  <div class="title-h3">Article 2 . Durée de la Police</div>
 </div>
 <p class='space-top'>La <span class="bold">police</span> entre en vigueur le AFAIRE et prendra fin le AFAIRE</p>
 <p class="space-top">
-  <span class="bold">Vous</span>bénéficiez d’un droit de renonciation à la mise en vigueur de cette police pendant un délai de
+  <span class="bold">Vous</span> bénéficiez d’un droit de renonciation à la mise en vigueur de cette police pendant un délai de
   quatorze jours (calendaires) jusqu’au AFAIRE sans frais ni pénalité et vous renoncerez de ce fait
   à tous vos droits à indemnisation au titre de cette police. Passé cette date, la police est réputée
   être en vigueur et la prime pour le premier trimestre est due à InsureTrade Assurances.
@@ -100,14 +100,269 @@ Votre Intermédiaire d’assurance :
 </p>
 <div class="h3">
   <div class="bullet-h3"></div>
-  <div class="title-h3">Article 3 Nature des activités assurées : <%= @assure.activity_code %> AFAIRE</div>
+  <div class="title-h3">Article 3 Nature des activités assurées : <%= @assure.activity_code %> AFAIRE</div>
 </div>
 <div class="h3">
   <div class="bullet-h3"></div>
-  <div class="title-h3">Article 4 Description des produits/prestations de services assurés : AFAIRE</div>
+  <div class="title-h3">Article 4 Description des produits/prestations de services assurés : AFAIRE</div>
 </div>
 <div class="h3">
   <div class="bullet-h3"></div>
   <div class="title-h3">Article 5 Seuil d’Intervention</div>
 </div>
-<p class="space-top"><span clas='bold'>Vous</span> gardez à votre charge toute <span class="bold">Perte</span> inférieure ou égale à <%= @quote.seuil %> Euros.</p>
+<p class="space-top"><span class='bold'>Vous</span> gardez à votre charge toute <span class="bold">Perte</span> inférieure ou égale à <%= @quote.seuil %> Euros.</p>
+<div class="h3">
+  <div class="bullet-h3"></div>
+  <div class="title-h3">Article 6 Garantie Plancher par sinistre et par exercice annuel d’assurance</div>
+</div>
+<ol class="space-top">
+  <li>Premier niveau de garantie plancher par sinistre et par exercice annuel d’assurance sur vos
+  impayés provenant de vos <span class='bold'>Clients actifs in bonis</span> : <%= @quote.guarantie %> Euro</li>
+  <li class="space-top">Second niveau de garantie plancher par sinistre et par exercice annuel d’assurance sur vos
+  impayés provenant de vos <span class='bold'>Clients actifs in bonis</span> : <%= @quote.guarantie %> Euro, en cas d’épuisement total
+  durant un exercice annuel d’assurance du premier niveau de garantie plancher.</li>
+  <li class="space-top">Troisième niveau de garantie plancher par sinistre et par exercice annuel d’assurance sur
+  vos impayés provenant de vos <span class='bold'>Clients actifs in bonis</span> : <%= @quote.guarantie %> Euro, en cas d’épuisement
+  total durant un exercice annuel d’assurance du premier puis du second niveau de garantie
+  plancher.</li>
+  <li class="space-top">Quatrième niveau de garantie plancher par sinistre et par exercice annuel d’assurance sur
+  vos impayés provenant de vos <span class='bold'>Clients actifs in bonis</span> : <%= @quote.guarantie %> Euro, en cas d’épuisement
+  total durant un exercice annuel d’assurance du premier puis du second et enfin du troisième
+  niveau de garantie plancher.</li>
+</ol>
+<div class="h3">
+  <div class="bullet-h3"></div>
+  <div class="title-h3">Article 7 Garanties individuelles Click &amp; Cover</div>
+</div>
+<ul class="space-top">
+<li>Sur tout Client avec un <span class='bold'>Grade de risque A</span> , le total de vos impayés est garanti à concurrence
+d’un maximum de : <%= @quote.g_a(@chosen) %> €</li>
+<li>Sur tout Client avec un <span class='bold'>Grade de risque B</span> , le total de vos impayés est garanti à concurrence
+d’un maximum de : <%= @quote.g_a(@chosen) / 2 %> €</li>
+</ul>
+<div class="h3">
+  <div class="bullet-h3"></div>
+  <div class="title-h3">Article 8 Plafond de Garantie par exercice annuel d’assurance</div>
+</div>
+<p class="space-top">Le plafond de garantie de la présente police par exercice d’assurance ne peut excéder quatre fois le
+montant de la <span class="bold">garantie individuelle Click &amp; Cover</span>  pour un Client avec un <span class="bold">Grade de risque A</span> , soit :</p>
+<p class="text-center">AFARIE</p>
+<div class="h3">
+  <div class="bullet-h3"></div>
+  <div class="title-h3">Article 9 Franchises</div>
+</div>
+<p class="space-top"><span class="bold">Vous</span> gardez à votre charge les quotes parts suivantes sur chaque  <span class="bold"> sinistre garanti</span> :</p>
+<p class="space-top bold">Garantie Plancher par sinistre et par exercice annuel d’assurance</p>
+<ul class="space-top bold">
+<li>30% au titre du premier niveau de garantie plancher</li>
+<li>35% au titre du second niveau de garantie plancher</li>
+<li>40% au titre du troisième niveau de garantie plancher</li>
+<li>45% au titre du quatrièmeer niveau de garantie plancher</li>
+</ul>
+<p class="space-top bold">Garanties individuelles Click &amp; Cover: 15%</p>
+<div class="h3">
+  <div class="bullet-h3"></div>
+  <div class="title-h3">Article 10 Prix pour l’exercice annuel d’assurance</div>
+</div>
+<p class="space-top">Pour le présent exercice annuel d’assurance, le prix total hors taxes est de AFAIRE
+dont :</p>
+<ol>
+<li>La <span class="bold">Prime d’assurance</span>  : <%= @quote.prime_chose(@chosen) %> € + 9% de Taxe ; et</li>
+<li>Un <span class="bold">coût de police et de prestation de services Click &amp; Cover</span>  : AFAIRE € + 20% de
+TVA,</li>
+</ol>
+<p>Ce montant est payable en totalité à la prise d’effet de la police et permet un nombre de <%= @quote.consultation_number %>
+consultations Click &amp; Cover. Toute consultation complémentaire Click &amp; Cover vous sera
+facturée 30 € HT</p>
+<p class="space-top bold">Conditions de paiement :</p>
+<p class="space-top">
+La <span class="bold">prime d’assurance</span>  est payable en 4 échéances trimestrielles. La première échéance trimestrielle
+est équivalente à un quart du montant de la prime d’assurance plus la totalité du montant de <span class="bold">cout de
+police et de prestations de service Click &amp; Cover</span>  et sera débitée sur votre compte bancaire au
+AFAIRE
+</p>
+<div class="h3">
+  <div class="bullet-h3"></div>
+  <div class="title-h3">Convention de Prestations de Service au titre de la présente police</div>
+</div>
+<p class="space-top">
+<span class="bold">Nous</span> , InsureTrade Assurance, avons sous-traité et déléguons à InsureTrade Servicing, un certain
+nombre de tâches et de missions dont la collecte d’informations, l’évaluation des risques de crédit et
+le suivi de l’ensemble de ces éléments sur chacun des <span class="bold">Clients</span> susceptibles d’être assurés au titre de
+votre présente police.
+</p>
+<p class="space-top">
+<span class="bold">Nous</span> transmettrons à InsureTrade Servicing toutes les informations que <span class="bold">Vous</span> pouvez <span class="bold">Nous</span>
+transférer sur vos <span class="bold">Clients</span> et <span class="bold">Nous</span> <span class="bold">Vous</span> communiquerons nos décisions de garantie prises avec
+l’aide d’InsureTradeServicing sur chacun de vos <span class="bold">Clients</span> au titre de votre présente police.
+</p>
+<p class="space-top">
+Le <span class="bold">Coût de police et Prestations de Service Click &amp; Cover</span>  au titre de la <span class="bold">Police</span> indiqué à l’Article
+10 des présentes conditions particulières - y inclus la TVA applicable - est facturée par InsureTrade
+Servicing et lui est directement du et payable.
+</p>
+<p class="space-top">
+En cas de demande(s) supplémentaire(s) par rapport au nombre de <span class="bold">Clients</span> inclus dans le forfait
+forfaitaire initial du <span class="bold">Coût de police et Prestations de Service Click &amp; Cover</span>  au titre de la <span class="bold">Police</span>, les
+frais supplémentaires par demande supplémentaire tels que précisés aux présentes conditions
+particulières seront facturés par InsureTrade Servicing et lui seront directement dus et payables.
+</p>
+<h2>DEVIS RÉALISÉ EN LIGNE</h2>
+<p class='bold'>Ce document reprend les différentes informations que vous avez fournies a votre intermédiaire
+<%= @expert.full_name %> pour votre devis en ligne à la date du AFAIRE</p>
+<%# list %>
+<div>
+  <div class="row">
+    <p class="row-left bold">Assuré</p>
+    <p class="row-right bold"><%= @primary_contact.full_name %></p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">Raison Sociale</p>
+    <p class="row-right bold"><%= @assure.compagny_name %></p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">Adresse</p>
+    <p class="row-right bold"><%= @assure.address %></p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">Code Postale</p>
+    <p class="row-right bold"><%= @assure.zip_code %></p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">Ville</p>
+    <p class="row-right bold"><%= @assure.city %></p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">Pays</p>
+    <p class="row-right bold"><%= @assure.country %></p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">N° Siren</p>
+    <p class="row-right bold"><%= @assure.siret %></p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">Informations Economiques</p>
+    <p class="row-right bold">AFAIRE</p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">Code d’activité principale</p>
+    <p class="row-right bold"><%= @assure.activity_code %></p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">Ventes de produits et prestations de service assurées</p>
+    <p class="row-right bold">AFAIRE</p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">Montant du chiffre d’affaires soumis à votre assureur crédit de base pour le dernier exercice annuel
+    d’assurance</p>
+    <p class="row-right bold"><%= @police_cinq_million.ammount_ca %></p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">pourcentage de ce chiffre d’affaires insuffisamment couvert</p>
+    <p class="row-right bold">AFAIRE</p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">nombre total approximatif de vos clients actifs assurés</p>
+    <p class="row-right bold"><%= @police_cinq_million.client_number %></p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">pourcentage approximatif de ces clients actifs insuffisamment couverts</p>
+    <p class="row-right bold">AFAIRE</p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">Assureur Crédit de Base</p>
+    <p class="row-right bold">AFAIRE</p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">Référence de votre Police de base</p>
+    <p class="row-right bold">AFAIRE</p>
+  </div>
+  <div class="row">
+    <p class="row-left bold">Période de votre police de base</p>
+    <p class="row-right bold">AFAIRE</p>
+  </div>
+</div>
+<div class="h3">
+  <div class="bullet-h3"></div>
+  <div class="title-h3">Informations supplémentaires</div>
+</div>
+<p class="space-top bold">Représentant légal </p>
+<p><span class="bold">Nom : </span><%= @primary_contact.last_name %></p>
+<p><span class="bold">Prénom : </span><%= @primary_contact.first_name %></p>
+<p><span class="bold">Fonction : </span><%= @primary_contact.position %></p>
+<p class="space-top bold">Informations relatives à la correspondance quotidienne </p>
+<p><span class="bold">Nom : </span>AFAIRE</p>
+<p><span class="bold">Prénom : </span>AFAIRE</p>
+<p><span class="bold">Fonction : </span>AFAIRE</p>
+<p><span class="bold">E-mail : </span>AFAIRE</p>
+<p><span class="bold">Tel : </span>AFAIRE</p>
+<p class="space-top"><span class="bold">Vous</span>  déclarez avoir pris pleinement connaissance de toutes les pièces constituant cette police.</p>
+<p class="space-top">En cas de contrariété, et sans préjudice de ce qui est dit aux Conditions générales, les Conditions particulières
+prévalent sur les Conditions générales.</p>
+<p class="space-top">Dans l’hypothèse où une clause serait nulle, réputée non écrite ou que, de toute autre façon, sa validité serait
+remise en cause, cela n’affecterait pas la validité du reste de la Police.</p>
+<p class="space-top"><span class="bold">Vous</span> certifiez <span class="bold">Nous</span> avoir communiqué toutes les informations demandées au Devis réalisé en ligne et que
+celles-ci sont vraies et sincères.</p>
+<p class="space-top">Vous autorisez votre Intermédiaire <%= @expert.full_name %>:</p>
+<ol>
+  <li>
+    d’étre copié sur toute la correspondance quotidienne faite au titre de la police
+    <div class='pdf-flex'>
+      <div class='pdf-checkbox'></div>
+      <div >Oui</div>
+      <div class='pdf-checkbox ml-1rem'></div>
+      <div>Non</div>
+    </div>
+  </li>
+  <li>
+    d’introduire en ligne pour votre compte des consultations Click&amp; Cover dans la limite du nombre
+    maximum de consultations que vous avez payé.
+    <div class='pdf-flex'>
+      <div class='pdf-checkbox'></div>
+      <div >Oui</div>
+      <div class='pdf-checkbox ml-1rem'></div>
+      <div>Non</div>
+    </div>
+  </li>
+</ol>
+<div class="h3">
+  <div class="bullet-h3"></div>
+  <div class="title-h3">Date d’émission : AFAIRE</div>
+</div>
+<p class="bold space-top">Signature du document par une personne ayant autorité à agir</p>
+<div class="pdf-flex justify-between space-top">
+  <div>
+    <ul>
+      <li class='bold'>Assuré</li>
+      <li>Nom: <%= @primary_contact.last_name %></li>
+      <li>Prénom: <%= @primary_contact.first_name %></li>
+      <li>Fonction: <%= @primary_contact.position %></li>
+
+    </ul>
+  </div>
+  <div class="signature">
+    Signature:
+  </div>
+</div>
+<div class="pdf-flex justify-between space-top">
+  <div>
+    <ul>
+      <li class='bold'>InsureTrade Assurances</li>
+      <li>C/ Numància, 207 Bajos <br>08034 Barcelona, Spain</li>
+    </ul>
+  </div>
+  <div class="signature">
+    Signature:
+  </div>
+</div>
+<div class="pdf-flex justify-between space-top">
+  <div>
+    <ul>
+      <li class='bold'>InsureTrade Servicing</li>
+      <li>C/ Numància, 207 Bajos <br>08034 Barcelona, Spain</li>
+    </ul>
+  </div>
+  <div class="signature">
+    Signature:
+  </div>
+</div>
