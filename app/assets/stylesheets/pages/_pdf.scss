@@ -95,6 +95,38 @@
     padding-left: 8px;
     border-top-style: none;
   }
-
+  .row {
+    margin-top: 1rem;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+  }
+  .row-left {
+    width: 30rem;
+  }
+  .row-right {
+    width: 18rem;
+    padding-left: 8px;
+  }
+  .pdf-flex {
+    display: -webkit-box;
+  }
+  .justify-between {
+    -webkit-box-pack: justify;
+  }
+  .pdf-checkbox {
+    border: 1px solid $dark-blue;
+    height: 10px;
+    width: 10px;
+    margin-top: 8px;
+    margin-right: 8px;;
+  }
+  .ml-1rem {
+    margin-left: 1rem;
+  }
+  .signature {
+    border: 1px solid $dark-blue;
+    height: 100px;
+    width: 400px;
+  }
 }
 
