@@ -62,6 +62,9 @@
   .space-top {
     margin-top: 2rem;
   }
+  .space-top-1 {
+    margin-top: 1rem;
+  }
   .table-row-first {
     margin-top: 1rem;
     display: -webkit-box;
@@ -127,6 +130,41 @@
     border: 1px solid $dark-blue;
     height: 100px;
     width: 400px;
+  }
+  .page-break {
+    display: block;
+    clear: both;
+    page-break-after: always;
+  }
+  .mandat {
+    display: -webkit-box;
+  }
+  .mandat-left {
+    width: 14rem;
+    padding-left: 8px;
+    font-weight: 600;
+    color: $dark-blue;
+  }
+  .mandat-right {
+    margin-top: 10px;
+    width: 35rem;
+    padding-left: 8px;
+    border-top-style: none;
+  }
+  .mandat-fill {
+    width: 35rem;
+    border: 1px solid $dark-blue;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+  }
+  .mandat-label {
+    font-size: 12px;
+  }
+  .mandat-label-3 {
+    display: -webkit-box;
+    font-size: 12px;
+    -webkit-box-pack: justify;
   }
 }
 
