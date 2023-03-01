@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_23_094658) do
+ActiveRecord::Schema.define(version: 2023_03_01_132642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,20 @@ ActiveRecord::Schema.define(version: 2023_01_23_094658) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["police_cinq_million_id"], name: "index_client_info_cinqs_on_police_cinq_million_id"
+  end
+
+  create_table "consumers", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.string "siret"
+    t.string "country"
+    t.string "name"
+    t.string "address"
+    t.string "zip_code"
+    t.string "city"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "risk_allowed", default: true
+    t.index ["customer_id"], name: "index_consumers_on_customer_id"
   end
 
   create_table "contracts", force: :cascade do |t|
@@ -367,6 +381,7 @@ ActiveRecord::Schema.define(version: 2023_01_23_094658) do
   end
 
   add_foreign_key "client_info_cinqs", "police_cinq_millions"
+  add_foreign_key "consumers", "customers"
   add_foreign_key "contracts", "customers"
   add_foreign_key "contracts", "users"
   add_foreign_key "customer_contacts", "insure_trad_supps"

@@ -13,10 +13,10 @@
     </div>
   <% end %>
 
-  <%= link_to  root_path, class: 'sidebar-button' do %>
-    <div >
+  <%= link_to  search_risks_path, class: 'sidebar-button' do %>
+    <div class= <%= %w(risks).include?(params[:controller]) ? "sidebar-active" : "" %> >
       <%= render "shared/svg/3.svg" %>
-      <p class="mt-1">Assurances<br>Polices</p>
+      <p class="mt-1">Grade de<br>Risque</p>
     </div>
   <% end %>
 

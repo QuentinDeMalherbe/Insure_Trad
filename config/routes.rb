@@ -42,6 +42,13 @@ Rails.application.routes.draw do
     resources :guarantee_ccs
     resources :guarantee_adds
     resources :unpaids
+    resources :consumers
+    resources :risks do
+      collection do
+        get :search
+        get :result
+      end
+    end
     resources :sinisters
 
     get '/insure_trad_supps/:id/createpdf', to: 'insure_trad_supps#creationpdf', as: 'creation'
