@@ -3,47 +3,47 @@
     <h2 class="title pb-0">Garantie Click & Cover</h2>
   </div>
   <%= simple_form_for(:new_guarantee_cc) do |f| %>
-  <div class="inline">
-    <%= f.input :siret, label: "N° SIREN" %>
-    <%= f.input :country, as: :string, label: "Pays"  %>
-  </div>
-  <%= f.input :name, label: "Raison Sociale"  %>
-  <%= f.input :address, label: "Adresse postale"  %>
-  <div class="inline">
-    <%= f.input :zip_code, label: "#{t 'customer.edit.label4' }"  %>
-    <%= f.input :city, label: "#{t 'customer.edit.label5' }" %>
-  </div>
-  <div class="mt-4">
-    <h3 class="small-title ">Garantie Click & Cover</h3>
-    <div class="d-flex align-items-center">
-      <div class='text-white bg-dark-blue p-2 rounded-circle d-flex align-items-center justify-content-center mt-4' style="width:30px;height:30px;">B</div>
-      <%= f.input :grade, label: "Client avec un grade de risque B", wrapper_html: {class:'flex-grow-1 mx-2'}  %>
-      <%= f.input :franchise, label: "Franchise", wrapper_html: {class:'w-25'} %>
+    <div class="inline">
+      <%= f.input :siret, label: "N° SIREN" %>
+      <%= f.input :country, as: :string, label: "Pays"  %>
     </div>
-  </div>
-  <div class="blue-card mt-4">
-    <div class='blue-card-title'>Ajoutez une garantie complémentaire temporaire avec la même franchise. Offre valable 48h</div>
-    <div class= "blue-card-content">
-      <p class='text-small text-dark-blue mb-4'>Valable jusqu’au   30/12/2022</p>
+    <%= f.input :name, label: "Raison Sociale"  %>
+    <%= f.input :address, label: "Adresse postale"  %>
+    <div class="inline">
+      <%= f.input :zip_code, label: "#{t 'customer.edit.label4' }"  %>
+      <%= f.input :city, label: "#{t 'customer.edit.label5' }" %>
+    </div>
+    <div class="mt-4">
+      <h3 class="small-title ">Garantie Click & Cover</h3>
       <div class="d-flex align-items-center">
-
-        <%= f.input :amount, label: "Montant de la garantie complémentaire temporaire", wrapper_html: {class:' mr-5'}  %>
-        <%= f.input :price, label: "Prix complémentaire TTC", wrapper_html: {class:'w-25'} %>
+        <div class='text-white bg-dark-blue p-2 rounded-circle d-flex align-items-center justify-content-center mt-4' style="width:30px;height:30px;">B</div>
+        <%= f.input :grade, label: "Client avec un grade de risque B", wrapper_html: {class:'flex-grow-1 mx-2'}  %>
+        <%= f.input :franchise, label: "Franchise", wrapper_html: {class:'w-25'} %>
       </div>
     </div>
-  </div>
-  <div class="blue-card my-4">
-    <div class='blue-card-title'>Demander une garantie additionnelle à la carte, un conseiller crédit vous répond dans les 48h.</div>
-    <div class= "blue-card-content">
-      <p class='text-important text-semibold mb-4'>
-      Toute garantie additionnelle accordée est valable temporairement et fait l'objet d'un coût débité automatiquement sur votre compte bancaire.
-      </p>
+    <div class="blue-card mt-4">
+      <div class='blue-card-title'>Ajoutez une garantie complémentaire temporaire avec la même franchise. Offre valable 48h</div>
+      <div class= "blue-card-content">
+        <p class='text-small text-dark-blue mb-4'>Valable jusqu’au   30/12/2022</p>
+        <div class="d-flex align-items-center">
 
-      <div class="d-flex justify-content-center">
-        <%= f.submit "#{t 'customer.edit.submit1' }" , class: 'btn btn-primary ' %>
+          <%= f.input :amount, label: "Montant de la garantie complémentaire temporaire", wrapper_html: {class:' mr-5'}  %>
+          <%= f.input :price, label: "Prix complémentaire TTC", wrapper_html: {class:'w-25'} %>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="blue-card my-4">
+      <div class='blue-card-title'>Demander une garantie additionnelle à la carte, un conseiller crédit vous répond dans les 48h.</div>
+      <div class= "blue-card-content">
+        <p class='text-important text-semibold mb-4'>
+        Toute garantie additionnelle accordée est valable temporairement et fait l'objet d'un coût débité automatiquement sur votre compte bancaire.
+        </p>
+
+        <div class="d-flex justify-content-center">
+          <%= f.submit "#{t 'customer.edit.submit1' }" , class: 'btn btn-primary ' %>
+        </div>
+      </div>
+    </div>
 
   <%# probleme de boutton avec simple_form prend pas en compte la class peut etre change de simple avec tag par exemple ( cf index customers) %>
   <% end %>

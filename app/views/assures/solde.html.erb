@@ -1,0 +1,39 @@
+<div class="container">
+  <div class='mb-4'>
+    <h2 class="title pb-0">
+      <span>
+      <svg width="24" height="26" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.20504 2H14.795L20.1667 7.86V16.14L14.795 22H7.20504L1.83337 16.14V7.86L7.20504 2Z" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 16H11.0092" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 8V12" stroke="#FF5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      </span>
+      Solde épuisé
+    </h2>
+  </div>
+  <div class="orange-card  ">
+    <div class='orange-card-content full-rounded text-dark-orange border-orange'>
+    Votre solde de consultations est épuisé. Pour accéder à nouveau à la consultation Click & Cover vous devez <span class="text-bold">renouveler l’achat de crédit de consultation(s).</span>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <%= simple_form_for :sold , html: {novalidate: true, class: "no-bs-validation mt-5 d-flex justify-content-center flex-column"} do |f|%>
+        <%= f.input :solde, label: "Nombre de crédits" , as: :integer, input_html: {class:' mb-5'} , label_html: {class: 'text-center'}%>
+      <div class='text-important mb-5'>
+        <span class="text-important-bold text-big">30€ </span> HT/unité
+      </div>
+      <%= f.submit "#{t 'button_valider'}", class:'btn btn-primary mb-2' , disabled: true %>
+    <% end %>
+  </div>
+
+  <%= link_to :back do %>
+    <div class="d-flex my-5">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 12H5" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 19L5 12L12 5" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class='ml-4 text-grey'>Retour à la page précédente</p>
+    </div>
+  <% end %>
+</div>

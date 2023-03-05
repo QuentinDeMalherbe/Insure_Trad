@@ -131,6 +131,24 @@ a {
   border-radius: 0px 0px 8px 8px;
 }
 
+
+.light-orange-card .light-orange-card-title{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 24px;
+  background-color: #FB9F4A;
+  border-radius: 8px 8px 0px 0px;
+  color: white;
+}
+
+.light-orange-card .light-orange-card-content {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  background-color: #FFF6EE;
+  border-radius: 0px 0px 8px 8px;
+}
+
 .grey-container {
   padding-top: 24px;
   padding-bottom: 24px;
@@ -148,4 +166,12 @@ a {
   background-color: #50C0C71A;
   border: 1px solid #CBECEE;
 
+}
+
+.full-rounded {
+  border-radius: 8px 8px 8px 8px !important;
+}
+
+.border-dark-orange {
+  border: 1px solid #FF5252 ;
 }
