@@ -1,0 +1,43 @@
+<div class="container">
+  <div class='mb-4'>
+    <h2 class="title pb-0">Consultation Click & Cover</h2>
+  </div>
+
+  <%= simple_form_for :search, url: search_guarantee_ccs_path, method: "GET" do |f|%>
+    <div class= 'grey-container'>
+      <div class="inline">
+        <%= f.input :siret, label: "N° SIREN" %>
+        <%= f.input :country, as: :string, label: "Pays"  %>
+      </div>
+      <div class="inline">
+        <h3 class='text-center'>Ou</h3>
+      </div>
+      <%= f.input :name, label: "Raison Sociale"  %>
+      <%= f.input :address, label: "Adresse postale"  %>
+      <div class="inline">
+        <%= f.input :zip_code, label: "#{t 'customer.edit.label4' }"  %>
+        <%= f.input :city, label: "#{t 'customer.edit.label5' }" %>
+      </div>
+      <div class="d-flex justify-content-center">
+        <%= f.submit "Rechercher" , class: 'btn btn-primary ' %>
+      </div>
+    </div>
+  <%# probleme de boutton avec simple_form prend pas en compte la class peut etre change de simple avec tag par exemple ( cf index customers) %>
+  <% end %>
+
+  <div class="row overflow-auto mt-5">
+    <div class="col-sm-8 offset-sm-2 overflow-auto">
+      <div id="customers" class ="<%= @hide ? "hidden" : ""  %>" >
+        <% @consumers.each do |consumer| %>
+          <%= link_to(result_guarantee_ccs_path(consumer_id: consumer.id)) do %>
+            <div class='card'>
+              <h3 class='mt-2 mb-0'><%= consumer.name %></h3>
+              <p>SIRET : <%= consumer.siret %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

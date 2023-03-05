@@ -504,4 +504,10 @@ puts 'Creating  6 customers/primary_contacts/contracts/police_cinq_millions/nbi_
   User.seed(user_2.id)
   User.seed(user_3.id)
 
+puts 'creating consumer'
+consumer_1 = Consumer.create(siret: '1', name: 'Allavène A', customer_id: 1, risk_allowed: true, grade: 'a')
+consumer_1 = Consumer.create(siret: '2', name: 'Bernard B', customer_id: 1, risk_allowed: true, grade: 'b')
+consumer_1 = Consumer.create(siret: '4', name: 'Dupond D', customer_id: 1, risk_allowed: false, grade: 'd')
+consumer_1 = Consumer.create(siret: '5', name: 'Etienne E', customer_id: 1, risk_allowed: false, grade: 'e')
+
 puts 'Finished!'

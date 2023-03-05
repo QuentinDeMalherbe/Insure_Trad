@@ -56,3 +56,9 @@
 .border-classic-right {
   border-radius: 0 12px 12px 0 !important;
 }
+
+.btn-cancel {
+  color: $primary !important;
+  background-color: white;
+  border: 1px solid $primary
+}

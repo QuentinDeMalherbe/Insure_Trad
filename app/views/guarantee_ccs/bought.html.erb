@@ -1,0 +1,76 @@
+<div class="container">
+  <div class='mb-4'>
+    <h2 class="title  text-center pb-0">Achat confirmé !</h2>
+  </div>
+
+  <div class="card-turquoise w-50 p-4 m-auto">
+    <h2 class=" text-dark-blue pb-2">Avenant Client N° 421337</h2>
+    <p class=" text-dark-grey"><%= DateTime.now.strftime("%c") %></p>
+    <div class="w-75  border border-dark-grey border-classic m-auto "></div>
+    <div class='mt-4'>
+      <p class="text-dark-grey text-very-small">Garantie Click& Cover</p>
+      <div class="d-flex justify-content-between">
+        <p class="text-dark-grey"> Grade de risque</p>
+        <p class="text-dark-blue text-bold">A</p>
+      </div>
+      <div class="d-flex justify-content-between">
+        <p class="text-dark-grey"> Garantie Click & Cover</p>
+        <p class="text-dark-blue text-bold">15 000 €</p>
+      </div>
+      <div class="d-flex justify-content-between">
+        <p class="text-dark-grey"> Franchise </p>
+        <p class="text-dark-blue text-bold">15%</p>
+      </div>
+    </div>
+    <div class="w-75  border border-dark-grey border-classic m-auto "></div>
+    <div class='mt-4'>
+      <p class="text-dark-grey text-very-small">Complémentaire temporaire</p>
+      <div class="d-flex justify-content-between">
+        <p class="text-dark-grey"> Garantie Click& Cover </p>
+        <p class="text-dark-blue text-bold">15 000 €</p>
+      </div>
+      <div class="d-flex justify-content-between">
+        <p class="text-dark-grey"> Prime forfaitaire HT</p>
+        <p class="text-dark-blue text-bold">15%</p>
+      </div>
+      <div class="d-flex justify-content-between">
+        <p class="text-dark-grey"> Durée de validité</p>
+        <p class="text-dark-blue text-bold">6 mois</p>
+      </div>
+    </div>
+    <div class="w-75  border border-dark-grey border-classic m-auto "></div>
+    <div class="my-4">
+      <div class="d-flex">
+        <div class='w-50'>
+          <p class='text-dark-grey mr-7 text-very-small'>Référence</p>
+          <p class='text-dark-blue'>N°546 789 14</p>
+        </div>
+        <div class='w-50'>
+          <p class='text-dark-grey mr-7 text-very-small'>SIREN</p>
+          <p class='text-dark-blue'><%= @consumer.siret %></p>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class='w-50'>
+          <p class='text-dark-grey mr-7 text-very-small'>Raison sociale</p>
+          <p class='text-dark-blue'><%= @consumer.name %></p>
+        </div>
+        <div class='w-50'>
+          <p class='text-dark-grey mr-7 text-very-small'>Adresse</p>
+          <p class='text-dark-blue'>12 avenue Martin Paris</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <%= link_to root_path do %>
+    <div class="d-flex my-5">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 12H5" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 19L5 12L12 5" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class='ml-4 text-grey'>Retour à l'accueil</p>
+    </div>
+  <% end %>
+</div>

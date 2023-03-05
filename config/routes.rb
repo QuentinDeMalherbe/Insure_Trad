@@ -39,7 +39,13 @@ Rails.application.routes.draw do
         end
       end
     end
-    resources :guarantee_ccs
+    resources :guarantee_ccs do
+      collection do
+        get :search
+        get :result
+        get :bought
+      end
+    end
     resources :guarantee_adds
     resources :unpaids
     resources :consumers
@@ -50,6 +56,7 @@ Rails.application.routes.draw do
       end
     end
     resources :sinisters
+    get '/assures/:id/solde', to: 'assures#solde', as: 'solde_assure'
 
     get '/insure_trad_supps/:id/createpdf', to: 'insure_trad_supps#creationpdf', as: 'creation'
     get '/police_cinq_millions/:id/createpdf', to: 'police_cinq_millions#creationpdf', as: 'police_creation'

@@ -1,0 +1,153 @@
+<div class="container">
+  <div class='mb-4'>
+    <h2 class="title pb-0">Consultation Click & Cover</h2>
+  </div>
+  <div class="card-turquoise d-flex justify-content-between p-4 mb-5">
+    <div>
+      <p class='text-dark-grey mb-0 text-very-small'>Date</p>
+      <p class='text-dark-blue mb-0'>15/02/2023</p>
+    </div>
+    <div>
+      <p class='text-dark-grey mb-0 text-very-small'>Heure</p>
+      <p class='text-dark-blue mb-0'>16h25</p>
+    </div>
+    <div>
+      <p class='text-dark-grey mb-0 text-very-small'>Référence police d’assurance</p>
+      <p class='text-dark-blue mb-0'>N° 546 789 14</p>
+    </div>
+  </div>
+  <%= simple_form_for @consumer , html: {novalidate: true, class: "no-bs-validation mb-5"} do |f|%>
+      <div class="inline">
+        <%= f.input :siret, label: "N° SIREN" ,disabled: true, readonly: true %>
+        <%= f.input :country, as: :string, label: "Pays",  disabled: true, readonly: true  %>
+      </div>
+      <%= f.input :name, label: "Raison Sociale" ,  disabled: true, readonly: true %>
+      <%= f.input :address, label: "Adresse postale" ,  disabled: true, readonly: true %>
+      <div class="inline">
+        <%= f.input :zip_code, label: "#{t 'customer.edit.label4' }" ,  disabled: true, readonly: true %>
+        <%= f.input :city, label: "#{t 'customer.edit.label5' }",  disabled: true, readonly: true %>
+      </div>
+
+  <% end %>
+  <% if @grade == "a" || @grade == 'b' %>
+    <div class="d-flex my-4">
+      <div class="custom-wrapper-input mt-0 mr-4 flex-grow-1">
+        <h5>Garantie <strong>Click & Cover</strong>
+          <span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
+              <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </h5>
+        <div class="d-flex align-items-center">
+          <div class="mr-4 text-white rounded-circle bg-dark-blue px-2 pt-1 text-center " style="height:32px;width:32px;margin-top: 25px;"><%= @grade.capitalize %></div>
+          <div class="flex-grow-1">
+            <div class='label text-dark-blue'>Client avec un grade de risque <%= @grade.capitalize %></div>
+            <div class="input"> 15 000 €</div>
+          </div>
+          <div class="custom-wrapper-input ml-4">
+            <div class='label text-dark-blue'>Franchise</div>
+            <div class="input "> 15% </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class='text-small'>Cette garantie Click&Cover prend effet sur vos livraisons faites...</p>
+    <p class='text-small'>Aggravation de risque, telle que définie....</p>
+    <p class='text-small'>Cette garantie a pris effet...</p>
+    <%= simple_form_for(:new_guarantee_cc) do |f| %>
+      <div class="blue-card my-4">
+        <div class='blue-card-title text-semibold py-3'>Doublement de la Garantie Click&Cover</div>
+        <div class= "blue-card-content">
+          <p class='text-important  mb-4'>
+            Tout doublement de garantie accordé est valable temporairement et fait l'objet d'un paiement de prime forfaitaire comme indiqué ci-dessous :
+          </p>
+            <div class="d-flex align-items-center">
+
+              <%= f.input :amount, label: "Montant de la garantie complémentaire temporaire", wrapper_html: {class:' mr-5'}, input_html: {value:'15 000 €'}  %>
+              <%= f.input :price, label: "Prix forfaitaire HT", wrapper_html: {class:'w-25 mr-5'}, input_html: {value:'500 €'}%>
+              <%= f.input :price, label: "Durée de validité", wrapper_html: {class:'w-25'}, input_html: {value:'6 mois'} %>
+            </div>
+        </div>
+      </div>
+    <% end %>
+    <div class='d-flex justify-content-center'>
+      <%= link_to  :back do %>
+        <div class='btn btn-cancel mr-5' >Refuser</div>
+      <% end %>
+      <%= link_to bought_guarantee_ccs_path(consumer_id: @consumer.id) do %>
+        <div class='btn btn-primary'>Acheter</div>
+      <% end %>
+    </div>
+
+
+  <% elsif @grade == 'd' %>
+
+    <div class="light-orange-card my-4">
+      <div class='light-orange-card-title text-semibold py-3'>Client non éligible à une garantie Click & Cover</div>
+      <div class= "light-orange-card-content">
+        <p class='text-important mb-4 mr-4'>
+          À ce jour ce client n’est pas éligible à une garantie individuelle Click & Cover mais reste garanti dans les limites et conditions de la garantie plancher par sinistre et par exercice d’assurance de votre police.
+        </p>
+
+        <div class="d-flex mb-4">
+          <div class="custom-wrapper-input mt-0 mr-4 flex-grow-1">
+            <div class="d-flex align-items-center">
+              <div class="mr-4 text-white rounded-circle bg-light-orange px-2 pt-1 text-center " style="height:32px;width:32px;margin-top: 25px;">D</div>
+              <div class="flex-grow-1">
+                <div class='label text-dark-orange'>Client avec un grade de risque D</div>
+                <div class="input"> - </div>
+              </div>
+              <div class="custom-wrapper-input ml-4">
+                <div class='label text-light-orange'>Franchise</div>
+                <div class="input "> - </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <% elsif @grade == 'e' %>
+
+    <div class="orange-card my-4">
+      <div class='orange-card-title text-semibold py-3'>Client non éligible à une garantie Click & Cover</div>
+      <div class= "orange-card-content">
+        <p class='text-important mb-4 mr-4'>
+          À ce jour ce client présente un profil de risques aggravés . Les garanties au titre de votre police d’assurance cessent immédiatement sur toute nouvelle livraison pouvant être faite avec ce client.
+        </p>
+
+        <div class="d-flex mb-4">
+          <div class="custom-wrapper-input mt-0 mr-4 flex-grow-1">
+            <div class="d-flex align-items-center">
+              <div class="mr-4 text-white rounded-circle bg-dark-orange px-2 pt-1 text-center " style="height:32px;width:32px;margin-top: 25px;">E</div>
+              <div class="flex-grow-1">
+                <div class='label text-dark-orange'>Client avec un grade de risque E</div>
+                <div class="input"> - </div>
+              </div>
+              <div class="custom-wrapper-input ml-4">
+                <div class='label text-dark-orange'>Franchise</div>
+                <div class="input "> - </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  <% end %>
+
+
+  <%= link_to :back do %>
+    <div class="d-flex my-5">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 12H5" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 19L5 12L12 5" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class='ml-4 text-grey'>Retour à la page précédente</p>
+    </div>
+  <% end %>
+</div>
+
