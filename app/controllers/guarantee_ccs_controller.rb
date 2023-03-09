@@ -7,6 +7,7 @@ class GuaranteeCcsController < ApplicationController
   def search
     @consumers =Consumer.all
     @hide = true
+    @research = { }
     if params[:search].present?
       @hide = false
       %i[name siret].each do |filter|
@@ -14,6 +15,14 @@ class GuaranteeCcsController < ApplicationController
 
         @consumers = @consumers.public_send("#{filter}_search", params[:search][filter])
       end
+      @research = {
+        siret: params[:search][:siret],
+        name: params[:search][:name],
+        country: params[:search][:country],
+        address: params[:search][:address],
+        zip_code: params[:search][:zip_code],
+        city: params[:search][:city]
+      }
     end
   end
 
@@ -27,6 +36,7 @@ class GuaranteeCcsController < ApplicationController
   end
 
   def bought
+    @bought = params[:bought]
     @consumer = Consumer.find params[:consumer_id]
     @grade = @consumer.grade
   end

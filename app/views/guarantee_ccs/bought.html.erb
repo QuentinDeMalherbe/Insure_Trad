@@ -22,22 +22,24 @@
         <p class="text-dark-blue text-bold">15%</p>
       </div>
     </div>
-    <div class="w-75  border border-dark-grey border-classic m-auto "></div>
-    <div class='mt-4'>
-      <p class="text-dark-grey text-very-small">Complémentaire temporaire</p>
-      <div class="d-flex justify-content-between">
-        <p class="text-dark-grey"> Garantie Click& Cover </p>
-        <p class="text-dark-blue text-bold">15 000 €</p>
+    <% if @bought == 'true' %>
+      <div class="w-75  border border-dark-grey border-classic m-auto "></div>
+      <div class='mt-4'>
+        <p class="text-dark-grey text-very-small">Complémentaire temporaire</p>
+        <div class="d-flex justify-content-between">
+          <p class="text-dark-grey"> Garantie Click& Cover </p>
+          <p class="text-dark-blue text-bold">15 000 €</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-dark-grey"> Prime forfaitaire HT</p>
+          <p class="text-dark-blue text-bold">15%</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-dark-grey"> Durée de validité</p>
+          <p class="text-dark-blue text-bold">6 mois</p>
+        </div>
       </div>
-      <div class="d-flex justify-content-between">
-        <p class="text-dark-grey"> Prime forfaitaire HT</p>
-        <p class="text-dark-blue text-bold">15%</p>
-      </div>
-      <div class="d-flex justify-content-between">
-        <p class="text-dark-grey"> Durée de validité</p>
-        <p class="text-dark-blue text-bold">6 mois</p>
-      </div>
-    </div>
+    <% end %>
     <div class="w-75  border border-dark-grey border-classic m-auto "></div>
     <div class="my-4">
       <div class="d-flex">

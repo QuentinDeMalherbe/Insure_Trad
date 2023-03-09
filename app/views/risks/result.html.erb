@@ -47,15 +47,10 @@
                 </svg>
               </span>
             </h5>
-            <div class="d-flex align-items-center">
-              <div class="mr-4 text-white rounded-circle bg-dark-green px-2 pt-1 text-center " style="height:32px;width:32px;margin-top: 25px;">B</div>
+            <div class="d-flex align-items-center my-2">
+              <div class="mr-4 text-white rounded-circle bg-dark-green px-2 pt-1 text-center " style="height:32px;width:32px;">B</div>
               <div class="flex-grow-1">
-                <div class='label text-dark-green'>Client avec un grade de risque B</div>
-                <div class="input"> - </div>
-              </div>
-              <div class="custom-wrapper-input ml-4">
-                <div class='label text-dark-green'>Franchise</div>
-                <div class="input "> - </div>
+                <div class=' text-dark-green'>Client avec un grade de risque B</div>
               </div>
             </div>
           </div>
@@ -63,15 +58,6 @@
         <p>Ce grade de risque est donné à titre indicatif et ne peut nous engager dans une quelconque prise en garantie d’impayé ou au titre de toute police d’assurance sur ce client. Nous pouvons modifier ce grade de risque à tout moment.</p>
       </div>
     </div>
-    <%= link_to :back do %>
-      <div class="d-flex">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 12H5" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 19L5 12L12 5" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <p class='ml-4 text-grey'>Retour à la page précédente</p>
-      </div>
-    <% end %>
 
   <% else %>
 
@@ -84,15 +70,10 @@
 
         <div class="d-flex mb-4">
           <div class="custom-wrapper-input mt-0 mr-4 flex-grow-1">
-            <div class="d-flex align-items-center">
-              <div class="mr-4 text-white rounded-circle bg-dark-orange px-2 pt-1 text-center " style="height:32px;width:32px;margin-top: 25px;">E</div>
+            <div class="d-flex align-items-center my-2">
+              <div class="mr-4 text-white rounded-circle bg-dark-orange px-2 pt-1 text-center " style="height:32px;width:32px;">D</div>
               <div class="flex-grow-1">
-                <div class='label text-dark-orange'>Client avec un grade de risque B</div>
-                <div class="input"> - </div>
-              </div>
-              <div class="custom-wrapper-input ml-4">
-                <div class='label text-dark-orange'>Franchise</div>
-                <div class="input "> - </div>
+                <div class=' text-dark-orange'>Client avec un grade de risque D</div>
               </div>
             </div>
           </div>
@@ -102,15 +83,16 @@
         </p>
       </div>
     </div>
-    <%= link_to :back do %>
-      <div class="d-flex my-5">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 12H5" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 19L5 12L12 5" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <p class='ml-4 text-grey'>Retour à la page précédente</p>
-      </div>
-    <% end %>
+  <% end %>
+
+  <%= link_to root_path do %>
+    <div class="d-flex mb-5">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 12H5" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 19L5 12L12 5" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class='ml-4 text-grey'>Retour au menu</p>
+    </div>
   <% end %>
 </div>
 
