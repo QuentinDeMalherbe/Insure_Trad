@@ -32,7 +32,7 @@
   <% if @grade == "a" || @grade == 'b' %>
     <div class="d-flex my-4">
       <div class="custom-wrapper-input mt-0 mr-4 flex-grow-1">
-        <h5>Garantie <strong>Click & Cover</strong>
+        <h5>Garantie <strong>Click & Cover actuelle</strong>
           <span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
@@ -54,12 +54,14 @@
         </div>
       </div>
     </div>
-    <p class='text-small'>Cette garantie Click&Cover prend effet sur vos livraisons faites...</p>
-    <p class='text-small'>Aggravation de risque, telle que définie....</p>
-    <p class='text-small'>Cette garantie a pris effet...</p>
+    <p class='text-small'>
+      Cette garantie Click & Cover prend effet sur vos livraisons faites à compter de la date ci-dessus indiquée. Sauf survenance d’une situation ou évènement d’Aggravation de
+      Risque, telle que définie aux conditions générales de la police, elle reste valide jusqu’à la date d’expiration de l’exercice annuel d’assurance de votre police durant lequel
+      cette garantie a pris effet et au plus tard jusqu’à douze mois calendaires suivant sa date de délivrance.
+    </p>
     <%= simple_form_for(:new_guarantee_cc) do |f| %>
       <div class="blue-card my-4">
-        <div class='blue-card-title text-semibold py-3'>Doublement de la Garantie Click&Cover</div>
+        <div class='blue-card-title text-semibold py-3'>Acheter le doublement de la Garantie Click&Cover ?</div>
         <div class= "blue-card-content">
           <p class='text-important  mb-4'>
             Tout doublement de garantie accordé est valable temporairement et fait l'objet d'un paiement de prime forfaitaire comme indiqué ci-dessous :
@@ -70,16 +72,16 @@
               <%= f.input :price, label: "Prix forfaitaire HT", wrapper_html: {class:'w-25 mr-5'}, input_html: {value:'500 €'}%>
               <%= f.input :price, label: "Durée de validité", wrapper_html: {class:'w-25'}, input_html: {value:'6 mois'} %>
             </div>
+          <div class='d-flex justify-content-center'>
+            <%= link_to  bought_guarantee_ccs_path(consumer_id: @consumer.id, bought: false) do %>
+              <div class='btn btn-cancel mr-5' >Avenant sans doublement</div>
+            <% end %>
+            <%= link_to bought_guarantee_ccs_path(consumer_id: @consumer.id, bought: true) do %>
+              <div class='btn btn-primary'>Avenant avec doublement</div>
+            <% end %>
         </div>
       </div>
     <% end %>
-    <div class='d-flex justify-content-center'>
-      <%= link_to  :back do %>
-        <div class='btn btn-cancel mr-5' >Refuser</div>
-      <% end %>
-      <%= link_to bought_guarantee_ccs_path(consumer_id: @consumer.id) do %>
-        <div class='btn btn-primary'>Acheter</div>
-      <% end %>
     </div>
 
 
@@ -94,15 +96,10 @@
 
         <div class="d-flex mb-4">
           <div class="custom-wrapper-input mt-0 mr-4 flex-grow-1">
-            <div class="d-flex align-items-center">
-              <div class="mr-4 text-white rounded-circle bg-light-orange px-2 pt-1 text-center " style="height:32px;width:32px;margin-top: 25px;">D</div>
+            <div class="d-flex align-items-center my-2">
+              <div class="mr-4 text-white rounded-circle bg-light-orange px-2 pt-1 text-center " style="height:32px;width:32px;">D</div>
               <div class="flex-grow-1">
-                <div class='label text-dark-orange'>Client avec un grade de risque D</div>
-                <div class="input"> - </div>
-              </div>
-              <div class="custom-wrapper-input ml-4">
-                <div class='label text-light-orange'>Franchise</div>
-                <div class="input "> - </div>
+                <div class=' text-light-orange'>Client avec un grade de risque D</div>
               </div>
             </div>
           </div>
@@ -121,15 +118,10 @@
 
         <div class="d-flex mb-4">
           <div class="custom-wrapper-input mt-0 mr-4 flex-grow-1">
-            <div class="d-flex align-items-center">
-              <div class="mr-4 text-white rounded-circle bg-dark-orange px-2 pt-1 text-center " style="height:32px;width:32px;margin-top: 25px;">E</div>
+            <div class="d-flex align-items-center my-2">
+              <div class="mr-4 text-white rounded-circle bg-dark-orange px-2 pt-1 text-center " style="height:32px;width:32px;">E</div>
               <div class="flex-grow-1">
-                <div class='label text-dark-orange'>Client avec un grade de risque E</div>
-                <div class="input"> - </div>
-              </div>
-              <div class="custom-wrapper-input ml-4">
-                <div class='label text-dark-orange'>Franchise</div>
-                <div class="input "> - </div>
+                <div class=' text-dark-orange'>Client avec un grade de risque E</div>
               </div>
             </div>
           </div>

@@ -6,17 +6,17 @@
   <%= simple_form_for :search, url: search_guarantee_ccs_path, method: "GET" do |f|%>
     <div class= 'grey-container'>
       <div class="inline">
-        <%= f.input :siret, label: "N° SIREN" %>
-        <%= f.input :country, as: :string, label: "Pays"  %>
+        <%= f.input :siret, label: "N° SIREN", input_html: { value: @research[:siret] } %>
+        <%= f.input :country, as: :string, label: "Pays", input_html: { value: @research[:country] }  %>
       </div>
       <div class="inline">
         <h3 class='text-center'>Ou</h3>
       </div>
-      <%= f.input :name, label: "Raison Sociale"  %>
-      <%= f.input :address, label: "Adresse postale"  %>
+      <%= f.input :name, label: "Raison Sociale", input_html: { value: @research[:name] }   %>
+      <%= f.input :address, label: "Adresse postale", input_html: { value: @research[:address] }   %>
       <div class="inline">
-        <%= f.input :zip_code, label: "#{t 'customer.edit.label4' }"  %>
-        <%= f.input :city, label: "#{t 'customer.edit.label5' }" %>
+        <%= f.input :zip_code, label: "#{t 'customer.edit.label4' }" , input_html: { value: @research[:zip_code] }  %>
+        <%= f.input :city, label: "#{t 'customer.edit.label5' }", input_html: { value: @research[:city] }  %>
       </div>
       <div class="d-flex justify-content-center">
         <%= f.submit "Rechercher" , class: 'btn btn-primary ' %>
