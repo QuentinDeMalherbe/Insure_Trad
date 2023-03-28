@@ -2,35 +2,48 @@
   <%= link_to  customers_path, class: "sidebar-button " do %>
     <div class= <%= %w(customers primary_contacts contracts police_cinq_millions nbi_cinq_multiples nbi_cinq_uns).include?(params[:controller]) ? "sidebar-active" : "" %> >
       <%= render "shared/svg/fi_tarif.svg" %>
-      <p class="mt-1">Tarifs</p>
+      <p class="mt-1 fs-14">Devis</p>
     </div>
   <% end %>
 
   <%= link_to  root_path, class: 'sidebar-button '  do%>
     <div >
       <%= render "shared/svg/2.svg" %>
-      <p class="mt-1">Contacts</p>
+      <p class="mt-1 fs-14">Assurés</p>
+    </div>
+  <% end %>
+
+  <%= link_to  root_path, class: 'sidebar-button '  do%>
+    <div >
+      <%= render "shared/svg/2.svg" %>
+      <p class="mt-1 fs-14">Vos études</p>
     </div>
   <% end %>
 
   <%= link_to  search_risks_path, class: 'sidebar-button' do %>
     <div class= <%= %w(risks).include?(params[:controller]) ? "sidebar-active" : "" %> >
       <%= render "shared/svg/3.svg" %>
-      <p class="mt-1">Grade de<br>Risque</p>
+      <p class="mt-1 fs-14">Grade de<br>Risque</p>
     </div>
   <% end %>
 
   <%= link_to  root_path, class: 'sidebar-button' do %>
     <div >
       <%= render "shared/svg/fi_calcul.svg" %>
-      <p class="mt-1">Gestion<br>comptable</p>
+      <p class="mt-1 fs-14">Gestion<br>comptable</p>
     </div>
   <% end %>
 
   <%= link_to  root_path, class: 'sidebar-button' do %>
     <div >
       <%= render "shared/svg/fi_help-circle.svg" %>
-      <p class="mt-1">Aide</p>
+      <p class="mt-1 fs-14">Aide</p>
+    </div>
+  <% end %>
+  <%= link_to  root_path, class: 'sidebar-button' do %>
+    <div >
+      <%= render "shared/svg/fi_help-circle.svg" %>
+      <p class="mt-1 fs-14">Tutorial</p>
     </div>
   <% end %>
 
