@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :contracts
 
   def full_name
-    " afaire"
+    "Alban de Malherbe"
   end
 
   def self.seed(user_id)

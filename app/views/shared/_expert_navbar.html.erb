@@ -8,9 +8,22 @@
     <%= render "shared/avancement" %>
   <% end %>
   <div class=" justify-content-end bg-primary h-100 d-flex justify-content-center align-items-center" id="navbarNavDropdown">
-      <div class="mx-4 " >
+      <div class="mx-4 pt-3" >
         <p class='m-0'><%= current_user.full_name %></p>
-        <p class="m-0 font-weight-bold">Gérer mon compte</p>
+        <p class="m-0 font-weight-bold pointer">Gérer mon compte</p>
+        <div class="btn-group">
+          <p class="dropdown-toggle  font-weight-bold pointer"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Contactez-nous
+          </p>
+          <div class="dropdown-menu">
+            <p class="dropdown-item-customize" href="#">Votre conseiller : </p>
+            <p class="dropdown-item-customize" href="#">Henri Durant</p>
+            <div class="dropdown-divider"></div>
+            <p class="dropdown-item-customize" href="#">Tel :  06 12 34 56 78</p>
+            <a class="dropdown-item" href="#">Envoyer un mail</a>
+            <a class="dropdown-item" href="#">Prendre rendez-vous</a>
+          </div>
+        </div>
       </div>
       <div class="mx-4 ">
         <%= link_to  destroy_user_session_path, method: :delete do%>
