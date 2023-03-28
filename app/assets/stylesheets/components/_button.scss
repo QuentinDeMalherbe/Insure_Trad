@@ -38,12 +38,6 @@
   padding: 4px 24px !important;
 }
 
-.block-button {
-  display: block;
-  position: absolute;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-}
 
 .border-classic {
   border-radius: 12px !important;
@@ -61,4 +55,20 @@
   color: $primary !important;
   background-color: white;
   border: 1px solid $primary
+}
+
+@media(max-width: 2000px) {
+
+
+  .block-button {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
+@media(max-width: 925px) {
+  .block-button {
+
+  }
 }
