@@ -15,8 +15,8 @@ fr:
       placeholder1: "Nom, N° de siret, etc"
       button1: "Recherche"
     edit:
-      title1: "Information  Assuré"
-      p1: 'Confirmez les informations suivantes obtenues sur votre assuré'
+      title1: "Votre client"
+      p1: 'Confirmez les informations suivantes obtenues sur votre client'
       label1: 'Raison sociale'
       label2: 'Siret'
       label3: 'Adresse'

@@ -75,6 +75,17 @@
   color: white;
   margin-bottom: 0rem !important;
 }
+
+.rounded-top {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
+
+.rounded-bottom {
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+
 @media(max-width: 2000px) {
 
 
