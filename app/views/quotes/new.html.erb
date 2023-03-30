@@ -18,13 +18,13 @@
         </svg>
       </span>
     </h5>
-    <div class='label'>Montant en €</div>
-    <div class="input"><%= @quote.seuil %></div>
+
+    <div class="input"><%= @quote.seuil %> €</div>
   </div>
 
   <div class="d-flex">
     <div class="custom-wrapper-input mb-4 flex-grow-1">
-      <h5>Garantie par sinistre et par exercice. Montant en €
+      <h5>Garantie par sinistre et par exercice.
         <span>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
@@ -33,11 +33,11 @@
           </svg>
         </span>
       </h5>
-      <div class='label'>Montant en €</div>
-      <div class="input"><%= number_with_delimiter(@quote.guarantie, delimiter: " ") %></div>
+
+      <div class="input"><%= number_with_delimiter(@quote.guarantie, delimiter: " ") %> €</div>
     </div>
     <div class="custom-wrapper-input mb-4 ml-4">
-      <h5 style='height:32px'>
+      <h5 style='height:8px'>
       </h5>
       <div class='label'>Franchise</div>
       <div class="input ">30%</div>
@@ -77,10 +77,10 @@
         </div>
       </div>
 
-      <div class='custom-checkbox-selected'>
+      <div class='custom-checkbox'>
         <div class="d-flex  ">
           <div class=' custom-checkbox-circle'>
-            <div class='custom-checkbox-circle-selected'>
+            <div class='custom-checkbox-circle'>
             </div>
           </div>
           <p class="ml-4">2 fois</p>
@@ -138,7 +138,7 @@
         <div class="mr-4 text-white rounded-circle bg-dark-blue px-2 pt-1 text-center " style="height:32px;width:32px">A</div>
         <div class="flex-grow-1">
           <div class='label'>Client avec un grade de risque A</div>
-          <div class="input"><%= number_with_delimiter(@quote.guarantie_a, delimiter: " ") %></div>
+          <div class="input"><%= number_with_delimiter(@quote.guarantie_a, delimiter: " ") %> €</div>
         </div>
         <div class="custom-wrapper-input ml-4">
           <div class='label'>Franchise</div>
@@ -149,7 +149,7 @@
         <div class="mr-4 text-white rounded-circle bg-dark-blue px-2 pt-1 text-center " style="height:32px;width:32px">B</div>
         <div class="flex-grow-1">
           <div class='label'>Client avec un grade de risque B</div>
-          <div class="input"><%= number_with_delimiter(@quote.guarantie_b, delimiter: " ") %></div>
+          <div class="input"><%= number_with_delimiter(@quote.guarantie_b, delimiter: " ") %> €</div>
         </div>
         <div class="custom-wrapper-input ml-4">
           <div class='label'>Franchise</div>
@@ -160,7 +160,7 @@
   </div>
 
   <div class="custom-wrapper-input mb-4 ">
-    <h5>Primes et honoraires annuelles
+    <h5>Primes et honoraires annuelles H.T.
       <span>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
@@ -169,8 +169,9 @@
         </svg>
       </span>
     </h5>
-    <div class='label'>Montant en €</div>
-    <div class="input w-25"><%= number_with_delimiter(@quote.prime, delimiter: " ") %></div>
+
+    <div class="input w-25"><%= number_with_delimiter(@quote.prime, delimiter: " ") %> €</div>
+    <div class='label'>Sans reconstittution de la garantie plancher</div>
   </div>
 
   <div class="custom-wrapper-input mb-4 ">
@@ -184,7 +185,7 @@
       </span>
     </h5>
 
-    <div class="input w-25"><%= number_with_delimiter(@quote.consultation_number, delimiter: " ") %></div>
+    <div class="input w-25"><%= number_with_delimiter(@quote.consultation_number, delimiter: " ") %> €</div>
   </div>
 
   <div class='mb-4'>
@@ -212,7 +213,7 @@
             <div class="mr-4 text-white rounded-circle bg-dark-blue px-2 pt-1 text-center " style="height:32px;width:32px">A</div>
             <div class="flex-grow-1">
               <div class='label'>Prime forfaitaire</div>
-              <div class="input"><%= number_with_delimiter(@quote.prime_a, delimiter: " ") %></div>
+              <div class="input"><%= number_with_delimiter(@quote.prime_a, delimiter: " ") %> €</div>
             </div>
             <div class="custom-wrapper-input ml-4">
               <div class='label'>Période de garantie</div>
@@ -235,7 +236,7 @@
             <div class="mr-4 text-white rounded-circle bg-dark-blue px-2 pt-1 text-center " style="height:32px;width:32px">B</div>
             <div class="flex-grow-1">
               <div class='label'>Prime forfaitaire</div>
-              <div class="input"><%= number_with_delimiter(@quote.prime_b, delimiter: " ") %></div>
+              <div class="input"><%= number_with_delimiter(@quote.prime_b, delimiter: " ") %> €</div>
             </div>
             <div class="custom-wrapper-input ml-4">
               <div class='label'>Période de garantie</div>
@@ -250,18 +251,22 @@
 
   <div class="d-flex justify-content-between mb-7">
     <div>
-
+      <%= link_to pdf_quote_path(id: @quote.id, :format => :pdf ) , id: 'normalQuote' do %>
+          <div class='btn btn-primary d-flex'>
+            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.5 11.08V12C22.4988 14.1564 21.8005 16.2547 20.5093 17.9818C19.2182 19.709 17.4033 20.9725 15.3354 21.5839C13.2674 22.1953 11.0573 22.1219 9.03447 21.3746C7.01168 20.6273 5.28465 19.2461 4.11096 17.4371C2.93727 15.628 2.37979 13.4881 2.52168 11.3363C2.66356 9.18455 3.49721 7.13631 4.89828 5.49706C6.29935 3.85781 8.19279 2.71537 10.2962 2.24013C12.3996 1.7649 14.6003 1.98232 16.57 2.85999" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22.5 4L12.5 14.01L9.5 11.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class='ml-4'>
+              Valider ce devis
+            </div>
+          </div>
+        <% end %>
     </div>
     <div>
     <%= link_to  comparaison_quotes_path(customer_id: @quote.customer_id) do %>
-      <div class='btn btn-primary d-flex'>
-        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M22.5 11.08V12C22.4988 14.1564 21.8005 16.2547 20.5093 17.9818C19.2182 19.709 17.4033 20.9725 15.3354 21.5839C13.2674 22.1953 11.0573 22.1219 9.03447 21.3746C7.01168 20.6273 5.28465 19.2461 4.11096 17.4371C2.93727 15.628 2.37979 13.4881 2.52168 11.3363C2.66356 9.18455 3.49721 7.13631 4.89828 5.49706C6.29935 3.85781 8.19279 2.71537 10.2962 2.24013C12.3996 1.7649 14.6003 1.98232 16.57 2.85999" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M22.5 4L12.5 14.01L9.5 11.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div class='ml-4'>
-          Valider ce devis
-        </div>
+      <div class='btn btn-primary '>
+        Modifier ce devis
       </div>
     <% end %>
     </div>
