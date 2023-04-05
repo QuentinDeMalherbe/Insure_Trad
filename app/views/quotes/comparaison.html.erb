@@ -253,14 +253,14 @@
       <% end %>
     </div>
     <div class='flex-grow-1 p-2 '>
-      <%= link_to pdf_quote_path(id: @quote.id , :format => :pdf), id: 'customQuote' do %>
+      <%= link_to signature_quote_path(id: @quote.id ), target:'_blank', id: 'customQuote' do %>
         <div class='btn btn-primary w-100' >
           Acheter
         </div>
       <% end %>
     </div>
     <div class='w-33 p-2 '>
-      <%= link_to pdf_quote_path(id: @quote.id, :format => :pdf ) , id: 'normalQuote' do %>
+      <%= link_to signature_quote_path(id: @quote.id ) , target:'_blank', id: 'normalQuote' do %>
         <div class='btn btn-primary w-100' >
           Acheter
         </div>

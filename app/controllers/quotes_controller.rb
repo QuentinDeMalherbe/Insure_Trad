@@ -12,7 +12,22 @@ class QuotesController < ApplicationController
     @quote = Quote.find_by(customer_id: params[:customer_id], user_id: current_user.id)
   end
 
+  def signature
+    @quote = Quote.find(params[:id])
+    @expert = current_user
+    @assure = Customer.find @quote.customer_id
+    @police_cinq_million = @assure.contracts.first.police_cinq_million
+    @primary_contact = @assure.primary_contacts.first
+    @chosen = params[:chosen] ? params[:chosen] : "normal"
+    p 'on estr al'
+    p params
+    render layout: 'signature'
+
+  end
+
   def pdf
+        p 'on estr al'
+    p params
     @quote = Quote.find(params[:id])
     @expert = current_user
     @assure = Customer.find @quote.customer_id
@@ -31,4 +46,5 @@ class QuotesController < ApplicationController
       end
     end
   end
+
 end

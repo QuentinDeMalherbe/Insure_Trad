@@ -1,0 +1,604 @@
+<div class="container bg-white p-5">
+
+  <h1>DISPOSITIONS CONTRACTUELLES DE VOTRE POLICE IMPAYE INSURETRADE</h1>
+  <p>Votre police d’assurance Impayé (la " <span class="bold">Police</span>" ) est composée des éléments suivants :</p>
+
+  <ul>
+    <li>Les Conditions Générales « InsureTrade»</li>
+    <li>Les Conditions Particulières</li>
+    <li>Convention de Prestations de Services au titre de la police « Trade Insure »</li>
+    <li>Le Devis que vous avez réalisé en ligne</li>
+    <li>Un Mandat de Prélèvement au profit d’ InsureTrade Assurances</li>
+    <li>Un Mandat de Prélèvement au profit d’ InsureTrade Servicing</li>
+  </ul>
+  <p class="space-top">Les mots en italique se réfèrent à une valeur et sont expliqués dans les Conditions Particulières.</p>
+  <p class="space-top">Les termes en caractères <span class="bold">gras</span>  sont définis à l’article 7 – Définitions des conditions générales</p>
+  <h2>CONDITIONS PARTICULIÈRES</h2>
+  <p>
+  <span class="bold">
+  Votre Intermédiaire d’assurance :
+  </span>
+  <%= current_user.full_name %>, expert addresse
+  </p>
+  <div class="h3">
+    <div class="bullet-h3"></div>
+    <div class="title-h3">Article 1. Vous/Assuré</div>
+  </div>
+  <%# array %>
+  <div>
+    <div class="table-row-first">
+      <div class=" table-case-left-first bold">
+        Raison Sociale
+      </div>
+      <div class="table-case-right-first">
+        <%= @assure.compagny_name %>
+      </div>
+    </div>
+    <div class="table-row">
+      <div class=" table-case-left bold">
+        Adresse
+      </div>
+      <div class="table-case-right">
+        <%= @assure.address %>
+      </div>
+    </div>
+    <div class="table-row">
+      <div class=" table-case-left bold">
+        Code Postale
+      </div>
+      <div class="table-case-right">
+        <%= @assure.zip_code %>
+      </div>
+    </div>
+    <div class="table-row">
+      <div class=" table-case-left bold">
+        Ville
+      </div>
+      <div class="table-case-right">
+        <%= @assure.city %>
+      </div>
+    </div>
+    <div class="table-row">
+      <div class=" table-case-left bold">
+        Pays
+      </div>
+      <div class="table-case-right">
+        <%= @assure.country %>
+      </div>
+    </div>
+    <div class="table-row">
+      <div class=" table-case-left bold">
+        N° Siren
+      </div>
+      <div class="table-case-right">
+        <%= @assure.siret %>
+      </div>
+    </div>
+    <div class="table-row">
+      <div class=" table-case-left bold">
+        Adresse de notification électronique
+      </div>
+      <div class="table-case-right">
+        addresse mail a mettre
+      </div>
+    </div>
+  </div>
+  <div class="h3">
+    <div class="bullet-h3"></div>
+    <div class="title-h3">Article 2 . Durée de la Police</div>
+  </div>
+  <p class='space-top'>La <span class="bold">police</span> entre en vigueur le AFAIRE et prendra fin le AFAIRE</p>
+  <p class="space-top">
+    <span class="bold">Vous</span> bénéficiez d’un droit de renonciation à la mise en vigueur de cette police pendant un délai de
+    quatorze jours (calendaires) jusqu’au AFAIRE sans frais ni pénalité et vous renoncerez de ce fait
+    à tous vos droits à indemnisation au titre de cette police. Passé cette date, la police est réputée
+    être en vigueur et la prime pour le premier trimestre est due à InsureTrade Assurances.
+  </p>
+  <p class="space-top">
+    Cette police est renouvelable par tacite reconduction. <span class="bold">Vous</span> pouvez résilier cette police à la fin de
+    chaque exercice annuel de la police moyennant un préavis de 30 jours et cette police peut être
+    résiliée par <span class="bold">Nous</span> moyennant un préavis de 30 jours avant chaque date d’expiration d’exercice
+    annuel d’assurance.
+  </p>
+  <div class="h3">
+    <div class="bullet-h3"></div>
+    <div class="title-h3">Article 3 Nature des activités assurées : <%= @assure.activity_code %> AFAIRE</div>
+  </div>
+  <div class="h3">
+    <div class="bullet-h3"></div>
+    <div class="title-h3">Article 4 Description des produits/prestations de services assurés : AFAIRE</div>
+  </div>
+  <div class="h3">
+    <div class="bullet-h3"></div>
+    <div class="title-h3">Article 5 Seuil d’Intervention</div>
+  </div>
+  <p class="space-top"><span class='bold'>Vous</span> gardez à votre charge toute <span class="bold">Perte</span> inférieure ou égale à <%= @quote.seuil %> Euros.</p>
+  <div class="h3">
+    <div class="bullet-h3"></div>
+    <div class="title-h3">Article 6 Garantie Plancher par sinistre et par exercice annuel d’assurance</div>
+  </div>
+  <ol class="space-top">
+    <li>Premier niveau de garantie plancher par sinistre et par exercice annuel d’assurance sur vos
+    impayés provenant de vos <span class='bold'>Clients actifs in bonis</span> : <%= @quote.guarantie %> Euro</li>
+    <li class="space-top">Second niveau de garantie plancher par sinistre et par exercice annuel d’assurance sur vos
+    impayés provenant de vos <span class='bold'>Clients actifs in bonis</span> : <%= @quote.guarantie %> Euro, en cas d’épuisement total
+    durant un exercice annuel d’assurance du premier niveau de garantie plancher.</li>
+    <li class="space-top">Troisième niveau de garantie plancher par sinistre et par exercice annuel d’assurance sur
+    vos impayés provenant de vos <span class='bold'>Clients actifs in bonis</span> : <%= @quote.guarantie %> Euro, en cas d’épuisement
+    total durant un exercice annuel d’assurance du premier puis du second niveau de garantie
+    plancher.</li>
+    <li class="space-top">Quatrième niveau de garantie plancher par sinistre et par exercice annuel d’assurance sur
+    vos impayés provenant de vos <span class='bold'>Clients actifs in bonis</span> : <%= @quote.guarantie %> Euro, en cas d’épuisement
+    total durant un exercice annuel d’assurance du premier puis du second et enfin du troisième
+    niveau de garantie plancher.</li>
+  </ol>
+  <div class="h3">
+    <div class="bullet-h3"></div>
+    <div class="title-h3">Article 7 Garanties individuelles Click &amp; Cover</div>
+  </div>
+  <ul class="space-top">
+  <li>Sur tout Client avec un <span class='bold'>Grade de risque A</span> , le total de vos impayés est garanti à concurrence
+  d’un maximum de : <%= @quote.g_a(@chosen) %> €</li>
+  <li>Sur tout Client avec un <span class='bold'>Grade de risque B</span> , le total de vos impayés est garanti à concurrence
+  d’un maximum de : <%= @quote.g_a(@chosen) / 2 %> €</li>
+  </ul>
+  <div class="h3">
+    <div class="bullet-h3"></div>
+    <div class="title-h3">Article 8 Plafond de Garantie par exercice annuel d’assurance</div>
+  </div>
+  <p class="space-top">Le plafond de garantie de la présente police par exercice d’assurance ne peut excéder quatre fois le
+  montant de la <span class="bold">garantie individuelle Click &amp; Cover</span>  pour un Client avec un <span class="bold">Grade de risque A</span> , soit :</p>
+  <p class="text-center">AFARIE</p>
+  <div class="h3">
+    <div class="bullet-h3"></div>
+    <div class="title-h3">Article 9 Franchises</div>
+  </div>
+  <p class="space-top"><span class="bold">Vous</span> gardez à votre charge les quotes parts suivantes sur chaque  <span class="bold"> sinistre garanti</span> :</p>
+  <p class="space-top bold">Garantie Plancher par sinistre et par exercice annuel d’assurance</p>
+  <ul class="space-top bold">
+  <li>30% au titre du premier niveau de garantie plancher</li>
+  <li>35% au titre du second niveau de garantie plancher</li>
+  <li>40% au titre du troisième niveau de garantie plancher</li>
+  <li>45% au titre du quatrièmeer niveau de garantie plancher</li>
+  </ul>
+  <p class="space-top bold">Garanties individuelles Click &amp; Cover: 15%</p>
+  <div class="h3">
+    <div class="bullet-h3"></div>
+    <div class="title-h3">Article 10 Prix pour l’exercice annuel d’assurance</div>
+  </div>
+  <p class="space-top">Pour le présent exercice annuel d’assurance, le prix total hors taxes est de AFAIRE
+  dont :</p>
+  <ol>
+  <li>La <span class="bold">Prime d’assurance</span>  : <%= @quote.prime_chose(@chosen) %> € + 9% de Taxe ; et</li>
+  <li>Un <span class="bold">coût de police et de prestation de services Click &amp; Cover</span>  : AFAIRE € + 20% de
+  TVA,</li>
+  </ol>
+  <p>Ce montant est payable en totalité à la prise d’effet de la police et permet un nombre de <%= @quote.consultation_number %>
+  consultations Click &amp; Cover. Toute consultation complémentaire Click &amp; Cover vous sera
+  facturée 30 € HT</p>
+  <p class="space-top bold">Conditions de paiement :</p>
+  <p class="space-top">
+  La <span class="bold">prime d’assurance</span>  est payable en 4 échéances trimestrielles. La première échéance trimestrielle
+  est équivalente à un quart du montant de la prime d’assurance plus la totalité du montant de <span class="bold">cout de
+  police et de prestations de service Click &amp; Cover</span>  et sera débitée sur votre compte bancaire au
+  AFAIRE
+  </p>
+  <div class="h3">
+    <div class="bullet-h3"></div>
+    <div class="title-h3">Convention de Prestations de Service au titre de la présente police</div>
+  </div>
+  <p class="space-top">
+  <span class="bold">Nous</span> , InsureTrade Assurance, avons sous-traité et déléguons à InsureTrade Servicing, un certain
+  nombre de tâches et de missions dont la collecte d’informations, l’évaluation des risques de crédit et
+  le suivi de l’ensemble de ces éléments sur chacun des <span class="bold">Clients</span> susceptibles d’être assurés au titre de
+  votre présente police.
+  </p>
+  <p class="space-top">
+  <span class="bold">Nous</span> transmettrons à InsureTrade Servicing toutes les informations que <span class="bold">Vous</span> pouvez <span class="bold">Nous</span>
+  transférer sur vos <span class="bold">Clients</span> et <span class="bold">Nous</span> <span class="bold">Vous</span> communiquerons nos décisions de garantie prises avec
+  l’aide d’InsureTradeServicing sur chacun de vos <span class="bold">Clients</span> au titre de votre présente police.
+  </p>
+  <p class="space-top">
+  Le <span class="bold">Coût de police et Prestations de Service Click &amp; Cover</span>  au titre de la <span class="bold">Police</span> indiqué à l’Article
+  10 des présentes conditions particulières - y inclus la TVA applicable - est facturée par InsureTrade
+  Servicing et lui est directement du et payable.
+  </p>
+  <p class="space-top">
+  En cas de demande(s) supplémentaire(s) par rapport au nombre de <span class="bold">Clients</span> inclus dans le forfait
+  forfaitaire initial du <span class="bold">Coût de police et Prestations de Service Click &amp; Cover</span>  au titre de la <span class="bold">Police</span>, les
+  frais supplémentaires par demande supplémentaire tels que précisés aux présentes conditions
+  particulières seront facturés par InsureTrade Servicing et lui seront directement dus et payables.
+  </p>
+  <h2>DEVIS RÉALISÉ EN LIGNE</h2>
+  <p class='bold'>Ce document reprend les différentes informations que vous avez fournies a votre intermédiaire
+  <%= @expert.full_name %> pour votre devis en ligne à la date du AFAIRE</p>
+  <%# list %>
+  <div>
+    <div class="row">
+      <p class="row-left bold">Assuré</p>
+      <p class="row-right bold"><%= @primary_contact.full_name %></p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">Raison Sociale</p>
+      <p class="row-right bold"><%= @assure.compagny_name %></p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">Adresse</p>
+      <p class="row-right bold"><%= @assure.address %></p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">Code Postale</p>
+      <p class="row-right bold"><%= @assure.zip_code %></p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">Ville</p>
+      <p class="row-right bold"><%= @assure.city %></p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">Pays</p>
+      <p class="row-right bold"><%= @assure.country %></p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">N° Siren</p>
+      <p class="row-right bold"><%= @assure.siret %></p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">Informations Economiques</p>
+      <p class="row-right bold">AFAIRE</p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">Code d’activité principale</p>
+      <p class="row-right bold"><%= @assure.activity_code %></p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">Ventes de produits et prestations de service assurées</p>
+      <p class="row-right bold">AFAIRE</p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">Montant du chiffre d’affaires soumis à votre assureur crédit de base pour le dernier exercice annuel
+      d’assurance</p>
+      <p class="row-right bold"><%= @police_cinq_million.ammount_ca %></p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">pourcentage de ce chiffre d’affaires insuffisamment couvert</p>
+      <p class="row-right bold">AFAIRE</p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">nombre total approximatif de vos clients actifs assurés</p>
+      <p class="row-right bold"><%= @police_cinq_million.client_number %></p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">pourcentage approximatif de ces clients actifs insuffisamment couverts</p>
+      <p class="row-right bold">AFAIRE</p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">Assureur Crédit de Base</p>
+      <p class="row-right bold">AFAIRE</p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">Référence de votre Police de base</p>
+      <p class="row-right bold">AFAIRE</p>
+    </div>
+    <div class="row">
+      <p class="row-left bold">Période de votre police de base</p>
+      <p class="row-right bold">AFAIRE</p>
+    </div>
+  </div>
+  <div class="h3">
+    <div class="bullet-h3"></div>
+    <div class="title-h3">Informations supplémentaires</div>
+  </div>
+  <p class="space-top bold">Représentant légal </p>
+  <p><span class="bold">Nom : </span><%= @primary_contact.last_name %></p>
+  <p><span class="bold">Prénom : </span><%= @primary_contact.first_name %></p>
+  <p><span class="bold">Fonction : </span><%= @primary_contact.position %></p>
+  <p class="space-top bold">Informations relatives à la correspondance quotidienne </p>
+  <p><span class="bold">Nom : </span>AFAIRE</p>
+  <p><span class="bold">Prénom : </span>AFAIRE</p>
+  <p><span class="bold">Fonction : </span>AFAIRE</p>
+  <p><span class="bold">E-mail : </span>AFAIRE</p>
+  <p><span class="bold">Tel : </span>AFAIRE</p>
+  <p class="space-top"><span class="bold">Vous</span>  déclarez avoir pris pleinement connaissance de toutes les pièces constituant cette police.</p>
+  <p class="space-top">En cas de contrariété, et sans préjudice de ce qui est dit aux Conditions générales, les Conditions particulières
+  prévalent sur les Conditions générales.</p>
+  <p class="space-top">Dans l’hypothèse où une clause serait nulle, réputée non écrite ou que, de toute autre façon, sa validité serait
+  remise en cause, cela n’affecterait pas la validité du reste de la Police.</p>
+  <p class="space-top"><span class="bold">Vous</span> certifiez <span class="bold">Nous</span> avoir communiqué toutes les informations demandées au Devis réalisé en ligne et que
+  celles-ci sont vraies et sincères.</p>
+  <p class="space-top">Vous autorisez votre Intermédiaire <%= @expert.full_name %>:</p>
+  <ol>
+    <li>
+      d’étre copié sur toute la correspondance quotidienne faite au titre de la police
+      <div class='pdf-flex'>
+        <div class='pdf-checkbox'></div>
+        <div >Oui</div>
+        <div class='pdf-checkbox ml-1rem'></div>
+        <div>Non</div>
+      </div>
+    </li>
+    <li>
+      d’introduire en ligne pour votre compte des consultations Click&amp; Cover dans la limite du nombre
+      maximum de consultations que vous avez payé.
+      <div class='pdf-flex'>
+        <div class='pdf-checkbox'></div>
+        <div >Oui</div>
+        <div class='pdf-checkbox ml-1rem'></div>
+        <div>Non</div>
+      </div>
+    </li>
+  </ol>
+  <div class="h3">
+    <div class="bullet-h3"></div>
+    <div class="title-h3">Date d’émission : AFAIRE</div>
+  </div>
+  <p class="bold space-top">Signature du document par une personne ayant autorité à agir</p>
+  <div class="pdf-flex justify-between space-top">
+    <div>
+      <ul>
+        <li class='bold'>Assuré</li>
+        <li>Nom: <%= @primary_contact.last_name %></li>
+        <li>Prénom: <%= @primary_contact.first_name %></li>
+        <li>Fonction: <%= @primary_contact.position %></li>
+
+      </ul>
+    </div>
+    <div class="signature">
+      Signature:
+    </div>
+  </div>
+  <div class="pdf-flex justify-between space-top">
+    <div>
+      <ul>
+        <li class='bold'>InsureTrade Assurances</li>
+        <li>C/ Numància, 207 Bajos <br>08034 Barcelona, Spain</li>
+      </ul>
+    </div>
+    <div class="signature">
+      Signature:
+    </div>
+  </div>
+  <div class="pdf-flex justify-between space-top">
+    <div>
+      <ul>
+        <li class='bold'>InsureTrade Servicing</li>
+        <li>C/ Numància, 207 Bajos <br>08034 Barcelona, Spain</li>
+      </ul>
+    </div>
+    <div class="signature">
+      Signature:
+    </div>
+  </div>
+  <div class="page-break"></div>
+  <%# mandat  %>
+  <div id="mandat">
+    <h2>Mandat de prélèvement SEPA</h2>
+    <p class="space-top">Référence Unique du Mandat <span class="bold">InsureTrade Servicing</span></p>
+    <p class="space-top">En signant ce formulaire de mandat, vous autorisez (A) Insure Trade Servicing à envoyer des instructions à votre banque
+    pour débiter votre compte, et (B) votre banque à débiter votre compte conformément aux instructions de Insure Trade
+    Servicing.</p>
+    <p>Vous bénéficiez du droit d’être remboursé par votre banque selon les conditions décrites dans la convention que vous
+    avez passée avec elle. Une demande de remboursement doit être présentée :</p>
+    <div class='pdf-flex'>
+      <div class='pdf-checkbox'></div>
+      <div >dans les 8 semaines suivant la date de débit de votre compte pour un prélèvement autorisé,</div>
+    </div>
+    <div class='pdf-flex'>
+      <div class='pdf-checkbox'></div>
+      <div >sans tarder et au plus tard dans les 13 mois en cas de prélèvement non autorisé.</div>
+    </div>
+    <p class="space-top">Vous</p>
+    <div class="mandat space-top">
+      <div class="mandat-left">Votre nom</div>
+      <div class="mandat-right">
+        <div class="mandat-fill">
+        </div>
+        <div class="mandat-label">
+          Nom de l’entreprise débitrice
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top-1">
+      <div class="mandat-left">Votre adresse</div>
+      <div class="mandat-right">
+        <div class="mandat-fill">
+        </div>
+        <div class="mandat-label">
+          Numéro et nom de la rue
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top-1">
+      <div class="mandat-left"></div>
+      <div class="mandat-right">
+        <div class="mandat-fill">
+        </div>
+        <div class="mandat-label-3">
+          <div>Code Postale</div>
+          <div>Ville</div>
+          <div class="mr-5">Pays</div>
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top-1">
+      <div class="mandat-left">Votre numéro IBAN</div>
+      <div class="mandat-right">
+        <div class="mandat-fill">
+        </div>
+        <div class="mandat-label">
+          Numéro d’identification international du compte bancaire – IBAN (International Bank Account Number)
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top-1">
+      <div class="mandat-left"></div>
+      <div class="mandat-right">
+        <div class="mandat-fill">
+        </div>
+        <div class="mandat-label">
+          Code international d’identification de votre compte – BIC (Bank Account Identifier)
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top-1">
+      <div class="mandat-left"></div>
+      <div class="mandat-right">
+        <div class="mandat-fill">
+        </div>
+        <div class="mandat-label">
+          Zone pays de la banque
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top-1">
+      <div class="mandat-left mt-3">Nom du créancier</div>
+      <div class="mandat-right">
+        <div class="mandat-fill">Insure Trade Servicing
+        </div>
+        <div class="mandat-label">
+          Nom du créancier
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top-1">
+      <div class="mandat-left"></div>
+      <div class="mandat-right">
+        <div class="mandat-fill">FR41ZZZ600187
+        </div>
+        <div class="mandat-label">
+          Identifiant créancier SEPA
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top-1">
+      <div class="mandat-left"></div>
+      <div class="mandat-right">
+        <div class="mandat-fill">1 Avenue du Général de Gaulle
+        </div>
+        <div class="mandat-label">
+          Numéro et nom de la rue
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top-1">
+      <div class="mandat-left"></div>
+      <div class="mandat-right">
+        <div class="mandat-fill mandat-label-3">
+          <div>92270</div>
+          <div class='w-25'>Neuilly sur Seine</div>
+          <div class="mr-5">France</div>
+        </div>
+        <div class="mandat-label-3">
+          <div>Code Postale</div>
+          <div>Ville</div>
+          <div class="mr-5">Pays</div>
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top">
+      <div class="mandat-left">I.C.S</div>
+      <div class="mandat-right"> </div>
+    </div>
+    <div class="page-break"></div>
+    <p class="space-top">(1) le signataire de ce mandat doit être le même que le signataire de la police Note : Vos droits concernant le présent
+      mandat sont expliqués dans un document que vous pouvez obtenir auprès de votre banque.pouvez obtenir auprès de votre banque.</p>
+    <div class="mandat space-top-1">
+      <div class="mandat-left">Type paiement</div>
+      <div class="mandat-right mt-0">
+        <div class='pdf-flex'>
+          <div class='pdf-checkbox'></div>
+          <div >Paiement récurrent / répétitif</div>
+          <div class='pdf-checkbox ml-1rem'></div>
+          <div>Paiement ponctuel</div>
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top-1">
+      <div class="mandat-left ">Nom du signataire (1)</div>
+      <div class="mandat-right">
+        <div class="mandat-fill">
+        </div>
+        <div class="mandat-label">
+          Nom du signataire (1)
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top">
+      <div class="mandat-left">Signature et cachet commercial (1), précédés de 'Fait le ... à '</div>
+      <div class="mandat-right"> </div>
+    </div>
+    <p class="space-top">Informations relatives au contrat entre le créancier et le débiteur fournies seulement à titre indicatif</p>
+    <div class="mandat space-top">
+      <div class="mandat-left ">Code TVA intracommunautaire</div>
+      <div class="mandat-right">
+        <div class="mandat-fill">
+        </div>
+        <div class="mandat-label">
+          Code TVA intracommunautaire
+        </div>
+      </div>
+    </div>
+    <p class="space-top-1">(2) renseigné par l’assureur</p>
+    <div class="mandat space-top-1">
+      <div class="mandat-left ">Compte assuré (2)</div>
+      <div class="mandat-right">
+        <div class="mandat-fill">
+        </div>
+        <div class="mandat-label">
+          Compte assuré (2)
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top-1">
+      <div class="mandat-left ">Contrat concerné (2)</div>
+      <div class="mandat-right">
+        <div class="mandat-fill">
+        </div>
+        <div class="mandat-label">
+          Contrat concerné (2)
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top-1">
+      <div class="mandat-left ">Direction régionale (2)</div>
+      <div class="mandat-right">
+        <div class="mandat-fill">
+        </div>
+        <div class="mandat-label">
+          Type de police
+        </div>
+      </div>
+    </div>
+    <div class="mandat space-top-1">
+      <div class="mandat-left "></div>
+      <div class="mandat-right">
+        <div class="mandat-fill">
+        </div>
+        <div class="mandat-label">
+          Numéro de police
+        </div>
+      </div>
+    </div>
+    <p class='space-top'>Les informations contenues dans le présent mandat, qui doit être complété, sont destinées à n’être utilisées par le
+      créancier que pour la gestion de sa relation avec son client. Elles pourront donner lieu à l’exercice, par ce dernier, de ses
+      droits d’oppositions, d’accès et de rectification tels que prévus aux articles 38 et suivants de la loi n°78-17 du 6 janvier
+      1978 relative à l’informatique, aux fichiers et aux libertés.</p>
+  </div>
+</div>
+<div class="container bg-white my-4 p-4 text-center">
+  <p class='mb-2'>Vous avez lu le document et certifiez ses données.</p>
+
+  <%= link_to pdf_quote_path(id: @quote.id , chosen: @chosen, format: 'pdf') , id: 'normalQuote', target: "_blank", class:'d-flex justify-content-center mt-4' do %>
+      <div class='btn btn-small btn-primary d-flex w-25'>
+        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.5 11.08V12C22.4988 14.1564 21.8005 16.2547 20.5093 17.9818C19.2182 19.709 17.4033 20.9725 15.3354 21.5839C13.2674 22.1953 11.0573 22.1219 9.03447 21.3746C7.01168 20.6273 5.28465 19.2461 4.11096 17.4371C2.93727 15.628 2.37979 13.4881 2.52168 11.3363C2.66356 9.18455 3.49721 7.13631 4.89828 5.49706C6.29935 3.85781 8.19279 2.71537 10.2962 2.24013C12.3996 1.7649 14.6003 1.98232 16.57 2.85999" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22.5 4L12.5 14.01L9.5 11.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class='ml-4'>
+          Signer le document
+        </div>
+      </div>
+    <% end %>
+</div>
+<div class="box-right rounded-circle bg-white text-center" style='padding-top:10px'>
+  <div>v</div>
+</div>
