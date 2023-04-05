@@ -24,7 +24,10 @@
         <%= yield %>
       </div>
     <% elsif current_user.status == 'assure'  %>
-      <%= render "shared/assure_sidebar" %>
+      <div class=' d-flex'>
+        <%= render "shared/assure_sidebar" %>
+        <%= yield %>
+      </div>
       <%= yield %>
     <% end %>
   </body>
