@@ -10,27 +10,37 @@
   <div class="collapse navbar-collapse bg-white pl-2 pb-2" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item " >
-        <%= link_to "Demande Garantie Click & Cover", search_guarantee_ccs_path(), class:'nav-link nav-link-primary' %>
+        <%= link_to search_guarantee_ccs_path(), class:'nav-link nav-link-primary' do %>
+          <p class='text-center mb-0'>Demande<br> Garantie Click & Cover</p>
+        <% end %>
       </li>
       <% if false %>
       <li class="nav-item " >
-        <%= link_to "Garantie Click & Cover", new_guarantee_cc_path(), class:' nav-link nav-link-primary' %>
+        <%= link_to  new_guarantee_cc_path(), class:' nav-link nav-link-primary' do %>
+          <p class='text-center mb-0'>Demande<br> Garantie Click & Cover</p>
+        <% end %>
       </li>
       <% end %>
-      <li class="nav-item " >
-        <%= link_to "Demande garantie à la carte", new_guarantee_add_path(), class:'nav-link nav-link-primary' %>
+      <li class="nav-item mr-2" >
+        <%= link_to new_guarantee_add_path(), class:'nav-link nav-link-primary' do %>
+          <p class='text-center mb-0'>Demande<br> Garantie à la carte</p>
+        <% end %>
       </li>
-      <li class="nav-item " >
-        <%= link_to "Demande Impayé/Recouvrement", new_unpaid_path(), class:'nav-link nav-link-primary' %>
+      <li class="nav-item mr-2" >
+        <a class="nav-link nav-link-primary text-center" href="#">Demande <br>Relance client</a>
       </li>
-      <li class="nav-item " >
-        <%= link_to "Déclaration sinistre", new_sinister_path(), class:'nav-link nav-link-primary' %>
+      <li class="nav-item mr-2" >
+        <%= link_to new_unpaid_path(), class:'nav-link nav-link-primary' do %>
+          <p class='text-center mb-0'>Demande<br> Impayé/Recouvrement</p>
+        <% end %>
       </li>
-      <li class="nav-item " >
-        <a class="nav-link nav-link-primary" href="#">Demande relance client</a>
+      <li class="nav-item mr-2" >
+        <%= link_to new_sinister_path(), class:'nav-link nav-link-primary mt-2' do %>
+          <p class='text-center mb-0'>Déclaration sinistre</p>
+        <% end %>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link nav-link-primary dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item dropdown mr-2">
+        <a class="nav-link nav-link-primary dropdown-toggle mt-2 text-center" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Contactez-nous
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -40,8 +50,8 @@
 
         </div>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link nav-link-primary dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item dropdown text-center"">
+        <a class="nav-link nav-link-primary dropdown-toggle mt-2" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Mon profil
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
