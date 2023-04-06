@@ -40,6 +40,11 @@
 
 .nav-link-primary {
   color: $dark-blue !important;
+
+}
+
+.nav-link-primary:hover {
+  text-decoration: underline;
 }
 
 .navbar-brand{
