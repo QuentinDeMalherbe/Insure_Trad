@@ -1,53 +1,61 @@
 <div >
   <div class="bg-dark-blue text-white d-flex flex-column  align-items-center py-5 px-4">
-    <h1 class= 'pb-3'>L’assurance des impayés<br>simplifiée et automatisée</h1>
-    <h3>Accessible à tous les professionnels, TPE et PME<br>sur leurs clients, entreprises et administrations</h3>
+    <h1 class= 'pb-3'><%=  "#{t 'home.title1_1' }"%> <br> <%=  "#{t 'home.title1_2' }"%></h1>
+    <h3><%=  "#{t 'home.subtitle1_1' }"%><br><%=  "#{t 'home.subtitle1_2' }"%></h3>
   </div>
   <div class='block-button'>
-    <%= link_to "Espace partenaire", new_user_session_path(status: "expert"), class: 'btn btn-primary mr-2' %>
-    <%= link_to "Espace assuré", new_user_session_path(status: "assure"), class: 'btn btn-primary'%>
+    <%= link_to "#{t 'home.button1' }", new_user_session_path(status: "expert"), class: 'btn btn-primary mr-2' %>
+    <%= link_to "#{t 'home.button2' }", new_user_session_path(status: "assure"), class: 'btn btn-primary'%>
   </div>
   <div class='d-flex flex-column  align-items-center py-5 px-4'>
-    <h2 class='pb-4'>Vous êtes courtier d’assurance</h2>
+    <h2 class='pb-4'><%=  "#{t 'home.title2' }"%></h2>
     <div class='d-flex mx-7'>
       <p>
-        InsureTrade propose des offres d’assurance
-        <br> des impayés spécialement construites pour<br> être recommandées et distribuées en toute
-        <br> confiance par tous les courtiers d’assurance.<br> Nous vous accompagnons avec des moyens
+        <%=  "#{t 'home.p1_1' }"%>
+        <br> <%=  "#{t 'home.p1_2' }"%>
+        <br> <%=  "#{t 'home.p1_3' }"%>
+        <br> <%=  "#{t 'home.p1_4' }"%>
+        <br> <%=  "#{t 'home.p1_5' }"%>
       </p>
       <p class='mx-5'>
-        digitalisés et didactiques en ligne ou par
-        <br> téléphone tout au long de la souscription<br> des polices - effectuée en quelques clics -
-        <br>et immédiatement mise en place avec une<br> signature électronique.
+        <%=  "#{t 'home.p2_1' }"%>
+        <br> <%=  "#{t 'home.p2_2' }"%>
+        <br> <%=  "#{t 'home.p2_3' }"%>
+        <br> <%=  "#{t 'home.p2_4' }"%>
+        <br> <%=  "#{t 'home.p2_5' }"%>
       </p>
       <p>
-        Vous pouvez ainsi enrichir en toute sérénité<br> votre offre commerciale et élargir votre
-        <br> gamme de produits/services d’assurance<br> et de conseils auprès de vos assurés
-        <br> et prospects
+        <%=  "#{t 'home.p3_1' }"%>
+        <br> <%=  "#{t 'home.p3_2' }"%>
+        <br> <%=  "#{t 'home.p3_3' }"%>
+        <br> <%=  "#{t 'home.p3_4' }"%>
+        <br> <%=  "#{t 'home.p3_5' }"%>
       </p>
     </div>
-    <%= link_to "Devenez partenaire", new_user_registration_path(status: "expert"), class: 'btn btn-primary my-5' %>
-    <h2 class='pb-4'>Vous êtes professionnel, chef d’entreprise ou <br> prestataire de services auprès des pros , TPE, PME</h2>
+    <%= link_to "#{t 'home.button1' }", new_user_registration_path(status: "expert"), class: 'btn btn-primary my-5' %>
+    <h2 class='pb-4 text-center'><%=  "#{t 'home.title3_1' }"%>
+      <br> <%=  "#{t 'home.title3_2' }"%>
+    </h2>
     <div class='d-flex mx-7'>
       <p>
-        InsureTrade élimine les obstacles d’accès
-        <br> à l’assurance-crédit pour les professionnels,
-        <br> tpe et pme en proposant des tarifications
-        <br> accessibles à tous les budgets, la certitude
+        <%=  "#{t 'home.p4_1' }"%>
+        <br> <%=  "#{t 'home.p4_2' }"%>
+        <br> <%=  "#{t 'home.p4_3' }"%>
+        <br> <%=  "#{t 'home.p4_4' }"%>
       </p>
       <p class='mx-5'>
-        d’un plancher d’indemnisation quelque soit
-        <br> la modification des risques en cours
-        <br> de police et par une totale digitalisation,
-        <br> une souscription immédiate
+        <%=  "#{t 'home.p5_1' }"%>
+        <br> <%=  "#{t 'home.p5_2' }"%>
+        <br> <%=  "#{t 'home.p5_3' }"%>
+        <br> <%=  "#{t 'home.p5_4' }"%>
       </p>
       <p>
-        et une signatue en ligne
-        <br> de la police avec une gestion simplifiée
-        <br>et automatisée des garanties.
+        <%=  "#{t 'home.p6_1' }"%>
+        <br> <%=  "#{t 'home.p6_2' }"%>
+        <br> <%=  "#{t 'home.p6_3' }"%>
         <br>
       </p>
     </div>
-    <%= link_to "Demandez une démo", root_path, class: 'btn btn-primary my-5'%>
+    <%= link_to "#{t 'home.button3' }", root_path, class: 'btn btn-primary my-5'%>
   </div>
 </div>

@@ -20,7 +20,7 @@ fr:
       label1: 'Raison sociale'
       label2: 'Siret'
       label3: 'Adresse'
-      label4: 'Code Postale'
+      label4: 'Code postal'
       label5: 'Ville'
       label6: 'Pays'
       label7: "Code d'activité"
@@ -104,3 +104,54 @@ fr:
       label8: 'Régularité de ces relations commerciales avec ce Client ?'
       label9: 'Votre Expérience des paiements de votre assuré avec ce client ?'
       label10: 'Votre assuré a-t-il à ce jour une facture restant impayée- même partiellement - de plus de 15 jours calendaires ?'
+  home:
+    title1_1: "L’assurance des impayés"
+    title1_2: "simplifiée et automatisée"
+    subtitle1_1: "Accessible à tous les professionnels, TPE et PME"
+    subtitle1_2: "sur leurs clients, entreprises et administrations"
+    title2: 'Vous êtes courtier d’assurance'
+    p1_1: "InsureTrade propose des offres d’assurance"
+    p1_2: "des impayés spécialement construites pour"
+    p1_3: "être recommandées et distribuées en toute"
+    p1_4: "confiance par tous les courtiers d’assurance."
+    p1_5: "Nous vous accompagnons avec des moyens"
+    p2_1: "digitalisés et didactiques en ligne ou par"
+    p2_2: "téléphone tout au long de la souscription"
+    p2_3: "des polices - effectuée en quelques clics -"
+    p2_4: "et immédiatement mise en place avec une"
+    p2_5: "signature électronique."
+    p3_1: "Vous pouvez ainsi enrichir en toute sérénité"
+    p3_2: "votre offre commerciale et élargir votre"
+    p3_3: "gamme de produits/services d’assurance"
+    p3_4: "et de conseils auprès de vos assurés"
+    p3_5: "et prospects"
+    title3_1: "Vous êtes professionnel, chef d’entreprise ou "
+    title3_2: "prestataire de services auprès des pros , TPE, PME"
+    p4_1: "InsureTrade élimine les obstacles d’accès"
+    p4_2: "à l’assurance-crédit pour les professionnels,"
+    p4_3: "tpe et pme en proposant des tarifications"
+    p4_4: "accessibles à tous les budgets, la certitude"
+    p5_1: "d’un plancher d’indemnisation quelque soit"
+    p5_2: "la modification des risques en cours"
+    p5_3: "de police et par une totale digitalisation,"
+    p5_4: "une souscription immédiate"
+    p6_1: "et une signatue en ligne"
+    p6_2: "de la police avec une gestion simplifiée"
+    p6_3: "et automatisée des garanties."
+    button1: "Espace partenaire"
+    button2: "Espace assuré"
+    button3: "Demandez une Demo"
+  first_navbar:
+    title1: "Nos offres"
+    dd11: "Chiffre d'affaire < à 5 M€"
+    dd12: "Chiffre d'affaire de 5 M€ à 15 M€"
+    dd13: "Chiffre d'affaire de 15 M€ à 25 M€"
+    title2: "Qui sommes-nous?"
+    dd21: "InsureTrade"
+    dd22: "Notre équipe"
+    dd23: "Nous recrutons"
+    dd24: "Notre actualité"
+    button: "Devenir partenaire"
+    langues: "Langues"
+
+
