@@ -9,34 +9,34 @@
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Nos offres
+          <%=  "#{t 'first_navbar.title1' }"%>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Chiffre d'affaire < à 5 M€</a>
-          <a class="dropdown-item" href="#">Chiffre d'affaire de 5 M€ à 15 M€</a>
-          <a class="dropdown-item" href="#">Chiffre d'affaire de 15 M€ à 25 M€</a>
+          <a class="dropdown-item" href="#"><%=  "#{t 'first_navbar.dd11' }"%></a>
+          <a class="dropdown-item" href="#"><%=  "#{t 'first_navbar.dd12' }"%></a>
+          <a class="dropdown-item" href="#"><%=  "#{t 'first_navbar.dd13' }"%></a>
         </div>
       </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Qui sommes-nous?
+          <%=  "#{t 'first_navbar.title2' }"%>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">InsureTrade</a>
-          <a class="dropdown-item" href="#">Notre équipe</a>
-          <a class="dropdown-item" href="#">Nous recrutons</a>
-          <a class="dropdown-item" href="#">Notre actualité</a>
+          <a class="dropdown-item" href="#"><%=  "#{t 'first_navbar.dd21' }"%></a>
+          <a class="dropdown-item" href="#"><%=  "#{t 'first_navbar.dd22' }"%></a>
+          <a class="dropdown-item" href="#"><%=  "#{t 'first_navbar.dd23' }"%></a>
+          <a class="dropdown-item" href="#"><%=  "#{t 'first_navbar.dd24' }"%></a>
         </div>
       </li>
 
       <li class="nav-item mx-4" >
-        <%= link_to "Devenir partenaire", new_user_registration_path(status: "expert"), class: 'btn btn-primary btn-small' %>
+        <%= link_to "#{t 'first_navbar.button' }", new_user_registration_path(status: "expert"), class: 'btn btn-primary btn-small' %>
       </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Langues
+          <%=  "#{t 'first_navbar.langues' }"%>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <%= link_to  root_path(locale: :en), class:"dropdown-item" do %>

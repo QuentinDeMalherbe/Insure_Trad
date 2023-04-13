@@ -11,10 +11,7 @@
       <p class='text-dark-grey mb-0 text-very-small'>Heure</p>
       <p class='text-dark-blue mb-0'>16h25</p>
     </div>
-    <div>
-      <p class='text-dark-grey mb-0 text-very-small'>Référence police d’assurance</p>
-      <p class='text-dark-blue mb-0'>N° 546 789 14</p>
-    </div>
+
   </div>
   <%= simple_form_for @consumer , html: {novalidate: true, class: "no-bs-validation mb-5"} do |f|%>
       <div class="inline">
@@ -22,7 +19,7 @@
         <%= f.input :country, as: :string, label: "Pays",  disabled: true, readonly: true  %>
       </div>
       <%= f.input :name, label: "Raison Sociale" ,  disabled: true, readonly: true %>
-      <%= f.input :address, label: "Adresse postale" ,  disabled: true, readonly: true %>
+      <%= f.input :address, label: "Adresse " ,  disabled: true, readonly: true %>
       <div class="inline">
         <%= f.input :zip_code, label: "#{t 'customer.edit.label4' }" ,  disabled: true, readonly: true %>
         <%= f.input :city, label: "#{t 'customer.edit.label5' }",  disabled: true, readonly: true %>
