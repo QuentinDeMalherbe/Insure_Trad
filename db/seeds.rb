@@ -505,9 +505,93 @@ puts 'Creating  6 customers/primary_contacts/contracts/police_cinq_millions/nbi_
   User.seed(user_3.id)
 
 puts 'creating consumer'
-consumer_1 = Consumer.create(siret: '1', name: 'Allavène A', customer_id: 1, risk_allowed: true, grade: 'a')
-consumer_1 = Consumer.create(siret: '2', name: 'Bernard B', customer_id: 1, risk_allowed: true, grade: 'b')
-consumer_1 = Consumer.create(siret: '4', name: 'Dupond D', customer_id: 1, risk_allowed: false, grade: 'd')
-consumer_1 = Consumer.create(siret: '5', name: 'Etienne E', customer_id: 1, risk_allowed: false, grade: 'e')
+  consumer_1 = Consumer.create(
+    siret: '342248499',
+    name: 'Rozenbal France',
+    country: 'France',
+    address: '297 rue du Petit Mas ZI de Courtine',
+    zip_code: '84000',
+    city: 'Avignon',
+    customer_id: 1,
+    risk_allowed: false,
+    grade: 'e')
+
+  consumer_2 = Consumer.create(
+    siret: '433428018',
+    name: 'Advens',
+    country: 'France',
+    address: '32 rue Faidherbe',
+    zip_code: '59800',
+    city: 'Lille',
+    customer_id: 1,
+    risk_allowed: false,
+    grade: 'e')
+
+  consumer_3 = Consumer.create(
+    siret: '659501837',
+    name: 'Société Nouvelle Librairie Charlemagne',
+    country: 'France',
+    address: '50 bd de Strasbourg',
+    zip_code: '83000',
+    city: 'Toulon',
+    customer_id: 1,
+    risk_allowed: false,
+    grade: 'd')
+
+  consumer_4 = Consumer.create(
+    siret: '318745106',
+    name: 'Demarez Sa',
+    country: 'France',
+    address: '249 rue Irene Jolot Curie',
+    zip_code: '60160',
+    city: 'La Croix Saint Ouen',
+    customer_id: 1,
+    risk_allowed: false,
+    grade: 'd')
+
+  consumer_5 = Consumer.create(
+    siret: '329382600',
+    name: 'Picoty Aquitaine',
+    country: 'France',
+    address: '44 rue du 503ième Rgt du Train',
+    zip_code: '33127',
+    city: 'Martignas sur Jamme',
+    customer_id: 1,
+    risk_allowed: true,
+    grade: 'b')
+
+  consumer_6 = Consumer.create(
+    siret: '679200287',
+    name: 'Armor Protéines',
+    country: 'France',
+    address: '2 Route Neuve',
+    zip_code: '50420',
+    city: 'Conde sur Vire',
+    customer_id: 1,
+    risk_allowed: true,
+    grade: 'b')
+
+  consumer_7 = Consumer.create(
+    siret: '732075312',
+    name: 'Accenture',
+    country: 'France',
+    address: '118 avenue de France',
+    zip_code: '75013',
+    city: 'Paris',
+    customer_id: 1,
+    risk_allowed: true,
+    grade: 'a')
+
+  consumer_8 = Consumer.create(
+    siret: '847120185',
+    name: 'Bongrain Sa',
+    country: 'France',
+    address: '42 rue Rieussec',
+    zip_code: '78220',
+    city: 'Viroflay',
+    customer_id: 1,
+    risk_allowed: true,
+    grade: 'a')
+
 
 puts 'Finished!'
