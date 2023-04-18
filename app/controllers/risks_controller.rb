@@ -26,5 +26,6 @@ class RisksController < ApplicationController
   def result
     @consumer = Consumer.find params[:consumer_id]
     @allowed = @consumer.risk_allowed
+    @grade = @consumer.grade
   end
 end

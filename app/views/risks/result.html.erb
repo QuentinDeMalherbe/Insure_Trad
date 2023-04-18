@@ -26,7 +26,7 @@
       </div>
 
   <% end %>
-  <% if @allowed %>
+  <% if @grade == "a" || @grade == 'b' %>
     <div class="green-card my-4">
       <div class='green-card-title text-semibold py-3'>Client éligible à la garantie Click & Cover.</div>
       <div class= "green-card-content">
@@ -56,11 +56,11 @@
       </div>
     </div>
 
-  <% else %>
+  <% elsif @grade == 'd' %>
 
-    <div class="orange-card my-4">
-      <div class='orange-card-title text-semibold py-3'>Client non éligible à une garantie Click & Cover</div>
-      <div class= "orange-card-content">
+    <div class="light-orange-card my-4">
+      <div class='light-orange-card-title text-semibold py-3'>Client non éligible à une garantie Click & Cover</div>
+      <div class= "light-orange-card-content">
         <p class='text-important mb-4'>
           À ce jour ce client présente un profil de risques aggravés.
         </p>
@@ -68,9 +68,9 @@
         <div class="d-flex mb-4">
           <div class="custom-wrapper-input mt-0 mr-4 flex-grow-1">
             <div class="d-flex align-items-center my-2">
-              <div class="mr-4 text-white rounded-circle bg-dark-orange px-2 pt-1 text-center " style="height:32px;width:32px;">D</div>
+              <div class="mr-4 text-white rounded-circle bg-light-orange px-2 pt-1 text-center " style="height:32px;width:32px;">D</div>
               <div class="flex-grow-1">
-                <div class=' text-dark-orange'>Client avec un grade de risque D</div>
+                <div class=' text-dark-light-orange'>Client avec un grade de risque D</div>
               </div>
             </div>
           </div>
@@ -78,6 +78,27 @@
         <p>
           Ce grade de risque est donné à titre indicatif et ne peut nous engager dans une quelconque prise en garantie d’impayé ou au titre de toute police d’assurance sur ce client. Nous pouvons modifier ce grade de risque à tout moment.
         </p>
+      </div>
+    </div>
+  <% elsif @grade == 'e' %>
+    <div class="orange-card my-4">
+      <div class='orange-card-title text-semibold py-3'>Client non éligible à une garantie Click & Cover</div>
+      <div class= "orange-card-content">
+        <p class='text-important mb-4 mr-4'>
+          À ce jour ce client présente un profil de risques aggravés . Les garanties au titre de votre police d’assurance cessent immédiatement sur toute nouvelle livraison pouvant être faite avec ce client.
+        </p>
+
+        <div class="d-flex mb-4">
+          <div class="custom-wrapper-input mt-0 mr-4 flex-grow-1">
+            <div class="d-flex align-items-center my-2">
+              <div class="mr-4 text-white rounded-circle bg-dark-orange px-2 pt-1 text-center " style="height:32px;width:32px;">E</div>
+              <div class="flex-grow-1">
+                <div class=' text-dark-orange'>Client avec un grade de risque E</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   <% end %>
@@ -93,3 +114,5 @@
   <% end %>
 </div>
 
+
+>
