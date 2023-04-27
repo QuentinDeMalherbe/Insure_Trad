@@ -184,4 +184,32 @@ en:
     dd24: "News"
     button: "Broker registration"
     langues: "Languages"
+  intermediaire_home:
+    title_1: 'Broker Space'
+    p_1: "InsureTrade facilitates your access to a unique trade credit insurance coverage and optimizes the underwriting and administration process with a fully digitalized and simple on line support."
+    p_2_1: "Our ambition, "
+    p_2_2: "TO HELP YOU PERSONNALY "
+    p_2_3: "with our powerful"
+    p_2_4: "DIGITAL"
+    p_2_5: "tool and to allow you to continue comfortably "
+    p_2_6: "GROWING"
+    p_2_7: "your business ."
+    p_2_8: ""
+    p_2_9: ""
+    p_3_1: "We centralize on our digital platform all the stages that make up the life of an insurance policy."
+    p_3_2: "The multiple menus help to quickly and simply respond to all your expectations and questions."
+    card_t_1: "NBI/Policy Underwriting"
+    card_p_1: "You obtain in a few clicks an on line Non Binding Indication on every submission and can bind and sign an insurance policy with an electronic signature. All of your online quotes and contractual documents are compliant with the FCA requirement"
+    card_t_2: "Technical support"
+    card_p_2: "You enjoy an online and phone support from our teams at each stage of the life of any policy with automatic explanations on technical terms. You are in contact with an account manager who is personally dedicated to help you and respond to your requests."
+    card_t_3: "Policies, Submissions &amp; Administration"
+    card_p_3: "You have an online access to all the information related to your administrative and accounting follow up necessary for managing any insurance policy: monitoring of your NBI ( with an automatic chaser that you can activate), management of your entire insured portfolio (underwriting, contractual documents, individual coverages, endorsements, premium billing and cashing, debt collection, claim filing, indemnification, policy renewal, policy cancelation, etc.), accounting follow up of your brokerage fees."
+    card_t_4: "Marketing support"
+    card_p_4_1: "You can freely view the risk grade assigned by InsureTrade on five firms per month. This allow you when negotiating or underwriting a policy to know in advance the individual coverage offered by InsureTrade on any customer of your prospect."
+    card_p_4_2: "You have an online tutorial providing you with a technical training on Trade Credit insurance."
+    card_p_4_3: "You can use a wide range of sales support tools with flyers, newsletters, sales pitches and claim examples."
+    card_p_4_4: "You are invited to attend to technical or commercial training sessions organized regularly by our teams."
+    card_p_4_5: "If you want to personalize your services, our teams can provide you with desktop publishing (quotes, contracts, premium billing, certificates) adapted to the colors and brand of your firm."
+
+
 
