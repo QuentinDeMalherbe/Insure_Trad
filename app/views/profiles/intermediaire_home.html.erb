@@ -1,57 +1,61 @@
 <div class="container">
-  <h1 class="text-dark-blue mb-4">Espace Partenaire </h1>
+<%=  "#{t 'first_navbar.dd11' }"%>
+  <h1 class="text-dark-blue mb-4"><%=  "#{t 'intermediaire_home.title_1' }"%></h1>
   <p>
-    InsureTrade vous simplifie l'accès à une offre unique d'assurance-crédit et optimise un parcours totalement digitalisé de souscription et de gestion
-    simplifiée accessible à tous.
+    <%=  "#{t 'intermediaire_home.p_1' }"%>
   </p>
   <p>
-    Notre ambition, <span class="text-dark-blue text-bold"> VOUS ACCOMPAGNER</span> avec un outil <span class="text-dark-blue text-bold"> DIGITAL </span>performant et des <span class="text-dark-blue text-bold"> SOUTIENS PERSONNALISES </span>pour vous permettre de vous
-    <span class="text-dark-blue text-bold"> DEVELOPPER </span>sereinement.
+    <%=  "#{t 'intermediaire_home.p_2_1' }"%>
+    <span class="text-dark-blue text-bold"> <%=  "#{t 'intermediaire_home.p_2_2' }"%></span>
+    <%=  "#{t 'intermediaire_home.p_2_3' }"%>
+    <span class="text-dark-blue text-bold"> <%=  "#{t 'intermediaire_home.p_2_4' }"%> </span>
+    <%=  "#{t 'intermediaire_home.p_2_5' }"%>
+    <span class="text-dark-blue text-bold"> <%=  "#{t 'intermediaire_home.p_2_6' }"%> </span>
+    <%=  "#{t 'intermediaire_home.p_2_7' }"%>
+    <span class="text-dark-blue text-bold"> <%=  "#{t 'intermediaire_home.p_2_8' }"%></span>
+    <%=  "#{t 'intermediaire_home.p_2_9' }"%>
   </p>
   <p>
-    Nous centralison sur notre plateforme digitale l'ensemble des étapes qui composent la vie d'un contrat d'assurance et auxquelles
-    <span class="text-dark-blue text-bold"> vous pouvez accéder en ligne à l'aide des différents menus mis à votre disposition.</span>
+    <%=  "#{t 'intermediaire_home.p_3_1' }"%>
+    <span class="text-dark-blue text-bold"> <%=  "#{t 'intermediaire_home.p_3_2' }"%></span>
   </p>
 
   <div class="row mt-4">
+
     <div class="col-12 col-md-6 mt-4">
       <div class="text-white text-bold bg-turquoise px-4 py-2 d-flex justify-content-between rounded-top" data-toggle="collapse" href="#devis" role="button" aria-expanded="false" aria-controls="devis">
-        <p class='mb-0'>Devis/Souscription</p>
+        <p class='mb-0'><%=  "#{t 'intermediaire_home.card_t_1' }"%></p>
         <p class='mb-0'>v</p>
       </div>
 
       <div class="collapse" id="devis">
         <div class="px-4 bg-light-turquoise py-2 rounded-bottom">
-          Vous obtenez en quelques clics, un devis personnalisé pour vos clients et pouvez conclure la mise en place d'une police par sa signature électronique. Tous vos devis en ligne et documents contractuels sont conformes à la DDA.
+          <%=  "#{t 'intermediaire_home.card_p_1' }"%>
         </div>
       </div>
     </div>
 
     <div class="col-12 col-md-6 mt-4">
         <div class="text-white text-bold bg-turquoise px-4 py-2 d-flex justify-content-between rounded-top"  data-toggle="collapse" href="#assistance" role="button" aria-expanded="false" aria-controls="assistance">
-          <p class='mb-0'>Assistance technique</p>
+          <p class='mb-0'><%=  "#{t 'intermediaire_home.card_t_2' }"%></p>
           <p class='mb-0'>v</p>
         </div>
       <div class="collapse" id="assistance">
         <div class="px-4 bg-light-turquoise py-2 rounded-bottom">
-          Vous bénéficiez d'un support en ligne et par téléphone par nos équipes à chaque étape de la vis d'une police avec des explications ou compléments automatiques apportés sur des termes techniques.
-          Vous êtes accompagné par un conseiller qui vous est persollement dédié pour répondre à tous vos besoins.
+          <%=  "#{t 'intermediaire_home.card_p_2' }"%>
         </div>
       </div>
     </div>
     <div class="col-12 col-md-6 mt-4">
       <p>
         <div class="text-white text-bold bg-turquoise px-4 py-2 d-flex justify-content-between rounded-top" data-toggle="collapse" href="#gestion" role="button" aria-expanded="false" aria-controls="gestion">
-          <p class='mb-0'>Assurés, prospects et comptable</p>
+          <p class='mb-0'><%=  "#{t 'intermediaire_home.card_t_3' }"%></p>
           <p class='mb-0'>v</p>
         </div>
       </p>
       <div class="collapse" id="gestion">
         <div class="px-4 bg-light-turquoise py-2 rounded-bottom">
-          Vous avez accès en ligne à l'ensemble des données nécessaires à votre suivi administratif et comptable de tout le
-          cycle de vente d'une police d'assurance : suivi de vos devis ( relance automatique que vous pouvez actionner ),
-          gestion de votre portefeuille assurés ( souscription, documents contractuelles, garanties individuelles, avenants, encaissement,
-          recouvrement, renouvellement, résiliation...), gestion comptable de vos honoraires.
+        <%=  "#{t 'intermediaire_home.card_p_3' }"%>
         </div>
       </div>
     </div>
@@ -59,7 +63,7 @@
     <div class="col-12 col-md-6 mt-4">
       <p>
         <div class="text-white text-bold bg-turquoise px-4 py-2 d-flex justify-content-between rounded-top" data-toggle="collapse" href="#accompagnement" role="button" aria-expanded="false" aria-controls="accompagnement">
-          <p class='mb-0'>Accompagnement commercial</p>
+          <p class='mb-0'><%=  "#{t 'intermediaire_home.card_t_4' }"%></p>
           <p class='mb-0'>v</p>
 
         </div>
@@ -67,22 +71,19 @@
       <div class="collapse" id="accompagnement">
         <div class="px-4 bg-light-turquoise py-2 rounded-bottom">
           <p>
-            Vous pouvez consulter gratuitement le grade de risque attribué par InsureTrade sur 5 entreprises par mois. Ceci vous permettra lors de la souscription d'une police de connaître à l'avance
-            la prise en garantie d'un ou plusieurs clients de votre prospect.
+            <%=  "#{t 'intermediaire_home.card_p_4_1' }"%>
           </p>
           <p>
-            Vous disposez d'un tutorial e nligne vous apportant une formation technique à l'assurance crédit.
+            <%=  "#{t 'intermediaire_home.card_p_4_2' }"%>
           </p>
           <p>
-            Vous pouvez utiliser un large panel d'outils d'aide à la vente avec des fiches produits, des newletters, des arguments
-            commerciaux et des exemples de sinistre.
+            <%=  "#{t 'intermediaire_home.card_p_4_3' }"%>
           </p>
           <p>
-            Vous êtes invités à participer à des sessions de formation technique ou commerciale organisées régulièrement par nos équipes.
+            <%=  "#{t 'intermediaire_home.card_p_4_4' }"%>
           </p>
           <p>
-            Vous souhaitez personnaliser vos prestations, nos équipes peuvent mettre à votre disposition des éditiques
-            ( devis, contrats, appel de prime, attestation) adaptés aux couleurs et à la marque de votre cabinet.
+            <%=  "#{t 'intermediaire_home.card_p_4_4' }"%>
           </p>
 
         </div>
