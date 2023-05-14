@@ -1,13 +1,13 @@
 <div class="d-flex justify-content-around h-screen-withnavbar">
   <% if params[:status] != "assure" %>
     <div class="bg-dark-blue col d-flex flex-column  align-items-center justify-content-center ">
-      <h2 class='text-white mb-4'>Pas de code Partenaire ?</h2>
-      <%= link_to "Obtenir votre code Partenaire", new_user_registration_path(status: "expert"), class: 'btn btn-primary ' %>
+      <h2 class='text-white mb-4'><%=  "#{t 'sign_in.h2_1' }"%></h2>
+      <%= link_to "#{t 'sign_in.button1' }", new_user_registration_path(status: "expert"), class: 'btn btn-primary ' %>
     </div>
   <% end %>
   <div class="col d-flex flex-column  align-items-center justify-content-center">
     <div>
-      <h2 class='text-dark-blue mb-4'>Accédez à votre espace</h2>
+      <h2 class='text-dark-blue mb-4'><%=  "#{t 'sign_in.h2_2' }"%></h2>
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">

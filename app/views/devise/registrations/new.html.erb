@@ -3,61 +3,61 @@
   <%= link_to  :back  do %>
     <div class="d-flex">
       <%= render "shared/svg/fi_arrow-left" %>
-      <p class=' ml-2 text-dark-grey font-weight-bold'>Retour</p>
+      <p class=' ml-2 text-dark-grey font-weight-bold'><%=  "#{t 'sign_up.b1' }"%></p>
     </div>
   <% end %>
-  <h2 class="mb-5">Pour obtenir votre code Partenaire, veuillez remplir le formulaire ci-dessous</h2>
+  <h2 class="mb-5"><%=  "#{t 'sign_up.h1' }"%></h2>
   <div>
     <div class="d-flex mb-4">
       <div class='text-white bg-dark-blue p-2 rounded-circle d-flex align-items-center justify-content-center' style="width:30px;height:30px;">1</div>
-      <div class=' ml-2 text-dark-blue font-weight-bold d-flex align-items-center justify-content-center' >Informations inscrit</div>
+      <div class=' ml-2 text-dark-blue font-weight-bold d-flex align-items-center justify-content-center' ><%=  "#{t 'sign_up.h2_1' }"%></div>
     </div>
     <div class="d-flex align-items-center  mb-4">
-      <p class='mb-0 mr-6' style="width:150px">PRENOM</p>
+      <p class='mb-0 mr-6' style="width:150px"><%=  "#{t 'sign_up.label1' }"%></p>
       <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
     </div>
     <div class="d-flex align-items-center  mb-4">
-      <p class='mb-0 mr-6' style="width:150px">NOM</p>
+      <p class='mb-0 mr-6' style="width:150px"><%=  "#{t 'sign_up.label2' }"%></p>
       <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
     </div>
     <div class="d-flex align-items-center  mb-5">
-      <p class='mb-0 mr-6' style="width:150px">EMAIL</p>
+      <p class='mb-0 mr-6' style="width:150px"><%=  "#{t 'sign_up.label3' }"%></p>
       <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
     </div>
   </div>
   <div>
     <div class="d-flex mb-4">
       <div class='text-white bg-dark-blue p-2 rounded-circle d-flex align-items-center justify-content-center' style="width:30px;height:30px;">1</div>
-      <div class=' ml-2 text-dark-blue font-weight-bold d-flex align-items-center justify-content-center' >Informations du cabinet</div>
+      <div class=' ml-2 text-dark-blue font-weight-bold d-flex align-items-center justify-content-center' ><%=  "#{t 'sign_up.h2_2' }"%></div>
     </div>
 
     <div class="d-flex align-items-center  mb-4">
-      <p class='mb-0 mr-6' style="width:150px">Rechercher par</p>
+      <p class='mb-0 mr-6' style="width:150px"><%=  "#{t 'sign_up.label4' }"%></p>
       <div class="border border-dark-blue border-classic d-flex  align-items-center justify-content-around" style="width:300px;height:45px">
-        <div class='bg-primary w-50 h-100 text-center border-classic-left d-flex align-items-center justify-content-center' style='cursor: pointer;'>Siret</div>
-        <div class=' w-50 h-100 text-center border-classic-right d-flex align-items-center justify-content-center' style='cursor: pointer;'>Raison sociale</div>
+        <div class='bg-primary w-50 h-100 text-center border-classic-left d-flex align-items-center justify-content-center' style='cursor: pointer;'><%=  "#{t 'sign_up.answer1' }"%></div>
+        <div class=' w-50 h-100 text-center border-classic-right d-flex align-items-center justify-content-center' style='cursor: pointer;'><%=  "#{t 'sign_up.answer2' }"%></div>
       </div>
     </div>
     <div class="d-flex align-items-center  mb-4">
-      <p class='mb-0 mr-6' style="width:150px">SIRET/SIREN</p>
+      <p class='mb-0 mr-6' style="width:150px"><%=  "#{t 'sign_up.label5' }"%></p>
       <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
     </div>
     <div class="d-flex align-items-center  mb-5">
-      <p class='mb-0 mr-6' style="width:150px">ORIAS</p>
+      <p class='mb-0 mr-6' style="width:150px"><%=  "#{t 'sign_up.label6' }"%></p>
       <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
     </div>
   </div>
   <div>
     <div class="d-flex mb-4">
       <div class='text-white bg-dark-blue p-2 rounded-circle d-flex align-items-center justify-content-center' style="width:30px;height:30px;">2</div>
-      <div class=' ml-2 text-dark-blue font-weight-bold d-flex align-items-center justify-content-center'>Transmettre votre Kbis et votre RIB</div>
+      <div class=' ml-2 text-dark-blue font-weight-bold d-flex align-items-center justify-content-center'><%=  "#{t 'sign_up.h2_3' }"%></div>
     </div>
     <div class="d-flex align-items-center  mb-4">
-      <p class='mb-0 mr-6' style="width:150px">Joindre votre Kbis</p>
+      <p class='mb-0 mr-6' style="width:150px"><%=  "#{t 'sign_up.label7' }"%></p>
       <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
     </div>
     <div class="d-flex align-items-center  mb-5">
-      <p class='mb-0 mr-6' style="width:150px">Joindre votre RIB</p>
+      <p class='mb-0 mr-6' style="width:150px"><%=  "#{t 'sign_up.label8' }"%></p>
       <div class="border border-dark-blue border-classic bg-white " style="width:300px;height:45px"></div>
     </div>
   </div>

@@ -6,7 +6,7 @@ commentaire : ici on peut faire creation nouveau client
 
 <div class="container">
 
-  <h2 class="title text-center">Rechercher votre client</h2>
+  <h2 class="title text-center"><%=  "#{t 'index_customer.h1' }"%></h2>
   <%= form_tag customers_path, method: :get do %>
     <div class="d-flex mb-6 ">
       <%= select_tag(:search,

@@ -7,23 +7,23 @@
 <% end %>
 
 <div class="container ">
-  <h2 id='comparaison' class='mb-5 title'>Devis personnalisé</h2>
+  <h2 id='comparaison' class='mb-5 title'><%=  "#{t 'quote.comparaison.h1' }"%></h2>
   <div class="d-flex">
     <div class='w-25'></div>
-    <div class='flex-grow-1 small-title'>Devis personnalisé</div>
-    <div class='w-33 small-title'>Devis initial</div>
+    <div class='flex-grow-1 small-title'><%=  "#{t 'quote.comparaison.h21' }"%></div>
+    <div class='w-33 small-title'><%=  "#{t 'quote.comparaison.h22' }"%></div>
   </div>
 
   <%# seuil %>
   <div class="d-flex bg-light-turquoise align-items-center border-top">
-    <div class='w-25 p-2 sub-title-1'> Seuil d'intervention</div>
+    <div class='w-25 p-2 sub-title-1'> <%=  "#{t 'quote.comparaison.t1' }"%></div>
     <div class='flex-grow-1 p-2 '><p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.seuil, delimiter: " ") %> €</p></div>
     <div class='w-33 p-2 '><p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.seuil, delimiter: " ") %> €</p></div>
   </div>
 
   <%# guarantie %>
   <div class="d-flex  align-items-center border-top">
-    <div class='w-25 p-2 sub-title-1'>Garantie plancher </div>
+    <div class='w-25 p-2 sub-title-1'><%=  "#{t 'quote.comparaison.t2' }"%> </div>
     <div class='flex-grow-1 p-2 '>
       <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.guarantie, delimiter: " ") %> €</p>
 
@@ -36,11 +36,11 @@
 
   <%# guarantie a et b %>
   <div class="d-flex bg-light-turquoise align-items-center border-top">
-    <div class='w-25 p-2 sub-title-1'>Garantie Click & Cover </div>
+    <div class='w-25 p-2 sub-title-1'><%=  "#{t 'quote.comparaison.t3' }"%> </div>
 
     <div class='flex-grow-1 p-2 '>
       <div class='mb-2'>
-        <label for="client-a" class='text-important-bold text-semibold mb-2 pb-0'>Client grade A</label>
+        <label for="client-a" class='text-important-bold text-semibold mb-2 pb-0'><%=  "#{t 'quote.comparaison.c11' }"%></label>
 
         <div class='text-important-bold text-semibold mb-2'>
           <select id='grade_a' name="client-a" id="pet-select" class='w-50 p-2 rounded-2 bg-light-turquoise text-important-bold text-semibold border-light-turquoise'>
@@ -52,7 +52,7 @@
 
       </div>
       <div>
-        <label for="client-a" class='text-important-bold text-semibold mb-2 pb-0'>Client grade B</label>
+        <label for="client-a" class='text-important-bold text-semibold mb-2 pb-0'><%=  "#{t 'quote.comparaison.c12' }"%></label>
 
         <div class='text-important-bold text-semibold mb-2'>
           <p id='grade_b' class='text-important-bold text-semibold mb-2'
@@ -69,12 +69,12 @@
 
     <div class='w-33 px-2 pb-2 '>
       <div class='mb-2'>
-        <p class='text-important-bold text-semibold mb-2'>Client grade A</p>
+        <p class='text-important-bold text-semibold mb-2'><%=  "#{t 'quote.comparaison.c21' }"%></p>
         <p class='text-important-bold text-semibold mb-2'><%= number_with_delimiter(@quote.guarantie_a, delimiter: " ") %> €</p>
         <p class='sub-title-1 mb-35'></p>
       </div>
       <div>
-        <p class='text-important-bold text-semibold mb-2'>Client grade B</p>
+        <p class='text-important-bold text-semibold mb-2'><%=  "#{t 'quote.comparaison.c22' }"%></p>
         <p class='text-important-bold text-semibold mb-2'><%= number_with_delimiter(@quote.guarantie_b, delimiter: " ") %> €</p>
 
       </div>
@@ -83,7 +83,7 @@
 
   <%# prime %>
   <div class="d-flex  align-items-center border-top">
-    <div class='w-25 p-2 sub-title-1'>Prime honoraires annuels H.T. </div>
+    <div class='w-25 p-2 sub-title-1'><%=  "#{t 'quote.comparaison.t4' }"%></div>
     <div class='flex-grow-1 p-2 '>
       <p id='prime'class='text-important-bold text-semibold mb-0'
         down='<%= number_with_delimiter(@quote.prime_down, delimiter: " ") %> €'
@@ -92,17 +92,17 @@
       >
         <%= number_with_delimiter(@quote.prime, delimiter: " ") %> €
         </p>
-      <p class='sub-title-1'>Sans reconstitution de la garantie plancher</p>
+      <p class='sub-title-1'><%=  "#{t 'quote.comparaison.c2' }"%></p>
     </div>
     <div class='w-33 p-2 '>
       <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.prime, delimiter: " ") %> €</p>
-      <p class='sub-title-1'>Sans reconstitution de la garantie plancher</p>
+      <p class='sub-title-1'><%=  "#{t 'quote.comparaison.c2' }"%></p>
     </div>
   </div>
 
   <%# nombre de consulation %>
   <div class="d-flex  bg-light-turquoise align-items-center border-top">
-    <div class='w-25 py-3 pl-2 sub-title-1'>Nombre de consultations Click & Cover </div>
+    <div class='w-25 py-3 pl-2 sub-title-1'><%=  "#{t 'quote.comparaison.t5' }"%></div>
     <div class='flex-grow-1 py-3 pl-2 '>
       <p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.consultation_number, delimiter: " ") %> </p>
     </div>
@@ -114,11 +114,11 @@
   <%# reconstitution %>
   <div class="d-flex   align-items-center border-top">
     <div class='w-25 p-2 sub-title-1 d-flex align-items-center justify-content-between'>
-      <div class='w-75'>Reconstitution de la garantie plancher</div>
+      <div class='w-75'><%=  "#{t 'quote.comparaison.t6' }"%></div>
       <div style="margin-top:40px">
-        <div class=''>1 fois</div>
-        <div style='margin-top:33px;margin-bottom:33px'>2 fois</div>
-        <div class=''>3 fois</div>
+        <div class=''><%=  "#{t 'quote.comparaison.1f' }"%></div>
+        <div style='margin-top:33px;margin-bottom:33px'><%=  "#{t 'quote.comparaison.2f' }"%></div>
+        <div class=''><%=  "#{t 'quote.comparaison.3f' }"%></div>
       </div>
 
     </div>
@@ -126,7 +126,7 @@
     <div class='flex-grow-1 p-2 '>
       <div class='mb-4'>
         <div class=" text-important-bold text-semibold ">
-          Prime honoraires annuelle H.T
+          <%=  "#{t 'quote.comparaison.c31' }"%>
         </div>
       </div>
 
@@ -191,7 +191,7 @@
       <div class='mb-4'>
         <div class='mb-4'>
           <div class=" text-important-bold text-semibold ">
-            Prime honoraires annuels H.T.
+            <%=  "#{t 'quote.comparaison.c32' }"%>
           </div>
         </div>
         <div class="d-flex  mt-4">
@@ -247,7 +247,7 @@
           <path d="M10 11V17" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div class='ml-4'>
-            Annuler
+            <%=  "#{t 'quote.comparaison.cancel' }"%>
           </div>
         </div>
       <% end %>
@@ -255,14 +255,14 @@
     <div class='flex-grow-1 p-2 '>
       <%= link_to signature_quote_path(id: @quote.id ), target:'_blank', id: 'customQuote' do %>
         <div class='btn btn-primary w-100' >
-          Acheter
+          <%=  "#{t 'quote.comparaison.acheter' }"%>
         </div>
       <% end %>
     </div>
     <div class='w-33 p-2 '>
       <%= link_to signature_quote_path(id: @quote.id ) , target:'_blank', id: 'normalQuote' do %>
         <div class='btn btn-primary w-100' >
-          Acheter
+          <%=  "#{t 'quote.comparaison.acheter' }"%>
         </div>
       <% end %>
     </div>
