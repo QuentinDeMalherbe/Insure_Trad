@@ -7,9 +7,9 @@
 <% end %>
 
 <div class="container h-screen mt-8 mx-6">
-  <h2 class='mb-5'>Devis</h2>
+  <h2 class='mb-5'><%=  "#{t 'quote.new.h1' }"%></h2>
   <div class="custom-wrapper-input mb-4 ">
-    <h5>Seuil d'intervention
+    <h5><%=  "#{t 'quote.new.l1' }"%>
       <span>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
@@ -24,7 +24,7 @@
 
   <div class="d-flex">
     <div class="custom-wrapper-input mb-4 flex-grow-1">
-      <h5>Garantie par sinistre et par exercice.
+      <h5><%=  "#{t 'quote.new.l2' }"%>
         <span>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
@@ -39,13 +39,13 @@
     <div class="custom-wrapper-input mb-4 ml-4">
       <h5 style='height:8px'>
       </h5>
-      <div class='label'>Franchise</div>
+      <div class='label'><%=  "#{t 'quote.new.franchise' }"%></div>
       <div class="input ">30%</div>
     </div>
   </div>
 
   <div class="custom-wrapper-input mb-4 ">
-    <h5>Reconstitution automatique de la garantie plancher en cas d’épuisement
+    <h5><%=  "#{t 'quote.new.l3' }"%>
       <span>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
@@ -62,10 +62,10 @@
             <div>
             </div>
           </div>
-          <p class="ml-4">1 fois</p>
+          <p class="ml-4"><%=  "#{t 'quote.new.cb1_1' }"%></p>
         </div>
         <div>
-          <p class='mb-0'>Franchise à 35%
+          <p class='mb-0'><%=  "#{t 'quote.new.cb1_2' }"%>
             <span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
@@ -83,10 +83,10 @@
             <div class='custom-checkbox-circle'>
             </div>
           </div>
-          <p class="ml-4">2 fois</p>
+          <p class="ml-4"><%=  "#{t 'quote.new.cb2_1' }"%></p>
         </div>
         <div>
-          <p class='mb-0'>Franchise à 40%
+          <p class='mb-0'><%=  "#{t 'quote.new.cb2_2' }"%>
             <span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
@@ -104,10 +104,10 @@
             <div >
             </div>
           </div>
-          <p class="ml-4">3 fois</p>
+          <p class="ml-4"><%=  "#{t 'quote.new.cb3_1' }"%></p>
         </div>
         <div>
-          <p class='mb-0'>Franchise à 45%
+          <p class='mb-0'><%=  "#{t 'quote.new.cb3_2' }"%>
             <span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
@@ -125,7 +125,7 @@
 
   <div class="d-flex">
     <div class="custom-wrapper-input mb-4 flex-grow-1">
-      <h5>Garantie <strong>Click & Cover</strong>
+      <h5><%=  "#{t 'quote.new.h2_1' }"%>
         <span>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
@@ -137,22 +137,22 @@
       <div class="d-flex align-items-center">
         <div class="mr-4 text-white rounded-circle bg-dark-blue px-2 pt-1 text-center " style="height:32px;width:32px">A</div>
         <div class="flex-grow-1">
-          <div class='label'>Client avec un grade de risque A</div>
+          <div class='label'><%=  "#{t 'quote.new.l4' }"%></div>
           <div class="input"><%= number_with_delimiter(@quote.guarantie_a, delimiter: " ") %> €</div>
         </div>
         <div class="custom-wrapper-input ml-4">
-          <div class='label'>Franchise</div>
+          <div class='label'><%=  "#{t 'quote.new.franchise' }"%></div>
           <div class="input ">15%</div>
         </div>
       </div>
       <div class="d-flex align-items-center mt-4">
         <div class="mr-4 text-white rounded-circle bg-dark-blue px-2 pt-1 text-center " style="height:32px;width:32px">B</div>
         <div class="flex-grow-1">
-          <div class='label'>Client avec un grade de risque B</div>
+          <div class='label'><%=  "#{t 'quote.new.l5' }"%></div>
           <div class="input"><%= number_with_delimiter(@quote.guarantie_b, delimiter: " ") %> €</div>
         </div>
         <div class="custom-wrapper-input ml-4">
-          <div class='label'>Franchise</div>
+          <div class='label'><%=  "#{t 'quote.new.franchise' }"%></div>
           <div class="input ">15%</div>
         </div>
       </div>
@@ -160,7 +160,7 @@
   </div>
 
   <div class="custom-wrapper-input mb-4 ">
-    <h5>Primes et honoraires annuelles H.T.
+    <h5><%=  "#{t 'quote.new.l6' }"%>
       <span>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
@@ -171,11 +171,11 @@
     </h5>
 
     <div class="input w-25"><%= number_with_delimiter(@quote.prime, delimiter: " ") %> €</div>
-    <div class='label'>Sans reconstittution de la garantie plancher</div>
+    <div class='label'><%=  "#{t 'quote.new.l6_1' }"%></div>
   </div>
 
   <div class="custom-wrapper-input mb-4 ">
-    <h5>Nombre de consultations Click & Cover inclus dans le contrat de police
+    <h5><%=  "#{t 'quote.new.l7' }"%>
       <span>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
@@ -191,12 +191,12 @@
   <div class='mb-4'>
     <div class='w-100 border bg-turquoise rounded-t-2  py-2 px-4 text-white font-bold '>
       <strong>
-        Informations complémentaires
+        <%=  "#{t 'quote.new.title' }"%>
       </strong>
     </div>
     <div class='bg-light-turquoise p-4 rounded-b-2 '>
       <div class="custom-wrapper-input mb-4 ">
-        <h5>L’assuré pourra demander à tout moment en ligne un doublement automatique et temporaire de ses garantie(s) <strong>Click & Cover</strong>  moyennant :</h5>
+        <h5><%=  "#{t 'quote.new.p11' }"%><strong><%=  "#{t 'quote.new.p12' }"%></strong><%=  "#{t 'quote.new.p13' }"%></h5>
       </div>
 
       <div class="d-flex mb-4">
@@ -206,18 +206,18 @@
               <rect width="21" height="20" rx="10" fill="#50C0C7"/>
               <path d="M14.473 6.8067C14.411 6.74421 14.3373 6.69461 14.256 6.66077C14.1748 6.62692 14.0876 6.6095 13.9996 6.6095C13.9116 6.6095 13.8245 6.62692 13.7433 6.66077C13.662 6.69461 13.5883 6.74421 13.5263 6.8067L8.55964 11.78L6.47297 9.6867C6.40863 9.62454 6.33267 9.57566 6.24943 9.54286C6.16619 9.51006 6.07731 9.49397 5.98786 9.49552C5.8984 9.49706 5.81013 9.51622 5.72808 9.55188C5.64602 9.58754 5.5718 9.63902 5.50964 9.70336C5.44748 9.76771 5.39861 9.84367 5.3658 9.92691C5.333 10.0101 5.31691 10.099 5.31846 10.1885C5.32001 10.2779 5.33916 10.3662 5.37482 10.4483C5.41049 10.5303 5.46196 10.6045 5.52631 10.6667L8.08631 13.2267C8.14828 13.2892 8.22202 13.3388 8.30326 13.3726C8.3845 13.4065 8.47163 13.4239 8.55964 13.4239C8.64765 13.4239 8.73479 13.4065 8.81603 13.3726C8.89727 13.3388 8.971 13.2892 9.03297 13.2267L14.473 7.7867C14.5406 7.72427 14.5946 7.6485 14.6316 7.56417C14.6685 7.47983 14.6876 7.38876 14.6876 7.2967C14.6876 7.20463 14.6685 7.11356 14.6316 7.02923C14.5946 6.94489 14.5406 6.86912 14.473 6.8067Z" fill="#05455E"/>
             </svg>
-            <h5 class='ml-4'>le paiement d’une prime complémentaire sur tout Client avec <strong>un grade de risque A pour une période de garantie de 6 mois </strong> :
+            <h5 class='ml-4'><%=  "#{t 'quote.new.p21' }"%><strong><%=  "#{t 'quote.new.p22' }"%> </strong> :
             </h5>
           </div>
           <div class=" ml-5 d-flex align-items-center">
             <div class="mr-4 text-white rounded-circle bg-dark-blue px-2 pt-1 text-center " style="height:32px;width:32px">A</div>
             <div class="flex-grow-1">
-              <div class='label'>Prime forfaitaire</div>
+              <div class='label'><%=  "#{t 'quote.new.l8' }"%></div>
               <div class="input"><%= number_with_delimiter(@quote.prime_a, delimiter: " ") %> €</div>
             </div>
             <div class="custom-wrapper-input ml-4">
-              <div class='label'>Période de garantie</div>
-              <div class="input ">6 mois</div>
+              <div class='label'><%=  "#{t 'quote.new.l9' }"%></div>
+              <div class="input ">6 <%=  "#{t 'quote.new.mois' }"%></div>
             </div>
           </div>
         </div>
@@ -229,18 +229,18 @@
               <rect width="21" height="20" rx="10" fill="#50C0C7"/>
               <path d="M14.473 6.8067C14.411 6.74421 14.3373 6.69461 14.256 6.66077C14.1748 6.62692 14.0876 6.6095 13.9996 6.6095C13.9116 6.6095 13.8245 6.62692 13.7433 6.66077C13.662 6.69461 13.5883 6.74421 13.5263 6.8067L8.55964 11.78L6.47297 9.6867C6.40863 9.62454 6.33267 9.57566 6.24943 9.54286C6.16619 9.51006 6.07731 9.49397 5.98786 9.49552C5.8984 9.49706 5.81013 9.51622 5.72808 9.55188C5.64602 9.58754 5.5718 9.63902 5.50964 9.70336C5.44748 9.76771 5.39861 9.84367 5.3658 9.92691C5.333 10.0101 5.31691 10.099 5.31846 10.1885C5.32001 10.2779 5.33916 10.3662 5.37482 10.4483C5.41049 10.5303 5.46196 10.6045 5.52631 10.6667L8.08631 13.2267C8.14828 13.2892 8.22202 13.3388 8.30326 13.3726C8.3845 13.4065 8.47163 13.4239 8.55964 13.4239C8.64765 13.4239 8.73479 13.4065 8.81603 13.3726C8.89727 13.3388 8.971 13.2892 9.03297 13.2267L14.473 7.7867C14.5406 7.72427 14.5946 7.6485 14.6316 7.56417C14.6685 7.47983 14.6876 7.38876 14.6876 7.2967C14.6876 7.20463 14.6685 7.11356 14.6316 7.02923C14.5946 6.94489 14.5406 6.86912 14.473 6.8067Z" fill="#05455E"/>
             </svg>
-            <h5 class='ml-4'>le paiement d’une prime complémentaire sur tout Client avec <strong>un grade de risque A pour une période de garantie de 4 mois </strong>  :
+            <h5 class='ml-4'><%=  "#{t 'quote.new.p31' }"%> <strong><%=  "#{t 'quote.new.p32' }"%> </strong>  :
             </h5>
           </div>
           <div class=" ml-5 d-flex align-items-center">
             <div class="mr-4 text-white rounded-circle bg-dark-blue px-2 pt-1 text-center " style="height:32px;width:32px">B</div>
             <div class="flex-grow-1">
-              <div class='label'>Prime forfaitaire</div>
+              <div class='label'><%=  "#{t 'quote.new.l8' }"%></div>
               <div class="input"><%= number_with_delimiter(@quote.prime_b, delimiter: " ") %> €</div>
             </div>
             <div class="custom-wrapper-input ml-4">
-              <div class='label'>Période de garantie</div>
-              <div class="input ">4 mois</div>
+              <div class='label'><%=  "#{t 'quote.new.l9' }"%></div>
+              <div class="input ">4 <%=  "#{t 'quote.new.mois' }"%></div>
             </div>
           </div>
         </div>
@@ -258,7 +258,7 @@
             <path d="M22.5 4L12.5 14.01L9.5 11.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <div class='ml-4'>
-              Valider ce devis
+              <%=  "#{t 'quote.new.b1' }"%>
             </div>
           </div>
         <% end %>
@@ -266,7 +266,7 @@
     <div>
     <%= link_to  comparaison_quotes_path(customer_id: @quote.customer_id) do %>
       <div class='btn btn-primary '>
-        Modifier ce devis
+        <%=  "#{t 'quote.new.b2' }"%>
       </div>
     <% end %>
     </div>
