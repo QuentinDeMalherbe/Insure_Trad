@@ -277,7 +277,17 @@ en:
       p31: "An additional flat premium is payable on any Buyer with a"
       p32: "Risk Grade B for a 4 months insurance period"
       b1: "Approve this NBI"
-      b2: "Mofidy this NBI"
+      b2: "Modify this NBI"
+      r:
+        l1: 'Company'
+        l2: 'Reference'
+        l3: 'Help'
+        p1: "Contract specimen"
+        h2: "Details"
+        p2: "Non-payment insurance for SMEs with a turnover between 5 and 25 million €"
+        l5: 'Home turnover'
+        l6: 'Ext. turnover'
+        l4: "Number of buyers"
     comparaison:
       h1: "Customized NBI"
       h21: "Customized NBI"
