@@ -155,7 +155,7 @@ fr:
     langues: "Langues"
   intermediaire_home:
     title_1: 'Espace Partenaire'
-    p_1: "InsureTrade vous simplifie l&#39;accès à une offre unique d&#39;assurance-crédit et optimise un parcours totalement digitalisé de souscription et de gestion simplifiée accessible à tous."
+    p_1: "InsureTrade vous simplifie l'accès à une offre unique d'assurance-crédit et optimise un parcours totalement digitalisé de souscription et de gestion simplifiée accessible à tous."
     p_2_1: "Notre ambition, "
     p_2_2: "VOUS ACCOMPAGNER"
     p_2_3: "avec un outil"
@@ -247,6 +247,16 @@ fr:
       p32: "un grade de risque A pour une période de garantie de 4 mois :"
       b1: "Valider ce devis"
       b2: "Modifier ce devis"
+      r:
+        l1: 'Société'
+        l2: 'Référence'
+        l3: 'Support'
+        p1: "Specimen de contrat"
+        h2: "Détails"
+        p2: "Assurance des Impayés pour les PME avec un chiffre d'affaires entre 5 et 25 millions €"
+        l5: 'CA dom.'
+        l6: 'CA exp.'
+        l4: "Nombre d'acheteurs"
     comparaison:
       h1: "Devis personnalisé"
       h21: "Devis personnalisé"
