@@ -33,7 +33,6 @@ import { changeSelect } from '../pages/comparaison';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  console.log(document.getElementById('comparaison') !== null);
   if (document.getElementById('comparaison') !== null) {
     const select = document.getElementById('grade_a');
     select.addEventListener('change', () => {
