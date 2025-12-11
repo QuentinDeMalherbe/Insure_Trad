@@ -31,7 +31,13 @@ class PoliceCinqMillionsController < ApplicationController
     @contract = Contract.find(params[:contract_id])
     @police_cinq_million = @contract.police_cinq_million
     # redirect_to  new_police_cinq_million_nbi_cinq_multiple_path(@police_cinq_million)
-    redirect_to new_quote_path(customer_id: @contract.customer_id)
+
+    # Quentin
+    # ICI DEVIS V 1
+    # redirect_to new_quote_path(customer_id: @contract.customer_id)
+    # ICI DEVIS V 2
+    @quote = Quote.find_by(customer_id: @contract.customer_id, user_id: current_user.id)
+    redirect_to devis_quote_path(@quote)
   end
 
   def update

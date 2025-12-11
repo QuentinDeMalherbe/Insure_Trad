@@ -12,6 +12,7 @@ Rails.application.routes.draw do
         get :comparaison
       end
       member do
+        get :devis
         get :signature
         get :pdf
       end
