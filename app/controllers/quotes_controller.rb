@@ -10,9 +10,16 @@ class QuotesController < ApplicationController
     @avancement = true
     @step = 2
     @quote = Quote.find(params[:id])
+    @customer = Customer.find(@quote.customer_id)
   end
 
   def comparaison
+    @avancement = true
+    @step = 2
+    @quote = Quote.find_by(customer_id: params[:customer_id], user_id: current_user.id)
+  end
+
+  def difference
     @avancement = true
     @step = 2
     @quote = Quote.find_by(customer_id: params[:customer_id], user_id: current_user.id)

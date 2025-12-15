@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :quotes do
       collection do
         get :comparaison
+        get :difference
       end
       member do
         get :devis

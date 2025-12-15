@@ -1,0 +1,307 @@
+<% if params["locale"] === "fr" %>
+<% langage = :second %>
+<% elsif params["locale"] === "en" %>
+<% langage = :third %>
+<% else %>
+<% langage = :third %>
+<% end %>
+
+<div class="container ">
+  <h2 id='comparaison' class='mb-2 title'>Devis</h2>
+  <div class="d-flex">
+    <div class='w-25'></div>
+    <div class='w-37 small-title'>New option</div>
+    <div class='w-37 small-title'>Initial NBI </div>
+  </div>
+
+  <%# 1 %>
+  <div class="bg-light-turquoise border-top">
+    <div class="d-flex  align-items-center ">
+      <div class='w-25 p-2 sub-title-1'>
+        <div>Maximum Policy limit of liability for any annual period</div>
+    <div class="text-10 italic table-grey ml-2">The maximum amount InsureTrade Assurances shall indemnify the Insured for all Insured Losses, once the Aggregate
+      Deductible is consumed per annual period:</div>
+      </div>
+      <div class='p-2 w-37'>
+              <div class='text-important-bold text-semibold mb-2'>
+          <select id='grade_a' name="client-a" id="pet-select" class='w-50 p-2 rounded-2 bg-light-turquoise text-important-bold text-semibold border-light-turquoise'>
+              <option value="down">250 €</option>
+              <option value="normal" selected>300 €</option>
+              <option value="up">400 €</option>
+          </select>
+        </div>
+      </div>
+      <div class='w-37 p-2 '><p class='text-important-bold text-semibold mb-0'><%= number_with_delimiter(@quote.seuil, delimiter: " ") %> €</p></div>
+    </div>
+  </div>
+  <%#  2 %>
+  <div class="bg-white border-top">
+    <div class="d-flex  align-items-center ">
+      <div class='w-25 p-2 sub-title-1'>
+        <div>Annual Aggregate Deductible</div>
+    <div class="text-10 italic table-grey ml-2">The Insured shall bear for its own account the following amount of Insured Loss(es) before InsureTrade Assurances makes
+payment under the Insurance policy</div>
+      </div>
+      <div class='w-37 p-2 '><p class='text-important-bold text-semibold mb-0'>1000 €</p></div>
+      <div class='w-37 p-2 '><p class='text-important-bold text-semibold mb-0'> 1000 €</p></div>
+    </div>
+  </div>
+  <%#  3 %>
+  <div class="bg-light-turquoise border-top mt-4">
+    <div class="d-flex  align-items-center ">
+      <div class='w-25 p-2 sub-title-1'>
+        <div>Number of free Click&amp;Cover
+consultations</div>
+
+      </div>
+      <div class='w-37 p-2 '>
+        <div class='text-important-bold text-semibold mb-2'>
+          <select id='grade_a' name="client-a" id="pet-select" class='w-50 p-2 rounded-2 bg-light-turquoise text-important-bold text-semibold border-light-turquoise'>
+              <option value="down">5 </option>
+              <option value="normal" selected> 10 </option>
+              <option value="up">15</option></option>
+          </select>
+        </div>
+
+      </div>
+      <div class='w-37 p-2 '><p class='text-important-bold text-semibold mb-0'> 10</p></div>
+    </div>
+  </div>
+  <%#  4 %>
+  <div class="bg-white border-top">
+    <div class="d-flex  align-items-center ">
+      <div class='w-25 p-2 sub-title-1'>
+        <div>Credit Management fee</div>
+
+      </div>
+      <div class='w-37 p-2 '><p class='text-important-bold text-semibold mb-0'>1 250 €</p></div>
+      <div class='w-37 p-2 '><p class='text-important-bold text-semibold mb-0'>1 250 €</p></div>
+    </div>
+  </div>
+  <%#  5 %>
+  <div class="bg-light-turquoise border-top">
+    <div class="d-flex  align-items-center ">
+      <div class='w-25 p-2 sub-title-1'>
+        <div>Flat Premium</div>
+
+      </div>
+      <div class='w-37 p-2 '><p class='text-important-bold text-semibold mb-0'>500 €</p></div>
+      <div class='w-37 p-2 '><p class='text-important-bold text-semibold mb-0'> 500 €</p></div>
+    </div>
+  </div>
+  <%#  6 %>
+  <div class="bg-white border-top">
+    <div class="d-flex  align-items-center ">
+      <div class='w-25 p-2 sub-title-1'>
+        <div>Total</div>
+            <div class="text-10 italic table-grey ml-2">Net of IPT and VAT, The annual insurance premium and administration fees are:</div>
+      </div>
+      <div class='w-37 p-2 '><p class='text-important-bold text-semibold mb-0'>1 750 €</p></div>
+      <div class='w-37 p-2 '><p class='text-important-bold text-semibold mb-0'> 1 750 €</p></div>
+    </div>
+  </div>
+
+    <%#  non guarantee %>
+    <div class="text-10 italic table-grey ml-2 mt-4 mb-0">Any Insured Loss amount on Buyers with an individual Click&amp;Cover guarantee shall be covered as follows depending on their
+respective risk classifications– from optimum to Limited – confirmed online by InsureTrade</div>
+  <div class="bg-light-turquoise border-top">
+    <div class="d-flex  align-items-center ">
+      <div class='w-25 p-2 sub-title-1 semibold'>
+        <div>Type of Click&amp;Cover guarantee per Buyer</div>
+      </div>
+      <div class='d-flex p-2 w-37 '>
+        <div class='sub-title-1 w-50'>
+          <div>Maximum insured limit amount per insured Loss</div>
+        </div>
+        <div class='sub-title-1 w-50'>
+          <div>Maximum insured limit amount per policy period for the total of insured losses</div>
+        </div>
+      </div>
+      <div class='w-37 p-2 d-flex'>
+        <div class=' sub-title-1 w-50'>
+          <div>Maximum insured limit amount per insured Loss</div>
+        </div>
+        <div class='sub-title-1 w-50'>
+          <div>Maximum insured limit amount per policy period for the total of insured losses</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white border-top">
+    <div class="d-flex  align-items-center ">
+      <div class='w-25 p-2 sub-title-1 semibold'>
+        <div>Optimium</div>
+      </div>
+      <div class='d-flex p-2 w-37 '>
+        <div class='text-important-bold text-semibold  w-50'>
+          <div>100</div>
+        </div>
+        <div class='text-important-bold text-semibold  w-50'>
+          <div>200</div>
+        </div>
+      </div>
+      <div class='w-37 p-2 d-flex'>
+        <div class=' text-important-bold text-semibold  w-50'>
+          <div>100</div>
+        </div>
+        <div class='text-important-bold text-semibold  w-50'>
+          <div>200</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-light-turquoise border-top">
+    <div class="d-flex  align-items-center ">
+      <div class='w-25 p-2 sub-title-1 semibold'>
+        <div>Large</div>
+      </div>
+      <div class='d-flex p-2 w-37 '>
+        <div class='text-important-bold text-semibold w-50'>
+          <div>100</div>
+        </div>
+        <div class='text-important-bold text-semibold w-50'>
+          <div>200</div>
+        </div>
+      </div>
+      <div class='w-37 p-2 d-flex'>
+        <div class=' text-important-bold text-semibold w-50'>
+          <div>100</div>
+        </div>
+        <div class='text-important-bold text-semibold w-50'>
+          <div>200</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white border-top">
+    <div class="d-flex  align-items-center ">
+      <div class='w-25 p-2 sub-title-1 semibold'>
+        <div>Medium</div>
+      </div>
+      <div class='d-flex p-2 w-37 '>
+        <div class='text-important-bold text-semibold w-50'>
+          <div>100</div>
+        </div>
+        <div class='text-important-bold text-semibold w-50'>
+          <div>200</div>
+        </div>
+      </div>
+      <div class='w-37 p-2 d-flex'>
+        <div class=' text-important-bold text-semibold w-50'>
+          <div>100</div>
+        </div>
+        <div class='text-important-bold text-semibold w-50'>
+          <div>200</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-light-turquoise border-top">
+    <div class="d-flex  align-items-center ">
+      <div class='w-25 p-2 sub-title-1 semibold'>
+        <div>Small</div>
+      </div>
+      <div class='d-flex p-2 w-37 '>
+        <div class='text-important-bold text-semibold w-50'>
+          <div>100</div>
+        </div>
+        <div class='text-important-bold text-semibold w-50'>
+          <div>200</div>
+        </div>
+      </div>
+      <div class='w-37 p-2 d-flex'>
+        <div class=' text-important-bold text-semibold w-50'>
+          <div>100</div>
+        </div>
+        <div class='text-important-bold text-semibold w-50'>
+          <div>200</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <%#  first loss%>
+    <div class="text-10 italic table-grey ml-2 mt-4 mb-0">On any Buyer which Insured did not consult InsureTrade Services on for obtaining a Click&amp;Cover Guarantee, Insured Loss shall
+be covered under the following First Loss guarantee subject to the terms conditions of the policy,</div>
+  <div class="bg-light-turquoise border-top">
+    <div class="d-flex  align-items-center ">
+      <div class='w-25 p-2 sub-title-1 semibold'>
+        <div>First Loss</div>
+      </div>
+      <div class='d-flex p-2 w-37 '>
+        <div class='sub-title-1 w-50'>
+          <div>Maximum insured limit amount per insured Loss</div>
+        </div>
+        <div class='sub-title-1 w-50'>
+          <div>Maximum insured limit amount per policy period for the total of insured losses</div>
+        </div>
+      </div>
+      <div class='w-37 p-2 d-flex'>
+        <div class=' sub-title-1 w-50'>
+          <div>Maximum insured limit amount per insured Loss</div>
+        </div>
+        <div class='sub-title-1 w-50'>
+          <div>Maximum insured limit amount per policy period for the total of insured losses</div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="bg-white border-top">
+    <div class="d-flex  align-items-center ">
+      <div class='w-25 p-2 sub-title-1 semibold'>
+        <div></div>
+      </div>
+      <div class='d-flex p-2 w-37 '>
+        <div class='text-important-bold text-semibold  w-50'>
+          <div>1000</div>
+        </div>
+        <div class='text-important-bold text-semibold  w-50'>
+          <div>2000</div>
+        </div>
+      </div>
+      <div class='w-37 p-2 d-flex'>
+        <div class=' text-important-bold text-semibold  w-50'>
+          <div>1000</div>
+        </div>
+        <div class='text-important-bold text-semibold  w-50'>
+          <div>2000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%# bouton %>
+  <div class="d-flex  align-items-center border-top">
+    <div class='w-25 p-2 sub-title-1'>
+      <%= link_to  root_path do %>
+        <div class='btn btn-danger button-250 d-flex '>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 11V17" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 11V17" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class='ml-4'>
+            <%=  "#{t 'quote.comparaison.cancel' }"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class='w-37 p-2 '>
+      <%= link_to signature_quote_path(id: @quote.id ), target:'_blank', id: 'customQuote' do %>
+        <div class='btn btn-primary w-100' >
+          <%=  "#{t 'quote.comparaison.acheter' }"%>
+        </div>
+      <% end %>
+    </div>
+    <div class='w-37 p-2 '>
+      <%= link_to signature_quote_path(id: @quote.id ) , target:'_blank', id: 'normalQuote' do %>
+        <div class='btn btn-primary w-100' >
+          <%=  "#{t 'quote.comparaison.acheter' }"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+</div>
