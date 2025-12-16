@@ -23,6 +23,26 @@ class QuotesController < ApplicationController
     @avancement = true
     @step = 2
     @quote = Quote.find_by(customer_id: params[:customer_id], user_id: current_user.id)
+    @customer = Customer.find(@quote.customer_id)
+  end
+
+  def extension
+    @avancement = true
+    @step = 3
+    @quote = Quote.find params[:id]
+    @customer = Customer.find(@quote.customer_id)
+  end
+  def final_1
+    @avancement = true
+    @step = 3
+    @quote = Quote.find params[:id]
+    @customer = Customer.find(@quote.customer_id)
+  end
+  def final_2
+    @avancement = true
+    @step = 3
+    @quote = Quote.find params[:id]
+    @customer = Customer.find(@quote.customer_id)
   end
 
   def signature

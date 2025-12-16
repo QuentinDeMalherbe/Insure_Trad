@@ -1,0 +1,73 @@
+<% if params["locale"] === "fr" %>
+<% langage = :second %>
+<% elsif params["locale"] === "en" %>
+<% langage = :third %>
+<% else %>
+<% langage = :third %>
+<% end %>
+
+<div class="container container-custom">
+  <div class="title my-4">
+    <h2>COVERAGE EXTENSION</h2>
+    <h3>You may get indicative quote for coverage on following extensions :</h3>
+  </div>
+  <div class='mb-4'>
+    <div class="d-flex  mt-4">
+      <div class=' custom-checkbox-circle'>
+        <div>
+        </div>
+      </div>
+      <div>
+        <p id='r_1'class='text-important-bold text-semibold ml-4 mb-0'
+          down='<%= number_with_delimiter(@quote.r_1_down, delimiter: " ") %> €'
+          normal='<%= number_with_delimiter(@quote.reconstitution_1, delimiter: " ") %> €'
+          up='<%= number_with_delimiter(@quote.r_1_up, delimiter: " ") %> €'
+        >
+          Export Turnover     </p>
+        <p class='sub-title-1 ml-4'></p>
+      </div>
+    </div>
+  </div>
+    <div class='mb-4'>
+    <div class="d-flex  mt-4">
+      <div class=' custom-checkbox-circle'>
+        <div>
+        </div>
+      </div>
+      <div>
+        <p id='r_1'class='text-important-bold text-semibold ml-4 mb-0'
+          down='<%= number_with_delimiter(@quote.r_1_down, delimiter: " ") %> €'
+          normal='<%= number_with_delimiter(@quote.reconstitution_1, delimiter: " ") %> €'
+          up='<%= number_with_delimiter(@quote.r_1_up, delimiter: " ") %> €'
+        >
+          Preshipment risk
+        </p>
+        <p class='sub-title-1 ml-4'></p>
+      </div>
+    </div>
+  </div>
+    <div class='mb-4'>
+    <div class="d-flex  mt-4">
+      <div class=' custom-checkbox-circle-selected'>
+        <div>
+        </div>
+      </div>
+      <div>
+        <p id='r_1'class='text-important-bold text-semibold ml-4 mb-0'
+          down='<%= number_with_delimiter(@quote.r_1_down, delimiter: " ") %> €'
+          normal='<%= number_with_delimiter(@quote.reconstitution_1, delimiter: " ") %> €'
+          up='<%= number_with_delimiter(@quote.r_1_up, delimiter: " ") %> €'
+        >
+          Legal fees on any disputed invoice(s)
+        </p>
+        <p class='sub-title-1 ml-4'></p>
+      </div>
+    </div>
+  </div>
+  <%= link_to final_1_quotes_path(id: @quote.id ) , id: 'normalQuote' do %>
+        <div class='btn btn-primary   ' >
+          Next
+        </div>
+      <% end %>
+</div>
+

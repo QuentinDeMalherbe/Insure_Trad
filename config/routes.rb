@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       collection do
         get :comparaison
         get :difference
+        get :extension
+        get :final_1
+        get :final_2
       end
       member do
         get :devis
