@@ -1,0 +1,65 @@
+<% if params["locale"] === "fr" %>
+<% langage = :second %>
+<% elsif params["locale"] === "en" %>
+<% langage = :third %>
+<% else %>
+<% langage = :third %>
+<% end %>
+
+<div class="container container-custom">
+  <div class="title my-4">
+    <h2>COVERAGE EXTENSION</h2>
+    <h3>You may get indicative quote for coverage on following extensions :</h3>
+  </div>
+<%= simple_form_for :police_cinq_million, url: '#', method: :post do |f| %>
+
+  <%= f.input :first,
+    as: :radio_buttons,
+    label: 'Have you been Trade Credit insured in the past 6 months ?',
+    collection: [
+      ['Yes', true],
+      ['No', false]
+    ],
+    item_wrapper_class: 'form-check form-check-inline',
+    input_html: { class: 'form-check-input' },
+    label_html: { class: 'form-check-label' } %>
+  <%= f.input :two,
+    as: :radio_buttons,
+    label: 'Are you facing any Due Date remaining unpaid for more than 30 days from one or several of your Buyers ?',
+    collection: [
+      ['Yes', true],
+      ['No', false]
+    ],
+    item_wrapper_class: 'form-check form-check-inline',
+    input_html: { class: 'form-check-input' },
+    label_html: { class: 'form-check-label' } %>
+  <%= f.input :three,
+    as: :radio_buttons,
+    label: 'Do you have any knowledge of any facts or events which might give rise to a claim under the InsureTrade insurance policy?',
+    collection: [
+      ['Yes', true],
+      ['No', false]
+    ],
+    item_wrapper_class: 'form-check form-check-inline',
+    input_html: { class: 'form-check-input' },
+    label_html: { class: 'form-check-label' } %>
+
+  <%= f.input :comment,
+    as: :text,
+    label: "Please describe your business activity which will form part of you InsureTrade insurance
+policy and specify whether you are -even partially- a manufacturer, distributor, wholesaler,
+trader, agent etc... ",
+    input_html: {
+      class: 'form-control',
+      style: 'height: 120px;',
+      placeholder: 'Your answer...'
+    } %>
+
+<% end %>
+  <%= link_to final_2_quotes_path(id: @quote.id ) , id: 'normalQuote' do %>
+        <div class='btn btn-primary   ' >
+          Next
+        </div>
+      <% end %>
+</div>
+

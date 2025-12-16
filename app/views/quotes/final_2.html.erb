@@ -1,0 +1,76 @@
+<% if params["locale"] === "fr" %>
+<% langage = :second %>
+<% elsif params["locale"] === "en" %>
+<% langage = :third %>
+<% else %>
+<% langage = :third %>
+<% end %>
+
+<div class="container container-custom">
+  <div class="title mt-4">
+    <h2>COVERAGE EXTENSION</h2>
+    <h3>Please fully confirm the corporate officer entitled to bind and sign the Insuretrade policy</h3>
+  </div>
+  <div>
+    <p class='mb-0'><span class="text-bold text-dark-blue" >position: </span> <%= @customer.primary_contacts.first.position %></p>
+    <p class='mb-0'><span class="text-bold text-dark-blue">last_name: </span> <%= @customer.primary_contacts.first.last_name %></p>
+    <p class='mb-0'><span class="text-bold text-dark-blue">first_name: </span> <%= @customer.primary_contacts.first.first_name %></p>
+    <p class='mb-0'><span class="text-bold text-dark-blue">mail: </span> <%= @customer.primary_contacts.first.email %></p>
+    <p class='mb-0'><span class="text-bold text-dark-blue">phone: </span> <%= @customer.primary_contacts.first.tel %></p>
+    <p class="mt-4">
+      I declare to be duly entitled for signing the InsureTrade insurance policy on behalf of the
+      company………
+    </p>
+    <p class="mt-2">
+      We declare that the information electronically given on InsureTrade pricing web platform is, to the best
+      of our knowledge and belief, correct and that we are not aware of any circumstances that we have not
+      disclosed to InsureTrade, which might influence the underwriter’s assessment of and willingness to
+      accept the risk.
+    </p>
+    <p class="mt-2">
+      We agree that these given information shall form the basis of and be incorporated in the InsureTrade
+      policy.
+    </p>
+    <p class="mt-2 text-bold text-dark-blue">
+      The following shall be electronically signed with the full policy documentation at time of
+      binding.
+    </p>
+
+
+    <div class="signature-box mt-4 mb-2">
+      <div class="d-flex gap-4 align-items-stretch">
+
+        <div class="flex-grow-1 mr-4">
+          <label class="mb-2 d-block">Signature</label>
+          <div class="signature-area"></div>
+          <small class="text-muted">
+            Please sign in the box above
+          </small>
+        </div>
+
+        <div style="min-width: 180px;">
+          <label for="signature_date" class="form-label mb-2">
+            Date
+          </label>
+          <input
+            type="date"
+            id="signature_date"
+            name="signature_date"
+            class="form-control"
+            value="<%= Date.today %>"
+          >
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <%= link_to final_1_quotes_path(id: @quote.id ) , id: 'normalQuote' do %>
+        <div class='btn btn-primary   ' >
+          Next
+        </div>
+      <% end %>
+</div>
+
