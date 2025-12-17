@@ -38,6 +38,12 @@ class QuotesController < ApplicationController
     @quote = Quote.find params[:id]
     @customer = Customer.find(@quote.customer_id)
   end
+  def final_1_bis
+    @avancement = true
+    @step = 3
+    @quote = Quote.find params[:id]
+    @customer = Customer.find(@quote.customer_id)
+  end
   def final_2
     @avancement = true
     @step = 3

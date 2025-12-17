@@ -13,6 +13,7 @@ Rails.application.routes.draw do
         get :difference
         get :extension
         get :final_1
+        get :final_1_bis
         get :final_2
       end
       member do
