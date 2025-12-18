@@ -17,24 +17,30 @@
     as: :radio_buttons,
     label: 'Select your policy Inception:',
     collection: [
-      [Date.today, true],
-      [Date.today.at_beginning_of_month.next_month, false]
+      ["Today : #{Date.today}", true],
+      ["Next month : #{Date.today.at_beginning_of_month.next_month}", false]
     ],
     item_wrapper_class: 'form-check form-check-inline',
     input_html: { class: 'form-check-input' },
     label_html: { class: 'form-check-label' } %>
-  <%= f.input :two,
-    as: :radio_buttons,
-    label: 'Select your insurance premium terms of payment (annual fees are payable up front)',
-    collection: [
-      ['Monthly Payment', true],
-      ['Quarterly Payment Upfront payment at Inception date With a 2% discount', false],
-      ['Upfront payment at Inception date with a 5% discount', false]
-    ],
-    item_wrapper_class: 'form-check',
-    input_html: { class: 'form-check-input' },
-    label_html: { class: 'form-check-label' }
-  %>
+<%= f.input :two,
+  as: :radio_buttons,
+  label: 'Select your insurance premium terms of payment (annual fees are payable up front)',
+  collection: [
+    ['Monthly Payment', 'monthly'],
+    ['Quarterly Payment – Upfront payment at inception date (2% discount)', 'quarterly'],
+    ['Upfront payment at inception date (5% discount)', 'upfront']
+  ],
+  item_wrapper_class: 'form-check',
+  input_html: { class: 'form-check-input' },
+  item_label_class: 'form-check-label',
+  item_label_proc: ->(label, value) {
+    label
+      .gsub(/\((\d+% discount)\)/, '<em>(\1)</em>')
+      .html_safe
+  }
+%>
+
 <p class="mt-2">Fill out your bank details for an automatic bank debit of the premium and fees
 payment</p>
 <div class="row">
