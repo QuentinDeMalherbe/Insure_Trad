@@ -6,21 +6,19 @@
 <% langage = :third %>
 <% end %>
 
-<div class="container h-screen mt-8 mx-6">
-  <h2 class=''><%=  "#{t 'quote.new.h1' }"%></h2>
-
-
-  <h3 class='text-important-bold'>Our Preliminary NBI</h3>
+<div class="container h-screen mt-4 mx-6">
+  <h2 class='title mb-0 pb-2' ><%=  "#{t 'quote.new.h1' }"%></h2>
+  <h3 class='text-important-bold mt-0'>Our Preliminary NBI</h3>
   <p style='font-style:italic;' class='text-12 mb-0'>The annual insurance premium and administration fees are:</p>
   <div class="d-flex w-100">
     <div class='w-25'></div>
     <div class="custom-wrapper-input w-33 ">
-      <h5 class='flex-grow-1 text-14'>Annual amount excluding Tax</h5>
+      <h5 class='flex-grow-1 text-14 pb-0'>Annual amount excluding Tax</h5>
     </div>
     <div class=" w-33 custom-wrapper-input  ">
       <div class="d-flex">
-      <h5 class='w-33 text-14'>IPT or VAT</h5>
-      <h5 class='flex-grow-1 text-14'>Annual amount including Ipt or Vat</h5>
+      <h5 class='w-33 text-14 pb-0'>IPT or VAT</h5>
+      <h5 class='flex-grow-1 text-14 pb-0'>Annual amount including Ipt or Vat</h5>
       </div>
     </div>
   </div>
@@ -67,38 +65,44 @@
     </div>
   </div>
 
- <p style='font-style:italic;'class= 'mt-4 text-12 mb-0'>The maximum amount InsureTrade Assurances shall indemnify the Insured for all Insured Losses, once the Aggregate
-Deductible is consumed per annual period:</p>
+<div class='d-flex '>
+  <div class= ' mr-4'>
+      <p style='font-style:italic;'class= 'mt-4 text-12 mb-0 me-4'>The maximum amount InsureTrade Assurances shall indemnify the Insured for all Insured Losses, once the Aggregate
+      Deductible is consumed per annual period:</p>
 
-  <div class="custom-wrapper-input mb-4 ">
-    <h5 class='mt-0'>Maximum Policy limit of liability for any annual period
-      <span>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
-          <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-    </h5>
+      <div class="custom-wrapper-input mb-4 ">
+        <h5 class='mt-0'>Maximum Policy limit of liability for any annual period
+          <span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
+              <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </h5>
 
-    <div class="input py-2">35 000 €</div>
+        <div class="input py-2 w-50">35 000 €</div>
+      </div>
   </div>
 
- <p style='font-style:italic;'class= 'text-12 mt-2 mb-0'>The Insured shall bear for its own account the following amount of Insured Loss(es) before InsureTrade Assurances makes
-payment under the Insurance policy</p>
-  <div class="custom-wrapper-input mb-4 ">
-    <h5 class='mb-0 mt-0'>Annual Aggregate Deductible
-      <span>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
-          <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-    </h5>
+  <div>
+      <p style='font-style:italic;'class= 'text-12 mt-4 mb-0'>The Insured shall bear for its own account the following amount of Insured Loss(es) before InsureTrade Assurances makes
+      payment under the Insurance policy</p>
+      <div class="custom-wrapper-input mb-4 ">
+        <h5 class='mb-0 mt-0'>Annual Aggregate Deductible
+          <span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#D9D9D9"/>
+              <path d="M12 16V12" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 8H12.01" stroke="#7C9193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </h5>
 
-    <div class="input py-2">4 500 €</div>
+        <div class="input py-2 w-50">4 500 €</div>
+      </div>
   </div>
+</div>
 
 <h3 class='text-important-bold mt-0'>NON CANCELLABLE GUARANTEES</h3>
  <p style='font-style:italic;'class= 'text-12 mb-0'>Any Insured Loss amount on Buyers with an individual Click&amp;Cover guarantee shall be covered as follows depending on their
@@ -111,9 +115,9 @@ respective risk classifications– from optimum to Limited – confirmed online 
 
     <div class='flex-grow-1'>
       <div class="d-flex custom-wrapper-input">
-        <h5 class="w-33 text-14">Type of Click&amp;Cover guarantee per Buyer</h5>
-        <h5 class="w-33 text-14">Maximum insured limit amount per insured Loss</h5>
-        <h5 class="w-33 text-14">Maximum insured limit amount per policy period for the total of insured losses</h5>
+        <h5 class="w-33 text-14 pb-0">Type of Click&amp;Cover guarantee per Buyer</h5>
+        <h5 class="w-33 text-14 pb-0">Maximum insured limit amount per insured Loss</h5>
+        <h5 class="w-33 text-14 pb-0">Maximum insured limit amount per policy period for the total of insured losses</h5>
       </div>
 
       <div class="d-flex bg-light-turquoise align-items-center border-top w-100">
@@ -152,8 +156,8 @@ be covered under the following First Loss guarantee subject to the terms conditi
     <div class='flex-grow-1'>
 
       <div class="d-flex custom-wrapper-input">
-        <h5 class="w-50 text-14">Maximum insured limit amount per insured Loss</h5>
-        <h5 class="w-50 text-14">Maximum insured limit amount per policy period for the total of insured losses</h5>
+        <h5 class="w-50 text-14 pb-0">Maximum insured limit amount per insured Loss</h5>
+        <h5 class="w-50 text-14 pb-0">Maximum insured limit amount per policy period for the total of insured losses</h5>
       </div>
 
       <div class="d-flex bg-light-turquoise align-items-center border-top w-100">
