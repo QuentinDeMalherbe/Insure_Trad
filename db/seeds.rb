@@ -33,7 +33,7 @@ puts 'Creating user'
       status: 'expert'
     )
     user_6 = User.new(
-      email: 'anna-louise.gleadell@guycarp.com',
+      email: 'anne-louise.gleadell@guycarp.com',
       password:'123456',
       status: 'expert'
     )
